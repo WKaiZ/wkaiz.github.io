@@ -13,6 +13,7 @@ website:
       - slides.qmd
       - resume.qmd
       - publications.qmd
+      - courses.qmd
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/
