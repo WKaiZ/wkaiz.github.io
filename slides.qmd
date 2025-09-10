@@ -1,0 +1,13 @@
+---
+title: "Slides"
+listing: 
+  sort: "date desc"
+  type: default
+  page-size: 100
+  categories: true
+  sort-ui: true
+  filter-ui: true
+  feed: true
+  contents: 
+    - links.yml
+---

@@ -1,0 +1,492 @@
+- path: https://docs.google.com/presentation/d/15wrq3fHueo6bNLK1u-PJC3UZe0BI8vRM9w2IYooXfJA/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Fall 2025 Lab 3"
+  description: "Visualizations, Data Types, Extending Tables"
+  date: "2025-09-10"
+  categories: [Data 8, Fa25]
+- path: https://docs.google.com/presentation/d/1xpjSqR0T3OP9mvjJoeCiP1trdRs6IYuyWLky59t61X8/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Fall 2025 Lab 2"
+  description: "Intro to Tables & Causation"
+  date: "2025-09-03"
+  categories: [Data 8, Fa25]
+- path: https://docs.google.com/presentation/d/1DEfDOVpNMlYF03lZ9njTXpgltlZUHuRXw0DWWAbTB9Y/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Fall 2025 Lab 1"
+  description: "By the Numbers"
+  date: "2025-08-27"
+  categories: [Data 8, Fa25]
+- path: https://docs.google.com/presentation/d/19W6OIYNbyRlX7tpk5HpkeHhPzg-wcHPYa0PaQLjXvrE/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 13"
+  description: "Wrapping Up"
+  date: "2025-08-11"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1MHZaJrDv_KCFpbOr_FLFsZ5qgqTMHlBMHJtq3eAgmc4/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 12"
+  description: "Regression & Residuals"
+  date: "2025-08-04"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1GNVchPlddiehBs4Y99V9qP92b4fOTxueBMxfA68r_0c/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 11"
+  description: "Correlation and Regression"
+  date: "2025-07-30"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1lDfIC5NR_CwNM2xVPdB-tuRipp_Z22rajDftOUmRFJU/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 10"
+  description: "Central Limit Theorem"
+  date: "2025-07-28"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/18mS5LGvS9ZBj4MsGrvyY8YaKVo7Q-MOYzDJ8M2H56GQ/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 9"
+  description: "Interpreting Confidence, Center and Spread"
+  date: "2025-07-23"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1mJpjBuGWQVds1mVq587ulTRBYZU_oyyN0AiShPzOZoQ/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 8"
+  description: "Confidence Intervals"
+  date: "2025-07-21"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1kRwKh3kvQu14tgPT4JFF-aT6DpzyV1HYZE-uIf1ZmEg/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 7.5"
+  description: "Midterm Review"
+  date: "2025-07-16"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1AIBxuhXXAmmOB9jUXX67GdzcxxPD5fw_1DFDECy0-sM/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 7"
+  description: "Sampling, Hypothesis Testing, Decisions"
+  date: "2025-07-14"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1JkrCfYyYqb3g5NaDSL-y0rXUSLhPFp7iQPMT_MDGVuQ/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 6"
+  description: "Conditions, Iterations"
+  date: "2025-07-09"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/12Y-s9TOu_fI3ZQhiaMjESpMT8p9w2F7fdge60BD5Fgw/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 5"
+  description: "Functions, Pivots, and Joins"
+  date: "2025-07-07"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1iqv7V5HzBN4YtTlHZTu98rSfoffvw652QjJGq3l5LbI/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 4"
+  description: "Data Visualizations, Histograms"
+  date: "2025-07-02"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1JgrpfpZpASM_KA-aM6W1VEPsS8kN9feJmhYlTmmPA-I/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 3"
+  description: "Data Types, Table, Census"
+  date: "2025-06-30"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/194UdI7kDPCDX30hA5jDG1xnBk54zucWn-8plE16dOvc/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 2"
+  description: "Cause and Effect, Python"
+  date: "2025-06-25"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1C7e3eIC0cc9lq-DXl9s6d8CVMrQTZG8JJvf3E1IMwLU/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2025 Lab 1"
+  description: "Introduction"
+  date: "2025-06-23"
+  categories: [Data 8, Su25]
+- path: https://docs.google.com/presentation/d/1vA5EkMw_zUuj9lVjfKpbH89kdctHlbfeBZDcuylGNgo/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 12.5"
+  description: "Final Practice"
+  date: "2024-08-05"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1HlacG4sg2FnD-ByHrQzWaY6wOz2ZPCzl-Y1-9sOzCqA/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 12"
+  description: "Wrapping Up"
+  date: "2024-07-31"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1aZuYx67jPut9bx92SmPRfK-qGwvsbt6YMz_myjtRJBA/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 11"
+  description: "RMSE, Prediction Intervals, and k-Nearest Neighbors"
+  date: "2024-07-29"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/105KS0wANZ8ZYrkE8JXw8Rtkg5TK_ZMC6kwfopYpZmyc/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 10"
+  description: "Regression & Residuals"
+  date: "2024-07-24"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/12DtaHdhA3SasnmtRZ8S5rE3UDlnqpAqJaU_vwmaHHuk/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 9"
+  description: "Correlation & Regression"
+  date: "2024-07-22"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1IebwdTeVDvoWCm2EIGb7HCD0vYcFNOQT07VPHtPHiO0/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 8"
+  description: "Sample Means, CLT"
+  date: "2024-07-17"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1eVdVVIzaPVI9W7yKD_VT6hnlGVop8C9F19D0I1RI21I/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 7"
+  description: "The Bootstrap"
+  date: "2024-07-15"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1BRnTz2r8lw2-1VCFI8AywXnDPFOnidkL5oFEWWPmdKQ/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 6.5"
+  description: "Midterm Review"
+  date: "2024-07-10"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1tw_dFfrmtxc_Ke9ld4xRxxzJYiAlS5C5SDxrA7j0Lvk/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 6"
+  description: "Assessing Models"
+  date: "2024-07-08"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1egNhkixD82HLsI4v03CxeB7zBqRFHWo811H9VP1oKd4/edit#slide=id.g1ebe4590989_0_0
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 5"
+  description: "Functions, Table Methods"
+  date: "2024-07-03"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1RNQqeZ-2eK6hEG2PpnPmWB9dOuimRid9x7jUd1bjIZc/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 4"
+  description: "Functions, Visualizations"
+  date: "2024-07-01"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1VkziJYe7NWAQFi2_GzDyw9nJK0mqwt2OAC-FsN9Q8V0/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 3"
+  description: "Data Types and Table Manipulation"
+  date: "2024-06-26"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1CefTJ2Zu86IcjCIxFpmFP5FVSZO2WFICTSV4IJxusSU/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 2"
+  description: "Table Operations"
+  date: "2024-06-24"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1v2ohgL2tRgMOGX7b7iCe4PYXz7YFJ2mIA6nn6vG8Aos/edit?usp=sharing
+  image: /assets/data8.png
+  title: "DATA C8 Summer 2024 Lab 1"
+  description: "By the Numbers"
+  date: "2024-06-17"
+  categories: [Data 8, Su24]
+- path: https://docs.google.com/presentation/d/1ky5BzM0kAFpWztS3WoJbH1Cv3Ej_UElLX7wMfK-SocQ/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 14"
+  description: "Final Review of RL"
+  date: "2024-08-06"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/16VhPDkT3D_zRxozVPeNUwOPl9sVGFRmMzzLOYe3Ok4Y/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 14"
+  description: "Final Review of MDPs"
+  date: "2024-08-05"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1egHMnBCZr45zxg_j6ncoQhrh5KHekB4Bwl-o7WxB2BY/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 13"
+  description: "Vector Calculus, Backpropagation"
+  date: "2024-08-01"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1XgFq27xOykTQpiFBxxvlbwYf6iYQl_JvIG_QPZ3tNn4/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 12"
+  description: "Neural Networks, Loss Functions"
+  date: "2024-07-30"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1LmMRK2hQNqaHSYIyOrzyKKgs5Z6ZFH1G1gNKKdE_gKc/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 11"
+  description: "MLE, Naive Bayes, Regressions"
+  date: "2024-07-25"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1DNCzlXXgE6ElL5rmGQ4dTXOiBVhRHIwh2X-C4YlIcSA/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 10"
+  description: "RL"
+  date: "2024-07-23"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1IJDPYU9U5lhr6DSYILo3xYsuwpJzoXiZCVmb9voqkik/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 9"
+  description: "MDPs, VPI"
+  date: "2024-07-18"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1Ifm6lvlaypJZbsHLuwdBga5YC_h42pT1eQysOmPnGoo/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 8"
+  description: "Particle Filtering, Decision Networks"
+  date: "2024-07-16"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1Bu0vb4v2wxOmh5Ns6OfTc4AhDUKwKlvWlIJkIqAqS28/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 7"
+  description: "D-Separation, HMMs"
+  date: "2024-07-11"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1wzxGEhtk0C5MyDkY-kh0Qeymvgua7Vley_MlEcx6Cwc/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 6"
+  description: "Midterm Review of CSPs"
+  date: "2024-07-09"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/14whzKGQKs5-Of7r4ytc3BckZrJBUneCr_WUdWJg2cjU/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 5"
+  description: "Probability, Bayes Nets, Variable Elimination"
+  date: "2024-07-04"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/18zb1FYCfZK7KcQPpHERJJjNpOhg67Rnr2XI0Em_XLcM/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 4"
+  description: "Games"
+  date: "2024-07-02"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1v0pTkXrFHjBEoBfQN8hn6cy_oLfko-PmXCkkmCAR5i8/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 3"
+  description: "CSPs"
+  date: "2024-06-27"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1e5TkPYTvGC_KQqwoN3D0-PFJ_liaO3j5N1sR7t0i2RU/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 2"
+  description: "Informed Search"
+  date: "2024-06-25"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/17H63leJTTm2ppM9wHFRI8u1U2g8XuaTWCDgGMQU2K4c/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Summer 2024 Discussion 1"
+  description: "Uninformed Search"
+  date: "2024-06-20"
+  categories: [CS 188, Su24]
+- path: https://docs.google.com/presentation/d/1tJi6X2JU2_CtMhfN87lks4UcIUPlbZiXw10tWfPllls/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 11"
+  description: "ML II"
+  date: "2025-04-23"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1sTaSy3DbL8QUjE-pcdBm4diYkNBGcekQwgw2vM2XbwU/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 10"
+  description: "ML"
+  date: "2025-04-16"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/191OMJlARS8GpxJ2IMlLj2BkC63TKkh8itr4gRRv262s/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 9"
+  description: "Particle Filtering and Naive Bayes"
+  date: "2025-04-09"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1Dlke_vIv5NY3UZY6E0YHB2ZcCPy79hvt_93arLF243g/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 8"
+  description: "HMMs, VPI"
+  date: "2025-04-02"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/12yGQZ4mRvVHSzTHmF402x-Nrn5fLwtaQ6_5ouNlw_s4/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 7.5"
+  description: "Midterm Review of Search, Games, and CSPs"
+  date: "2025-03-20"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1hHjyabW9OgfDVtTOQNORO3eQcg4RWrXwNIViq-NbnqA/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 7"
+  description: "BN Inference and Sampling"
+  date: "2025-03-11"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1-wdY3FOGilqtzOHZiciqsnwqIxZgrSFcHWrLJ6iYvno/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 6"
+  description: "Probability and Bayes Nets"
+  date: "2025-03-05"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1t2TFmhzX2UXbzFjzPhfECCYebSW_XZNmUNcDiLHkmG8/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 5"
+  description: "RL"
+  date: "2025-02-25"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1mEBaUfojDd9emVEw8wn6zEOqiLBFcMuMAsBK8LKOoqA/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 4"
+  description: "MDPs"
+  date: "2025-02-19"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1MsI5iMEvtsh76G7ZYZ6r1nwFOqsNPUgK9p1f03hSqGw/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 3"
+  description: "Games"
+  date: "2025-02-12"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1bOnd1oS5MfC5-8QDEqRrA3njxYa-lBbi8xjcZq2XHBQ/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 2"
+  description: "CSPs"
+  date: "2025-02-05"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1INxHO0ndWnTAHzNVCJrqBcFVc_CFseVpjV_uxx2MqNQ/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Spring 2025 Discussion 1"
+  description: "Search"
+  date: "2025-01-29"
+  categories: [CS 188, Sp25]
+- path: https://docs.google.com/presentation/d/1VneTYG5U8bulg9WuN1TR1knym2tMf-pGYrx6zsTYjYM/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 11"
+  description: "ML II"
+  date: "2024-12-04"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/19eoPvQIh_WpGq8lZgyOaSeM2OECQbbGoudfJkpxlUx8/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 10"
+  description: "ML"
+  date: "2024-11-18"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1y9A4uRuZQEL2cPGv_pCRC8KL45uAQkArQuUe0zZpT8g/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 9"
+  description: "Particle Filtering and Naive Bayes"
+  date: "2024-11-12"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1OEjyNKOi7WyG7GdMftykeGpzKARB-WAiLz--JrXK1xg/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 8"
+  description: "VPIs and HMMs"
+  date: "2024-11-05"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1c3j98axN6xPm5aIPko6-krLWS1UiMBUQkgt5sA78bRU/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 7"
+  description: "BN Inference and Sampling"
+  date: "2024-10-28"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1pM00huZ_ussKNwIePpvuxJ7yb0eWSGU0QGZOADdfnHA/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 6"
+  description: "Probability and Bayes Nets"
+  date: "2024-10-21"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1cobUVL0o5onJblpmxC-ySzCUo8bjHiOpjI7MUk01qpU/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 5"
+  description: "RL"
+  date: "2024-10-08"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1OFUHtTs5rQyCdFDOJj2fJZ7CAZ5821vUaV8HHf7Bm_g/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 4"
+  description: "MDPs"
+  date: "2024-10-01"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1bzIofkR97WLkbxTDrX46Itgsk5bVdDpJcTgyj2NpQRU/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 3"
+  description: "Games"
+  date: "2024-09-24"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1SnGEpx_NjOufmMRaa_WIXXSjryI-avyCp9DzxiwVuhU/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 2"
+  description: "CSPs"
+  date: "2024-09-17"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1iIz2Uf4b_bfd-eDeL7YxKS5tlsIc74rUTi3X8DVWGjY/edit?usp=sharing
+  image: /assets/cs188.png
+  title: "CS 188 Fall 2024 Discussion 1"
+  description: "Search"
+  date: "2024-09-10"
+  categories: [CS 188, Fa24]
+- path: https://docs.google.com/presentation/d/1BmzPx_STl3N7MyAijzxEGUpCcFGaA-SofsbyisQ8OlI/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 13"
+  description: "PCA & Clustering"
+  date: "2025-08-06"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1GQwirGBzSu-mnbbmSLiqXq5TZfA3iZnG7H6hL32Qo2w/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 12"
+  description: "ROC Curves and Performance Metrics"
+  date: "2025-08-04"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1Opxfg3yvDRECFfvQHRN50xKO-VB5R5FuwlBGNDm56OE/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 11"
+  description: "Logistic Regression"
+  date: "2025-07-30"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1R4bwK13kfqluymq6diBCDCYbkMjAydJxTNzvhE_13fU/edit?usp=drive_link
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 10"
+  description: "SQL"
+  date: "2025-07-28"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1kg0benyZ8SNU5WI8MTH9HO8TzVFsONbp67kysaBZCyQ/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 9"
+  description: "Random Variables, Bias, Variance"
+  date: "2025-07-23"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1v6yCaaaxUMuanlqOPPydXkuIDsKOgTUC5jn3s02d840/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 8"
+  description: "Cross-Validation & Regularization"
+  date: "2025-07-21"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1BclqIYwwF8HlPai118rj6FTUc7d5wfVQYK-FC6_d7SI/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 7"
+  description: "Gradient Descent"
+  date: "2025-07-16"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1Pe8e4oMBGrvQz_5hHQvOKyLcjmU3weqrAQPnZt2eUG8/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 6"
+  description: "Modeling and OLS"
+  date: "2025-07-14"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1fsyb91Ezwlx8AzvQ74JPDYhyd4AkBzAFHS3ina6ccFs/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 5"
+  description: "Probability, Sampling, & Visualization"
+  date: "2025-07-09"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/15q4VDHt5zi29HAi7I075hFwtopJK5E0TpwNF0VlFiQ0/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 4"
+  description: "RegEx & Visualizations"
+  date: "2025-07-07"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1laoOZWzn8uD4wLkwSdilN3iw-kT6XgJ1-4YSYkLCtgE/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 3"
+  description: "Pandas II & EDA"
+  date: "2025-07-02"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1kNVAkYRM3TPJSQKWedCBVYyg4W0RkAmdBGTJKIjbIqc/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 2"
+  description: "Pandas"
+  date: "2025-06-30"
+  categories: [Data 100, Su25]
+- path: https://docs.google.com/presentation/d/1AgSSfatbcDtakg0poRt2ylLx-4O2DsuID5Be50GermY/edit?usp=sharing
+  image: /assets/data100.png
+  title: "DATA 100 Summer 2025 Discussion 1"
+  description: "Prerequisites"
+  date: "2025-06-25"
+  categories: [Data 100, Su25]

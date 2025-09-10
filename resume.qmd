@@ -1,0 +1,60 @@
+---
+title: "Resume"
+format:
+  html:
+    page-layout: full
+---
+
+## Education
+
+**University of California, Berkeley** — *B.A. in Computer Science and Applied Mathematics, Minor in Data Science; GPA: 3.97*  
+*Berkeley, CA | August 2022 – May 2026*
+
+**Northwood High School** — *GPA: 4.28*  
+*Irvine, CA | August 2018 – June 2022*
+
+## Experience
+
+**Undergraduate Course Staff** — *UC Berkeley*  
+*Berkeley, CA | August 2023 – Present* 
+
+- Lead Teaching Assistant for CS 188 (AI), DATA 100, and DATA C8.  
+- Created assignments, discussion materials, maintained course website, and led office hours.
+
+**Undergraduate Research Assistant / Mentor** — *UC Berkeley, Algoverse*  
+*Berkeley, CA | August 2023 – Present*  
+
+- *Cross-Platform SQL Rewrite Optimization*: Generalized rewrite rules for SQL optimization across distributed database platforms (Apache Calcite, CockroachDB).  
+- *Forecasting Adversarial Multi-Agent Behavior*: Built real-time chain-of-thought (CoT) prompting system using multimodal LLMs to predict crowd behavior from video.  
+- *Ontology-Guided Detection of Semantic Leakage*: Developed ontology-based method to detect errors in CoT reasoning, improving AI interpretability.  
+- *Empirical Analysis of FDA Citizen Petitions*: Collected and analyzed 20 GB of petitions to evaluate FDA responsiveness.  
+- *Human Strategy Updating via Peer Advice*: Modeled human strategy updates using inverse reinforcement learning and random forest classification.  
+- *AI for Pancreatic Cancer Detection*: Built ML models to predict pancreatic cancer from clinical datasets.
+
+**Applied AI Engineer Intern** — *Power Meta Corp.*  
+*Irvine, CA | May 2024 – July 2024*  
+
+- Applied AI-driven resource allocation and optimization in decentralized GPU grid computing for blockchain.  
+- Integrated machine learning methods to improve blockchain model efficiency and scalability.
+
+## Projects
+
+**BearCourseHub** — *Swift, SwiftUI, Firebase* | August 2023 – December 2023  
+
+- Developed an iOS app delivering curated course information and customizable features to enhance UC Berkeley students’ experience.
+
+**Course Projects** — *Java, Python* | March 2023 – Present  
+
+- Built a simple database from scratch including B+ trees, join algorithms, and query optimization.  
+- Built a traceroute tool in Python to analyze network paths and latency.  
+- Built a neural network from scratch with convolutional, batch normalization, and pooling layers.  
+- Developed a 2D tile-based procedural world exploration engine enabling user interaction.
+
+## Other
+
+- **Relevant Coursework:** Machine Learning (A+), Artificial Intelligence (A+), Database Systems (A), Introduction to Internet (A+), Probability for Data Science (A+), Computer Architecture (A+), DATA 100 (A+), Numerical Analysis (A+), Computer Vision, NLP, Data Mining, Agentic AI  
+- **Awards and Honors:** Dean's List, Honors to Date, EECS Honors
+- **Programming Languages:** Java, Python, C, SQL, Swift, SwiftUI, RISC-V, R, Javascript  
+- **Developer Tools:** Git, VS Code, PyCharm, RStudio, IntelliJ, MongoDB  
+- **Libraries:** pandas, NumPy, Matplotlib, seaborn, PyTorch, Tidyverse, scikit, Otter  
+- **Languages:** Native Chinese

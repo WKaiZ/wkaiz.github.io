@@ -1,0 +1,55 @@
+---
+title: "Wesley Kai Zheng"
+image: "assets/avatar.jpg"
+
+about: 
+  template: trestles 
+  image-width: 80%
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/WKaiZ
+      target: _blank
+    - icon: envelope
+      text: Email
+      href: mailto:wzheng0302@berkeley.edu
+      target: _blank   
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/wesley-zheng-cal
+      target: _blank
+    # - icon: twitter-x
+    #   text: Twitter
+    #   href: https://x.com/WesleyZheng
+    #   target: _blank   
+    # - icon: wechat
+    #   text: WeChat
+    #   href: assets/wechat.JPG
+    #   target: _blank 
+    # - icon: steam
+    #   text: Steam
+    #   href: https://steamcommunity.com/id/wes246/
+    #   target: _blank 
+    # - icon: book-fill
+    #   text: RedNote
+    #   href: https://www.xiaohongshu.com/user/profile/63f1fcbe000000001001e07e
+    #   target: _blank
+
+listing:
+    contents: 
+      - links.yml
+    type: grid
+    max-items: 3
+    page-size: 3
+    fields: [image, date, title]
+    max-description-length: 75
+    sort: 
+      - "date desc"
+      - "title asc"
+---
+
+Hello! Welcome to my personal site! I am a fourth-year student at UC Berkeley, studying Computer Science, Applied Mathematics, and Data Science.  
+
+I am currently a TA for [Data 8: Foundations of Data Science](https://www.data8.org/). Previously, I have served as a TA for [Data 100: Principles and Techniques of Data Science](https://ds100.org/) and [CS 188: Introduction to Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/).
+
+

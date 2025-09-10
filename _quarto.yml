@@ -1,0 +1,33 @@
+project:
+  type: website
+  resources:
+    - assets/**
+
+website:
+  title: "Wesley Zheng"
+  favicon: "assets/icon.png"
+  navbar: 
+    left:
+      - href: index.qmd
+        text: Home
+      - slides.qmd
+      - resume.qmd
+      - publications.qmd
+    right:
+      - text: Notes
+        href: https://wkaiz.github.io/discussions/
+        target: _blank
+      - text: Projects
+        href: https://wkaiz.github.io/projects/
+        target: _blank
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+
