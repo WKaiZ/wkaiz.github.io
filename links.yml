@@ -1,9 +1,11 @@
 - path: https://docs.google.com/presentation/d/12JSuYVQFWSWH4HjN8j5NMRClwUpzv5qFZxMDeikF6lU/edit?usp=sharing
   title: "DATA C8 Fall 2025 Lab 9"
+  image: /assets/data8.png
   description: " The Central Limit Theorem"
   date: "2025-10-29"
   categories: [Data 8, Fa25]
 - path: https://docs.google.com/presentation/d/1BCUy1mNgzMl2djKNxCdgVmFmFNDA1Fpo1aq0CjN8E24/edit?usp=sharing
+  image: /assets/data8.png
   title: "DATA C8 Fall 2025 Lab 8"
   description: " The Bootstrap"
   date: "2025-10-22"
