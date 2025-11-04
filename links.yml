@@ -1,3 +1,7 @@
+- path: https://docs.google.com/presentation/d/15YrfeeMJB4XJKUlD5I0e_zR7DzUySxA6hzktwritQpE/edit?usp=sharing
+  title: "DATA C8 Fall 2025 Lab 10"
+  image: /assets/data8.png
+  description: " The Central Limit Theorem"
 - path: https://docs.google.com/presentation/d/12JSuYVQFWSWH4HjN8j5NMRClwUpzv5qFZxMDeikF6lU/edit?usp=sharing
   title: "DATA C8 Fall 2025 Lab 9"
   image: /assets/data8.png
@@ -72,10 +76,10 @@
   categories: [Data 8, Su25]
 - path: https://docs.google.com/presentation/d/1GNVchPlddiehBs4Y99V9qP92b4fOTxueBMxfA68r_0c/edit?usp=sharing
   image: /assets/data8.png
-  title: "DATA C8 Summer 2024 Lab 11"
+  title: "DATA C8 Summer 2025 Lab 11"
   description: "Correlation and Regression"
   date: "2025-07-30"
-  categories: [Data 8, Su24]
+  categories: [Data 8, Su25]
 - path: https://docs.google.com/presentation/d/1lDfIC5NR_CwNM2xVPdB-tuRipp_Z22rajDftOUmRFJU/edit?usp=sharing
   image: /assets/data8.png
   title: "DATA C8 Summer 2025 Lab 10"
