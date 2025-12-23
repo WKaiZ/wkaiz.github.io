@@ -18,6 +18,10 @@ about:
       text: LinkedIn
       href: https://linkedin.com/in/wesley-zheng-cal
       target: _blank
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=-VW_lKwAAAAJ&hl=en
+      target: _blank
     # - icon: twitter-x
     #   text: Twitter
     #   href: https://x.com/WesleyZheng
@@ -26,10 +30,10 @@ about:
     #   text: WeChat
     #   href: assets/wechat.JPG
     #   target: _blank 
-    # - icon: steam
-    #   text: Steam
-    #   href: https://steamcommunity.com/id/wes246/
-    #   target: _blank 
+    - icon: steam
+      text: Steam
+      href: https://steamcommunity.com/id/wes246/
+      target: _blank 
     # - icon: book-fill
     #   text: RedNote
     #   href: https://www.xiaohongshu.com/user/profile/63f1fcbe000000001001e07e

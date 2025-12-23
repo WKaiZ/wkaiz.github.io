@@ -2,4 +2,14 @@
 title: "Research"
 ---
 
-Stay tuned!
+
+::: {.columns .mb-4}
+::: {.column width="28%"}
+![](assets/frontier-cs.png){.img-fluid .rounded}
+:::
+::: {.column width="72%"}
+#### FrontierCS: Evolving Challenges for Evolving Intelligence
+Qiuyang Mang, Wenhao Chai, Zhifei Li, Huanzhi Mao, Shang Zhou, Alexander Du, **Wesley Zheng**, *et al.*  
+*2025*. [arXiv:2512.15699](https://arxiv.org/abs/2512.15699)
+:::
+:::
