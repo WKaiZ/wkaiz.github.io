@@ -12,7 +12,9 @@ website:
       - href: index.qmd
         text: Home
       - slides.qmd
-      - resume.qmd
+      - text: Resume
+        href: /assets/resume.pdf
+        target: _blank
       - publications.qmd
       - courses.qmd
     right:

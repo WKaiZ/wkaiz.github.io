@@ -18,97 +18,69 @@
     "href": "courses.html",
     "title": "Courses",
     "section": "",
-    "text": "Course\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nASTRON C10\nIntroduction to General Astronomy\nAlexei Filippenko\n4.0\nIP\n-\n\n\nCOMPSCI 180\nIntro to Computer Vision and Computational Photography\nAlexei Efros, Angjoo Kanazawa\n4.0\nIP\nProjects\n\n\nCOMPSCI C182\nDesigning, Visualizing and Understanding Deep Neural Networks\nAnant Sahai, Gireeja Ranade\n4.0\nIP\n-\n\n\nCOMPSCI 194\nSpecial Topics\nXiaodong Song\n1.0\nIP\n-\n\n\nEECS 183\nNatural Language Processing\nAlane Suhr, Gopala Anumanchipalli\n4.0\nIP\n-"
+    "text": "Course\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCOMPSCI 162\nOperating Systems and System Programming\nJohn Kubiatowicz, this link opens in new tab\n4.0\nIP\n\n\nMATH 185\nIntroduction to Complex Analysis\nIlia Nekrasov\n4.0\nIP\n\n\nMCELLBI 50\nThe Immune System and Disease\nAnant Sahai, Gireeja Ranade\n4.0\nIP\n\n\nUGBA 10X\nFoundations of Business\nBrandi Pearce, Harris Sondak, Jonathan Heyne, Queen Jaks\n3.0\nIP"
+  },
+  {
+    "objectID": "courses.html#spring-2026",
+    "href": "courses.html#spring-2026",
+    "title": "Courses",
+    "section": "",
+    "text": "Course\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCOMPSCI 162\nOperating Systems and System Programming\nJohn Kubiatowicz, this link opens in new tab\n4.0\nIP\n\n\nMATH 185\nIntroduction to Complex Analysis\nIlia Nekrasov\n4.0\nIP\n\n\nMCELLBI 50\nThe Immune System and Disease\nAnant Sahai, Gireeja Ranade\n4.0\nIP\n\n\nUGBA 10X\nFoundations of Business\nBrandi Pearce, Harris Sondak, Jonathan Heyne, Queen Jaks\n3.0\nIP"
   },
   {
     "objectID": "courses.html#fall-2025",
     "href": "courses.html#fall-2025",
     "title": "Courses",
-    "section": "",
-    "text": "Course\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nASTRON C10\nIntroduction to General Astronomy\nAlexei Filippenko\n4.0\nIP\n-\n\n\nCOMPSCI 180\nIntro to Computer Vision and Computational Photography\nAlexei Efros, Angjoo Kanazawa\n4.0\nIP\nProjects\n\n\nCOMPSCI C182\nDesigning, Visualizing and Understanding Deep Neural Networks\nAnant Sahai, Gireeja Ranade\n4.0\nIP\n-\n\n\nCOMPSCI 194\nSpecial Topics\nXiaodong Song\n1.0\nIP\n-\n\n\nEECS 183\nNatural Language Processing\nAlane Suhr, Gopala Anumanchipalli\n4.0\nIP\n-"
+    "section": "Fall 2025",
+    "text": "Fall 2025\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nASTRON C10\nIntroduction to General Astronomy\nAlexei Filippenko\n4.0\nP\n\n\nCOMPSCI 180\nIntro to Computer Vision and Computational Photography\nAlexei Efros, Angjoo Kanazawa\n4.0\nA\n\n\nCOMPSCI C182\nDesigning, Visualizing and Understanding Deep Neural Networks\nAnant Sahai, Gireeja Ranade\n4.0\nP\n\n\nCOMPSCI 194\nSpecial Topics\nXiaodong Song\n1.0\nP\n\n\nEECS 183\nNatural Language Processing\nAlane Suhr, Gopala Anumanchipalli\n4.0\nA+\n\n\nDATA 144\nData Mining and Analytics\nZachary Pardos\n3.0\nA+"
   },
   {
     "objectID": "courses.html#spring-2025",
     "href": "courses.html#spring-2025",
     "title": "Courses",
     "section": "Spring 2025",
-    "text": "Spring 2025\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nCDSS 198\nDirected Group Studies for Advanced Undergraduates\n-\n1.0\nP\n-\n\n\nCOMPSCI 168\nIntroduction to the Internet: Architecture and Protocols\nPeyrin Kao, Sylvia Ratnasamy\n4.0\nA+\n-\n\n\nCOMPSCI 189\nIntroduction to Machine Learning\nJonathan Shewchuk\n4.0\nA+\n-\n\n\nMATH 104\nIntroduction to Analysis\nMengxuan Yang\n4.0\nA-\n-\n\n\nMELC 18\nIntroduction to Ancient Egypt\nCarol Redmount\n4.0\nA+\n-"
+    "text": "Spring 2025\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCDSS 198\nDirected Group Studies for Advanced Undergraduates\n-\n1.0\nP\n\n\nCOMPSCI 168\nIntroduction to the Internet: Architecture and Protocols\nPeyrin Kao, Sylvia Ratnasamy\n4.0\nA+\n\n\nCOMPSCI 189\nIntroduction to Machine Learning\nJonathan Shewchuk\n4.0\nA+\n\n\nMATH 104\nIntroduction to Analysis\nMengxuan Yang\n4.0\nA-\n\n\nMELC 18\nIntroduction to Ancient Egypt\nCarol Redmount\n4.0\nA+"
   },
   {
     "objectID": "courses.html#fall-2024",
     "href": "courses.html#fall-2024",
     "title": "Courses",
     "section": "Fall 2024",
-    "text": "Fall 2024\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nCOMPSCI 186\nIntroduction to Database Systems\nAlvin Cheung\n4.0\nA\n-\n\n\nCOMPSCI 375\nTeaching Techniques for Computer Science\nVictor Huang\n2.0\nP\n-\n\n\nDATA C104\nHuman Contexts and Ethics of Data\nAri Edmundson, Cathryn Carson, Daniel Roddy\n4.0\nA-\n-\n\n\nDATA C140\nProbability for Data Science\nAni Adhikari\n4.0\nA+\n-\n\n\nMATH 128A\nNumerical Analysis\nMing Gu\n4.0\nA+\n-"
+    "text": "Fall 2024\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCOMPSCI 186\nIntroduction to Database Systems\nAlvin Cheung\n4.0\nA\n\n\nCOMPSCI 375\nTeaching Techniques for Computer Science\nVictor Huang\n2.0\nP\n\n\nDATA C104\nHuman Contexts and Ethics of Data\nAri Edmundson, Cathryn Carson, Daniel Roddy\n4.0\nA-\n\n\nDATA C140\nProbability for Data Science\nAni Adhikari\n4.0\nA+\n\n\nMATH 128A\nNumerical Analysis\nMing Gu\n4.0\nA+"
   },
   {
     "objectID": "courses.html#spring-2024",
     "href": "courses.html#spring-2024",
     "title": "Courses",
     "section": "Spring 2024",
-    "text": "Spring 2024\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nCOMPSCI 61C\nGreat Ideas of Computer Architecture (Machine Structures)\nJustin Yokota, Lisa Yan\n4.0\nA+\n-\n\n\nDATA C100\nPrinciples & Techniques of Data Science\nJoseph Gonzalez, Narges Norouzi\n4.0\nA+\n-\n\n\nESPM 169\nInternational Environmental Politics\nKate O’Neill\n4.0\nA+\n-\n\n\nMATH 110\nAbstract Linear Algebra\nEdward Frenkel\n4.0\nA\n-\n\n\nSTAT 33B\nIntroduction to Advanced Programming in R\nGaston Sanchez Trujillo\n1.0\nA\n-\n\n\nUGIS 192B\nSupervised Research: Social Sciences\n-\n3.0\nP\n-"
+    "text": "Spring 2024\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCOMPSCI 61C\nGreat Ideas of Computer Architecture (Machine Structures)\nJustin Yokota, Lisa Yan\n4.0\nA+\n\n\nDATA C100\nPrinciples & Techniques of Data Science\nJoseph Gonzalez, Narges Norouzi\n4.0\nA+\n\n\nESPM 169\nInternational Environmental Politics\nKate O’Neill\n4.0\nA+\n\n\nMATH 110\nAbstract Linear Algebra\nEdward Frenkel\n4.0\nA\n\n\nSTAT 33B\nIntroduction to Advanced Programming in R\nGaston Sanchez Trujillo\n1.0\nA\n\n\nUGIS 192B\nSupervised Research: Social Sciences\n-\n3.0\nP"
   },
   {
     "objectID": "courses.html#fall-2023",
     "href": "courses.html#fall-2023",
     "title": "Courses",
     "section": "Fall 2023",
-    "text": "Fall 2023\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nCOMPSCI 188\nIntroduction to Artificial Intelligence\nIgor Mordatch, Peyrin Kao\n4.0\nA+\n-\n\n\nCOMPSCI 198\nDirected Group Studies for Advanced Undergraduates\nJustin Wong, Andy Huang\n2.0\nP\n-\n\n\nDATA 198 GRP 005\nDirected Group Studies for Advanced Undergraduates\n-\n2.0\nP\n-\n\n\nDATA 198 GRP 007\nDirected Group Studies for Advanced Undergraduates\n-\n1.0\nP\n-\n\n\nDATA 198 GRP 012\nDirected Group Studies for Advanced Undergraduates\n-\n1.0\nP\n-\n\n\nMATH 113\nIntroduction to Abstract Algebra\nAleksandra Utiralova\n4.0\nA\n-\n\n\nPBHLTH 101\nA Sustainable World: Challenges and Opportunities\nLauren van der Walt, Marlon Maus\n3.0\nA+\n-"
+    "text": "Fall 2023\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCOMPSCI 188\nIntroduction to Artificial Intelligence\nIgor Mordatch, Peyrin Kao\n4.0\nA+\n\n\nCOMPSCI 198\nDirected Group Studies for Advanced Undergraduates\nJustin Wong, Andy Huang\n2.0\nP\n\n\nDATA 198 GRP 005\nDirected Group Studies for Advanced Undergraduates\n-\n2.0\nP\n\n\nDATA 198 GRP 007\nDirected Group Studies for Advanced Undergraduates\n-\n1.0\nP\n\n\nDATA 198 GRP 012\nDirected Group Studies for Advanced Undergraduates\n-\n1.0\nP\n\n\nMATH 113\nIntroduction to Abstract Algebra\nAleksandra Utiralova\n4.0\nA\n\n\nPBHLTH 101\nA Sustainable World: Challenges and Opportunities\nLauren van der Walt, Marlon Maus\n3.0\nA+"
   },
   {
     "objectID": "courses.html#spring-2023",
     "href": "courses.html#spring-2023",
     "title": "Courses",
     "section": "Spring 2023",
-    "text": "Spring 2023\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nCOMPSCI 61B\nData Structures\nJoshua Hug, Justin Yokota\n4.0\nA\n-\n\n\nCOMPSCI 198\nDirected Group Studies for Advanced Undergraduates\nLaksith Prabu, Ben Cuan, Ishaan Dham, Kian Sutarwala, Lance Mathias\n2.0\nP\n-\n\n\nDATA C8\nFoundations of Data Science\nJoseph Gonzalez, Swupnil Sahai\n4.0\nA+\n-\n\n\nGERMAN R5B\nReading and Composition\nMary Hennessy\n4.0\nA\n-\n\n\nMATH 24\nFreshman Seminars\nFrancisco Grunbaum\n1.0\nP\n-\n\n\nMATH 98BC\nBerkeley Connect\n-\n1.0\nP\n-\n\n\nNUSCTX 11\nIntroduction to Toxicology\nDaniel Nomura, Jen Chywan Wang, Sona Kang\n3.0\nA\n-"
+    "text": "Spring 2023\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCOMPSCI 61B\nData Structures\nJoshua Hug, Justin Yokota\n4.0\nA\n\n\nCOMPSCI 198\nDirected Group Studies for Advanced Undergraduates\nLaksith Prabu, Ben Cuan, Ishaan Dham, Kian Sutarwala, Lance Mathias\n2.0\nP\n\n\nDATA C8\nFoundations of Data Science\nJoseph Gonzalez, Swupnil Sahai\n4.0\nA+\n\n\nGERMAN R5B\nReading and Composition\nMary Hennessy\n4.0\nA\n\n\nMATH 24\nFreshman Seminars\nFrancisco Grunbaum\n1.0\nP\n\n\nMATH 98BC\nBerkeley Connect\n-\n1.0\nP\n\n\nNUSCTX 11\nIntroduction to Toxicology\nDaniel Nomura, Jen Chywan Wang, Sona Kang\n3.0\nA"
   },
   {
     "objectID": "courses.html#fall-2022",
     "href": "courses.html#fall-2022",
     "title": "Courses",
     "section": "Fall 2022",
-    "text": "Fall 2022\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\nExtra\n\n\n\n\nCOMPSCI 61A\nThe Structure and Interpretation of Computer Programs\nJohn DeNero\n4.0\nA\n-\n\n\nESPM 50AC\nIntroduction to Culture and Natural Resource Management\nKurt Spreyer\n4.0\nA+\n-\n\n\nMATH 55\nDiscrete Mathematics\nNikhil Srivastava\n4.0\nA+\n-\n\n\nNATAMST R1A\nNative American Studies Reading and Composition\nSierra Edd\n4.0\nA\n-\n\n\n\nTBD: Blog Links, Random Thoughts"
-  },
-  {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Resume",
-    "section": "",
-    "text": "University of California, Berkeley — B.A. in Computer Science and Applied Mathematics, Minor in Data Science; GPA: 3.97\nBerkeley, CA | August 2022 – May 2026\nNorthwood High School — GPA: 4.28\nIrvine, CA | August 2018 – June 2022"
-  },
-  {
-    "objectID": "resume.html#education",
-    "href": "resume.html#education",
-    "title": "Resume",
-    "section": "",
-    "text": "University of California, Berkeley — B.A. in Computer Science and Applied Mathematics, Minor in Data Science; GPA: 3.97\nBerkeley, CA | August 2022 – May 2026\nNorthwood High School — GPA: 4.28\nIrvine, CA | August 2018 – June 2022"
-  },
-  {
-    "objectID": "resume.html#experience",
-    "href": "resume.html#experience",
-    "title": "Resume",
-    "section": "Experience",
-    "text": "Experience\nUndergraduate Course Staff — UC Berkeley\nBerkeley, CA | August 2023 – Present\n\nLead Teaching Assistant for CS 188 (AI), DATA 100, and DATA C8.\n\nCreated assignments, discussion materials, maintained course website, and led office hours.\n\nUndergraduate Research Assistant / Mentor — UC Berkeley, Algoverse\nBerkeley, CA | August 2023 – Present\n\nCross-Platform SQL Rewrite Optimization: Generalized rewrite rules for SQL optimization across distributed database platforms (Apache Calcite, CockroachDB).\n\nForecasting Adversarial Multi-Agent Behavior: Built real-time chain-of-thought (CoT) prompting system using multimodal LLMs to predict crowd behavior from video.\n\nOntology-Guided Detection of Semantic Leakage: Developed ontology-based method to detect errors in CoT reasoning, improving AI interpretability.\n\nEmpirical Analysis of FDA Citizen Petitions: Collected and analyzed 20 GB of petitions to evaluate FDA responsiveness.\n\nHuman Strategy Updating via Peer Advice: Modeled human strategy updates using inverse reinforcement learning and random forest classification.\n\nAI for Pancreatic Cancer Detection: Built ML models to predict pancreatic cancer from clinical datasets.\n\nApplied AI Engineer Intern — Power Meta Corp.\nIrvine, CA | May 2024 – July 2024\n\nApplied AI-driven resource allocation and optimization in decentralized GPU grid computing for blockchain.\n\nIntegrated machine learning methods to improve blockchain model efficiency and scalability."
-  },
-  {
-    "objectID": "resume.html#projects",
-    "href": "resume.html#projects",
-    "title": "Resume",
-    "section": "Projects",
-    "text": "Projects\nBearCourseHub — Swift, SwiftUI, Firebase | August 2023 – December 2023\n\nDeveloped an iOS app delivering curated course information and customizable features to enhance UC Berkeley students’ experience.\n\nCourse Projects — Java, Python | March 2023 – Present\n\nBuilt a simple database from scratch including B+ trees, join algorithms, and query optimization.\n\nBuilt a traceroute tool in Python to analyze network paths and latency.\n\nBuilt a neural network from scratch with convolutional, batch normalization, and pooling layers.\n\nDeveloped a 2D tile-based procedural world exploration engine enabling user interaction."
-  },
-  {
-    "objectID": "resume.html#other",
-    "href": "resume.html#other",
-    "title": "Resume",
-    "section": "Other",
-    "text": "Other\n\nRelevant Coursework: Machine Learning (A+), Artificial Intelligence (A+), Database Systems (A), Introduction to Internet (A+), Probability for Data Science (A+), Computer Architecture (A+), DATA 100 (A+), Numerical Analysis (A+), Computer Vision, NLP, Data Mining, Agentic AI\n\nAwards and Honors: Dean’s List, Honors to Date, EECS Honors\nProgramming Languages: Java, Python, C, SQL, Swift, SwiftUI, RISC-V, R, Javascript\n\nDeveloper Tools: Git, VS Code, PyCharm, RStudio, IntelliJ, MongoDB\n\nLibraries: pandas, NumPy, Matplotlib, seaborn, PyTorch, Tidyverse, scikit, Otter\n\nLanguages: Native Chinese"
+    "text": "Fall 2022\n\n\n\nCourse\nDescription\nInstructor\nUnits\nGrade\n\n\n\n\nCOMPSCI 61A\nThe Structure and Interpretation of Computer Programs\nJohn DeNero\n4.0\nA\n\n\nESPM 50AC\nIntroduction to Culture and Natural Resource Management\nKurt Spreyer\n4.0\nA+\n\n\nMATH 55\nDiscrete Mathematics\nNikhil Srivastava\n4.0\nA+\n\n\nNATAMST R1A\nNative American Studies Reading and Composition\nSierra Edd\n4.0\nA\n\n\n\nTBD: Blog Links, Random Thoughts"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Wesley Kai Zheng",
     "section": "",
-    "text": "Hello! Welcome to my personal site! I am a fourth-year student at UC Berkeley, studying Computer Science, Applied Mathematics, and Data Science.\nI am currently a TA for Data 8: Foundations of Data Science. Previously, I have served as a TA for Data 100: Principles and Techniques of Data Science and CS 188: Introduction to Artificial Intelligence.\n\n\n\n\n\n\n\n\n\n\n\n\nDATA C8 Fall 2025 Lab 10\n\n\n\nDec 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nDATA C8 Fall 2025 Lab 9.5\n\n\n\nNov 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nDATA C8 Fall 2025 Lab 9\n\n\n\nNov 12, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Hello! Welcome to my personal site! I am a fourth-year student at UC Berkeley, studying Computer Science, Applied Mathematics, and Data Science.\nMy current research interests lie in artificial intelligence and database systems, where I have the privilege of working under the guidance of Professor Alvin Cheung and collaborating closely with, and being mentored by, Qiuyang Mang and Hans Mao.\nI am also currently a TA for CS 189: Introduction to Machine Learning. Previously, I have served as a TA for Data 8: Foundations of Data Science, Data 100: Principles and Techniques of Data Science, and CS 188: Introduction to Artificial Intelligence.\n\n\n\n\n\n\n\n\n\n\n\n\nDATA C8 Fall 2025 Lab 10\n\n\n\nDec 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nDATA C8 Fall 2025 Lab 9.5\n\n\n\nNov 19, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nDATA C8 Fall 2025 Lab 9\n\n\n\nNov 12, 2025\n\n\n\n\n\n\nNo matching items"
   }
 ]

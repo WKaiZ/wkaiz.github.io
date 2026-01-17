@@ -6,74 +6,83 @@ format:
     page-layout: full
 ---
 
+## Spring 2026
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|-----------|-------|-------|
+| [COMPSCI 162](https://cs162.org/) | Operating Systems and System Programming | John Kubiatowicz, this link opens in new tab | 4.0 | IP |
+| MATH 185| Introduction to Complex Analysis | Ilia Nekrasov | 4.0 | IP |
+| MCELLBI 50 | The Immune System and Disease | Anant Sahai, Gireeja Ranade | 4.0 | IP |
+| UGBA 10X | Foundations of Business | Brandi Pearce, Harris Sondak, Jonathan Heyne, Queen Jaks | 3.0 | IP |
+
 ## Fall 2025
-| Course | Description | Instructor | Units | Grade | Extra |
-|--------|-------------|-----------|-------|-------|-------|
-| ASTRON C10 | Introduction to General Astronomy | Alexei Filippenko | 4.0 | IP | - |
-| [COMPSCI 180](https://cal-cs180.github.io/fa25/) | Intro to Computer Vision and Computational Photography | Alexei Efros, Angjoo Kanazawa | 4.0 | IP | [Projects](https://wkaiz.github.io/projects/) |
-| [COMPSCI C182](https://berkeley-cs182.github.io/fa25/index.html) | Designing, Visualizing and Understanding Deep Neural Networks | Anant Sahai, Gireeja Ranade | 4.0 | IP | - |
-| [COMPSCI 194](https://rdi.berkeley.edu/agentic-ai/f25) | Special Topics | Xiaodong Song | 1.0 | IP | - |
-| [EECS 183](https://cal-nlp-class.github.io/fa25/) | Natural Language Processing | Alane Suhr, Gopala Anumanchipalli | 4.0 | IP | - |
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|-----------|-------|-------|
+| ASTRON C10 | Introduction to General Astronomy | Alexei Filippenko | 4.0 | P |
+| [COMPSCI 180](https://cal-cs180.github.io/fa25/) | Intro to Computer Vision and Computational Photography | Alexei Efros, Angjoo Kanazawa | 4.0 | A |
+| [COMPSCI C182](https://berkeley-cs182.github.io/fa25/index.html) | Designing, Visualizing and Understanding Deep Neural Networks | Anant Sahai, Gireeja Ranade | 4.0 | P |
+| [COMPSCI 194](https://rdi.berkeley.edu/agentic-ai/f25) | Special Topics | Xiaodong Song | 1.0 | P |
+| [EECS 183](https://cal-nlp-class.github.io/fa25/) | Natural Language Processing | Alane Suhr, Gopala Anumanchipalli | 4.0 | A+ |
+| DATA 144 | Data Mining and Analytics | Zachary Pardos | 3.0 | A+ |
 
 
 ## Spring 2025
-| Course | Description | Instructor | Units | Grade | Extra |
-|--------|-------------|------------|-------|-------|-------|
-| CDSS 198 | Directed Group Studies for Advanced Undergraduates | - | 1.0 | P | - |
-| [COMPSCI 168](https://sp25.cs168.io/) | Introduction to the Internet: Architecture and Protocols | Peyrin Kao, Sylvia Ratnasamy | 4.0 | A+ | - |
-| [COMPSCI 189](https://people.eecs.berkeley.edu/~jrs/189/) | Introduction to Machine Learning | Jonathan Shewchuk | 4.0 | A+ | - |
-| MATH 104 | Introduction to Analysis | Mengxuan Yang | 4.0 | A- | - |
-| MELC 18 | Introduction to Ancient Egypt | Carol Redmount | 4.0 | A+ | - |
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|------------|-------|-------|
+| CDSS 198 | Directed Group Studies for Advanced Undergraduates | - | 1.0 | P |
+| [COMPSCI 168](https://sp25.cs168.io/) | Introduction to the Internet: Architecture and Protocols | Peyrin Kao, Sylvia Ratnasamy | 4.0 | A+ |
+| [COMPSCI 189](https://people.eecs.berkeley.edu/~jrs/189/) | Introduction to Machine Learning | Jonathan Shewchuk | 4.0 | A+ |
+| MATH 104 | Introduction to Analysis | Mengxuan Yang | 4.0 | A- |
+| MELC 18 | Introduction to Ancient Egypt | Carol Redmount | 4.0 | A+ |
 
 ## Fall 2024
-| Course | Description | Instructor | Units | Grade | Extra |
-|--------|-------------|------------|-------|-------|-------|
-| [COMPSCI 186](https://cs186berkeley.net/) | Introduction to Database Systems | Alvin Cheung | 4.0 | A | - |
-| [COMPSCI 375](https://cs375.github.io/su24/index.html) | Teaching Techniques for Computer Science | Victor Huang | 2.0 | P | - |
-| DATA C104 | Human Contexts and Ethics of Data | Ari Edmundson, Cathryn Carson, Daniel Roddy | 4.0 | A- | - |
-| [DATA C140](https://data140.org/) | Probability for Data Science | Ani Adhikari | 4.0 | A+ | - |
-| MATH 128A | Numerical Analysis | Ming Gu | 4.0 | A+ | - |
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|------------|-------|-------|
+| [COMPSCI 186](https://cs186berkeley.net/) | Introduction to Database Systems | Alvin Cheung | 4.0 | A |
+| [COMPSCI 375](https://cs375.github.io/su24/index.html) | Teaching Techniques for Computer Science | Victor Huang | 2.0 | P |
+| DATA C104 | Human Contexts and Ethics of Data | Ari Edmundson, Cathryn Carson, Daniel Roddy | 4.0 | A- |
+| [DATA C140](https://data140.org/) | Probability for Data Science | Ani Adhikari | 4.0 | A+ |
+| MATH 128A | Numerical Analysis | Ming Gu | 4.0 | A+ |
 
 ## Spring 2024
-| Course | Description | Instructor | Units | Grade | Extra |
-|--------|-------------|------------|-------|-------|-------|
-| [COMPSCI 61C](https://inst.eecs.berkeley.edu/~cs61c/sp24/) | Great Ideas of Computer Architecture (Machine Structures) | Justin Yokota, Lisa Yan | 4.0 | A+ | - |
-| [DATA C100](https://ds100.org/sp24/) | Principles & Techniques of Data Science | Joseph Gonzalez, Narges Norouzi | 4.0 | A+ | - |
-| ESPM 169 | International Environmental Politics | Kate O’Neill | 4.0 | A+ | - |
-| MATH 110 | Abstract Linear Algebra | Edward Frenkel | 4.0 | A | - |
-| STAT 33B | Introduction to Advanced Programming in R | Gaston Sanchez Trujillo | 1.0 | A | - |
-| UGIS 192B | Supervised Research: Social Sciences | - | 3.0 | P | - |
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|------------|-------|-------|
+| [COMPSCI 61C](https://inst.eecs.berkeley.edu/~cs61c/sp24/) | Great Ideas of Computer Architecture (Machine Structures) | Justin Yokota, Lisa Yan | 4.0 | A+ |
+| [DATA C100](https://ds100.org/sp24/) | Principles & Techniques of Data Science | Joseph Gonzalez, Narges Norouzi | 4.0 | A+ |
+| ESPM 169 | International Environmental Politics | Kate O'Neill | 4.0 | A+ |
+| MATH 110 | Abstract Linear Algebra | Edward Frenkel | 4.0 | A |
+| STAT 33B | Introduction to Advanced Programming in R | Gaston Sanchez Trujillo | 1.0 | A |
+| UGIS 192B | Supervised Research: Social Sciences | - | 3.0 | P |
 
 ## Fall 2023
-| Course | Description | Instructor | Units | Grade | Extra |
-|--------|-------------|------------|-------|-------|-------|
-| [COMPSCI 188](https://inst.eecs.berkeley.edu/~cs188/fa23/) | Introduction to Artificial Intelligence | Igor Mordatch, Peyrin Kao | 4.0 | A+ | - |
-| [COMPSCI 198](https://cubstart.com/) | Directed Group Studies for Advanced Undergraduates | Justin Wong, Andy Huang | 2.0 | P | - |
-| DATA 198 GRP 005 | Directed Group Studies for Advanced Undergraduates | - | 2.0 | P | - |
-| DATA 198 GRP 007 | Directed Group Studies for Advanced Undergraduates | - | 1.0 | P | - |
-| DATA 198 GRP 012 | Directed Group Studies for Advanced Undergraduates | - | 1.0 | P | - |
-| MATH 113 | Introduction to Abstract Algebra | Aleksandra Utiralova | 4.0 | A | - |
-| PBHLTH 101 | A Sustainable World: Challenges and Opportunities | Lauren van der Walt, Marlon Maus | 3.0 | A+ | - |
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|------------|-------|-------|
+| [COMPSCI 188](https://inst.eecs.berkeley.edu/~cs188/fa23/) | Introduction to Artificial Intelligence | Igor Mordatch, Peyrin Kao | 4.0 | A+ |
+| [COMPSCI 198](https://cubstart.com/) | Directed Group Studies for Advanced Undergraduates | Justin Wong, Andy Huang | 2.0 | P |
+| DATA 198 GRP 005 | Directed Group Studies for Advanced Undergraduates | - | 2.0 | P |
+| DATA 198 GRP 007 | Directed Group Studies for Advanced Undergraduates | - | 1.0 | P |
+| DATA 198 GRP 012 | Directed Group Studies for Advanced Undergraduates | - | 1.0 | P |
+| MATH 113 | Introduction to Abstract Algebra | Aleksandra Utiralova | 4.0 | A |
+| PBHLTH 101 | A Sustainable World: Challenges and Opportunities | Lauren van der Walt, Marlon Maus | 3.0 | A+ |
 
 ## Spring 2023
-| Course | Description | Instructor | Units | Grade | Extra |
-|--------|-------------|-----------|-------|-------|-------|
-| [COMPSCI 61B](https://sp23.datastructur.es/) | Data Structures | Joshua Hug, Justin Yokota | 4.0 | A | - |
-| [COMPSCI 198](https://decal.ocf.berkeley.edu/) | Directed Group Studies for Advanced Undergraduates | Laksith Prabu, Ben Cuan, Ishaan Dham, Kian Sutarwala, Lance Mathias | 2.0 | P | - |
-| [DATA C8](https://www.data8.org/sp23/) | Foundations of Data Science | Joseph Gonzalez, Swupnil Sahai | 4.0 | A+ | - |
-| GERMAN R5B | Reading and Composition | Mary Hennessy | 4.0 | A | - |
-| MATH 24 | Freshman Seminars | Francisco Grunbaum | 1.0 | P | - |
-| MATH 98BC | Berkeley Connect | - | 1.0 | P | - |
-| NUSCTX 11 | Introduction to Toxicology | Daniel Nomura, Jen Chywan Wang, Sona Kang | 3.0 | A | - |
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|-----------|-------|-------|
+| [COMPSCI 61B](https://sp23.datastructur.es/) | Data Structures | Joshua Hug, Justin Yokota | 4.0 | A |
+| [COMPSCI 198](https://decal.ocf.berkeley.edu/) | Directed Group Studies for Advanced Undergraduates | Laksith Prabu, Ben Cuan, Ishaan Dham, Kian Sutarwala, Lance Mathias | 2.0 | P |
+| [DATA C8](https://www.data8.org/sp23/) | Foundations of Data Science | Joseph Gonzalez, Swupnil Sahai | 4.0 | A+ |
+| GERMAN R5B | Reading and Composition | Mary Hennessy | 4.0 | A |
+| MATH 24 | Freshman Seminars | Francisco Grunbaum | 1.0 | P |
+| MATH 98BC | Berkeley Connect | - | 1.0 | P |
+| NUSCTX 11 | Introduction to Toxicology | Daniel Nomura, Jen Chywan Wang, Sona Kang | 3.0 | A |
 
 
 ## Fall 2022
-| Course | Description | Instructor | Units | Grade | Extra |
-|--------|-------------|------------|-------|-------|-------|
-| [COMPSCI 61A](https://cs61a.org/) | The Structure and Interpretation of Computer Programs | John DeNero | 4.0 | A | - |
-| ESPM 50AC | Introduction to Culture and Natural Resource Management | Kurt Spreyer | 4.0 | A+ | - |
-| MATH 55 | Discrete Mathematics | Nikhil Srivastava | 4.0 | A+ | - |
-| NATAMST R1A | Native American Studies Reading and Composition | Sierra Edd | 4.0 | A | - |
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|------------|-------|-------|
+| [COMPSCI 61A](https://cs61a.org/) | The Structure and Interpretation of Computer Programs | John DeNero | 4.0 | A |
+| ESPM 50AC | Introduction to Culture and Natural Resource Management | Kurt Spreyer | 4.0 | A+ |
+| MATH 55 | Discrete Mathematics | Nikhil Srivastava | 4.0 | A+ |
+| NATAMST R1A | Native American Studies Reading and Composition | Sierra Edd | 4.0 | A |
 
 
 TBD: Blog Links, Random Thoughts

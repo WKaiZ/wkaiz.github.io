@@ -30,10 +30,10 @@ about:
     #   text: WeChat
     #   href: assets/wechat.JPG
     #   target: _blank 
-    - icon: steam
-      text: Steam
-      href: https://steamcommunity.com/id/wes246/
-      target: _blank 
+    # - icon: steam
+    #   text: Steam
+    #   href: https://steamcommunity.com/id/wes246/
+    #   target: _blank 
     # - icon: book-fill
     #   text: RedNote
     #   href: https://www.xiaohongshu.com/user/profile/63f1fcbe000000001001e07e
@@ -54,6 +54,7 @@ listing:
 
 Hello! Welcome to my personal site! I am a fourth-year student at UC Berkeley, studying Computer Science, Applied Mathematics, and Data Science.  
 
-I am currently a TA for [Data 8: Foundations of Data Science](https://www.data8.org/). Previously, I have served as a TA for [Data 100: Principles and Techniques of Data Science](https://ds100.org/) and [CS 188: Introduction to Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/).
+My current research interests lie in artificial intelligence and database systems, where I have the privilege of working under the guidance of Professor [Alvin Cheung](https://people.eecs.berkeley.edu/~akcheung/) and collaborating closely with, and being mentored by, [Qiuyang Mang](https://joyemang33.github.io/) and [Hans Mao](https://huanzhimao.com/).
 
+I am also currently a TA for [CS 189: Introduction to Machine Learning](https://eecs189.org/). Previously, I have served as a TA for [Data 8: Foundations of Data Science](https://www.data8.org/), [Data 100: Principles and Techniques of Data Science](https://ds100.org/), and [CS 188: Introduction to Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/).
 
