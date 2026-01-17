@@ -1,9 +1,0 @@
----
-title: "Resume"
-format: html
----
-
-```{=html}
-<iframe src="https://docs.google.com/gview?url=https://drive.google.com/uc?export=view&id=1Ng1gfhPFjkMeGIgb-po0IP7TuIP6nEgt&embedded=true" 
-style="width:100%; height:800px;" frameborder="0"></iframe>
-```
