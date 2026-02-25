@@ -1,3 +1,9 @@
+- path: https://docs.google.com/presentation/d/1MlUjrEJXngLOJSI5HYA1IkniNpegeONMxF7HgJMZ178/edit?usp=sharing
+  title: "CS 189 Spring 2026 Discussion 5"
+  image: /assets/cs189.png
+  description: "Lasso Regression & Bias-Variance Decomposition"
+  date: "2026-02-25"
+  categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/1tUfP0IDdGX-_hyM3F8sQrbkS03V-WGISQk-x28GmlJU/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 4"
   image: /assets/cs189.png
