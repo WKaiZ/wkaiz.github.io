@@ -1,3 +1,9 @@
+- path: https://docs.google.com/presentation/d/1-n2EEAsm7QD4GlQ-B2v2CMkOYWTwosjA4CaUzeOwSt8/edit?usp=sharing
+  title: "CS 189 Spring 2026 Discussion 7"
+  image: /assets/cs189.png
+  description: "Gradient Descent and ROC Curve"
+  date: "2026-03-04"
+  categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/1j51Qxxw2qJo13ZPUe5GE-yDWDBElUAB1mdgx4QofEn4/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 6"
   image: /assets/cs189.png
