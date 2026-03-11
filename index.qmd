@@ -65,19 +65,65 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!img) return;
 
   const candidates = [
-    "assets/avatar.jpg",
-    "assets/icon.png",
-    "assets/cat.jpeg",
+    "assets/drawing1.jpeg",
+    "assets/drawing2.jpeg",
+    "assets/drawing3.jpeg",
+    "assets/drawing4.jpeg",
+    "assets/drawing5.jpeg",
+    "assets/drawing6.jpeg",
+    "assets/drawing7.jpeg",
+    "assets/drawing8.jpeg",
+    "assets/drawing9.jpeg",
+    "assets/drawing10.jpeg",
+    "assets/drawing11.jpeg",
+    "assets/drawing12.jpeg",
+    "assets/drawing13.jpeg",
+    "assets/drawing14.jpeg",
+    "assets/drawing15.jpeg",
+    "assets/drawing16.jpeg",
+    "assets/drawing17.jpeg",
+    "assets/drawing18.jpeg",
+    "assets/drawing19.jpeg",
+    "assets/drawing20.jpeg",
+    "assets/drawing21.jpeg",
+    "assets/drawing22.jpeg",
+    "assets/drawing23.jpeg",
+    "assets/drawing24.jpeg",
+    "assets/drawing25.jpeg",
+    "assets/drawing26.jpeg",
+    "assets/drawing27.jpeg",
+    "assets/drawing28.jpeg",
+    "assets/drawing29.jpeg",
+    "assets/drawing30.jpeg",
+    "assets/drawing31.jpeg",
+    "assets/drawing32.jpeg",
+    "assets/drawing34.jpeg",
+    "assets/drawing35.jpeg",
+    "assets/drawing36.jpeg",
+    "assets/drawing37.jpeg",
+    "assets/drawing38.jpeg",
   ];
 
-  const key = "homeAvatarIndex:v1";
+  const pickIndex = () => {
+    if (window.crypto?.getRandomValues) {
+      const u = new Uint32Array(1);
+      window.crypto.getRandomValues(u);
+      return u[0] % candidates.length;
+    }
+    return Math.floor(Math.random() * candidates.length);
+  };
+
+  const key = "homeAvatarLastIndex:v1";
   const raw = window.localStorage.getItem(key);
   const lastIdx = raw == null ? -1 : Number.parseInt(raw, 10);
-  const nextIdx = Number.isFinite(lastIdx)
-    ? (lastIdx + 1) % candidates.length
-    : 0;
-  const picked = candidates[nextIdx];
-  window.localStorage.setItem(key, String(nextIdx));
+
+  let idx = pickIndex();
+  if (candidates.length > 1 && Number.isFinite(lastIdx) && idx === lastIdx) {
+    idx = (idx + 1) % candidates.length;
+  }
+
+  const picked = candidates[idx];
+  window.localStorage.setItem(key, String(idx));
 
   const reveal = () => {
     requestAnimationFrame(() => {
