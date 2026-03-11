@@ -61,8 +61,16 @@ I am also currently a TA for [CS 189: Introduction to Machine Learning](https://
 ```{=html}
 <script>
 window.addEventListener("DOMContentLoaded", () => {
-  const img = document.querySelector(".quarto-about-trestles img.about-image");
-  if (!img) return;
+  const about = document.querySelector(".quarto-about-trestles .about-entity");
+  if (!about) return;
+
+  const links = about.querySelector(".about-links");
+  if (!links) return;
+
+  const img = document.createElement("img");
+  img.className = "home-rotating-drawing";
+  img.alt = "Drawing";
+  links.insertAdjacentElement("afterend", img);
 
   const candidates = [
     "assets/drawing1.jpeg",

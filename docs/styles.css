@@ -1,6 +1,12 @@
 /* css styles */
 
-.quarto-about-trestles img.about-image {
+.home-rotating-drawing {
   opacity: 0;
   transition: opacity 180ms ease;
+  display: block;
+  width: 80%;
+  max-width: 520px;
+  height: auto;
+  margin: 12px auto 0;
+  border-radius: 12px;
 }

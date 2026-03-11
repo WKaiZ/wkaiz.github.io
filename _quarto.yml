@@ -10,6 +10,7 @@ execute:
 
 website:
   title: "Wesley Zheng"
+  image: "assets/icon.png"
   site-url: "https://wkaiz.github.io"
   favicon: "assets/icon.png"
   navbar: 

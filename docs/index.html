@@ -226,8 +226,14 @@ window.Quarto = {
 <p>I am also currently a TA for <a href="https://eecs189.org/">CS 189: Introduction to Machine Learning</a>. Previously, I have served as a TA for <a href="https://www.data8.org/">Data 8: Foundations of Data Science</a>, <a href="https://ds100.org/">Data 100: Principles and Techniques of Data Science</a>, and <a href="https://inst.eecs.berkeley.edu/~cs188/">CS 188: Introduction to Artificial Intelligence</a>.</p>
 <script>
 window.addEventListener("DOMContentLoaded", () => {
-  const img = document.querySelector(".quarto-about-trestles img.about-image");
-  if (!img) return;
+  const about = document.querySelector(".quarto-about-trestles .about-entity");
+  if (!about) return;
+  const links = about.querySelector(".about-links");
+  if (!links) return;
+  const img = document.createElement("img");
+  img.className = "home-rotating-drawing";
+  img.alt = "Drawing";
+  links.insertAdjacentElement("afterend", img);
   const candidates = [
     "assets/drawing1.jpeg",
     "assets/drawing2.jpeg",

@@ -9,6 +9,13 @@
 <link>https://wkaiz.github.io/slides.html</link>
 <atom:link href="https://wkaiz.github.io/slides.xml" rel="self" type="application/rss+xml"/>
 <description></description>
+<image>
+<url>https://wkaiz.github.io/assets/icon.png</url>
+<title>Wesley Zheng</title>
+<link>https://wkaiz.github.io/slides.html</link>
+<height>144</height>
+<width>144</width>
+</image>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Wed, 11 Mar 2026 07:00:00 GMT</lastBuildDate>
 <item>
