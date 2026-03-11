@@ -18,7 +18,7 @@ website:
       - href: index.qmd
         text: Home
       - slides.qmd
-      - publications.qmd
+      # - publications.qmd
       - courses.qmd
     right:
       - text: Notes
