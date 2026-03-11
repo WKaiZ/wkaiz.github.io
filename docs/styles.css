@@ -1,1 +1,6 @@
 /* css styles */
+
+.quarto-about-trestles img.about-image {
+  opacity: 0;
+  transition: opacity 180ms ease;
+}

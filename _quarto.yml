@@ -5,6 +5,9 @@ project:
     - assets/**
     - CNAME
 
+execute:
+  enabled: false
+
 website:
   title: "Wesley Zheng"
   site-url: "https://wkaiz.github.io"
