@@ -6,6 +6,7 @@ project:
 
 website:
   title: "Wesley Zheng"
+  site-url: "https://wkaiz.github.io"
   favicon: "assets/icon.png"
   navbar: 
     left:

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Wesley Zheng</title>
+<link>https://wkaiz.github.io/slides.html</link>
+<atom:link href="https://wkaiz.github.io/slides.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Wed, 11 Mar 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>CS 189 Spring 2026 Discussion 7</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Gradient Descent and ROC Curve</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 11 Mar 2026 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>CS 189 Spring 2026 Discussion 6</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Logistic Regression</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 04 Mar 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>CS 189 Spring 2026 Discussion 5</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Lasso Regression &amp; Bias-Variance Decomposition</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 25 Feb 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>CS 189 Spring 2026 Discussion 4</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Gaussians &amp; Ridge Regression</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 18 Feb 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>CS 189 Spring 2026 Discussion 3</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Probability, K-Means &amp; MLE</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 11 Feb 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>CS 189 Spring 2026 Discussion 2</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Machine Learning Design</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 04 Feb 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>CS 189 Spring 2026 Discussion 1</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Math Review &amp; Data Processing</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 28 Jan 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 10</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>MLR &amp; Bayes</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 03 Dec 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 9.5</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Residuals</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 19 Nov 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 9</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Residuals</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 12 Nov 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 8.5</title>
+  <link>https://wkaiz.github.io/</link>
+  <description> The Central Limit Theorem</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 05 Nov 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 8</title>
+  <link>https://wkaiz.github.io/</link>
+  <description> The Central Limit Theorem</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 29 Oct 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 7</title>
+  <link>https://wkaiz.github.io/</link>
+  <description> The Bootstrap</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 22 Oct 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 6.5</title>
+  <link>https://wkaiz.github.io/</link>
+  <description> Midterm Review</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 15 Oct 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 6.5</title>
+  <link>https://wkaiz.github.io/</link>
+  <description> Assessing Models</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 08 Oct 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 6</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Chance &amp; Models</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 01 Oct 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 5</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Table Methods, Conditionals &amp; Iteration</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 24 Sep 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 4</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>More Visualizations, Intro to Functions</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 17 Sep 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 3</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Visualizations, Data Types, Extending Tables</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 10 Sep 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
+  <title>DATA C8 Fall 2025 Lab 2</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Intro to Tables &amp; Causation</description>
+  <category>Data 8</category>
+  <category>Fa25</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 03 Sep 2025 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+</channel>
+</rss>
