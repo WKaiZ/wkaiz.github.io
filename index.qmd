@@ -110,6 +110,10 @@ window.addEventListener("DOMContentLoaded", () => {
     "assets/drawing36.jpeg",
     "assets/drawing37.jpeg",
     "assets/drawing38.jpeg",
+    "assets/drawing39.png",
+    "assets/drawing40.png",
+    "assets/drawing41.png",
+    "assets/drawing42.png",
   ];
 
   const pickIndex = () => {
