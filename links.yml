@@ -1,7 +1,7 @@
 - path: https://docs.google.com/presentation/d/1-n2EEAsm7QD4GlQ-B2v2CMkOYWTwosjA4CaUzeOwSt8/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 7"
   image: /assets/cs189.png
-  description: "Gradient Descent and ROC Curve"
+  description: "Gradient Descent & ROC Curve"
   date: "2026-03-11"
   categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/1j51Qxxw2qJo13ZPUe5GE-yDWDBElUAB1mdgx4QofEn4/edit?usp=sharing
@@ -19,25 +19,25 @@
 - path: https://docs.google.com/presentation/d/1tUfP0IDdGX-_hyM3F8sQrbkS03V-WGISQk-x28GmlJU/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 4"
   image: /assets/cs189.png
-  description: "Gaussians & Ridge Regression"
+  description: "Ridge Regression"
   date: "2026-02-18"
   categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/1nAM9Snmve6BiKIZ-cBfy9uRa6C9IzkHh6RMrL2rGr0A/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 3"
   image: /assets/cs189.png
-  description: "Probability, K-Means & MLE"
+  description: "Gaussians & K-Means"
   date: "2026-02-11"
   categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/10DHbqeftqgdwibyH8wMlk1rSSpiu93WWm9H0J7DLa3E/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 2"
   image: /assets/cs189.png
-  description: "Machine Learning Design"
+  description: "Math Review II"
   date: "2026-02-04"
   categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/1NJIr0C45UP-Ha11I8Rzs5kXA-Ec8Qah63kk2xqXpDxA/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 1"
   image: /assets/cs189.png
-  description: "Math Review & Data Processing"
+  description: "Math Review I"
   date: "2026-01-28"
   categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/1rPFNieKbeTOfBEWU46wy6pEYwnBVM6TG4sx7D8MOXII/edit?usp=sharing
