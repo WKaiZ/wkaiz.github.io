@@ -17,7 +17,17 @@
 <width>144</width>
 </image>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 01 Apr 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 08 Apr 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>CS 189 Spring 2026 Discussion 9</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Backpropagation &amp; CNNs</description>
+  <category>CS 189</category>
+  <category>Sp26</category>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 08 Apr 2026 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>CS 189 Spring 2026 Discussion 8</title>
   <link>https://wkaiz.github.io/</link>
@@ -31,7 +41,7 @@
 <item>
   <title>CS 189 Spring 2026 Discussion 7</title>
   <link>https://wkaiz.github.io/</link>
-  <description>Gradient Descent &amp; ROC Curve</description>
+  <description>Gradient Descent I</description>
   <category>CS 189</category>
   <category>Sp26</category>
   <guid>https://wkaiz.github.io/</guid>
@@ -206,16 +216,6 @@
   <category>Fa25</category>
   <guid>https://wkaiz.github.io/</guid>
   <pubDate>Wed, 17 Sep 2025 07:00:00 GMT</pubDate>
-  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>DATA C8 Fall 2025 Lab 3</title>
-  <link>https://wkaiz.github.io/</link>
-  <description>Visualizations, Data Types, Extending Tables</description>
-  <category>Data 8</category>
-  <category>Fa25</category>
-  <guid>https://wkaiz.github.io/</guid>
-  <pubDate>Wed, 10 Sep 2025 07:00:00 GMT</pubDate>
   <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
