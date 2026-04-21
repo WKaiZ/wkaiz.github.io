@@ -1,7 +1,12 @@
+- path: https://docs.google.com/presentation/d/10AIa96vfYPQ89HXVSsZ5tI4SFYlTuP3gV90kdtQgB2I/edit?usp=sharing
+  title: "CS 189 Spring 2026 Discussion 11"
+  image: /assets/cs189.png
+  description: "Transformers II"
+  date: "2026-04-22"
 - path: https://docs.google.com/presentation/d/1j6fqmqhQU4W5DX2AXt6WE_UBf49uQTkH_1WItmGoEq4/edit?usp=sharing
   title: "CS 189 Spring 2026 Discussion 10"
   image: /assets/cs189.png
-  description: "Transformers"
+  description: "Transformers I"
   date: "2026-04-15"
   categories: [CS 189, Sp26]
 - path: https://docs.google.com/presentation/d/1T8PpHNa8jfV1h8m108p1xClpvNGF4UlG1IjEcQF1GlQ/edit?usp=sharing
