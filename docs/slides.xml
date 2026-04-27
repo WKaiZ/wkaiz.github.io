@@ -17,7 +17,15 @@
 <width>144</width>
 </image>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 22 Apr 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 29 Apr 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>CS 189 Spring 2026 Discussion 12</title>
+  <link>https://wkaiz.github.io/</link>
+  <description>Representation Alignment</description>
+  <guid>https://wkaiz.github.io/</guid>
+  <pubDate>Wed, 29 Apr 2026 07:00:00 GMT</pubDate>
+  <media:content url="https://wkaiz.github.io/assets/cs189.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
 <item>
   <title>CS 189 Spring 2026 Discussion 11</title>
   <link>https://wkaiz.github.io/</link>
@@ -204,16 +212,6 @@
   <category>Fa25</category>
   <guid>https://wkaiz.github.io/</guid>
   <pubDate>Wed, 08 Oct 2025 07:00:00 GMT</pubDate>
-  <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
-</item>
-<item>
-  <title>DATA C8 Fall 2025 Lab 6</title>
-  <link>https://wkaiz.github.io/</link>
-  <description>Chance &amp; Models</description>
-  <category>Data 8</category>
-  <category>Fa25</category>
-  <guid>https://wkaiz.github.io/</guid>
-  <pubDate>Wed, 01 Oct 2025 07:00:00 GMT</pubDate>
   <media:content url="https://wkaiz.github.io/assets/data8.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 </channel>
