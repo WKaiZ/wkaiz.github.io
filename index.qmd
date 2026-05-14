@@ -56,6 +56,8 @@ Hello! I am an incoming fifth-year master’s student in EECS at the UC Berkeley
 
 My current research interests lie in artificial intelligence and database systems, where I have the privilege of being mentored by, [Qiuyang Mang](https://joyemang33.github.io/) and [Hans Mao](https://huanzhimao.com/).
 
+Previously, I completed my undergraduate studies at UC Berkeley as well, studying computer science, applied mathematics, and data science.
+
 I am also currently a TA for [CS 189: Introduction to Machine Learning](https://eecs189.org/). Previously, I have served as a TA for [Data 8: Foundations of Data Science](https://www.data8.org/), [Data 100: Principles and Techniques of Data Science](https://ds100.org/), and [CS 188: Introduction to Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/).
 
 ```{=html}
