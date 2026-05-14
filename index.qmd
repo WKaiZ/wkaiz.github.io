@@ -52,7 +52,7 @@ listing:
       - "title asc"
 ---
 
-Hello! Welcome to my personal site! I am an incoming fifth-year master’s student in EECS at the UC Berkeley, advised by Professor [Alvin Cheung](https://people.eecs.berkeley.edu/~akcheung/).
+Hello! I am an incoming fifth-year master’s student in EECS at the UC Berkeley, advised by Professor [Alvin Cheung](https://people.eecs.berkeley.edu/~akcheung/).
 
 My current research interests lie in artificial intelligence and database systems, where I have the privilege of being mentored by, [Qiuyang Mang](https://joyemang33.github.io/) and [Hans Mao](https://huanzhimao.com/).
 
