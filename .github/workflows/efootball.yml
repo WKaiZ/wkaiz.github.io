@@ -1,12 +1,9 @@
 name: Update eFootball squads
 
-# Rebuilds assets/efootball/squads.json from the WKaiZ/efootball repo every day and
-# commits it so the eFootball page picks up new squads and player photos automatically.
-
 on:
   schedule:
-    - cron: "20 6 * * *"   # daily at 06:20 UTC
-  workflow_dispatch: {}      # allow manual runs from the Actions tab
+    - cron: "20 6 * * *"
+  workflow_dispatch: {}
 
 permissions:
   contents: write

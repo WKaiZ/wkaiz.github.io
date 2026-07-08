@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""Build assets/efootball/squads.json for the eFootball page.
-
-Data source: https://github.com/WKaiZ/efootball
-    contenders/<country>/<country>.txt   -> top-ranked nations' drafted squads
-    challengers/<country>/<country>.txt  -> the rest of the nations
-    pes.db                               -> Transfermarkt player ids per drafted player
-
-Photos: Fotmob is tried first (searched by name). Any player Fotmob can't find is left to
-the daily Transfermarkt backfill, which resolves a small number per run
-(EFOOTBALL_TM_LIMIT, default 10), newest squad members first — so gaps fill in over days.
-A player with neither photo shows their initials. Resolved ids/urls are cached in
-assets/efootball/img_cache.json.
-
-We also compute how long each player has *consecutively* been in the squad by walking the
-git history of each country's squad file (following renames); the three longest-tenured
-players per nation are flagged. Standard library only, so it runs anywhere (including CI).
-"""
 
 import json
 import os
@@ -57,7 +40,7 @@ TM_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-LINE_RE = re.compile(  # "  [RWF] Lionel Messi (RWF) rating 101.48 #10"
+LINE_RE = re.compile(
     r"^\s*\[(?P<slot>[A-Z]+)\]\s+(?P<name>.+?)\s+\((?P<pos>[A-Z]+)\)\s+"
     r"rating\s+(?P<rating>[\d.]+)\s+#(?P<num>\d+)\s*$"
 )
@@ -72,7 +55,7 @@ FLAGS = {
     "netherlands": "🇳🇱", "portugal": "🇵🇹", "senegal": "🇸🇳", "spain": "🇪🇸",
     "switzerland": "🇨🇭", "uruguay": "🇺🇾", "usa": "🇺🇸",
     "algeria": "🇩🇿", "australia": "🇦🇺", "austria": "🇦🇹", "cameroon": "🇨🇲",
-    "canada": "🇨🇦", "congo": "🇨🇬", "czechia": "🇨🇿", "denmark": "🇩🇰",
+    "canada": "🇨🇦", "congo": "🇨🇩", "czechia": "🇨🇿", "denmark": "🇩🇰",
     "ecuador": "🇪🇨", "egypt": "🇪🇬", "greece": "🇬🇷", "hungary": "🇭🇺",
     "ivory-coast": "🇨🇮", "korea": "🇰🇷", "nigeria": "🇳🇬", "norway": "🇳🇴",
     "panama": "🇵🇦", "paraguay": "🇵🇾", "poland": "🇵🇱", "russia": "🇷🇺",
@@ -80,7 +63,8 @@ FLAGS = {
     "tunisia": "🇹🇳", "turkey": "🇹🇷", "ukraine": "🇺🇦", "uzbekistan": "🇺🇿",
     "venezuela": "🇻🇪", "wales": _WALES,
 }
-DISPLAY = {"usa": "USA", "korea": "South Korea", "ivory-coast": "Ivory Coast"}
+DISPLAY = {"usa": "USA", "korea": "South Korea", "ivory-coast": "Ivory Coast",
+           "congo": "DR Congo"}
 
 
 def log(*a):
@@ -102,8 +86,6 @@ def display_name(country):
     return DISPLAY.get(country, country.replace("-", " ").replace("_", " ").title())
 
 
-# --------------------------------------------------------------------------- git
-
 def git(repo, *args):
     return subprocess.run(["git", "-C", repo, *args], capture_output=True, text=True).stdout
 
@@ -113,7 +95,6 @@ def parse_names(text):
 
 
 def history_versions(repo, rel_path):
-    """(date 'YYYY-MM-DD', name_set) newest -> oldest, following file renames."""
     out = git(repo, "log", "--follow", "--format=C|%H|%cI", "--name-only", "--", rel_path)
     commits, h, d = [], None, None
     for ln in out.splitlines():
@@ -134,8 +115,6 @@ def compute_since(versions, name):
     return since
 
 
-# ------------------------------------------------------------------------- fotmob
-
 def http_get(url, timeout=30, headers=None):
     req = urllib.request.Request(url, headers=headers or {"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -143,13 +122,12 @@ def http_get(url, timeout=30, headers=None):
 
 
 def _fotmob_query(term):
-    """Single Fotmob search, no retries. Returns a player id or None."""
     url = f"{FOTMOB_SUGGEST}?term={urllib.parse.quote(term)}&lang=en"
     try:
         data = json.loads(http_get(url, timeout=15))
     except Exception:
         return None
-    best_player = best_any = None  # prefer an active player; fall back to coach entries
+    best_player = best_any = None
     for group in data.get("squadMemberSuggest", []):
         for opt in group.get("options", []):
             payload = opt.get("payload") or {}
@@ -183,18 +161,17 @@ def fotmob_lookup(name):
     return None
 
 
-# ------------------------------------------------------------- transfermarkt ids
-
 def load_game_data(db_path):
     conn = sqlite3.connect(db_path)
-    rows = {}
-    for country, pid, name, pos, rating in conn.execute(
-        "SELECT g.country, g.player_id, p.name, g.position, g.rating "
+    rows, cards = {}, {}
+    for country, pid, name, pos, rating, card_type in conn.execute(
+        "SELECT g.country, g.player_id, p.name, g.position, g.rating, g.card_type "
         "FROM game_data g JOIN players p ON p.player_id = g.player_id"
     ):
         rows.setdefault(country, []).append((str(pid), name, pos, rating))
+        cards[(country, str(pid), pos)] = card_type
     conn.close()
-    return rows
+    return rows, cards
 
 
 def find_tm_id(rows, player, override):
@@ -220,7 +197,6 @@ def find_tm_id(rows, player, override):
 
 
 def resolve_transfermarkt(tm_id):
-    """Portrait URL for a TM id; None if profile has no portrait; raises on network fail."""
     with urllib.request.urlopen(
         urllib.request.Request(TM_PROFILE.format(id=tm_id), headers=TM_HEADERS), timeout=30
     ) as r:
@@ -228,8 +204,6 @@ def resolve_transfermarkt(tm_id):
     m = re.search(rf"portrait/(?:big|header)/{tm_id}-(\d+)\.(jpg|png)", html)
     return TM_IMG.format(id=tm_id, ts=m.group(1), ext=m.group(2)) if m else None
 
-
-# ---------------------------------------------------------------------------- main
 
 def load_cache():
     if not os.path.exists(CACHE_PATH):
@@ -283,7 +257,7 @@ def build():
     try:
         log("Cloning efootball repo ...")
         subprocess.run(["git", "clone", "--quiet", REPO_URL, tmp], check=True)
-        game_data = load_game_data(os.path.join(tmp, "pes.db"))
+        game_data, card_types = load_game_data(os.path.join(tmp, "pes.db"))
         today = datetime.now(timezone.utc).date()
 
         out_countries, all_players = [], []
@@ -306,6 +280,7 @@ def build():
                     p["days"] = (today - datetime.fromisoformat(since).date()).days
                     p["fm_id"] = fm_cache.get(f"{c}|{norm(p['name'])}")
                     p["tm_id"] = find_tm_id(game_data.get(c, []), p, ov.get(norm(p["name"])))
+                    p["card_type"] = card_types.get((c, p["tm_id"], p["pos"])) or "Standard"
                 _assign_medals(players)
                 out_countries.append({
                     "id": c, "name": display_name(c), "flag": FLAGS.get(c, ""),
@@ -325,7 +300,7 @@ def build():
         for p in c["players"]:
             fm = FOTMOB_IMG.format(id=p["fm_id"]) if p["fm_id"] else None
             tm = tm_cache.get(p["tm_id"]) if p["tm_id"] else None
-            p["img"] = tm or fm  # Transfermarkt once resolved, else Fotmob, else initials
+            p["img"] = tm or fm
             p.pop("fm_id", None); p.pop("tm_id", None)
 
     out = {
@@ -343,7 +318,6 @@ def build():
 
 
 def _resolve_fotmob(all_players, cache):
-    """Look up Fotmob (primary) for players with no Fotmob id and no Transfermarkt photo."""
     fm_cache, tm_cache = cache["fotmob"], cache["transfermarkt"]
     todo = [(c, p) for c, p in all_players
             if not p["fm_id"] and not (p["tm_id"] and tm_cache.get(p["tm_id"]))]
@@ -355,7 +329,7 @@ def _resolve_fotmob(all_players, cache):
         pid = fotmob_lookup(p["name"])
         fm_cache[f"{c}|{norm(p['name'])}"] = pid
         p["fm_id"] = pid
-        if i % 25 == 0:            # persist progress so an interruption loses nothing
+        if i % 25 == 0:
             save_cache(cache)
             log(f"  ... {i}/{len(todo)}")
         time.sleep(0.15)
@@ -363,8 +337,6 @@ def _resolve_fotmob(all_players, cache):
 
 
 def _backfill_transfermarkt(all_players, cache):
-    """Resolve up to TM_DAILY_LIMIT Transfermarkt photos for players not yet resolved there,
-    whether or not they already have a (Fotmob) photo. Newest squad members first."""
     tm_cache = cache["transfermarkt"]
     pending = {}
     for c, p in all_players:

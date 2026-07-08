@@ -15,12 +15,8 @@ automatically every day.
 <style>
   .ef-wrap { --ef-card-bg:#fff; --ef-card-br:#e6e8eb; --ef-muted:#6b7280;
              --ef-accent:#2c6bed; --ef-shadow:0 1px 3px rgba(0,0,0,.08);
-             --ef-chip:#eef2f7; --ef-photo-bg:#f1f3f6; }
-  @media (prefers-color-scheme: dark) {
-    .ef-wrap { --ef-card-bg:#1c2128; --ef-card-br:#30363d; --ef-muted:#9aa4b2;
-               --ef-accent:#4f8cff; --ef-shadow:0 1px 3px rgba(0,0,0,.4);
-               --ef-chip:#262c34; --ef-photo-bg:#e9edf2; }
-  }
+             --ef-chip:#eef2f7; --ef-photo-bg:#f1f3f6;
+             color:#1f2937; }
   .ef-wrap { margin-top:.5rem; }
   .ef-meta { color:var(--ef-muted); font-size:.85rem; margin-bottom:1rem; }
   .ef-tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.25rem; }
@@ -61,7 +57,39 @@ automatically every day.
   .ef-pos[data-line="MID"] { background:#dcf5e3; color:#1f7a3d; }
   .ef-pos[data-line="FWD"] { background:#ffe0e0; color:#b02121; }
   .ef-days { margin-top:.35rem; font-size:.68rem; color:var(--ef-muted); }
-  .ef-wild .ef-card { border-color:var(--ef-accent); }
+  /* Card types (from pes.db game_data.card_type). Each non-standard type gets a
+     matching rating badge + full-card background; Standard stays plain/uniform. */
+  .ef-card.ef-ct-standard .ef-rating {
+    background:linear-gradient(135deg,#6b7280,#9ca3af); }
+
+  .ef-card.ef-ct-highlight .ef-rating {
+    background:linear-gradient(135deg,#374151,#111827); }
+  .ef-card.ef-ct-highlight {
+    background:linear-gradient(160deg,#f4f5f7,#d6dae0);
+    border-color:#6b7280; box-shadow:0 2px 12px rgba(75,85,99,.28); }
+  .ef-card.ef-ct-highlight:hover { box-shadow:0 8px 20px rgba(75,85,99,.40); }
+
+  .ef-card.ef-ct-showtime .ef-rating {
+    background:linear-gradient(135deg,#db2777,#f472b6); }
+  .ef-card.ef-ct-showtime {
+    background:linear-gradient(160deg,#ffe9f4,#fbcfe8);
+    border-color:#db2777; box-shadow:0 2px 12px rgba(219,39,119,.28); }
+  .ef-card.ef-ct-showtime:hover { box-shadow:0 8px 20px rgba(219,39,119,.40); }
+
+  .ef-card.ef-ct-epic .ef-rating {
+    background:linear-gradient(135deg,#b45309,#f59e0b); }
+  .ef-card.ef-ct-epic {
+    background:linear-gradient(160deg,#fff7e0,#fde68a);
+    border-color:#f59e0b; box-shadow:0 2px 12px rgba(245,158,11,.30); }
+  .ef-card.ef-ct-epic:hover { box-shadow:0 8px 20px rgba(245,158,11,.42); }
+
+  .ef-card.ef-ct-bigtime .ef-rating {
+    background:linear-gradient(135deg,#0891b2,#22d3ee); }
+  .ef-card.ef-ct-bigtime {
+    background:linear-gradient(160deg,#e6faff,#bae6fd);
+    border-color:#0891b2; box-shadow:0 2px 12px rgba(8,145,178,.30); }
+  .ef-card.ef-ct-bigtime:hover { box-shadow:0 8px 20px rgba(8,145,178,.42); }
+
   .ef-loading, .ef-error { color:var(--ef-muted); padding:2rem 0; }
 </style>
 
@@ -77,6 +105,7 @@ automatically every day.
                  MID:["DMF","CMF","AMF","LMF","RMF"], FWD:["CF","SS","LWF","RWF"] };
   const lineOf = (p) => Object.keys(LINE).find(k => LINE[k].includes(p)) || "MID";
   const MEDAL = { 1:"🥇", 2:"🥈", 3:"🥉" };
+  const ctClass = (t) => "ef-ct-" + String(t || "Standard").toLowerCase();
 
   const esc = (s) => String(s).replace(/[&<>"]/g, c =>
     ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
@@ -89,8 +118,8 @@ automatically every day.
 
   function card(p) {
     const medal = p.tenureRank ? `<span class="ef-medal">${MEDAL[p.tenureRank]}</span>` : "";
-    const tip = `${p.name} · ${p.pos} · rating ${p.rating.toFixed(0)} · in squad since ${p.since}`;
-    return `<div class="ef-card${p.tenureRank ? " ef-ranked" : ""}" title="${esc(tip)}">
+    const tip = `${p.name} · ${p.pos} · ${p.card_type || "Standard"} · rating ${p.rating.toFixed(0)} · in squad since ${p.since}`;
+    return `<div class="ef-card ${ctClass(p.card_type)}${p.tenureRank ? " ef-ranked" : ""}" title="${esc(tip)}">
       <div class="ef-photo">
         ${photoHTML(p)}
         <span class="ef-num">#${p.number}</span>
