@@ -11,10 +11,10 @@ format:
 ### Spring 2026
 | Course | Description | Instructor | Units | Grade |
 |--------|-------------|-----------|-------|-------|
-| [COMPSCI 162](https://cs162.org/) | Operating Systems and System Programming | John Kubiatowicz, this link opens in new tab | 4.0 | IP |
-| MATH 185 | Introduction to Complex Analysis | Ilia Nekrasov | 4.0 | IP |
-| MCELLBI 50 | The Immune System and Disease | Anant Sahai, Gireeja Ranade | 4.0 | IP |
-| UGBA 10X | Foundations of Business | Brandi Pearce, Harris Sondak, Jonathan Heyne, Queen Jaks | 3.0 | IP |
+| [COMPSCI 162](https://cs162.org/) | Operating Systems and System Programming | John Kubiatowicz, this link opens in new tab | 4.0 | A |
+| MATH 185 | Introduction to Complex Analysis | Ilia Nekrasov | 4.0 | A |
+| MCELLBI 50 | The Immune System and Disease | Anant Sahai, Gireeja Ranade | 4.0 | P |
+| UGBA 10X | Foundations of Business | Brandi Pearce, Harris Sondak, Jonathan Heyne, Queen Jaks | 3.0 | P |
 
 ### Fall 2025
 | Course | Description | Instructor | Units | Grade |
