@@ -1,0 +1,49 @@
+name: Update eFootball squads
+
+# Rebuilds assets/efootball/squads.json from the WKaiZ/efootball repo every day and
+# commits it so the eFootball page picks up new squads and player photos automatically.
+
+on:
+  schedule:
+    - cron: "20 6 * * *"   # daily at 06:20 UTC
+  workflow_dispatch: {}      # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: efootball-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build squads.json
+        run: python3 scripts/efootball_build.py
+
+      - name: Sync data into published docs/
+        run: |
+          mkdir -p docs/assets/efootball
+          cp assets/efootball/squads.json \
+             assets/efootball/img_cache.json \
+             assets/efootball/overrides.json \
+             docs/assets/efootball/
+
+      - name: Commit changes if any
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/efootball docs/assets/efootball
+          if git diff --staged --quiet; then
+            echo "No squad changes today."
+          else
+            git commit -m "chore: daily eFootball squad update"
+            git push
+          fi

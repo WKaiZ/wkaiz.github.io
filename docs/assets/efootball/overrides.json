@@ -1,0 +1,3 @@
+{
+ "_comment": "Optional Transfermarkt id overrides for players the pes.db mapping gets wrong. Shape: country -> player name (as in the squad file) -> transfermarkt player id. Names match case/accent-insensitively. Empty by default; pes.db supplies ids for all drafted players."
+}

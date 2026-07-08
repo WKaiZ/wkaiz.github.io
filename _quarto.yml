@@ -20,6 +20,8 @@ website:
       - slides.qmd
       # - publications.qmd
       - courses.qmd
+      - href: efootball.qmd
+        text: eFootball
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/
