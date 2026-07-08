@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-08 05:27 UTC",
+ "updated": "2026-07-08 08:50 UTC",
  "source": "https://github.com/WKaiZ/efootball",
  "countries": [
   {
@@ -2757,312 +2757,6 @@
    ]
   },
   {
-   "id": "congo",
-   "name": "DR Congo",
-   "flag": "🇨🇩",
-   "players": [
-    {
-     "section": "starters",
-     "slot": "CF",
-     "name": "Yoane Wissa",
-     "pos": "CF",
-     "rating": 94.87,
-     "number": 20,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Highlight",
-     "tenureRank": 1,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/388165-1740646948.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "LWF",
-     "name": "Michel-Ange Balikwisha",
-     "pos": "LWF",
-     "rating": 72.17,
-     "number": 27,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/502239-1771532209.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "RWF",
-     "name": "Théo Bongonda",
-     "pos": "RWF",
-     "rating": 75.15,
-     "number": 10,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/280701-1781718075.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "AMF",
-     "name": "William Balikwisha",
-     "pos": "AMF",
-     "rating": 72.49,
-     "number": 28,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/381968-1705488589.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "CMF",
-     "name": "Noah Sadiki",
-     "pos": "CMF",
-     "rating": 94.31,
-     "number": 14,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Highlight",
-     "tenureRank": 2,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/727089-1767005980.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "DMF",
-     "name": "Charles Pickel",
-     "pos": "DMF",
-     "rating": 73.21,
-     "number": 18,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/243879-1658483049.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "LB",
-     "name": "Arthur Masuaku",
-     "pos": "LB",
-     "rating": 74.29,
-     "number": 26,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/181380-1767006082.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "CB",
-     "name": "Chancel Mbemba",
-     "pos": "CB",
-     "rating": 74.54,
-     "number": 22,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/203348-1767006126.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "CB",
-     "name": "Steve Kapuadi",
-     "pos": "CB",
-     "rating": 74.49,
-     "number": 3,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/679709-1781717513.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "RB",
-     "name": "Aaron Wan-Bissaka",
-     "pos": "RB",
-     "rating": 75.43,
-     "number": 2,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/477758-1769112496.jpg"
-    },
-    {
-     "section": "starters",
-     "slot": "GK",
-     "name": "Matthieu Epolo",
-     "pos": "GK",
-     "rating": 72.7,
-     "number": 21,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/680218-1705580908.jpg"
-    },
-    {
-     "section": "substitutes",
-     "slot": "CF",
-     "name": "Simon Banza",
-     "pos": "CF",
-     "rating": 77.19,
-     "number": 23,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 3,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/344869-1726586877.jpg"
-    },
-    {
-     "section": "substitutes",
-     "slot": "LWF",
-     "name": "Brian Cipenga",
-     "pos": "LWF",
-     "rating": 71.12,
-     "number": 9,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/700565-1726738089.jpg"
-    },
-    {
-     "section": "substitutes",
-     "slot": "RWF",
-     "name": "Jackson Muleka",
-     "pos": "RWF",
-     "rating": 72.53,
-     "number": 17,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/549966-1696076449.png"
-    },
-    {
-     "section": "substitutes",
-     "slot": "AMF",
-     "name": "Gaël Kakuta",
-     "pos": "AMF",
-     "rating": 72.46,
-     "number": 11,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/74297-1777738804.png"
-    },
-    {
-     "section": "substitutes",
-     "slot": "CMF",
-     "name": "Edo Kayembe",
-     "pos": "CMF",
-     "rating": 72.68,
-     "number": 25,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/486477-1724774156.jpg"
-    },
-    {
-     "section": "substitutes",
-     "slot": "DMF",
-     "name": "Ngal'ayel Mukau",
-     "pos": "DMF",
-     "rating": 71.72,
-     "number": 6,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/1016015-1741120243.jpg"
-    },
-    {
-     "section": "substitutes",
-     "slot": "LB",
-     "name": "Joris Kayembe",
-     "pos": "LB",
-     "rating": 73.23,
-     "number": 12,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/129586-1714036942.png"
-    },
-    {
-     "section": "substitutes",
-     "slot": "CB",
-     "name": "Axel Tuanzebe",
-     "pos": "CB",
-     "rating": 73.99,
-     "number": 4,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/342046-1774470130.jpg"
-    },
-    {
-     "section": "substitutes",
-     "slot": "CB",
-     "name": "Rocky Bushiri",
-     "pos": "CB",
-     "rating": 71.74,
-     "number": 15,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/511802-1500892061.jpg"
-    },
-    {
-     "section": "substitutes",
-     "slot": "RB",
-     "name": "Gédéon Kalulu",
-     "pos": "RB",
-     "rating": 71.41,
-     "number": 24,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/1022309.png"
-    },
-    {
-     "section": "substitutes",
-     "slot": "GK",
-     "name": "Timothy Fayulu",
-     "pos": "GK",
-     "rating": 71.35,
-     "number": 16,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/541420-1739451911.jpg"
-    },
-    {
-     "section": "wildcard",
-     "slot": "WILD",
-     "name": "Meschack Elia",
-     "pos": "SS",
-     "rating": 72.7,
-     "number": 13,
-     "since": "2026-07-04",
-     "days": 4,
-     "card_type": "Standard",
-     "tenureRank": 0,
-     "img": "https://img.a.transfermarkt.technology/portrait/big/423678-1761655792.jpg"
-    }
-   ]
-  },
-  {
    "id": "croatia",
    "name": "Croatia",
    "flag": "🇭🇷",
@@ -3977,6 +3671,312 @@
      "card_type": "Standard",
      "tenureRank": 0,
      "img": "https://images.fotmob.com/image_resources/playerimages/967941.png"
+    }
+   ]
+  },
+  {
+   "id": "congo",
+   "name": "DR Congo",
+   "flag": "🇨🇩",
+   "players": [
+    {
+     "section": "starters",
+     "slot": "CF",
+     "name": "Yoane Wissa",
+     "pos": "CF",
+     "rating": 94.87,
+     "number": 20,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Highlight",
+     "tenureRank": 1,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/388165-1740646948.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "LWF",
+     "name": "Michel-Ange Balikwisha",
+     "pos": "LWF",
+     "rating": 72.17,
+     "number": 27,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/502239-1771532209.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "RWF",
+     "name": "Théo Bongonda",
+     "pos": "RWF",
+     "rating": 75.15,
+     "number": 10,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/280701-1781718075.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "AMF",
+     "name": "William Balikwisha",
+     "pos": "AMF",
+     "rating": 72.49,
+     "number": 28,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/381968-1705488589.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "CMF",
+     "name": "Noah Sadiki",
+     "pos": "CMF",
+     "rating": 94.31,
+     "number": 14,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Highlight",
+     "tenureRank": 2,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/727089-1767005980.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "DMF",
+     "name": "Charles Pickel",
+     "pos": "DMF",
+     "rating": 73.21,
+     "number": 18,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/243879-1658483049.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "LB",
+     "name": "Arthur Masuaku",
+     "pos": "LB",
+     "rating": 74.29,
+     "number": 26,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/181380-1767006082.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "CB",
+     "name": "Chancel Mbemba",
+     "pos": "CB",
+     "rating": 74.54,
+     "number": 22,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/203348-1767006126.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "CB",
+     "name": "Steve Kapuadi",
+     "pos": "CB",
+     "rating": 74.49,
+     "number": 3,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/679709-1781717513.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "RB",
+     "name": "Aaron Wan-Bissaka",
+     "pos": "RB",
+     "rating": 75.43,
+     "number": 2,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/477758-1769112496.jpg"
+    },
+    {
+     "section": "starters",
+     "slot": "GK",
+     "name": "Matthieu Epolo",
+     "pos": "GK",
+     "rating": 72.7,
+     "number": 21,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/680218-1705580908.jpg"
+    },
+    {
+     "section": "substitutes",
+     "slot": "CF",
+     "name": "Simon Banza",
+     "pos": "CF",
+     "rating": 77.19,
+     "number": 23,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 3,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/344869-1726586877.jpg"
+    },
+    {
+     "section": "substitutes",
+     "slot": "LWF",
+     "name": "Brian Cipenga",
+     "pos": "LWF",
+     "rating": 71.12,
+     "number": 9,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/700565-1726738089.jpg"
+    },
+    {
+     "section": "substitutes",
+     "slot": "RWF",
+     "name": "Jackson Muleka",
+     "pos": "RWF",
+     "rating": 72.53,
+     "number": 17,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/549966-1696076449.png"
+    },
+    {
+     "section": "substitutes",
+     "slot": "AMF",
+     "name": "Gaël Kakuta",
+     "pos": "AMF",
+     "rating": 72.46,
+     "number": 11,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/74297-1777738804.png"
+    },
+    {
+     "section": "substitutes",
+     "slot": "CMF",
+     "name": "Edo Kayembe",
+     "pos": "CMF",
+     "rating": 72.68,
+     "number": 25,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/486477-1724774156.jpg"
+    },
+    {
+     "section": "substitutes",
+     "slot": "DMF",
+     "name": "Ngal'ayel Mukau",
+     "pos": "DMF",
+     "rating": 71.72,
+     "number": 6,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/1016015-1741120243.jpg"
+    },
+    {
+     "section": "substitutes",
+     "slot": "LB",
+     "name": "Joris Kayembe",
+     "pos": "LB",
+     "rating": 73.23,
+     "number": 12,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/129586-1714036942.png"
+    },
+    {
+     "section": "substitutes",
+     "slot": "CB",
+     "name": "Axel Tuanzebe",
+     "pos": "CB",
+     "rating": 73.99,
+     "number": 4,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/342046-1774470130.jpg"
+    },
+    {
+     "section": "substitutes",
+     "slot": "CB",
+     "name": "Rocky Bushiri",
+     "pos": "CB",
+     "rating": 71.74,
+     "number": 15,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/511802-1500892061.jpg"
+    },
+    {
+     "section": "substitutes",
+     "slot": "RB",
+     "name": "Gédéon Kalulu",
+     "pos": "RB",
+     "rating": 71.41,
+     "number": 24,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://images.fotmob.com/image_resources/playerimages/1022309.png"
+    },
+    {
+     "section": "substitutes",
+     "slot": "GK",
+     "name": "Timothy Fayulu",
+     "pos": "GK",
+     "rating": 71.35,
+     "number": 16,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/541420-1739451911.jpg"
+    },
+    {
+     "section": "wildcard",
+     "slot": "WILD",
+     "name": "Meschack Elia",
+     "pos": "SS",
+     "rating": 72.7,
+     "number": 13,
+     "since": "2026-07-04",
+     "days": 4,
+     "card_type": "Standard",
+     "tenureRank": 0,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/423678-1761655792.jpg"
     }
    ]
   },
@@ -5552,7 +5552,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/914964.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/395632-1737120039.jpg"
     },
     {
      "section": "starters",
@@ -5812,7 +5812,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/915156.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/481675-1724268727.jpg"
     }
    ]
   },
@@ -11145,7 +11145,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/922622.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/454576-1716968211.jpg"
     },
     {
      "section": "starters",
@@ -11158,7 +11158,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/1425998.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/710886-1745227322.jpg"
     },
     {
      "section": "starters",
@@ -11171,7 +11171,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/1127054.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/540333-1695032418.jpg"
     },
     {
      "section": "starters",
@@ -11184,7 +11184,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/940594.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/482836-1772542190.jpg"
     },
     {
      "section": "starters",
@@ -11197,7 +11197,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/629112.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/243188-1770893430.jpg"
     },
     {
      "section": "starters",
@@ -11223,7 +11223,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/1289961.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/568333-1695033793.jpg"
     },
     {
      "section": "starters",
@@ -11236,7 +11236,7 @@
      "days": 4,
      "card_type": "Highlight",
      "tenureRank": 1,
-     "img": "https://images.fotmob.com/image_resources/playerimages/727897.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/404418-1722415670.jpg"
     },
     {
      "section": "starters",
@@ -11249,7 +11249,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/309328.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/204069-1765460153.png"
     },
     {
      "section": "starters",
@@ -11262,7 +11262,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/541825.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/168408-1758538210.png"
     },
     {
      "section": "starters",
@@ -11275,7 +11275,7 @@
      "days": 4,
      "card_type": "Highlight",
      "tenureRank": 3,
-     "img": "https://images.fotmob.com/image_resources/playerimages/651910.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/316884-1773950159.jpg"
     },
     {
      "section": "substitutes",
@@ -11288,7 +11288,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/534488.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/243225-1648491857.png"
     },
     {
      "section": "substitutes",
@@ -11301,7 +11301,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/1152435.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/728679-1749740333.jpg"
     },
     {
      "section": "substitutes",
@@ -11314,7 +11314,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/521846.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/277384-1738232660.jpg"
     },
     {
      "section": "substitutes",
@@ -11327,7 +11327,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/1044785.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/482838-1764162470.png"
     },
     {
      "section": "substitutes",
@@ -11340,7 +11340,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/72241.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/74960-1700237195.jpg"
     }
    ]
   },
@@ -14114,7 +14114,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 2,
-     "img": "https://images.fotmob.com/image_resources/playerimages/619513.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/358166-1759747995.jpg"
     },
     {
      "section": "starters",
@@ -14140,7 +14140,7 @@
      "days": 4,
      "card_type": "Standard",
      "tenureRank": 0,
-     "img": "https://images.fotmob.com/image_resources/playerimages/940776.png"
+     "img": "https://img.a.transfermarkt.technology/portrait/big/493593-1759064587.png"
     },
     {
      "section": "starters",
