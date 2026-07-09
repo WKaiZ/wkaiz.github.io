@@ -22,6 +22,8 @@ FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
 TM_PROFILE = "https://www.transfermarkt.us/x/profil/spieler/{id}"
 TM_IMG = "https://img.a.transfermarkt.technology/portrait/big/{id}-{ts}.{ext}"
 TM_DAILY_LIMIT = int(os.environ.get("EFOOTBALL_TM_LIMIT", "23"))
+TM_NULL_LIMIT = int(os.environ.get("EFOOTBALL_TM_NULL_LIMIT", "3"))
+TM_ERROR_LIMIT = int(os.environ.get("EFOOTBALL_TM_ERROR_LIMIT", "5"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -207,13 +209,16 @@ def resolve_transfermarkt(tm_id):
 
 def load_cache():
     if not os.path.exists(CACHE_PATH):
-        return {"fotmob": {}, "transfermarkt": {}}
+        return {"fotmob": {}, "transfermarkt": {}, "tm_null": {}}
     data = json.load(open(CACHE_PATH))
     if "fotmob" in data or "transfermarkt" in data:
         data.setdefault("fotmob", {})
         data.setdefault("transfermarkt", {})
+        data.setdefault("tm_null", {})
+        data.setdefault("tm_err", {})
         return data
-    return {"fotmob": {k: v for k, v in data.items() if v}, "transfermarkt": {}}
+    return {"fotmob": {k: v for k, v in data.items() if v},
+            "transfermarkt": {}, "tm_null": {}, "tm_err": {}}
 
 
 def save_cache(cache):
@@ -338,10 +343,16 @@ def _resolve_fotmob(all_players, cache):
 
 def _backfill_transfermarkt(all_players, cache):
     tm_cache = cache["transfermarkt"]
+    tm_null = cache.setdefault("tm_null", {})
+    tm_err = cache.setdefault("tm_err", {})
     pending = {}
     for c, p in all_players:
         tid = p["tm_id"]
-        if tid and tid not in tm_cache and (tid not in pending or p["days"] < pending[tid][0]):
+        if not tid or tm_cache.get(tid):
+            continue
+        if tm_null.get(tid, 0) >= TM_NULL_LIMIT or tm_err.get(tid, 0) >= TM_ERROR_LIMIT:
+            continue
+        if tid not in pending or p["days"] < pending[tid][0]:
             pending[tid] = (p["days"], p["name"])
     queue = sorted(pending.items(), key=lambda kv: kv[1][0])[:TM_DAILY_LIMIT]
     if not queue:
@@ -351,10 +362,25 @@ def _backfill_transfermarkt(all_players, cache):
     for tid, (days, name) in queue:
         try:
             url = resolve_transfermarkt(tid)
-            tm_cache[tid] = url
-            log(f"  {'ok  ' if url else 'none'} {name} (#{tid}, {days}d)")
+            if url:
+                tm_cache[tid] = url
+                tm_null.pop(tid, None)
+                tm_err.pop(tid, None)
+                log(f"  ok   {name} (#{tid}, {days}d)")
+            else:
+                n = tm_null.get(tid, 0) + 1
+                tm_null[tid] = n
+                if n >= TM_NULL_LIMIT:
+                    log(f"  null {name} (#{tid}) — giving up after {n} null result(s)")
+                else:
+                    log(f"  null {name} (#{tid}) — attempt {n}/{TM_NULL_LIMIT}, will retry")
         except Exception as e:
-            log(f"  fail {name} (#{tid}): {e} — will retry")
+            n = tm_err.get(tid, 0) + 1
+            tm_err[tid] = n
+            if n >= TM_ERROR_LIMIT:
+                log(f"  fail {name} (#{tid}): {e} — giving up after {n} error(s)")
+            else:
+                log(f"  fail {name} (#{tid}): {e} — attempt {n}/{TM_ERROR_LIMIT}, will retry")
         time.sleep(1.0)
     save_cache(cache)
 
