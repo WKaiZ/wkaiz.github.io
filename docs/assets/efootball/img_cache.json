@@ -83,7 +83,23 @@
   "74960": "https://img.a.transfermarkt.technology/portrait/big/74960-1700237195.jpg",
   "358166": "https://img.a.transfermarkt.technology/portrait/big/358166-1759747995.jpg",
   "274536": null,
-  "493593": "https://img.a.transfermarkt.technology/portrait/big/493593-1759064587.png"
+  "493593": "https://img.a.transfermarkt.technology/portrait/big/493593-1759064587.png",
+  "435772": "https://img.a.transfermarkt.technology/portrait/big/435772-1659601388.jpg",
+  "303259": "https://img.a.transfermarkt.technology/portrait/big/303259-1657098989.jpg",
+  "344695": "https://img.a.transfermarkt.technology/portrait/big/344695-1701245272.jpg",
+  "635645": "https://img.a.transfermarkt.technology/portrait/big/635645-1724772426.jpg",
+  "119085": "https://img.a.transfermarkt.technology/portrait/big/119085-1623748420.jpg",
+  "503348": "https://img.a.transfermarkt.technology/portrait/big/503348-1739896937.jpg",
+  "922462": "https://img.a.transfermarkt.technology/portrait/big/922462-1708346761.jpg",
+  "248658": "https://img.a.transfermarkt.technology/portrait/big/248658-1686246985.jpg",
+  "192735": "https://img.a.transfermarkt.technology/portrait/big/192735-1661509021.jpg",
+  "754037": "https://img.a.transfermarkt.technology/portrait/big/754037-1759747064.jpg",
+  "608537": "https://img.a.transfermarkt.technology/portrait/big/608537-1743416705.png",
+  "581429": "https://img.a.transfermarkt.technology/portrait/big/581429-1759320278.jpg",
+  "517918": "https://img.a.transfermarkt.technology/portrait/big/517918-1745401324.png",
+  "492556": "https://img.a.transfermarkt.technology/portrait/big/492556-1614842509.png",
+  "630015": "https://img.a.transfermarkt.technology/portrait/big/630015-1759064626.png",
+  "260857": "https://img.a.transfermarkt.technology/portrait/big/260857-1745331701.png"
  },
  "fotmob": {
   "argentina|carlos tevez": "38817",
@@ -1211,6 +1227,24 @@
   "wales|rhys norrington-davies": "914132",
   "wales|wes burns": "421768",
   "wales|danny ward": "254472",
-  "wales|sorba thomas": "812982"
+  "wales|sorba thomas": "812982",
+  "belgium|charles de ketelaere": "1095432",
+  "belgium|dodi lukebakio": "688876",
+  "france|dayot upamecano": "658554",
+  "switzerland|aurele amenda": "1257648",
+  "switzerland|loris benito": "176680",
+  "switzerland|lucas blondel": "823206",
+  "wales|lewis koumas": "1364042"
+ },
+ "tm_null": {
+  "274536": 1
+ },
+ "tm_err": {
+  "41609": 1,
+  "518804": 1,
+  "395685": 1,
+  "294525": 1,
+  "763079": 1,
+  "311958": 1
  }
 }
