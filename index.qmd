@@ -58,7 +58,7 @@ My current research interests lie in artificial intelligence and database system
 
 Previously, I completed my undergraduate studies at UC Berkeley as well, studying computer science, applied mathematics, and data science.
 
-I am also currently a TA for [CS 189: Introduction to Machine Learning](https://eecs189.org/). Previously, I have served as a TA for [Data 8: Foundations of Data Science](https://www.data8.org/), [Data 100: Principles and Techniques of Data Science](https://ds100.org/), and [CS 188: Introduction to Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/).
+I am also currently a TA for [DATA 102: Data, Inference, and Decisions](https://data102.org/). Previously, I have served as a TA for [CS 189: Introduction to Machine Learning](https://eecs189.org/), [Data 8: Foundations of Data Science](https://www.data8.org/), [Data 100: Principles and Techniques of Data Science](https://ds100.org/), and [CS 188: Introduction to Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/).
 
 ```{=html}
 <script>
