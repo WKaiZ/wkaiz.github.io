@@ -99,7 +99,23 @@
   "517918": "https://img.a.transfermarkt.technology/portrait/big/517918-1745401324.png",
   "492556": "https://img.a.transfermarkt.technology/portrait/big/492556-1614842509.png",
   "630015": "https://img.a.transfermarkt.technology/portrait/big/630015-1759064626.png",
-  "260857": "https://img.a.transfermarkt.technology/portrait/big/260857-1745331701.png"
+  "260857": "https://img.a.transfermarkt.technology/portrait/big/260857-1745331701.png",
+  "620322": "https://img.a.transfermarkt.technology/portrait/big/620322-1752061866.jpg",
+  "395685": "https://img.a.transfermarkt.technology/portrait/big/395685-1762899759.png",
+  "763079": "https://img.a.transfermarkt.technology/portrait/big/763079-1740493347.jpg",
+  "562022": "https://img.a.transfermarkt.technology/portrait/big/562022-1743417096.png",
+  "570272": "https://img.a.transfermarkt.technology/portrait/big/570272-1745332711.png",
+  "493725": "https://img.a.transfermarkt.technology/portrait/big/493725-1743416751.png",
+  "288883": "https://img.a.transfermarkt.technology/portrait/big/288883-1722142124.png",
+  "989049": "https://img.a.transfermarkt.technology/portrait/big/989049-1743416839.png",
+  "527866": "https://img.a.transfermarkt.technology/portrait/big/527866-1743416641.png",
+  "431912": "https://img.a.transfermarkt.technology/portrait/big/431912-1759064673.png",
+  "162569": "https://img.a.transfermarkt.technology/portrait/big/162569-1740595401.jpg",
+  "312294": "https://img.a.transfermarkt.technology/portrait/big/312294-1751718251.jpg",
+  "988222": "https://img.a.transfermarkt.technology/portrait/big/988222-1771690174.jpg",
+  "309193": "https://img.a.transfermarkt.technology/portrait/big/309193-1751924270.jpg",
+  "378293": "https://img.a.transfermarkt.technology/portrait/big/378293-1719230693.jpg",
+  "75942": "https://img.a.transfermarkt.technology/portrait/big/75942-1661350808.jpg"
  },
  "fotmob": {
   "argentina|carlos tevez": "38817",
@@ -1237,14 +1253,15 @@
   "wales|lewis koumas": "1364042"
  },
  "tm_null": {
-  "274536": 1
+  "274536": 2,
+  "518804": 1
  },
  "tm_err": {
-  "41609": 1,
+  "41609": 2,
   "518804": 1,
-  "395685": 1,
-  "294525": 1,
-  "763079": 1,
-  "311958": 1
+  "294525": 2,
+  "311958": 2,
+  "212499": 1,
+  "509390": 1
  }
 }
