@@ -92,11 +92,34 @@ def git(repo, *args):
     return subprocess.run(["git", "-C", repo, *args], capture_output=True, text=True).stdout
 
 
-def parse_names(text):
-    return {m.group("name").strip() for m in map(LINE_RE.match, text.splitlines()) if m}
+def row_sig(line):
+    return re.sub(r"\s+", " ", line.strip())
 
 
-def history_versions(repo, rel_path):
+def parse_sigs(text):
+    # Signature = the whole row ([SLOT] Name (POS) rating R #NUM): any edit
+    # to the row resets tenure.
+    return {row_sig(ln) for ln in text.splitlines() if LINE_RE.match(ln)}
+
+
+# <country>_players.txt pool rows: "Name, POS, rating, bool, CardType, [...], [...]"
+POOL_ROW_RE = re.compile(r"^\s*(?P<name>[^,\[\]]+?),\s*(?P<pos>[A-Z]+),")
+
+
+def parse_pool_sigs(text):
+    return {row_sig(ln) for ln in text.splitlines() if POOL_ROW_RE.match(ln)}
+
+
+def parse_pool_rows(text):
+    rows = {}
+    for ln in text.splitlines():
+        m = POOL_ROW_RE.match(ln)
+        if m:
+            rows[(norm(m["name"]), m["pos"])] = row_sig(ln)
+    return rows
+
+
+def history_versions(repo, rel_path, parser=parse_sigs):
     out = git(repo, "log", "--follow", "--format=C|%H|%cI", "--name-only", "--", rel_path)
     commits, h, d = [], None, None
     for ln in out.splitlines():
@@ -104,13 +127,13 @@ def history_versions(repo, rel_path):
             _, h, d = ln.split("|")
         elif ln.strip():
             commits.append((h, d[:10], ln.strip()))
-    return [(d, parse_names(git(repo, "show", f"{h}:{path}"))) for h, d, path in commits]
+    return [(d, parser(git(repo, "show", f"{h}:{path}"))) for h, d, path in commits]
 
 
-def compute_since(versions, name):
+def compute_since(versions, sig):
     since = None
-    for date, names in versions:
-        if name in names:
+    for date, sigs in versions:
+        if sig in sigs:
             since = date
         else:
             break
@@ -240,6 +263,7 @@ def _parse_players(text):
             players.append({
                 "section": section, "slot": m["slot"], "name": m["name"].strip(),
                 "pos": m["pos"], "rating": float(m["rating"]), "number": int(m["num"]),
+                "row": row_sig(line),
             })
     return players
 
@@ -277,15 +301,30 @@ def build():
                     continue
                 players = _parse_players(open(path).read())
                 versions = history_versions(tmp, rel)
+                pool_rel = f"{group_dir}/{c}/{c}_players.txt"
+                pool_path = os.path.join(tmp, pool_rel)
+                pool_rows = (parse_pool_rows(open(pool_path).read())
+                             if os.path.exists(pool_path) else {})
+                pool_versions = (history_versions(tmp, pool_rel, parse_pool_sigs)
+                                 if pool_rows else [])
                 ov = {norm(k): v for k, v in (overrides.get(c) or {}).items()
                       if not str(k).startswith("_")}
                 for p in players:
-                    since = compute_since(versions, p["name"]) or today.isoformat()
-                    p["since"] = since
-                    p["days"] = (today - datetime.fromisoformat(since).date()).days
                     p["fm_id"] = fm_cache.get(f"{c}|{norm(p['name'])}")
                     p["tm_id"] = find_tm_id(game_data.get(c, []), p, ov.get(norm(p["name"])))
                     p["card_type"] = card_types.get((c, p["tm_id"], p["pos"])) or "Standard"
+                    # Tenure resets on any edit to the player's squad row in
+                    # <c>.txt (slot, name, pos, rating, number) OR to their
+                    # pool row in <c>_players.txt (rating, card type, position
+                    # lists) — the later of the two contiguous-history dates.
+                    dates = [compute_since(versions, p["row"])]
+                    pool_row = pool_rows.get((norm(p["name"]), p["pos"]))
+                    if pool_row:
+                        dates.append(compute_since(pool_versions, pool_row))
+                    since = (today.isoformat() if any(d is None for d in dates)
+                             else max(dates))
+                    p["since"] = since
+                    p["days"] = (today - datetime.fromisoformat(since).date()).days
                 _assign_medals(players)
                 out_countries.append({
                     "id": c, "name": display_name(c), "flag": FLAGS.get(c, ""),
@@ -306,7 +345,7 @@ def build():
             fm = FOTMOB_IMG.format(id=p["fm_id"]) if p["fm_id"] else None
             tm = tm_cache.get(p["tm_id"]) if p["tm_id"] else None
             p["img"] = tm or fm
-            p.pop("fm_id", None); p.pop("tm_id", None)
+            p.pop("fm_id", None); p.pop("tm_id", None); p.pop("row", None)
 
     out = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
