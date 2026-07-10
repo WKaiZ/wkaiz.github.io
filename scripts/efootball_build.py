@@ -105,10 +105,16 @@ def parse_sigs(text):
 
 # <country>_players.txt pool rows: "Name, POS, rating, bool, CardType, [...], [...]"
 POOL_ROW_RE = re.compile(r"^\s*(?P<name>[^,\[\]]+?),\s*(?P<pos>[A-Z]+),")
+POOL_BOOL_RE = re.compile(r",\s*(?:True|False),")
+
+
+def pool_sig(line):
+    # Drop the boolean field — its changes must not reset tenure.
+    return row_sig(POOL_BOOL_RE.sub(",", line, count=1))
 
 
 def parse_pool_sigs(text):
-    return {row_sig(ln) for ln in text.splitlines() if POOL_ROW_RE.match(ln)}
+    return {pool_sig(ln) for ln in text.splitlines() if POOL_ROW_RE.match(ln)}
 
 
 def parse_pool_rows(text):
@@ -116,7 +122,7 @@ def parse_pool_rows(text):
     for ln in text.splitlines():
         m = POOL_ROW_RE.match(ln)
         if m:
-            rows[(norm(m["name"]), m["pos"])] = row_sig(ln)
+            rows[(norm(m["name"]), m["pos"])] = pool_sig(ln)
     return rows
 
 
@@ -203,19 +209,22 @@ def load_game_data(db_path):
 def find_tm_id(rows, player, override):
     if override:
         return str(override)
+    target = norm(player["name"])
+    # (name, pos) is unique in game_data — a player has at most one card per
+    # position — so an exact match cannot pick up another player's card.
+    for pid, name, pos, _ in rows:
+        if pos == player["pos"] and norm(name) == target:
+            return pid
+    # Name spellings can differ between the squad txt and pes.db; fall back to
+    # pos+rating, using the name to break collisions between players.
     cands = [r for r in rows if r[2] == player["pos"] and abs(r[3] - player["rating"]) < 0.01]
     if len(cands) == 1:
         return cands[0][0]
     if len(cands) > 1:
-        target = norm(player["name"])
-        for pid, name, _, _ in cands:
-            if norm(name) == target:
-                return pid
         for pid, name, _, _ in cands:
             if target in norm(name) or norm(name) in target:
                 return pid
         return cands[0][0]
-    target = norm(player["name"])
     for pid, name, _, _ in rows:
         if norm(name) == target:
             return pid
