@@ -20,6 +20,7 @@ GROUPS = [("contenders", "contender"), ("challengers", "challenger")]
 FOTMOB_SUGGEST = "https://apigw.fotmob.com/searchapi/suggest"
 FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
 TM_PROFILE = "https://www.transfermarkt.us/x/profil/spieler/{id}"
+TM_LINK = "https://www.transfermarkt.com/x/profil/spieler/{id}"
 TM_IMG = "https://img.a.transfermarkt.technology/portrait/big/{id}-{ts}.{ext}"
 TM_DAILY_LIMIT = int(os.environ.get("EFOOTBALL_TM_LIMIT", "23"))
 TM_NULL_LIMIT = int(os.environ.get("EFOOTBALL_TM_NULL_LIMIT", "3"))
@@ -345,6 +346,8 @@ def build():
             fm = FOTMOB_IMG.format(id=p["fm_id"]) if p["fm_id"] else None
             tm = tm_cache.get(p["tm_id"]) if p["tm_id"] else None
             p["img"] = tm or fm
+            if p["tm_id"]:
+                p["tm"] = TM_LINK.format(id=p["tm_id"])
             p.pop("fm_id", None); p.pop("tm_id", None); p.pop("row", None)
 
     out = {

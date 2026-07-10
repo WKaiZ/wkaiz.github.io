@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>eFootball – Wesley Zheng</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -33,15 +36,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="./assets/icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -175,6 +177,8 @@ ul.task-list li input[type="checkbox"] {
              border-radius:14px; padding:.55rem; box-shadow:var(--ef-shadow); text-align:center;
              transition:transform .12s ease, box-shadow .12s ease; }
   .ef-card:hover { transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.14); }
+  a.ef-card { display:block; color:inherit; text-decoration:none; cursor:pointer; }
+  a.ef-card:hover .ef-name { color:var(--ef-accent); }
   .ef-photo { position:relative; width:100%; aspect-ratio:3/4; margin:0 auto .5rem;
              border-radius:10px; background:var(--ef-photo-bg); overflow:hidden;
              display:flex; align-items:center; justify-content:center; }
@@ -259,7 +263,8 @@ ul.task-list li input[type="checkbox"] {
   function card(p) {
     const medal = p.tenureRank ? `<span class="ef-medal">${MEDAL[p.tenureRank]}</span>` : "";
     const tip = `${p.name} · ${p.pos} · ${p.card_type || "Standard"} · rating ${p.rating.toFixed(0)} · in squad since ${p.since}`;
-    return `<div class="ef-card ${ctClass(p.card_type)}${p.tenureRank ? " ef-ranked" : ""}" title="${esc(tip)}">
+    const cls = `ef-card ${ctClass(p.card_type)}${p.tenureRank ? " ef-ranked" : ""}`;
+    const inner = `
       <div class="ef-photo">
         ${photoHTML(p)}
         <span class="ef-num">#${p.number}</span>
@@ -267,8 +272,10 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <div class="ef-name">${esc(p.name)}</div>
       <div><span class="ef-pos" data-line="${lineOf(p.pos)}">${esc(p.pos)}</span></div>
-      <div class="ef-days">${medal}${daysSince(p.since)}d in squad</div>
-    </div>`;
+      <div class="ef-days">${medal}${daysSince(p.since)}d in squad</div>`;
+    return p.tm
+      ? `<a class="${cls}" href="${esc(p.tm)}" target="_blank" rel="noopener" title="${esc(tip)}">${inner}</a>`
+      : `<div class="${cls}" title="${esc(tip)}">${inner}</div>`;
   }
 
   function section(title, players, extra) {

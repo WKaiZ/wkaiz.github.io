@@ -35,6 +35,8 @@ automatically every day.
              border-radius:14px; padding:.55rem; box-shadow:var(--ef-shadow); text-align:center;
              transition:transform .12s ease, box-shadow .12s ease; }
   .ef-card:hover { transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.14); }
+  a.ef-card { display:block; color:inherit; text-decoration:none; cursor:pointer; }
+  a.ef-card:hover .ef-name { color:var(--ef-accent); }
   .ef-photo { position:relative; width:100%; aspect-ratio:3/4; margin:0 auto .5rem;
              border-radius:10px; background:var(--ef-photo-bg); overflow:hidden;
              display:flex; align-items:center; justify-content:center; }
@@ -119,7 +121,8 @@ automatically every day.
   function card(p) {
     const medal = p.tenureRank ? `<span class="ef-medal">${MEDAL[p.tenureRank]}</span>` : "";
     const tip = `${p.name} · ${p.pos} · ${p.card_type || "Standard"} · rating ${p.rating.toFixed(0)} · in squad since ${p.since}`;
-    return `<div class="ef-card ${ctClass(p.card_type)}${p.tenureRank ? " ef-ranked" : ""}" title="${esc(tip)}">
+    const cls = `ef-card ${ctClass(p.card_type)}${p.tenureRank ? " ef-ranked" : ""}`;
+    const inner = `
       <div class="ef-photo">
         ${photoHTML(p)}
         <span class="ef-num">#${p.number}</span>
@@ -127,8 +130,10 @@ automatically every day.
       </div>
       <div class="ef-name">${esc(p.name)}</div>
       <div><span class="ef-pos" data-line="${lineOf(p.pos)}">${esc(p.pos)}</span></div>
-      <div class="ef-days">${medal}${daysSince(p.since)}d in squad</div>
-    </div>`;
+      <div class="ef-days">${medal}${daysSince(p.since)}d in squad</div>`;
+    return p.tm
+      ? `<a class="${cls}" href="${esc(p.tm)}" target="_blank" rel="noopener" title="${esc(tip)}">${inner}</a>`
+      : `<div class="${cls}" title="${esc(tip)}">${inner}</div>`;
   }
 
   function section(title, players, extra) {
