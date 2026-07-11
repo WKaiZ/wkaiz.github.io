@@ -22,6 +22,8 @@ website:
       - courses.qmd
       - href: efootball.qmd
         text: eFootball
+      - href: wc26.qmd
+        text: WC26
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/

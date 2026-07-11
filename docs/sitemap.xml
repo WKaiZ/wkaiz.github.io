@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wkaiz.github.io/publications.html</loc>
-    <lastmod>2026-07-10T22:59:21.038Z</lastmod>
+    <loc>https://wkaiz.github.io/wc26.html</loc>
+    <lastmod>2026-07-11T00:17:24.227Z</lastmod>
   </url>
   <url>
-    <loc>https://wkaiz.github.io/slides.html</loc>
-    <lastmod>2026-07-10T22:59:21.038Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wkaiz.github.io/courses.html</loc>
-    <lastmod>2026-07-10T22:59:21.012Z</lastmod>
+    <loc>https://wkaiz.github.io/index.html</loc>
+    <lastmod>2026-07-10T23:46:36.529Z</lastmod>
   </url>
   <url>
     <loc>https://wkaiz.github.io/efootball.html</loc>
     <lastmod>2026-07-10T23:14:38.197Z</lastmod>
   </url>
   <url>
-    <loc>https://wkaiz.github.io/index.html</loc>
-    <lastmod>2026-07-10T23:46:36.529Z</lastmod>
+    <loc>https://wkaiz.github.io/courses.html</loc>
+    <lastmod>2026-07-10T22:59:21.012Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wkaiz.github.io/slides.html</loc>
+    <lastmod>2026-07-10T22:59:21.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wkaiz.github.io/publications.html</loc>
+    <lastmod>2026-07-10T22:59:21.038Z</lastmod>
   </url>
 </urlset>
