@@ -23,7 +23,7 @@ website:
       - href: efootball.qmd
         text: eFootball
       - href: wc26.qmd
-        text: WC26
+        text: FIFA World Cup 2026
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/

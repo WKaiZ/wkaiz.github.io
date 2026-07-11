@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>FIFA World Cup 2026 – Wesley Zheng</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./assets/icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./wc26.html" aria-current="page"> 
-<span class="menu-text">WC26</span></a>
+<span class="menu-text">FIFA World Cup 2026</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -163,6 +161,14 @@ ul.task-list li input[type="checkbox"] {
              --wc-accent:#2c6bed; --wc-chip:#eef2f7;
              --wc-shadow:0 1px 3px rgba(0,0,0,.08); color:#1f2937; margin-top:.5rem; }
   .wc-meta { color:var(--wc-muted); font-size:.85rem; margin-bottom:1.25rem; }
+  .wc-tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.25rem; }
+  .wc-tab { display:inline-flex; align-items:center; gap:.4rem; cursor:pointer;
+            border:1px solid var(--wc-card-br); background:var(--wc-card-bg);
+            border-radius:999px; padding:.35rem .8rem; font-size:.9rem; line-height:1;
+            transition:all .12s ease; color:inherit; }
+  .wc-tab:hover { border-color:var(--wc-accent); }
+  .wc-tab.active { background:var(--wc-accent); border-color:var(--wc-accent); color:#fff; }
+  .wc-tab .flag { font-size:1.05rem; }
   .wc-boards { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
   .wc-board { background:var(--wc-card-bg); border:1px solid var(--wc-card-br);
               border-radius:14px; box-shadow:var(--wc-shadow); overflow:hidden; }
@@ -195,6 +201,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="wc-wrap">
   <div class="wc-meta" id="wc-meta"></div>
+  <div class="wc-tabs" id="wc-tabs"></div>
   <div id="wc-boards"><div class="wc-loading">Loading leaderboards…</div></div>
 </div>
 
@@ -228,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
       <td class="wc-rank">${i + 1}</td>
       <td style="width:34px">${photo(p)}</td>
       <td class="wc-player"><div class="nm">${esc(p.name)}</div>
-        <div class="tm">${FLAG[p.team] || ""} ${esc(p.team)} · ${esc(p.pos || "")}</div></td>
+        <div class="tm">${FLAG[p.team] || ""} ${esc(p.team)}</div></td>
       <td class="wc-val">${medal}${val}</td>
       <td class="wc-sub">${sub}</td>
     </tr>`;
@@ -252,30 +259,54 @@ ul.task-list li input[type="checkbox"] {
     render();
   }
 
+  const by = (...keys) => (a, b) => {
+    for (const k of keys) { if (a[k] !== b[k]) return b[k] - a[k]; }
+    return a.name.localeCompare(b.name);
+  };
+
+  function renderBoards(players) {
+    const host = document.getElementById("wc-boards");
+    host.innerHTML = `<div class="wc-boards">
+      <div class="wc-board" id="wc-mins"></div>
+      <div class="wc-board" id="wc-goals"></div>
+      <div class="wc-board" id="wc-assists"></div></div>`;
+    board(document.getElementById("wc-mins"), "Minutes", "mins",
+      [...players].sort(by("mins", "apps", "goals")),
+      p => `${p.mins}′`, p => `${p.apps} apps · ${p.goals}g ${p.assists}a`);
+    board(document.getElementById("wc-goals"), "Goals", "goals",
+      players.filter(p => p.goals > 0).sort(by("goals", "assists")),
+      p => p.goals, p => `${p.assists}a · ${p.apps} apps`);
+    board(document.getElementById("wc-assists"), "Assists", "assists",
+      players.filter(p => p.assists > 0).sort(by("assists", "goals")),
+      p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
+  }
+
+  function buildTabs(players) {
+    const tabsEl = document.getElementById("wc-tabs");
+    const teams = [...new Set(players.map(p => p.team))].filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
+    const tab = (label, flag, team, active) =>
+      `<span class="wc-tab${active ? " active" : ""}" data-team="${esc(team)}">` +
+      `${flag ? `<span class="flag">${flag}</span>` : ""}${esc(label)}</span>`;
+    tabsEl.innerHTML = tab("All", "", "", true) +
+      teams.map(t => tab(t, FLAG[t] || "", t, false)).join("");
+    tabsEl.addEventListener("click", e => {
+      const t = e.target.closest(".wc-tab"); if (!t) return;
+      tabsEl.querySelectorAll(".wc-tab").forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+      const team = t.dataset.team;
+      renderBoards(team ? players.filter(p => p.team === team) : players);
+    });
+  }
+
   fetch("assets/wc26/stats.json?v=" + Date.now())
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
       const ps = data.players || [];
       document.getElementById("wc-meta").textContent =
         `Updated ${data.updated || ""} · ${data.matches} matches played · ${ps.length} players`;
-      const host = document.getElementById("wc-boards");
-      host.innerHTML = `<div class="wc-boards">
-        <div class="wc-board" id="wc-mins"></div>
-        <div class="wc-board" id="wc-goals"></div>
-        <div class="wc-board" id="wc-assists"></div></div>`;
-      const by = (...keys) => (a, b) => {
-        for (const k of keys) { if (a[k] !== b[k]) return b[k] - a[k]; }
-        return a.name.localeCompare(b.name);
-      };
-      board(document.getElementById("wc-mins"), "Minutes", "mins",
-        [...ps].sort(by("mins", "apps", "goals")),
-        p => `${p.mins}′`, p => `${p.apps} apps · ${p.goals}g ${p.assists}a`);
-      board(document.getElementById("wc-goals"), "Goals", "goals",
-        ps.filter(p => p.goals > 0).sort(by("goals", "assists")),
-        p => p.goals, p => `${p.assists}a · ${p.apps} apps`);
-      board(document.getElementById("wc-assists"), "Assists", "assists",
-        ps.filter(p => p.assists > 0).sort(by("assists", "goals")),
-        p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
+      buildTabs(ps);
+      renderBoards(ps);
     })
     .catch(err => {
       document.getElementById("wc-boards").innerHTML =

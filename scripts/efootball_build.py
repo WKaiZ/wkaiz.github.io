@@ -14,6 +14,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+import imgcache  # shared Transfermarkt photo cache (see scripts/imgcache.py)
+
 REPO_URL = "https://github.com/WKaiZ/efootball"
 GROUPS = [("contenders", "contender"), ("challengers", "challenger")]
 
@@ -255,7 +257,10 @@ def load_cache():
 
 
 def save_cache(cache):
-    json.dump(cache, open(CACHE_PATH, "w"), ensure_ascii=False, indent=1)
+    # fotmob ids are eFootball-specific; the Transfermarkt map is shared.
+    json.dump({"fotmob": cache["fotmob"]}, open(CACHE_PATH, "w"),
+              ensure_ascii=False, indent=1)
+    imgcache.save(cache)
 
 
 def _parse_players(text):
@@ -289,6 +294,7 @@ def _assign_medals(players):
 def build():
     os.makedirs(OUT_DIR, exist_ok=True)
     cache = load_cache()
+    imgcache.merge_legacy(imgcache.load(), cache)  # share the Transfermarkt map
     fm_cache, tm_cache = cache["fotmob"], cache["transfermarkt"]
     overrides = json.load(open(OVERRIDES_PATH)) if os.path.exists(OVERRIDES_PATH) else {}
 
@@ -365,7 +371,7 @@ def build():
         "countries": out_countries,
     }
     json.dump(out, open(SQUADS_PATH, "w"), ensure_ascii=False, indent=1)
-    json.dump(cache, open(CACHE_PATH, "w"), ensure_ascii=False, indent=1)
+    save_cache(cache)
 
     have = sum(1 for c in out_countries for p in c["players"] if p["img"])
     tot = sum(len(c["players"]) for c in out_countries)

@@ -34,6 +34,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/wc26 docs/assets/wc26
+          git add assets/wc26 assets/tm_img_cache.json docs/assets/wc26
           git diff --cached --quiet || git commit -m "chore: daily WC26 stats update"
           git push

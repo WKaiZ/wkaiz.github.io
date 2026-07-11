@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/efootball docs/assets/efootball
+          git add assets/efootball assets/tm_img_cache.json docs/assets/efootball
           if git diff --staged --quiet; then
             echo "No squad changes today."
           else

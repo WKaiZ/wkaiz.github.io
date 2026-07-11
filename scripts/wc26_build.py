@@ -18,15 +18,19 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+import imgcache  # shared Transfermarkt photo cache (see scripts/imgcache.py)
+
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world"
 SCOREBOARD = BASE + "/scoreboard?dates={start}-{end}&limit=300"
 SUMMARY = BASE + "/summary?event={id}"
 WC_START, WC_END = "20260611", "20260719"
 HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/{id}.png"
+FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
 
-# Player photos come from Transfermarkt, like the eFootball page: reuse the
-# eFootball image cache and pes.db name->tm_id mapping for free, and spend at
-# most WC26_TM_LIMIT Transfermarkt requests per day on the rest.
+# Player photos come from Transfermarkt, like the eFootball page: both builders
+# read and write one shared tid -> photo cache (scripts/imgcache.py) and reuse
+# pes.db's name->tm_id mapping for free, so a photo resolved by either page
+# serves both. At most WC26_TM_LIMIT Transfermarkt requests per day cover the rest.
 PES_DB_URL = "https://raw.githubusercontent.com/WKaiZ/efootball/main/pes.db"
 TM_SEARCH = "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={q}"
 TM_PROFILE = "https://www.transfermarkt.us/x/profil/spieler/{id}"
@@ -247,13 +251,30 @@ def build():
     log(f"Wrote stats.json: {len(players)} players across {len(events)} matches.")
 
 
+def ef_fotmob_index():
+    """Reuse the fotmob player photos that the eFootball builder resolved, as a
+    fallback for WC26 players who have no Transfermarkt photo. Returns a lookup
+    by "<country-slug>|<name>" plus a name-only lookup for the unambiguous rest.
+    """
+    if not os.path.exists(EF_IMG_CACHE):
+        return {}, {}
+    fm = json.load(open(EF_IMG_CACHE)).get("fotmob") or {}
+    by_key = {k: v for k, v in fm.items() if v}
+    name_ids = {}
+    for k, v in by_key.items():
+        name_ids.setdefault(k.split("|", 1)[-1], set()).add(v)
+    by_name = {n: ids.pop() for n, ids in name_ids.items() if len(ids) == 1}
+    return by_key, by_name
+
+
 def attach_images(players):
     cache = (json.load(open(IMG_CACHE_PATH)) if os.path.exists(IMG_CACHE_PATH)
              else {})
-    for k in ("tm_map", "search_miss", "transfermarkt", "tm_null", "tm_err"):
+    for k in ("tm_map", "search_miss"):
         cache.setdefault(k, {})
-    ef = json.load(open(EF_IMG_CACHE)) if os.path.exists(EF_IMG_CACHE) else {}
-    ef_tm = {k: v for k, v in (ef.get("transfermarkt") or {}).items() if v}
+    # tid -> photo url and the null/error backoff counters are shared with the
+    # eFootball builder, so photos resolved by either page are reused here.
+    imgcache.merge_legacy(imgcache.load(), cache)
 
     try:
         idx = pes_index()
@@ -268,7 +289,7 @@ def attach_images(players):
                 tm_map[p["id"]] = tid
 
     def img_for(tid):
-        return ef_tm.get(tid) or cache["transfermarkt"].get(tid)
+        return cache["transfermarkt"].get(tid)
 
     # Spend the daily Transfermarkt budget on the most visible players first.
     budget = TM_DAILY_LIMIT
@@ -317,15 +338,28 @@ def attach_images(players):
             log(f"  fail {p['name']} (#{tid}): {e}")
         time.sleep(1.0)
 
-    json.dump(cache, open(IMG_CACHE_PATH, "w"), ensure_ascii=False, indent=1)
-    have = 0
+    json.dump({"tm_map": cache["tm_map"], "search_miss": cache["search_miss"]},
+              open(IMG_CACHE_PATH, "w"), ensure_ascii=False, indent=1)
+    imgcache.save(cache)
+
+    fm_by_key, fm_by_name = ef_fotmob_index()
+
+    def fotmob_img(p):
+        slug = TEAM2DB.get(p["team"], p["team"].lower().replace(" ", "-"))
+        fid = fm_by_key.get(f"{slug}|{norm(p['name'])}") or fm_by_name.get(norm(p["name"]))
+        return FOTMOB_IMG.format(id=fid) if fid else None
+
+    tm_have = fm_have = 0
     for p in players:
         tid = tm_map.get(p["id"])
         tm = img_for(tid) if tid else None
-        p["img"] = tm or HEADSHOT.format(id=p["id"])
-        have += 1 if tm else 0
-    log(f"Photos: {have}/{len(players)} via Transfermarkt "
-        f"({len(tm_map)} id mappings), rest fall back to ESPN headshots.")
+        fm = None if tm else fotmob_img(p)  # prefer Transfermarkt, then fotmob
+        p["img"] = tm or fm or HEADSHOT.format(id=p["id"])
+        tm_have += 1 if tm else 0
+        fm_have += 1 if fm else 0
+    log(f"Photos: {tm_have}/{len(players)} via Transfermarkt ({len(tm_map)} id "
+        f"mappings), {fm_have} reused from eFootball's fotmob, rest fall back "
+        f"to ESPN headshots.")
 
 
 if __name__ == "__main__":

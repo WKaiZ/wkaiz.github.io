@@ -4,6 +4,10 @@ format:
   html:
     page-layout: full
     toc: false
+    # The leaderboard <table> is built client-side by JS; stop Quarto from
+    # trying to parse it out of the raw-HTML block (silences the
+    # "Unable to parse table from raw html block" warning).
+    html-table-processing: none
 ---
 
 Player leaderboards for the 2026 FIFA World Cup — minutes played, goals,
@@ -16,6 +20,14 @@ from completed matches and refresh automatically every day.
              --wc-accent:#2c6bed; --wc-chip:#eef2f7;
              --wc-shadow:0 1px 3px rgba(0,0,0,.08); color:#1f2937; margin-top:.5rem; }
   .wc-meta { color:var(--wc-muted); font-size:.85rem; margin-bottom:1.25rem; }
+  .wc-tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.25rem; }
+  .wc-tab { display:inline-flex; align-items:center; gap:.4rem; cursor:pointer;
+            border:1px solid var(--wc-card-br); background:var(--wc-card-bg);
+            border-radius:999px; padding:.35rem .8rem; font-size:.9rem; line-height:1;
+            transition:all .12s ease; color:inherit; }
+  .wc-tab:hover { border-color:var(--wc-accent); }
+  .wc-tab.active { background:var(--wc-accent); border-color:var(--wc-accent); color:#fff; }
+  .wc-tab .flag { font-size:1.05rem; }
   .wc-boards { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
   .wc-board { background:var(--wc-card-bg); border:1px solid var(--wc-card-br);
               border-radius:14px; box-shadow:var(--wc-shadow); overflow:hidden; }
@@ -48,6 +60,7 @@ from completed matches and refresh automatically every day.
 
 <div class="wc-wrap">
   <div class="wc-meta" id="wc-meta"></div>
+  <div class="wc-tabs" id="wc-tabs"></div>
   <div id="wc-boards"><div class="wc-loading">Loading leaderboards…</div></div>
 </div>
 
@@ -81,7 +94,7 @@ from completed matches and refresh automatically every day.
       <td class="wc-rank">${i + 1}</td>
       <td style="width:34px">${photo(p)}</td>
       <td class="wc-player"><div class="nm">${esc(p.name)}</div>
-        <div class="tm">${FLAG[p.team] || ""} ${esc(p.team)} · ${esc(p.pos || "")}</div></td>
+        <div class="tm">${FLAG[p.team] || ""} ${esc(p.team)}</div></td>
       <td class="wc-val">${medal}${val}</td>
       <td class="wc-sub">${sub}</td>
     </tr>`;
@@ -105,30 +118,54 @@ from completed matches and refresh automatically every day.
     render();
   }
 
+  const by = (...keys) => (a, b) => {
+    for (const k of keys) { if (a[k] !== b[k]) return b[k] - a[k]; }
+    return a.name.localeCompare(b.name);
+  };
+
+  function renderBoards(players) {
+    const host = document.getElementById("wc-boards");
+    host.innerHTML = `<div class="wc-boards">
+      <div class="wc-board" id="wc-mins"></div>
+      <div class="wc-board" id="wc-goals"></div>
+      <div class="wc-board" id="wc-assists"></div></div>`;
+    board(document.getElementById("wc-mins"), "Minutes", "mins",
+      [...players].sort(by("mins", "apps", "goals")),
+      p => `${p.mins}′`, p => `${p.apps} apps · ${p.goals}g ${p.assists}a`);
+    board(document.getElementById("wc-goals"), "Goals", "goals",
+      players.filter(p => p.goals > 0).sort(by("goals", "assists")),
+      p => p.goals, p => `${p.assists}a · ${p.apps} apps`);
+    board(document.getElementById("wc-assists"), "Assists", "assists",
+      players.filter(p => p.assists > 0).sort(by("assists", "goals")),
+      p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
+  }
+
+  function buildTabs(players) {
+    const tabsEl = document.getElementById("wc-tabs");
+    const teams = [...new Set(players.map(p => p.team))].filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
+    const tab = (label, flag, team, active) =>
+      `<span class="wc-tab${active ? " active" : ""}" data-team="${esc(team)}">` +
+      `${flag ? `<span class="flag">${flag}</span>` : ""}${esc(label)}</span>`;
+    tabsEl.innerHTML = tab("All", "", "", true) +
+      teams.map(t => tab(t, FLAG[t] || "", t, false)).join("");
+    tabsEl.addEventListener("click", e => {
+      const t = e.target.closest(".wc-tab"); if (!t) return;
+      tabsEl.querySelectorAll(".wc-tab").forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+      const team = t.dataset.team;
+      renderBoards(team ? players.filter(p => p.team === team) : players);
+    });
+  }
+
   fetch("assets/wc26/stats.json?v=" + Date.now())
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
       const ps = data.players || [];
       document.getElementById("wc-meta").textContent =
         `Updated ${data.updated || ""} · ${data.matches} matches played · ${ps.length} players`;
-      const host = document.getElementById("wc-boards");
-      host.innerHTML = `<div class="wc-boards">
-        <div class="wc-board" id="wc-mins"></div>
-        <div class="wc-board" id="wc-goals"></div>
-        <div class="wc-board" id="wc-assists"></div></div>`;
-      const by = (...keys) => (a, b) => {
-        for (const k of keys) { if (a[k] !== b[k]) return b[k] - a[k]; }
-        return a.name.localeCompare(b.name);
-      };
-      board(document.getElementById("wc-mins"), "Minutes", "mins",
-        [...ps].sort(by("mins", "apps", "goals")),
-        p => `${p.mins}′`, p => `${p.apps} apps · ${p.goals}g ${p.assists}a`);
-      board(document.getElementById("wc-goals"), "Goals", "goals",
-        ps.filter(p => p.goals > 0).sort(by("goals", "assists")),
-        p => p.goals, p => `${p.assists}a · ${p.apps} apps`);
-      board(document.getElementById("wc-assists"), "Assists", "assists",
-        ps.filter(p => p.assists > 0).sort(by("assists", "goals")),
-        p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
+      buildTabs(ps);
+      renderBoards(ps);
     })
     .catch(err => {
       document.getElementById("wc-boards").innerHTML =
