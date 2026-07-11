@@ -24,12 +24,26 @@ website:
         text: eFootball
       - href: wc26.qmd
         text: FIFA World Cup 2026
-      - href: ucl.qmd
-        text: UEFA Champions League
-      - href: europa.qmd
-        text: UEFA Europa League
-      - href: conference.qmd
-        text: UEFA Europa Conference League
+      - text: UEFA
+        menu:
+          - href: ucl.qmd
+            text: UEFA Champions League
+          - href: europa.qmd
+            text: UEFA Europa League
+          - href: conference.qmd
+            text: UEFA Europa Conference League
+      - text: Top 5 Leagues
+        menu:
+          - href: epl.qmd
+            text: Premier League
+          - href: laliga.qmd
+            text: La Liga
+          - href: seriea.qmd
+            text: Serie A
+          - href: bundesliga.qmd
+            text: Bundesliga
+          - href: ligue1.qmd
+            text: Ligue 1
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/

@@ -1,0 +1,173 @@
+---
+title: "La Liga"
+format:
+  html:
+    page-layout: full
+    toc: false
+    # The leaderboard <table> is built client-side by JS; stop Quarto from
+    # trying to parse it out of the raw-HTML block.
+    html-table-processing: none
+---
+
+Player leaderboards for the La Liga — minutes played, goals,
+and assists across every player in the competition. Stats are aggregated
+from completed matches and refresh automatically every day.
+
+```{=html}
+<style>
+  .laliga-wrap { --laliga-card-bg:#fff; --laliga-card-br:#e6e8eb; --laliga-muted:#6b7280;
+             --laliga-accent:#ff4b44; --laliga-chip:#eef2f7;
+             --laliga-shadow:0 1px 3px rgba(0,0,0,.08); color:#1f2937; margin-top:.5rem; }
+  .laliga-meta { color:var(--laliga-muted); font-size:.85rem; margin-bottom:1.25rem; }
+  .laliga-tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.25rem; }
+  .laliga-tab { display:inline-flex; align-items:center; gap:.4rem; cursor:pointer;
+            border:1px solid var(--laliga-card-br); background:var(--laliga-card-bg);
+            border-radius:999px; padding:.35rem .8rem; font-size:.9rem; line-height:1;
+            transition:all .12s ease; color:inherit; }
+  .laliga-tab:hover { border-color:var(--laliga-accent); }
+  .laliga-tab.active { background:var(--laliga-accent); border-color:var(--laliga-accent); color:#fff; }
+  .laliga-tab .crest { width:1.15em; height:1.15em; object-fit:contain; }
+  .laliga-boards { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
+  .laliga-board { background:var(--laliga-card-bg); border:1px solid var(--laliga-card-br);
+              border-radius:14px; box-shadow:var(--laliga-shadow); overflow:hidden; }
+  .laliga-board h3 { margin:0; padding:.8rem 1rem; font-size:1rem; font-weight:600;
+                 border-bottom:1px solid var(--laliga-card-br); display:flex; align-items:baseline; gap:.5rem; }
+  .laliga-board h3 .count { color:var(--laliga-muted); font-weight:400; font-size:.8rem; }
+  .laliga-table { width:100%; border-collapse:collapse; font-size:.88rem; }
+  .laliga-table td { padding:.42rem .6rem; border-top:1px solid #f1f3f6; vertical-align:middle; }
+  .laliga-table tr:first-child td { border-top:none; }
+  .laliga-table tr:hover td { background:#f8fafc; }
+  .laliga-rank { width:2rem; text-align:right; color:var(--laliga-muted); font-variant-numeric:tabular-nums; }
+  .laliga-headshot { width:30px; height:30px; border-radius:50%; background:#f1f3f6;
+                 object-fit:cover; display:block; }
+  .laliga-initials { width:30px; height:30px; border-radius:50%; background:var(--laliga-chip);
+                 color:var(--laliga-muted); font-size:.66rem; font-weight:600;
+                 display:flex; align-items:center; justify-content:center; }
+  .laliga-player { line-height:1.15; }
+  .laliga-player .nm { font-weight:600; }
+  .laliga-player .tm { color:var(--laliga-muted); font-size:.76rem; display:flex; align-items:center; gap:.3rem; }
+  .laliga-crest { width:1.05em; height:1.05em; object-fit:contain; }
+  .laliga-val { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }
+  .laliga-sub { text-align:right; color:var(--laliga-muted); font-size:.76rem; white-space:nowrap;
+            font-variant-numeric:tabular-nums; }
+  .laliga-more { display:block; width:100%; border:none; background:none; cursor:pointer;
+             padding:.6rem; font-size:.82rem; color:var(--laliga-accent); font-weight:600;
+             border-top:1px solid var(--laliga-card-br); }
+  .laliga-more:hover { background:#f8fafc; }
+  .laliga-medal { margin-right:.2rem; }
+  .laliga-loading, .laliga-error { color:var(--laliga-muted); padding:2rem 0; }
+</style>
+
+<div class="laliga-wrap">
+  <div class="laliga-meta" id="laliga-meta"></div>
+  <div class="laliga-tabs" id="laliga-tabs"></div>
+  <div id="laliga-boards"><div class="laliga-loading">Loading leaderboards…</div></div>
+</div>
+
+<script>
+(function () {
+  const TOP = 25;
+  const MEDAL = { 0:"🥇", 1:"🥈", 2:"🥉" };
+  const LOGO = (id) => `https://a.espncdn.com/i/teamlogos/soccer/500/${id}.png`;
+
+  const esc = (s) => String(s).replace(/[&<>"]/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+  const initials = (n) => n.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+
+  const photo = (p) => p.img
+    ? `<img loading="lazy" class="laliga-headshot" src="${esc(p.img)}" alt=""
+         onerror="this.outerHTML='<span class=&quot;laliga-initials&quot;>${esc(initials(p.name))}</span>'">`
+    : `<span class="laliga-initials">${esc(initials(p.name))}</span>`;
+
+  const crest = (id) => id
+    ? `<img class="laliga-crest" src="${esc(LOGO(id))}" alt="" loading="lazy"
+         onerror="this.style.display='none'">`
+    : "";
+
+  function row(p, i, val, sub) {
+    const medal = i < 3 ? `<span class="laliga-medal">${MEDAL[i]}</span>` : "";
+    return `<tr>
+      <td class="laliga-rank">${i + 1}</td>
+      <td style="width:34px">${photo(p)}</td>
+      <td class="laliga-player"><div class="nm">${esc(p.name)}</div>
+        <div class="tm">${crest(p.team_id)}${esc(p.team)}</div></td>
+      <td class="laliga-val">${medal}${val}</td>
+      <td class="laliga-sub">${sub}</td>
+    </tr>`;
+  }
+
+  function board(el, title, unit, players, val, sub) {
+    let shown = TOP;
+    const render = () => {
+      el.innerHTML = `<h3>${title}<span class="count">${players.length} players</span></h3>
+        <table class="laliga-table"><tbody>
+          ${players.slice(0, shown).map((p,i) => row(p, i, val(p), sub(p))).join("")}
+        </tbody></table>
+        ${shown < players.length
+          ? `<button class="laliga-more">Show all ${players.length}</button>`
+          : players.length > TOP ? `<button class="laliga-more">Show top ${TOP}</button>` : ""}`;
+      const btn = el.querySelector(".laliga-more");
+      if (btn) btn.addEventListener("click", () => {
+        shown = shown < players.length ? players.length : TOP; render();
+      });
+    };
+    render();
+  }
+
+  const by = (...keys) => (a, b) => {
+    for (const k of keys) { if (a[k] !== b[k]) return b[k] - a[k]; }
+    return a.name.localeCompare(b.name);
+  };
+
+  function renderBoards(players) {
+    const host = document.getElementById("laliga-boards");
+    host.innerHTML = `<div class="laliga-boards">
+      <div class="laliga-board" id="laliga-mins"></div>
+      <div class="laliga-board" id="laliga-goals"></div>
+      <div class="laliga-board" id="laliga-assists"></div></div>`;
+    board(document.getElementById("laliga-mins"), "Minutes", "mins",
+      [...players].sort(by("mins", "apps", "goals")),
+      p => `${p.mins}′`, p => `${p.apps} apps · ${p.goals}g ${p.assists}a`);
+    board(document.getElementById("laliga-goals"), "Goals", "goals",
+      players.filter(p => p.goals > 0).sort(by("goals", "assists")),
+      p => p.goals, p => `${p.assists}a · ${p.apps} apps`);
+    board(document.getElementById("laliga-assists"), "Assists", "assists",
+      players.filter(p => p.assists > 0).sort(by("assists", "goals")),
+      p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
+  }
+
+  function buildTabs(players) {
+    const tabsEl = document.getElementById("laliga-tabs");
+    const teams = [...new Map(players.filter(p => p.team).map(p => [p.team, p.team_id]))
+      .entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    const tab = (label, teamId, team, active) =>
+      `<span class="laliga-tab${active ? " active" : ""}" data-team="${esc(team)}">` +
+      `${teamId ? `<img class="crest" src="${esc(LOGO(teamId))}" alt="" ` +
+        `onerror="this.style.display='none'">` : ""}${esc(label)}</span>`;
+    tabsEl.innerHTML = tab("All", "", "", true) +
+      teams.map(([t, id]) => tab(t, id, t, false)).join("");
+    tabsEl.addEventListener("click", e => {
+      const t = e.target.closest(".laliga-tab"); if (!t) return;
+      tabsEl.querySelectorAll(".laliga-tab").forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+      const team = t.dataset.team;
+      renderBoards(team ? players.filter(p => p.team === team) : players);
+    });
+  }
+
+  fetch("assets/laliga/stats.json?v=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      const ps = data.players || [];
+      document.getElementById("laliga-meta").textContent =
+        `Updated ${data.updated || ""} · ${data.matches} matches played · ${ps.length} players`;
+      buildTabs(ps);
+      renderBoards(ps);
+    })
+    .catch(err => {
+      document.getElementById("laliga-boards").innerHTML =
+        `<div class="laliga-error">Couldn't load stats (${esc(err.message)}).</div>`;
+    });
+})();
+</script>
+```

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Shared builder for UEFA club-competition player leaderboards (appearances /
-goals / assists). The Champions, Europa, and Conference leagues share ESPN's
-API shape and photo pipeline, so each has a thin wrapper (ucl_build.py,
-europa_build.py, conference_build.py) that just calls run() with its slug and
-season window.
+"""Shared builder for soccer-league player leaderboards (appearances / goals /
+assists). Every ESPN soccer competition — the UEFA club competitions and the
+big-five domestic leagues alike — shares one API shape and photo pipeline, so
+each has a thin wrapper (e.g. ucl_build.py, epl_build.py) that just calls run()
+with its ESPN slug and season window.
 
 Data source: ESPN's public site API. Completed matches are immutable, so each
 match summary is fetched exactly once and cached in match_cache.json — a daily

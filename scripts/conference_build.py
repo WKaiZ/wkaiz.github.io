@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build UEFA Europa Conference League leaderboards. Thin wrapper over
-uefa_build.run; the shared logic lives in scripts/uefa_build.py.
+league_build.run; the shared logic lives in scripts/league_build.py.
 
 Season window is the 2025-26 competition; override with CONFERENCE_START /
 CONFERENCE_END (YYYYMMDD) when a new season starts.
@@ -8,10 +8,10 @@ CONFERENCE_END (YYYYMMDD) when a new season starts.
 
 import os
 
-import uefa_build
+import league_build
 
 if __name__ == "__main__":
-    uefa_build.run(
+    league_build.run(
         slug="uefa.europa.conf",
         start=os.environ.get("CONFERENCE_START", "20250916"),
         end=os.environ.get("CONFERENCE_END", "20260603"),

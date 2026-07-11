@@ -1,0 +1,173 @@
+---
+title: "Serie A"
+format:
+  html:
+    page-layout: full
+    toc: false
+    # The leaderboard <table> is built client-side by JS; stop Quarto from
+    # trying to parse it out of the raw-HTML block.
+    html-table-processing: none
+---
+
+Player leaderboards for the Serie A — minutes played, goals,
+and assists across every player in the competition. Stats are aggregated
+from completed matches and refresh automatically every day.
+
+```{=html}
+<style>
+  .seriea-wrap { --seriea-card-bg:#fff; --seriea-card-br:#e6e8eb; --seriea-muted:#6b7280;
+             --seriea-accent:#008fd7; --seriea-chip:#eef2f7;
+             --seriea-shadow:0 1px 3px rgba(0,0,0,.08); color:#1f2937; margin-top:.5rem; }
+  .seriea-meta { color:var(--seriea-muted); font-size:.85rem; margin-bottom:1.25rem; }
+  .seriea-tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.25rem; }
+  .seriea-tab { display:inline-flex; align-items:center; gap:.4rem; cursor:pointer;
+            border:1px solid var(--seriea-card-br); background:var(--seriea-card-bg);
+            border-radius:999px; padding:.35rem .8rem; font-size:.9rem; line-height:1;
+            transition:all .12s ease; color:inherit; }
+  .seriea-tab:hover { border-color:var(--seriea-accent); }
+  .seriea-tab.active { background:var(--seriea-accent); border-color:var(--seriea-accent); color:#fff; }
+  .seriea-tab .crest { width:1.15em; height:1.15em; object-fit:contain; }
+  .seriea-boards { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
+  .seriea-board { background:var(--seriea-card-bg); border:1px solid var(--seriea-card-br);
+              border-radius:14px; box-shadow:var(--seriea-shadow); overflow:hidden; }
+  .seriea-board h3 { margin:0; padding:.8rem 1rem; font-size:1rem; font-weight:600;
+                 border-bottom:1px solid var(--seriea-card-br); display:flex; align-items:baseline; gap:.5rem; }
+  .seriea-board h3 .count { color:var(--seriea-muted); font-weight:400; font-size:.8rem; }
+  .seriea-table { width:100%; border-collapse:collapse; font-size:.88rem; }
+  .seriea-table td { padding:.42rem .6rem; border-top:1px solid #f1f3f6; vertical-align:middle; }
+  .seriea-table tr:first-child td { border-top:none; }
+  .seriea-table tr:hover td { background:#f8fafc; }
+  .seriea-rank { width:2rem; text-align:right; color:var(--seriea-muted); font-variant-numeric:tabular-nums; }
+  .seriea-headshot { width:30px; height:30px; border-radius:50%; background:#f1f3f6;
+                 object-fit:cover; display:block; }
+  .seriea-initials { width:30px; height:30px; border-radius:50%; background:var(--seriea-chip);
+                 color:var(--seriea-muted); font-size:.66rem; font-weight:600;
+                 display:flex; align-items:center; justify-content:center; }
+  .seriea-player { line-height:1.15; }
+  .seriea-player .nm { font-weight:600; }
+  .seriea-player .tm { color:var(--seriea-muted); font-size:.76rem; display:flex; align-items:center; gap:.3rem; }
+  .seriea-crest { width:1.05em; height:1.05em; object-fit:contain; }
+  .seriea-val { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }
+  .seriea-sub { text-align:right; color:var(--seriea-muted); font-size:.76rem; white-space:nowrap;
+            font-variant-numeric:tabular-nums; }
+  .seriea-more { display:block; width:100%; border:none; background:none; cursor:pointer;
+             padding:.6rem; font-size:.82rem; color:var(--seriea-accent); font-weight:600;
+             border-top:1px solid var(--seriea-card-br); }
+  .seriea-more:hover { background:#f8fafc; }
+  .seriea-medal { margin-right:.2rem; }
+  .seriea-loading, .seriea-error { color:var(--seriea-muted); padding:2rem 0; }
+</style>
+
+<div class="seriea-wrap">
+  <div class="seriea-meta" id="seriea-meta"></div>
+  <div class="seriea-tabs" id="seriea-tabs"></div>
+  <div id="seriea-boards"><div class="seriea-loading">Loading leaderboards…</div></div>
+</div>
+
+<script>
+(function () {
+  const TOP = 25;
+  const MEDAL = { 0:"🥇", 1:"🥈", 2:"🥉" };
+  const LOGO = (id) => `https://a.espncdn.com/i/teamlogos/soccer/500/${id}.png`;
+
+  const esc = (s) => String(s).replace(/[&<>"]/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+  const initials = (n) => n.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+
+  const photo = (p) => p.img
+    ? `<img loading="lazy" class="seriea-headshot" src="${esc(p.img)}" alt=""
+         onerror="this.outerHTML='<span class=&quot;seriea-initials&quot;>${esc(initials(p.name))}</span>'">`
+    : `<span class="seriea-initials">${esc(initials(p.name))}</span>`;
+
+  const crest = (id) => id
+    ? `<img class="seriea-crest" src="${esc(LOGO(id))}" alt="" loading="lazy"
+         onerror="this.style.display='none'">`
+    : "";
+
+  function row(p, i, val, sub) {
+    const medal = i < 3 ? `<span class="seriea-medal">${MEDAL[i]}</span>` : "";
+    return `<tr>
+      <td class="seriea-rank">${i + 1}</td>
+      <td style="width:34px">${photo(p)}</td>
+      <td class="seriea-player"><div class="nm">${esc(p.name)}</div>
+        <div class="tm">${crest(p.team_id)}${esc(p.team)}</div></td>
+      <td class="seriea-val">${medal}${val}</td>
+      <td class="seriea-sub">${sub}</td>
+    </tr>`;
+  }
+
+  function board(el, title, unit, players, val, sub) {
+    let shown = TOP;
+    const render = () => {
+      el.innerHTML = `<h3>${title}<span class="count">${players.length} players</span></h3>
+        <table class="seriea-table"><tbody>
+          ${players.slice(0, shown).map((p,i) => row(p, i, val(p), sub(p))).join("")}
+        </tbody></table>
+        ${shown < players.length
+          ? `<button class="seriea-more">Show all ${players.length}</button>`
+          : players.length > TOP ? `<button class="seriea-more">Show top ${TOP}</button>` : ""}`;
+      const btn = el.querySelector(".seriea-more");
+      if (btn) btn.addEventListener("click", () => {
+        shown = shown < players.length ? players.length : TOP; render();
+      });
+    };
+    render();
+  }
+
+  const by = (...keys) => (a, b) => {
+    for (const k of keys) { if (a[k] !== b[k]) return b[k] - a[k]; }
+    return a.name.localeCompare(b.name);
+  };
+
+  function renderBoards(players) {
+    const host = document.getElementById("seriea-boards");
+    host.innerHTML = `<div class="seriea-boards">
+      <div class="seriea-board" id="seriea-mins"></div>
+      <div class="seriea-board" id="seriea-goals"></div>
+      <div class="seriea-board" id="seriea-assists"></div></div>`;
+    board(document.getElementById("seriea-mins"), "Minutes", "mins",
+      [...players].sort(by("mins", "apps", "goals")),
+      p => `${p.mins}′`, p => `${p.apps} apps · ${p.goals}g ${p.assists}a`);
+    board(document.getElementById("seriea-goals"), "Goals", "goals",
+      players.filter(p => p.goals > 0).sort(by("goals", "assists")),
+      p => p.goals, p => `${p.assists}a · ${p.apps} apps`);
+    board(document.getElementById("seriea-assists"), "Assists", "assists",
+      players.filter(p => p.assists > 0).sort(by("assists", "goals")),
+      p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
+  }
+
+  function buildTabs(players) {
+    const tabsEl = document.getElementById("seriea-tabs");
+    const teams = [...new Map(players.filter(p => p.team).map(p => [p.team, p.team_id]))
+      .entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    const tab = (label, teamId, team, active) =>
+      `<span class="seriea-tab${active ? " active" : ""}" data-team="${esc(team)}">` +
+      `${teamId ? `<img class="crest" src="${esc(LOGO(teamId))}" alt="" ` +
+        `onerror="this.style.display='none'">` : ""}${esc(label)}</span>`;
+    tabsEl.innerHTML = tab("All", "", "", true) +
+      teams.map(([t, id]) => tab(t, id, t, false)).join("");
+    tabsEl.addEventListener("click", e => {
+      const t = e.target.closest(".seriea-tab"); if (!t) return;
+      tabsEl.querySelectorAll(".seriea-tab").forEach(x => x.classList.remove("active"));
+      t.classList.add("active");
+      const team = t.dataset.team;
+      renderBoards(team ? players.filter(p => p.team === team) : players);
+    });
+  }
+
+  fetch("assets/seriea/stats.json?v=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      const ps = data.players || [];
+      document.getElementById("seriea-meta").textContent =
+        `Updated ${data.updated || ""} · ${data.matches} matches played · ${ps.length} players`;
+      buildTabs(ps);
+      renderBoards(ps);
+    })
+    .catch(err => {
+      document.getElementById("seriea-boards").innerHTML =
+        `<div class="seriea-error">Couldn't load stats (${esc(err.message)}).</div>`;
+    });
+})();
+</script>
+```

@@ -1,0 +1,39 @@
+name: Update La Liga leaderboards
+
+on:
+  schedule:
+    - cron: "20 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: laliga-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build stats.json
+        run: python3 scripts/laliga_build.py
+
+      - name: Sync data into published docs/
+        run: |
+          mkdir -p docs/assets/laliga
+          cp assets/laliga/stats.json assets/laliga/match_cache.json docs/assets/laliga/
+
+      - name: Commit changes if any
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/laliga assets/tm_img_cache.json docs/assets/laliga
+          git diff --cached --quiet || git commit -m "chore: daily La Liga stats update"
+          git push
