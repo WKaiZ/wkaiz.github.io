@@ -22,15 +22,31 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Keep last season's board frozen through the off-season; only start
+      # refreshing a day after the new season's first match kicks off.
+      - name: Gate on season start
+        id: gate
+        run: |
+          if python3 scripts/europa_build.py --gate; then
+            echo "Season underway — refreshing."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "New season hasn't kicked off yet — leaving last season's board in place."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build stats.json
+        if: steps.gate.outputs.proceed == 'true'
         run: python3 scripts/europa_build.py
 
       - name: Sync data into published docs/
+        if: steps.gate.outputs.proceed == 'true'
         run: |
           mkdir -p docs/assets/europa
           cp assets/europa/stats.json assets/europa/match_cache.json docs/assets/europa/
 
       - name: Commit changes if any
+        if: steps.gate.outputs.proceed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

@@ -23,6 +23,7 @@ import imgcache  # shared Transfermarkt photo cache (see scripts/imgcache.py)
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world"
 SCOREBOARD = BASE + "/scoreboard?dates={start}-{end}&limit=300"
 SUMMARY = BASE + "/summary?event={id}"
+TEAMS = BASE + "/teams"
 WC_START, WC_END = "20260611", "20260719"
 HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/{id}.png"
 FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
@@ -209,6 +210,23 @@ def extract_match(event_id):
     return length, players
 
 
+def team_flags():
+    """{team display name -> national flag image url} from ESPN's teams list."""
+    try:
+        data = get_json(TEAMS)
+    except Exception as e:
+        log(f"teams endpoint unavailable ({e}); flags may be missing.")
+        return {}
+    out = {}
+    for lg in data.get("sports", [{}])[0].get("leagues", []):
+        for t in lg.get("teams", []):
+            tm = t.get("team", {})
+            logos = tm.get("logos") or []
+            if tm.get("displayName") and logos:
+                out[tm["displayName"]] = logos[0].get("href")
+    return out
+
+
 def build():
     os.makedirs(OUT_DIR, exist_ok=True)
     cache = json.load(open(CACHE_PATH)) if os.path.exists(CACHE_PATH) else {}
@@ -241,6 +259,12 @@ def build():
     players = sorted(totals.values(),
                      key=lambda p: (-p["apps"], -p["mins"], -p["goals"], p["name"]))
     attach_images(players)
+
+    # National flag images from ESPN — robust across every team (emoji flags
+    # miss some nations and don't render subdivision flags like England).
+    flags = team_flags()
+    for p in players:
+        p["flag"] = flags.get(p["team"])
 
     out = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),

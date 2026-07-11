@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
             transition:all .12s ease; color:inherit; }
   .wc-tab:hover { border-color:var(--wc-accent); }
   .wc-tab.active { background:var(--wc-accent); border-color:var(--wc-accent); color:#fff; }
-  .wc-tab .flag { font-size:1.05rem; }
+  .wc-tab .flag { width:1.2em; height:1.2em; object-fit:contain; }
   .wc-boards { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
   .wc-board { background:var(--wc-card-bg); border:1px solid var(--wc-card-br);
               border-radius:14px; box-shadow:var(--wc-shadow); overflow:hidden; }
@@ -233,7 +233,8 @@ ul.task-list li input[type="checkbox"] {
                  display:flex; align-items:center; justify-content:center; }
   .wc-player { line-height:1.15; }
   .wc-player .nm { font-weight:600; }
-  .wc-player .tm { color:var(--wc-muted); font-size:.76rem; }
+  .wc-player .tm { color:var(--wc-muted); font-size:.76rem; display:flex; align-items:center; gap:.3rem; }
+  .wc-flag { width:1.15em; height:1.15em; object-fit:contain; border-radius:2px; flex:none; }
   .wc-val { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }
   .wc-sub { text-align:right; color:var(--wc-muted); font-size:.76rem; white-space:nowrap;
             font-variant-numeric:tabular-nums; }
@@ -255,16 +256,6 @@ ul.task-list li input[type="checkbox"] {
 (function () {
   const TOP = 25;
   const MEDAL = { 0:"🥇", 1:"🥈", 2:"🥉" };
-  const FLAG = { "Argentina":"🇦🇷","Australia":"🇦🇺","Austria":"🇦🇹","Belgium":"🇧🇪","Brazil":"🇧🇷",
-    "Canada":"🇨🇦","Colombia":"🇨🇴","Croatia":"🇭🇷","Curacao":"🇨🇼","Ecuador":"🇪🇨","Egypt":"🇪🇬",
-    "England":"\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}","France":"🇫🇷",
-    "Germany":"🇩🇪","Ghana":"🇬🇭","Haiti":"🇭🇹","Iran":"🇮🇷","Italy":"🇮🇹","Ivory Coast":"🇨🇮",
-    "Japan":"🇯🇵","Jordan":"🇯🇴","Mexico":"🇲🇽","Morocco":"🇲🇦","Netherlands":"🇳🇱",
-    "New Zealand":"🇳🇿","Norway":"🇳🇴","Panama":"🇵🇦","Paraguay":"🇵🇾","Portugal":"🇵🇹",
-    "Qatar":"🇶🇦","Saudi Arabia":"🇸🇦","Scotland":"\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}",
-    "Senegal":"🇸🇳","South Africa":"🇿🇦","South Korea":"🇰🇷","Spain":"🇪🇸","Switzerland":"🇨🇭",
-    "Tunisia":"🇹🇳","United States":"🇺🇸","USA":"🇺🇸","Uruguay":"🇺🇾","Uzbekistan":"🇺🇿",
-    "Cape Verde":"🇨🇻","Algeria":"🇩🇿" };
 
   const esc = (s) => String(s).replace(/[&<>"]/g, c =>
     ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
@@ -275,13 +266,17 @@ ul.task-list li input[type="checkbox"] {
          onerror="this.outerHTML='<span class=&quot;wc-initials&quot;>${esc(initials(p.name))}</span>'">`
     : `<span class="wc-initials">${esc(initials(p.name))}</span>`;
 
+  const flag = (url) => url
+    ? `<img class="wc-flag" src="${esc(url)}" alt="" loading="lazy" onerror="this.style.display='none'">`
+    : "";
+
   function row(p, i, val, sub) {
     const medal = i < 3 ? `<span class="wc-medal">${MEDAL[i]}</span>` : "";
     return `<tr>
       <td class="wc-rank">${i + 1}</td>
       <td style="width:34px">${photo(p)}</td>
       <td class="wc-player"><div class="nm">${esc(p.name)}</div>
-        <div class="tm">${FLAG[p.team] || ""} ${esc(p.team)}</div></td>
+        <div class="tm">${flag(p.flag)}${esc(p.team)}</div></td>
       <td class="wc-val">${medal}${val}</td>
       <td class="wc-sub">${sub}</td>
     </tr>`;
@@ -329,13 +324,13 @@ ul.task-list li input[type="checkbox"] {
 
   function buildTabs(players) {
     const tabsEl = document.getElementById("wc-tabs");
-    const teams = [...new Set(players.map(p => p.team))].filter(Boolean)
-      .sort((a, b) => a.localeCompare(b));
-    const tab = (label, flag, team, active) =>
+    const flags = new Map(players.filter(p => p.team).map(p => [p.team, p.flag]));
+    const teams = [...flags.keys()].sort((a, b) => a.localeCompare(b));
+    const tab = (label, url, team, active) =>
       `<span class="wc-tab${active ? " active" : ""}" data-team="${esc(team)}">` +
-      `${flag ? `<span class="flag">${flag}</span>` : ""}${esc(label)}</span>`;
+      `${url ? `<img class="flag" src="${esc(url)}" alt="" onerror="this.style.display='none'">` : ""}${esc(label)}</span>`;
     tabsEl.innerHTML = tab("All", "", "", true) +
-      teams.map(t => tab(t, FLAG[t] || "", t, false)).join("");
+      teams.map(t => tab(t, flags.get(t), t, false)).join("");
     tabsEl.addEventListener("click", e => {
       const t = e.target.closest(".wc-tab"); if (!t) return;
       tabsEl.querySelectorAll(".wc-tab").forEach(x => x.classList.remove("active"));

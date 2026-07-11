@@ -2,19 +2,28 @@
 """Build UEFA Europa League leaderboards. Thin wrapper over league_build.run;
 the shared logic lives in scripts/league_build.py.
 
-Season window is the 2025-26 competition; override with EUROPA_START /
-EUROPA_END (YYYYMMDD) when a new season starts.
+Targets the 2026-27 season; override with EUROPA_START / EUROPA_END (YYYYMMDD)
+when a new season starts. Run with --gate to exit 0 only once the season's
+first match kicked off a day ago — the workflow uses this to keep last season's
+board frozen through the off-season and refresh straight into the new one.
 """
 
 import os
+import sys
 
 import league_build
 
+CONFIG = dict(
+    slug="uefa.europa",
+    start=os.environ.get("EUROPA_START", "20260901"),
+    end=os.environ.get("EUROPA_END", "20270701"),
+    out_name="europa",
+    tm_limit=int(os.environ.get("EUROPA_TM_LIMIT", "26")),
+)
+
 if __name__ == "__main__":
-    league_build.run(
-        slug="uefa.europa",
-        start=os.environ.get("EUROPA_START", "20250916"),
-        end=os.environ.get("EUROPA_END", "20260603"),
-        out_name="europa",
-        tm_limit=int(os.environ.get("EUROPA_TM_LIMIT", "26")),
-    )
+    if "--gate" in sys.argv:
+        started = league_build.season_started(
+            CONFIG["slug"], CONFIG["start"], CONFIG["end"])
+        sys.exit(0 if started else 1)
+    league_build.run(**CONFIG)

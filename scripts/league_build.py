@@ -128,6 +128,20 @@ def completed_events(base, start, end):
     return sorted(out, key=lambda x: x[1])
 
 
+def season_started(slug, start, end, grace_days=1):
+    """True once the season's first scheduled match kicked off at least
+    grace_days ago. Lets a workflow keep last season's board frozen over the
+    off-season and only begin refreshing a day after the opening match, so the
+    board flips straight to fresh data instead of showing an empty new season."""
+    url = API.format(slug=slug) + f"/scoreboard?dates={start}-{end}&limit=400"
+    dates = sorted(e.get("date", "")[:10]
+                   for e in get_json(url).get("events", []) if e.get("date"))
+    if not dates:
+        return False
+    first = datetime.strptime(dates[0], "%Y-%m-%d").date()
+    return (datetime.now(timezone.utc).date() - first).days >= grace_days
+
+
 def stat_map(entry):
     return {s.get("name"): s.get("value") or 0 for s in entry.get("stats", [])}
 
@@ -344,6 +358,11 @@ def run(*, slug, start, end, out_name, tm_limit):
 
     players = sorted(totals.values(),
                      key=lambda p: (-p["apps"], -p["mins"], -p["goals"], p["name"]))
+    # Safety net: never overwrite an existing board with an empty one (e.g. an
+    # off-season run before the new season has any completed matches).
+    if not players and os.path.exists(stats_path):
+        log(f"No completed matches in window for {out_name}; keeping existing board.")
+        return
     attach_images(players, img_cache_path, tm_limit)
 
     out = {
