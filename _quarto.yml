@@ -26,6 +26,10 @@ website:
         text: FIFA World Cup 2026
       - href: ucl.qmd
         text: UEFA Champions League
+      - href: europa.qmd
+        text: UEFA Europa League
+      - href: conference.qmd
+        text: UEFA Europa Conference League
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/

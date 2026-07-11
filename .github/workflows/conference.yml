@@ -1,0 +1,39 @@
+name: Update Conference League leaderboards
+
+on:
+  schedule:
+    - cron: "20 8 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conference-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build stats.json
+        run: python3 scripts/conference_build.py
+
+      - name: Sync data into published docs/
+        run: |
+          mkdir -p docs/assets/conference
+          cp assets/conference/stats.json assets/conference/match_cache.json docs/assets/conference/
+
+      - name: Commit changes if any
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/conference assets/tm_img_cache.json docs/assets/conference
+          git diff --cached --quiet || git commit -m "chore: daily Conference League stats update"
+          git push
