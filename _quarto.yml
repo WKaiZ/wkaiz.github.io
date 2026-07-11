@@ -24,6 +24,8 @@ website:
         text: eFootball
       - href: wc26.qmd
         text: FIFA World Cup 2026
+      - href: ucl.qmd
+        text: UEFA Champions League
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/
