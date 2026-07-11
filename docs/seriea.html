@@ -215,6 +215,13 @@ ul.task-list li input[type="checkbox"] {
   .seriea-tab:hover { border-color:var(--seriea-accent); }
   .seriea-tab.active { background:var(--seriea-accent); border-color:var(--seriea-accent); color:#fff; }
   .seriea-tab .crest { width:1.15em; height:1.15em; object-fit:contain; }
+  .seriea-tab .flag { width:1.2em; height:1.2em; object-fit:contain; }
+  .seriea-modes { display:inline-flex; gap:.25rem; margin-bottom:.8rem; padding:.2rem;
+             background:var(--seriea-chip); border-radius:999px; }
+  .seriea-mode { border:none; background:none; cursor:pointer; border-radius:999px;
+             padding:.3rem .85rem; font-size:.82rem; color:var(--seriea-muted); font-weight:600; }
+  .seriea-mode.active { background:var(--seriea-card-bg); color:var(--seriea-accent);
+             box-shadow:0 1px 2px rgba(0,0,0,.12); }
   .seriea-boards { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
   .seriea-board { background:var(--seriea-card-bg); border:1px solid var(--seriea-card-br);
               border-radius:14px; box-shadow:var(--seriea-shadow); overflow:hidden; }
@@ -248,6 +255,10 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="seriea-wrap">
   <div class="seriea-meta" id="seriea-meta"></div>
+  <div class="seriea-modes" id="seriea-modes">
+    <button class="seriea-mode active" data-mode="club">By club</button>
+    <button class="seriea-mode" data-mode="nation">By nation</button>
+  </div>
   <div class="seriea-tabs" id="seriea-tabs"></div>
   <div id="seriea-boards"><div class="seriea-loading">Loading leaderboards…</div></div>
 </div>
@@ -324,33 +335,63 @@ ul.task-list li input[type="checkbox"] {
       p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
   }
 
-  function buildTabs(players) {
+  let allPlayers = [];
+  let mode = "club";
+
+  const MODES = {
+    club:   { key: "team",   img: p => LOGO(p.team_id), cls: "crest" },
+    nation: { key: "nation", img: p => p.nation_flag,   cls: "flag" },
+  };
+
+  function buildTabs() {
     const tabsEl = document.getElementById("seriea-tabs");
-    const teams = [...new Map(players.filter(p => p.team).map(p => [p.team, p.team_id]))
-      .entries()].sort((a, b) => a[0].localeCompare(b[0]));
-    const tab = (label, teamId, team, active) =>
-      `<span class="seriea-tab${active ? " active" : ""}" data-team="${esc(team)}">` +
-      `${teamId ? `<img class="crest" src="${esc(LOGO(teamId))}" alt="" ` +
-        `onerror="this.style.display='none'">` : ""}${esc(label)}</span>`;
+    const m = MODES[mode];
+    const groups = new Map();
+    for (const p of allPlayers) {
+      const v = p[m.key];
+      if (v && !groups.has(v)) groups.set(v, m.img(p));
+    }
+    const keys = [...groups.keys()].sort((a, b) => a.localeCompare(b));
+    const tab = (label, src, value, active) =>
+      `<span class="seriea-tab${active ? " active" : ""}" data-value="${esc(value)}">` +
+      `${src ? `<img class="${m.cls}" src="${esc(src)}" alt="" onerror="this.style.display='none'">` : ""}${esc(label)}</span>`;
     tabsEl.innerHTML = tab("All", "", "", true) +
-      teams.map(([t, id]) => tab(t, id, t, false)).join("");
+      keys.map(k => tab(k, groups.get(k), k, false)).join("");
+  }
+
+  function applyFilter(value) {
+    const key = MODES[mode].key;
+    renderBoards(value ? allPlayers.filter(p => p[key] === value) : allPlayers);
+  }
+
+  function initControls() {
+    const modesEl = document.getElementById("seriea-modes");
+    const tabsEl = document.getElementById("seriea-tabs");
+    modesEl.addEventListener("click", e => {
+      const b = e.target.closest(".seriea-mode"); if (!b) return;
+      modesEl.querySelectorAll(".seriea-mode").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      mode = b.dataset.mode;
+      buildTabs();
+      applyFilter("");
+    });
     tabsEl.addEventListener("click", e => {
       const t = e.target.closest(".seriea-tab"); if (!t) return;
       tabsEl.querySelectorAll(".seriea-tab").forEach(x => x.classList.remove("active"));
       t.classList.add("active");
-      const team = t.dataset.team;
-      renderBoards(team ? players.filter(p => p.team === team) : players);
+      applyFilter(t.dataset.value);
     });
   }
 
   fetch("assets/seriea/stats.json?v=" + Date.now())
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
-      const ps = data.players || [];
+      allPlayers = data.players || [];
       document.getElementById("seriea-meta").textContent =
-        `Updated ${data.updated || ""} · ${data.matches} matches played · ${ps.length} players`;
-      buildTabs(ps);
-      renderBoards(ps);
+        `Updated ${data.updated || ""} · ${data.matches} matches played · ${allPlayers.length} players`;
+      initControls();
+      buildTabs();
+      renderBoards(allPlayers);
     })
     .catch(err => {
       document.getElementById("seriea-boards").innerHTML =

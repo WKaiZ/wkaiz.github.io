@@ -22,8 +22,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      # Keep last season's board frozen through the off-season; only start
-      # refreshing a day after the new season's first match kicks off.
       - name: Gate on season start
         id: gate
         run: |
@@ -50,6 +48,6 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/epl assets/tm_img_cache.json docs/assets/epl
+          git add assets/epl assets/tm_img_cache.json assets/nation_cache.json docs/assets/epl
           git diff --cached --quiet || git commit -m "chore: daily Premier League stats update"
           git push

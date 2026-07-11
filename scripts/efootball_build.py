@@ -14,7 +14,7 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
-import imgcache  # shared Transfermarkt photo cache (see scripts/imgcache.py)
+import imgcache
 
 REPO_URL = "https://github.com/WKaiZ/efootball"
 GROUPS = [("contenders", "contender"), ("challengers", "challenger")]
@@ -71,53 +71,38 @@ FLAGS = {
 DISPLAY = {"usa": "USA", "korea": "South Korea", "ivory-coast": "Ivory Coast",
            "congo": "DR Congo"}
 
-
 def log(*a):
     print(*a, file=sys.stderr, flush=True)
-
 
 def norm(s):
     s = unicodedata.normalize("NFKD", s or "")
     s = "".join(c for c in s if not unicodedata.combining(c))
     return re.sub(r"\s+", " ", s).strip().lower()
 
-
 def deaccent(s):
     s = unicodedata.normalize("NFKD", s or "")
     return "".join(c for c in s if not unicodedata.combining(c))
 
-
 def display_name(country):
     return DISPLAY.get(country, country.replace("-", " ").replace("_", " ").title())
-
 
 def git(repo, *args):
     return subprocess.run(["git", "-C", repo, *args], capture_output=True, text=True).stdout
 
-
 def row_sig(line):
     return re.sub(r"\s+", " ", line.strip())
 
-
 def parse_sigs(text):
-    # Signature = the whole row ([SLOT] Name (POS) rating R #NUM): any edit
-    # to the row resets tenure.
     return {row_sig(ln) for ln in text.splitlines() if LINE_RE.match(ln)}
 
-
-# <country>_players.txt pool rows: "Name, POS, rating, bool, CardType, [...], [...]"
 POOL_ROW_RE = re.compile(r"^\s*(?P<name>[^,\[\]]+?),\s*(?P<pos>[A-Z]+),")
 POOL_BOOL_RE = re.compile(r",\s*(?:True|False),")
 
-
 def pool_sig(line):
-    # Drop the boolean field — its changes must not reset tenure.
     return row_sig(POOL_BOOL_RE.sub(",", line, count=1))
-
 
 def parse_pool_sigs(text):
     return {pool_sig(ln) for ln in text.splitlines() if POOL_ROW_RE.match(ln)}
-
 
 def parse_pool_rows(text):
     rows = {}
@@ -126,7 +111,6 @@ def parse_pool_rows(text):
         if m:
             rows[(norm(m["name"]), m["pos"])] = pool_sig(ln)
     return rows
-
 
 def history_versions(repo, rel_path, parser=parse_sigs):
     out = git(repo, "log", "--follow", "--format=C|%H|%cI", "--name-only", "--", rel_path)
@@ -138,7 +122,6 @@ def history_versions(repo, rel_path, parser=parse_sigs):
             commits.append((h, d[:10], ln.strip()))
     return [(d, parser(git(repo, "show", f"{h}:{path}"))) for h, d, path in commits]
 
-
 def compute_since(versions, sig):
     since = None
     for date, sigs in versions:
@@ -148,12 +131,10 @@ def compute_since(versions, sig):
             break
     return since
 
-
 def http_get(url, timeout=30, headers=None):
     req = urllib.request.Request(url, headers=headers or {"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read().decode("utf-8", "replace")
-
 
 def _fotmob_query(term):
     url = f"{FOTMOB_SUGGEST}?term={urllib.parse.quote(term)}&lang=en"
@@ -176,7 +157,6 @@ def _fotmob_query(term):
     chosen = best_player or best_any
     return chosen[0] if chosen else None
 
-
 def fotmob_lookup(name):
     tokens = name.split()
     variants = [name, deaccent(name)]
@@ -194,7 +174,6 @@ def fotmob_lookup(name):
         time.sleep(0.2)
     return None
 
-
 def load_game_data(db_path):
     conn = sqlite3.connect(db_path)
     rows, cards = {}, {}
@@ -207,18 +186,13 @@ def load_game_data(db_path):
     conn.close()
     return rows, cards
 
-
 def find_tm_id(rows, player, override):
     if override:
         return str(override)
     target = norm(player["name"])
-    # (name, pos) is unique in game_data — a player has at most one card per
-    # position — so an exact match cannot pick up another player's card.
     for pid, name, pos, _ in rows:
         if pos == player["pos"] and norm(name) == target:
             return pid
-    # Name spellings can differ between the squad txt and pes.db; fall back to
-    # pos+rating, using the name to break collisions between players.
     cands = [r for r in rows if r[2] == player["pos"] and abs(r[3] - player["rating"]) < 0.01]
     if len(cands) == 1:
         return cands[0][0]
@@ -232,7 +206,6 @@ def find_tm_id(rows, player, override):
             return pid
     return None
 
-
 def resolve_transfermarkt(tm_id):
     with urllib.request.urlopen(
         urllib.request.Request(TM_PROFILE.format(id=tm_id), headers=TM_HEADERS), timeout=30
@@ -240,7 +213,6 @@ def resolve_transfermarkt(tm_id):
         html = r.read().decode("utf-8", "replace")
     m = re.search(rf"portrait/(?:big|header)/{tm_id}-(\d+)\.(jpg|png)", html)
     return TM_IMG.format(id=tm_id, ts=m.group(1), ext=m.group(2)) if m else None
-
 
 def load_cache():
     if not os.path.exists(CACHE_PATH):
@@ -255,13 +227,10 @@ def load_cache():
     return {"fotmob": {k: v for k, v in data.items() if v},
             "transfermarkt": {}, "tm_null": {}, "tm_err": {}}
 
-
 def save_cache(cache):
-    # fotmob ids are eFootball-specific; the Transfermarkt map is shared.
     json.dump({"fotmob": cache["fotmob"]}, open(CACHE_PATH, "w"),
               ensure_ascii=False, indent=1)
     imgcache.save(cache)
-
 
 def _parse_players(text):
     players, section = [], None
@@ -282,7 +251,6 @@ def _parse_players(text):
             })
     return players
 
-
 def _assign_medals(players):
     for p in players:
         p["tenureRank"] = 0
@@ -290,11 +258,10 @@ def _assign_medals(players):
     for i, p in enumerate(ranked[:3]):
         p["tenureRank"] = i + 1
 
-
 def build():
     os.makedirs(OUT_DIR, exist_ok=True)
     cache = load_cache()
-    imgcache.merge_legacy(imgcache.load(), cache)  # share the Transfermarkt map
+    imgcache.merge_legacy(imgcache.load(), cache)
     fm_cache, tm_cache = cache["fotmob"], cache["transfermarkt"]
     overrides = json.load(open(OVERRIDES_PATH)) if os.path.exists(OVERRIDES_PATH) else {}
 
@@ -329,10 +296,6 @@ def build():
                     p["fm_id"] = fm_cache.get(f"{c}|{norm(p['name'])}")
                     p["tm_id"] = find_tm_id(game_data.get(c, []), p, ov.get(norm(p["name"])))
                     p["card_type"] = card_types.get((c, p["tm_id"], p["pos"])) or "Standard"
-                    # Tenure resets on any edit to the player's squad row in
-                    # <c>.txt (slot, name, pos, rating, number) OR to their
-                    # pool row in <c>_players.txt (rating, card type, position
-                    # lists) — the later of the two contiguous-history dates.
                     dates = [compute_since(versions, p["row"])]
                     pool_row = pool_rows.get((norm(p["name"]), p["pos"]))
                     if pool_row:
@@ -378,7 +341,6 @@ def build():
     log(f"Wrote squads.json: {len(out_countries)} nations, {have}/{tot} photos "
         f"({sum(1 for v in tm_cache.values() if v)} via Transfermarkt backfill).")
 
-
 def _resolve_fotmob(all_players, cache):
     fm_cache, tm_cache = cache["fotmob"], cache["transfermarkt"]
     todo = [(c, p) for c, p in all_players
@@ -396,7 +358,6 @@ def _resolve_fotmob(all_players, cache):
             log(f"  ... {i}/{len(todo)}")
         time.sleep(0.15)
     save_cache(cache)
-
 
 def _backfill_transfermarkt(all_players, cache):
     tm_cache = cache["transfermarkt"]
@@ -440,7 +401,6 @@ def _backfill_transfermarkt(all_players, cache):
                 log(f"  fail {name} (#{tid}): {e} — attempt {n}/{TM_ERROR_LIMIT}, will retry")
         time.sleep(1.0)
     save_cache(cache)
-
 
 if __name__ == "__main__":
     build()

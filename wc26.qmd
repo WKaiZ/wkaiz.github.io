@@ -4,9 +4,6 @@ format:
   html:
     page-layout: full
     toc: false
-    # The leaderboard <table> is built client-side by JS; stop Quarto from
-    # trying to parse it out of the raw-HTML block (silences the
-    # "Unable to parse table from raw html block" warning).
     html-table-processing: none
 ---
 

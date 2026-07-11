@@ -21,14 +21,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SHARED_PATH = os.path.join(ROOT, "assets", "tm_img_cache.json")
 
-
 def load():
     """Return the shared cache with all expected keys present."""
     data = json.load(open(SHARED_PATH)) if os.path.exists(SHARED_PATH) else {}
     for k in KEYS:
         data.setdefault(k, {})
     return data
-
 
 def merge_legacy(shared, local):
     """Fold Transfermarkt entries that used to live in a per-project cache into
@@ -38,11 +36,10 @@ def merge_legacy(shared, local):
         for tid, v in (local.get(k) or {}).items():
             if k == "transfermarkt":
                 shared[k].setdefault(tid, v)
-            else:  # keep the highest backoff count seen by either builder
+            else:
                 shared[k][tid] = max(shared[k].get(tid, 0), v)
         local[k] = shared[k]
     return shared
-
 
 def save(shared):
     os.makedirs(os.path.dirname(SHARED_PATH), exist_ok=True)

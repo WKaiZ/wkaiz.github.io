@@ -27,11 +27,13 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
-import imgcache  # shared Transfermarkt photo cache (see scripts/imgcache.py)
+import imgcache
 
 API = "https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}"
 HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/{id}.png"
 FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
+ATHLETE = "https://sports.core.api.espn.com/v2/sports/soccer/athletes/{id}"
+NATION_MISS_LIMIT = 3
 
 PES_DB_URL = "https://raw.githubusercontent.com/WKaiZ/efootball/main/pes.db"
 TM_SEARCH = "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={q}"
@@ -43,6 +45,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 EF_IMG_CACHE = os.path.join(ROOT, "assets", "efootball", "img_cache.json")
 EF_OVERRIDES = os.path.join(ROOT, "assets", "efootball", "overrides.json")
+NATION_CACHE_PATH = os.path.join(ROOT, "assets", "nation_cache.json")
 
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -54,28 +57,23 @@ TM_HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-
 def log(*a):
     print(*a, file=sys.stderr, flush=True)
-
 
 def norm(s):
     s = unicodedata.normalize("NFKD", s or "")
     s = "".join(c for c in s if not unicodedata.combining(c))
     return re.sub(r"\s+", " ", s).strip().lower()
 
-
 def get_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
 
-
 def tm_get(url):
     req = urllib.request.Request(url, headers=TM_HEADERS)
     with urllib.request.urlopen(req, timeout=30) as r:
         return r.read().decode("utf-8", "replace")
-
 
 def pes_name_index():
     """A single unambiguous normalized-name -> Transfermarkt-id map, pooled
@@ -105,18 +103,15 @@ def pes_name_index():
                     name_ids.setdefault(norm(name), set()).add(str(tid))
     return {n: ids.pop() for n, ids in name_ids.items() if len(ids) == 1}
 
-
 def tm_search(name):
     html = tm_get(TM_SEARCH.format(q=urllib.parse.quote_plus(name)))
     m = re.search(r"profil/spieler/(\d+)", html)
     return m.group(1) if m else None
 
-
 def resolve_tm_img(tm_id):
     html = tm_get(TM_PROFILE.format(id=tm_id))
     m = re.search(rf"portrait/(?:big|header)/{tm_id}-(\d+)\.(jpg|png)", html)
     return TM_IMG.format(id=tm_id, ts=m.group(1), ext=m.group(2)) if m else None
-
 
 def completed_events(base, start, end):
     url = base + f"/scoreboard?dates={start}-{end}&limit=400"
@@ -126,7 +121,6 @@ def completed_events(base, start, end):
         if st.get("state") == "post" and st.get("completed"):
             out.append((e["id"], e.get("date", "")[:10], e.get("name", "")))
     return sorted(out, key=lambda x: x[1])
-
 
 def season_started(slug, start, end, grace_days=1):
     """True once the season's first scheduled match kicked off at least
@@ -141,20 +135,14 @@ def season_started(slug, start, end, grace_days=1):
     first = datetime.strptime(dates[0], "%Y-%m-%d").date()
     return (datetime.now(timezone.utc).date() - first).days >= grace_days
 
-
 def stat_map(entry):
     return {s.get("name"): s.get("value") or 0 for s in entry.get("stats", [])}
 
-
 def nominal_minute(ev):
-    # "58'" -> 58, "90'+7'" -> 90 (stoppage time is not credited), "105'" -> 105
     m = re.match(r"(\d+)", str(ev.get("clock", {}).get("displayValue") or ""))
     return int(m.group(1)) if m else None
 
-
 def parse_events(data):
-    # Substitutions: participants[0] comes on, participants[1] goes off.
-    # Red cards end a player's match.
     subs_in, subs_out, reds = {}, {}, {}
     for ev in data.get("keyEvents", []):
         if ev.get("shootout"):
@@ -174,11 +162,10 @@ def parse_events(data):
             reds[pids[0]] = minute
     return subs_in, subs_out, reds
 
-
 def extract_match(base, event_id):
     data = get_json(base + f"/summary?event={event_id}")
     status = data.get("header", {}).get("competitions", [{}])[0].get("status", {})
-    length = 90 if status.get("type", {}).get("detail") == "FT" else 120  # AET / Pens
+    length = 90 if status.get("type", {}).get("detail") == "FT" else 120
     subs_in, subs_out, reds = parse_events(data)
     players = []
     for side in data.get("rosters", []):
@@ -210,6 +197,73 @@ def extract_match(base, event_id):
             })
     return length, players
 
+def _iter_roster(data):
+    for a in data.get("athletes", []):
+        if isinstance(a, dict) and "items" in a:
+            yield from a["items"]
+        else:
+            yield a
+
+def load_nation_cache():
+    data = (json.load(open(NATION_CACHE_PATH))
+            if os.path.exists(NATION_CACHE_PATH) else {})
+    data.setdefault("nations", {})
+    data.setdefault("misses", {})
+    return data
+
+def save_nation_cache(cache):
+    os.makedirs(os.path.dirname(NATION_CACHE_PATH), exist_ok=True)
+    json.dump(cache, open(NATION_CACHE_PATH, "w"), ensure_ascii=False, indent=1)
+
+def player_nations(players, slug, team_ids, season):
+    """Attach p["nation"] / p["nation_flag"] to each player. Nationalities keyed
+    by ESPN athlete id live in one shared cache reused across every competition
+    and daily run, so each player is resolved at most once.
+
+    Two sources: club rosters (one request per club, requested for the board's
+    season since the endpoint otherwise defaults to an empty off-season roster),
+    then a per-athlete lookup for whoever the rosters miss — mostly players who
+    changed clubs mid-season and so aren't in their final club's squad list."""
+    cache = load_nation_cache()
+    nations, misses = cache["nations"], cache["misses"]
+    base = API.format(slug=slug)
+
+    if any(p["id"] not in nations for p in players):
+        for tid in team_ids:
+            try:
+                data = get_json(base + f"/teams/{tid}/roster?season={season}")
+            except Exception as e:
+                log(f"roster {tid} unavailable ({e})")
+                continue
+            for a in _iter_roster(data):
+                aid = str(a.get("id", ""))
+                nation = a.get("citizenship")
+                if aid and nation:
+                    nations[aid] = [nation, (a.get("flag") or {}).get("href")]
+                    misses.pop(aid, None)
+            time.sleep(0.3)
+
+    for p in players:
+        pid = p["id"]
+        if pid in nations or misses.get(pid, 0) >= NATION_MISS_LIMIT:
+            continue
+        try:
+            d = get_json(ATHLETE.format(id=pid))
+            nation = d.get("citizenship")
+        except Exception as e:
+            nation, d = None, {}
+            log(f"  athlete {pid} lookup failed: {e}")
+        if nation:
+            nations[pid] = [nation, (d.get("flag") or {}).get("href")]
+            misses.pop(pid, None)
+        else:
+            misses[pid] = misses.get(pid, 0) + 1
+        time.sleep(0.3)
+
+    save_nation_cache(cache)
+    for p in players:
+        nat = nations.get(p["id"])
+        p["nation"], p["nation_flag"] = (nat[0], nat[1]) if nat else (None, None)
 
 def ef_fotmob_name_index():
     """Reuse the fotmob player photos the eFootball builder resolved, keyed by
@@ -224,14 +278,11 @@ def ef_fotmob_name_index():
             name_ids.setdefault(k.split("|", 1)[-1], set()).add(v)
     return {n: ids.pop() for n, ids in name_ids.items() if len(ids) == 1}
 
-
 def attach_images(players, img_cache_path, tm_limit):
     cache = (json.load(open(img_cache_path)) if os.path.exists(img_cache_path)
              else {})
     for k in ("tm_map", "search_miss"):
         cache.setdefault(k, {})
-    # tid -> photo url and the null/error backoff counters are shared with every
-    # other page, so a photo resolved anywhere is reused here.
     imgcache.merge_legacy(imgcache.load(), cache)
 
     try:
@@ -249,7 +300,6 @@ def attach_images(players, img_cache_path, tm_limit):
     def img_for(tid):
         return cache["transfermarkt"].get(tid)
 
-    # Spend the daily Transfermarkt budget on the most visible players first.
     budget = tm_limit
     prio = sorted(players,
                   key=lambda p: -(p["mins"] + 120 * (p["goals"] + p["assists"])))
@@ -310,14 +360,13 @@ def attach_images(players, img_cache_path, tm_limit):
     for p in players:
         tid = tm_map.get(p["id"])
         tm = img_for(tid) if tid else None
-        fm = None if tm else fotmob_img(p)  # prefer Transfermarkt, then fotmob
+        fm = None if tm else fotmob_img(p)
         p["img"] = tm or fm or HEADSHOT.format(id=p["id"])
         tm_have += 1 if tm else 0
         fm_have += 1 if fm else 0
     log(f"Photos: {tm_have}/{len(players)} via Transfermarkt ({len(tm_map)} id "
         f"mappings), {fm_have} reused from eFootball's fotmob, rest fall back "
         f"to ESPN headshots.")
-
 
 def run(*, slug, start, end, out_name, tm_limit):
     """Build assets/<out_name>/stats.json for the given ESPN competition slug."""
@@ -348,7 +397,6 @@ def run(*, slug, start, end, out_name, tm_limit):
                 "team_id": p.get("team_id", ""), "pos": p["pos"],
                 "apps": 0, "mins": 0, "goals": 0, "assists": 0,
             })
-            # keep the latest name/team/pos spelling (players can transfer)
             t["name"], t["team"] = p["name"], p["team"]
             t["team_id"], t["pos"] = p.get("team_id", ""), p["pos"]
             t["apps"] += p["apps"]
@@ -358,12 +406,14 @@ def run(*, slug, start, end, out_name, tm_limit):
 
     players = sorted(totals.values(),
                      key=lambda p: (-p["apps"], -p["mins"], -p["goals"], p["name"]))
-    # Safety net: never overwrite an existing board with an empty one (e.g. an
-    # off-season run before the new season has any completed matches).
     if not players and os.path.exists(stats_path):
         log(f"No completed matches in window for {out_name}; keeping existing board.")
         return
     attach_images(players, img_cache_path, tm_limit)
+
+    player_nations(players, slug,
+                   sorted({p["team_id"] for p in players if p.get("team_id")}),
+                   int(start[:4]))
 
     out = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
