@@ -1,7 +1,103 @@
 {
- "updated": "2026-07-19 08:59 UTC",
- "matches": 103,
+ "updated": "2026-07-20 09:47 UTC",
+ "matches": 104,
  "players": [
+  {
+   "id": "158626",
+   "name": "Emiliano Martínez",
+   "team": "Argentina",
+   "pos": "G",
+   "apps": 8,
+   "mins": 810,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/111873-1668180824.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
+   "id": "259910",
+   "name": "Marc Cucurella",
+   "team": "Spain",
+   "pos": "LB",
+   "apps": 8,
+   "mins": 750,
+   "goals": 0,
+   "assists": 2,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/284857-1765185117.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "368992",
+   "name": "Pau Cubarsí",
+   "team": "Spain",
+   "pos": "CD-R",
+   "apps": 8,
+   "mins": 750,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/962110-1712779232.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "222375",
+   "name": "Unai Simón",
+   "team": "Spain",
+   "pos": "G",
+   "apps": 8,
+   "mins": 750,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/262396-1709674901.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "249299",
+   "name": "Alexis Mac Allister",
+   "team": "Argentina",
+   "pos": "CM-L",
+   "apps": 8,
+   "mins": 749,
+   "goals": 1,
+   "assists": 1,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/534033-1669835342.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
+   "id": "45843",
+   "name": "Lionel Messi",
+   "team": "Argentina",
+   "pos": "CF-R",
+   "apps": 8,
+   "mins": 740,
+   "goals": 8,
+   "assists": 4,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/28003-1771694720.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
+   "id": "159317",
+   "name": "Aymeric Laporte",
+   "team": "Spain",
+   "pos": "CD-L",
+   "apps": 8,
+   "mins": 729,
+   "goals": 0,
+   "assists": 1,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/176553-1685546335.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "231828",
+   "name": "Rodri",
+   "team": "Spain",
+   "pos": "RM",
+   "apps": 8,
+   "mins": 726,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/357565-1682587890.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
   {
    "id": "189026",
    "name": "Mike Maignan",
@@ -99,6 +195,30 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png"
   },
   {
+   "id": "362150",
+   "name": "Lamine Yamal",
+   "team": "Spain",
+   "pos": "AM-R",
+   "apps": 8,
+   "mins": 615,
+   "goals": 1,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/937958-1773173768.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "229018",
+   "name": "Mikel Oyarzabal",
+   "team": "Spain",
+   "pos": "F",
+   "apps": 8,
+   "mins": 606,
+   "goals": 5,
+   "assists": 1,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/351478-1749415304.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
    "id": "231692",
    "name": "Jules Koundé",
    "team": "France",
@@ -111,6 +231,18 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png"
   },
   {
+   "id": "277206",
+   "name": "Julián Álvarez",
+   "team": "Argentina",
+   "pos": "CF-L",
+   "apps": 8,
+   "mins": 602,
+   "goals": 1,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/576024-1684920938.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
    "id": "229744",
    "name": "Ousmane Dembélé",
    "team": "France",
@@ -121,6 +253,30 @@
    "assists": 2,
    "img": "https://img.a.transfermarkt.technology/portrait/big/288230-1684148641.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png"
+  },
+  {
+   "id": "250465",
+   "name": "Pedri",
+   "team": "Spain",
+   "pos": "SUB",
+   "apps": 8,
+   "mins": 500,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/683840-1744278342.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "227765",
+   "name": "Dani Olmo",
+   "team": "Spain",
+   "pos": "AM",
+   "apps": 8,
+   "mins": 495,
+   "goals": 0,
+   "assists": 2,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/293385-1780663091.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
   },
   {
    "id": "267711",
@@ -159,15 +315,51 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png"
   },
   {
-   "id": "158626",
-   "name": "Emiliano Martínez",
-   "team": "Argentina",
-   "pos": "G",
-   "apps": 7,
-   "mins": 690,
-   "goals": 0,
+   "id": "214596",
+   "name": "Fabián Ruiz",
+   "team": "Spain",
+   "pos": "LM",
+   "apps": 8,
+   "mins": 322,
+   "goals": 1,
    "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/111873-1668180824.jpg",
+   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/214596.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "265869",
+   "name": "Ferran Torres",
+   "team": "Spain",
+   "pos": "SUB",
+   "apps": 8,
+   "mins": 283,
+   "goals": 1,
+   "assists": 1,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/398184-1779789996.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "209581",
+   "name": "Mikel Merino",
+   "team": "Spain",
+   "pos": "SUB",
+   "apps": 8,
+   "mins": 193,
+   "goals": 2,
+   "assists": 0,
+   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/209581.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "285450",
+   "name": "Enzo Fernández",
+   "team": "Argentina",
+   "pos": "CM-R",
+   "apps": 7,
+   "mins": 660,
+   "goals": 2,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/648195-1669894717.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
@@ -195,87 +387,27 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png"
   },
   {
-   "id": "159317",
-   "name": "Aymeric Laporte",
-   "team": "Spain",
+   "id": "233937",
+   "name": "Lisandro Martínez",
+   "team": "Argentina",
    "pos": "CD-L",
    "apps": 7,
-   "mins": 630,
-   "goals": 0,
-   "assists": 1,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/176553-1685546335.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "259910",
-   "name": "Marc Cucurella",
-   "team": "Spain",
-   "pos": "LB",
-   "apps": 7,
-   "mins": 630,
-   "goals": 0,
-   "assists": 2,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/284857-1765185117.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "368992",
-   "name": "Pau Cubarsí",
-   "team": "Spain",
-   "pos": "CD-R",
-   "apps": 7,
-   "mins": 630,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/962110-1712779232.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "222375",
-   "name": "Unai Simón",
-   "team": "Spain",
-   "pos": "G",
-   "apps": 7,
-   "mins": 630,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/262396-1709674901.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "249299",
-   "name": "Alexis Mac Allister",
-   "team": "Argentina",
-   "pos": "CM-L",
-   "apps": 7,
-   "mins": 629,
+   "mins": 626,
    "goals": 1,
    "assists": 1,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/534033-1669835342.jpg",
+   "img": "https://img.a.transfermarkt.technology/portrait/big/480762-1680681507.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
-   "id": "231828",
-   "name": "Rodri",
-   "team": "Spain",
-   "pos": "RM",
-   "apps": 7,
-   "mins": 627,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/357565-1682587890.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "45843",
-   "name": "Lionel Messi",
+   "id": "96970",
+   "name": "Cristian Romero",
    "team": "Argentina",
-   "pos": "F",
+   "pos": "CD-R",
    "apps": 7,
-   "mins": 620,
-   "goals": 8,
-   "assists": 4,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/28003-1771694720.jpg",
+   "mins": 612,
+   "goals": 1,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/355915-1665609429.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
@@ -303,40 +435,64 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png"
   },
   {
-   "id": "229018",
-   "name": "Mikel Oyarzabal",
-   "team": "Spain",
-   "pos": "F",
-   "apps": 7,
-   "mins": 544,
-   "goals": 5,
-   "assists": 1,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/351478-1749415304.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "277206",
-   "name": "Julián Álvarez",
+   "id": "164826",
+   "name": "Nahuel Molina",
    "team": "Argentina",
-   "pos": "LM",
+   "pos": "SUB",
    "apps": 7,
-   "mins": 500,
-   "goals": 1,
+   "mins": 531,
+   "goals": 0,
    "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/576024-1684920938.jpg",
+   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/164826.png",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
-   "id": "362150",
-   "name": "Lamine Yamal",
-   "team": "Spain",
-   "pos": "AM-R",
+   "id": "174466",
+   "name": "Rodrigo De Paul",
+   "team": "Argentina",
+   "pos": "RM",
    "apps": 7,
    "mins": 495,
+   "goals": 0,
+   "assists": 1,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/255901-1771694448.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
+   "id": "297373",
+   "name": "Álex Baena",
+   "team": "Spain",
+   "pos": "AM-L",
+   "apps": 7,
+   "mins": 487,
    "goals": 1,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/937958-1773173768.jpg",
+   "assists": 1,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/548111-1761821030.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "145190",
+   "name": "Nicolás Tagliafico",
+   "team": "Argentina",
+   "pos": "LB",
+   "apps": 7,
+   "mins": 477,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/145190.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
+   "id": "153115",
+   "name": "Leandro Paredes",
+   "team": "Argentina",
+   "pos": "SUB",
+   "apps": 7,
+   "mins": 473,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://images.fotmob.com/image_resources/playerimages/237606.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
    "id": "328464",
@@ -349,30 +505,6 @@
    "assists": 0,
    "img": "https://img.a.transfermarkt.technology/portrait/big/743413-1751367149.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png"
-  },
-  {
-   "id": "250465",
-   "name": "Pedri",
-   "team": "Spain",
-   "pos": "SUB",
-   "apps": 7,
-   "mins": 442,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/683840-1744278342.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "227765",
-   "name": "Dani Olmo",
-   "team": "Spain",
-   "pos": "AM",
-   "apps": 7,
-   "mins": 420,
-   "goals": 0,
-   "assists": 2,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/293385-1780663091.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
   },
   {
    "id": "280555",
@@ -411,40 +543,28 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
-   "id": "214596",
-   "name": "Fabián Ruiz",
-   "team": "Spain",
+   "id": "76017",
+   "name": "Nico González",
+   "team": "Argentina",
    "pos": "LM",
    "apps": 7,
-   "mins": 260,
-   "goals": 1,
-   "assists": 0,
-   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/214596.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
-   "id": "265869",
-   "name": "Ferran Torres",
-   "team": "Spain",
-   "pos": "SUB",
-   "apps": 7,
-   "mins": 225,
+   "mins": 253,
    "goals": 0,
    "assists": 1,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/398184-1779789996.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/76017.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
-   "id": "209581",
-   "name": "Mikel Merino",
-   "team": "Spain",
+   "id": "119289",
+   "name": "Nicolás Otamendi",
+   "team": "Argentina",
    "pos": "SUB",
    "apps": 7,
-   "mins": 148,
-   "goals": 2,
+   "mins": 243,
+   "goals": 0,
    "assists": 0,
-   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/209581.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+   "img": "https://images.fotmob.com/image_resources/playerimages/174321.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
    "id": "298008",
@@ -519,30 +639,6 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png"
   },
   {
-   "id": "233937",
-   "name": "Lisandro Martínez",
-   "team": "Argentina",
-   "pos": "CD-L",
-   "apps": 6,
-   "mins": 582,
-   "goals": 1,
-   "assists": 1,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/480762-1680681507.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
-   "id": "285450",
-   "name": "Enzo Fernández",
-   "team": "Argentina",
-   "pos": "CM-R",
-   "apps": 6,
-   "mins": 570,
-   "goals": 2,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/648195-1669894717.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
    "id": "240233",
    "name": "Achraf Hakimi",
    "team": "Morocco",
@@ -579,6 +675,18 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png"
   },
   {
+   "id": "268533",
+   "name": "Pedro Porro",
+   "team": "Spain",
+   "pos": "RB",
+   "apps": 6,
+   "mins": 564,
+   "goals": 2,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/553875-1730812390.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
    "id": "323807",
    "name": "Neil El Aynaoui",
    "team": "Morocco",
@@ -601,18 +709,6 @@
    "assists": 0,
    "img": "https://img.a.transfermarkt.technology/portrait/big/108390-1717280733.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png"
-  },
-  {
-   "id": "96970",
-   "name": "Cristian Romero",
-   "team": "Argentina",
-   "pos": "CD-R",
-   "apps": 6,
-   "mins": 542,
-   "goals": 1,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/355915-1665609429.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
    "id": "136865",
@@ -687,18 +783,6 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png"
   },
   {
-   "id": "164826",
-   "name": "Nahuel Molina",
-   "team": "Argentina",
-   "pos": "RB",
-   "apps": 6,
-   "mins": 469,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/164826.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
    "id": "336595",
    "name": "Bilal El Khannouss",
    "team": "Morocco",
@@ -771,30 +855,6 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png"
   },
   {
-   "id": "174466",
-   "name": "Rodrigo De Paul",
-   "team": "Argentina",
-   "pos": "SUB",
-   "apps": 6,
-   "mins": 425,
-   "goals": 0,
-   "assists": 1,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/255901-1771694448.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
-   "id": "297373",
-   "name": "Álex Baena",
-   "team": "Spain",
-   "pos": "AM-L",
-   "apps": 6,
-   "mins": 412,
-   "goals": 1,
-   "assists": 1,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/548111-1761821030.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
-  },
-  {
    "id": "275842",
    "name": "Dan Ndoye",
    "team": "Switzerland",
@@ -817,30 +877,6 @@
    "assists": 3,
    "img": "https://img.a.transfermarkt.technology/portrait/big/503733-1761080304.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png"
-  },
-  {
-   "id": "153115",
-   "name": "Leandro Paredes",
-   "team": "Argentina",
-   "pos": "DM",
-   "apps": 6,
-   "mins": 398,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://images.fotmob.com/image_resources/playerimages/237606.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
-   "id": "145190",
-   "name": "Nicolás Tagliafico",
-   "team": "Argentina",
-   "pos": "LB",
-   "apps": 6,
-   "mins": 357,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/145190.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
    "id": "260027",
@@ -951,27 +987,15 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png"
   },
   {
-   "id": "76017",
-   "name": "Nico González",
+   "id": "228262",
+   "name": "Gonzalo Montiel",
    "team": "Argentina",
-   "pos": "SUB",
+   "pos": "RB",
    "apps": 6,
-   "mins": 208,
+   "mins": 189,
    "goals": 0,
    "assists": 1,
-   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/76017.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
-   "id": "119289",
-   "name": "Nicolás Otamendi",
-   "team": "Argentina",
-   "pos": "SUB",
-   "apps": 6,
-   "mins": 167,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://images.fotmob.com/image_resources/playerimages/174321.png",
+   "img": "https://images.fotmob.com/image_resources/playerimages/687008.png",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
@@ -985,6 +1009,18 @@
    "assists": 1,
    "img": "https://img.a.transfermarkt.technology/portrait/big/598506-1723144724.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png"
+  },
+  {
+   "id": "312146",
+   "name": "Nico Williams",
+   "team": "Spain",
+   "pos": "SUB",
+   "apps": 6,
+   "mins": 108,
+   "goals": 0,
+   "assists": 1,
+   "img": "https://images.fotmob.com/image_resources/playerimages/1202110.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
   },
   {
    "id": "257390",
@@ -1297,18 +1333,6 @@
    "assists": 0,
    "img": "https://img.a.transfermarkt.technology/portrait/big/332697-1754245044.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png"
-  },
-  {
-   "id": "268533",
-   "name": "Pedro Porro",
-   "team": "Spain",
-   "pos": "RB",
-   "apps": 5,
-   "mins": 444,
-   "goals": 2,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/553875-1730812390.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
   },
   {
    "id": "272867",
@@ -1887,6 +1911,18 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png"
   },
   {
+   "id": "249663",
+   "name": "Facundo Medina",
+   "team": "Argentina",
+   "pos": "SUB",
+   "apps": 5,
+   "mins": 309,
+   "goals": 0,
+   "assists": 1,
+   "img": "https://images.fotmob.com/image_resources/playerimages/812652.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
    "id": "308908",
    "name": "Fabian Rieder",
    "team": "Switzerland",
@@ -2091,18 +2127,6 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png"
   },
   {
-   "id": "228262",
-   "name": "Gonzalo Montiel",
-   "team": "Argentina",
-   "pos": "SUB",
-   "apps": 5,
-   "mins": 131,
-   "goals": 0,
-   "assists": 1,
-   "img": "https://images.fotmob.com/image_resources/playerimages/687008.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
    "id": "308947",
    "name": "Malo Gusto",
    "team": "France",
@@ -2137,18 +2161,6 @@
    "assists": 0,
    "img": "https://a.espncdn.com/i/headshots/soccer/players/full/378491.png",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png"
-  },
-  {
-   "id": "312146",
-   "name": "Nico Williams",
-   "team": "Spain",
-   "pos": "SUB",
-   "apps": 5,
-   "mins": 63,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://images.fotmob.com/image_resources/playerimages/1202110.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
   },
   {
    "id": "282583",
@@ -3745,18 +3757,6 @@
    "assists": 0,
    "img": "https://images.fotmob.com/image_resources/playerimages/276738.png",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png"
-  },
-  {
-   "id": "249663",
-   "name": "Facundo Medina",
-   "team": "Argentina",
-   "pos": "",
-   "apps": 4,
-   "mins": 259,
-   "goals": 0,
-   "assists": 1,
-   "img": "https://images.fotmob.com/image_resources/playerimages/812652.png",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
    "id": "301321",
@@ -6507,6 +6507,18 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png"
   },
   {
+   "id": "323838",
+   "name": "Giuliano Simeone",
+   "team": "Argentina",
+   "pos": "SUB",
+   "apps": 3,
+   "mins": 193,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/742201-1741120599.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
+  },
+  {
    "id": "253173",
    "name": "Ao Tanaka",
    "team": "Japan",
@@ -8415,18 +8427,6 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png"
   },
   {
-   "id": "323838",
-   "name": "Giuliano Simeone",
-   "team": "Argentina",
-   "pos": "RM",
-   "apps": 2,
-   "mins": 143,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/742201-1741120599.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
    "id": "305629",
    "name": "Ismail Yüksek",
    "team": "Türkiye",
@@ -8785,6 +8785,18 @@
    "assists": 0,
    "img": "https://img.a.transfermarkt.technology/portrait/big/810092-1777411744.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png"
+  },
+  {
+   "id": "233945",
+   "name": "Marcos Senesi",
+   "team": "Argentina",
+   "pos": "SUB",
+   "apps": 2,
+   "mins": 108,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/469781-1738824319.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
   },
   {
    "id": "249548",
@@ -10287,18 +10299,6 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png"
   },
   {
-   "id": "233945",
-   "name": "Marcos Senesi",
-   "team": "Argentina",
-   "pos": "CD-L",
-   "apps": 1,
-   "mins": 90,
-   "goals": 0,
-   "assists": 0,
-   "img": "https://img.a.transfermarkt.technology/portrait/big/469781-1738824319.jpg",
-   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png"
-  },
-  {
    "id": "77072",
    "name": "Mark McKenzie",
    "team": "United States",
@@ -11391,6 +11391,30 @@
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/par.png"
   },
   {
+   "id": "128714",
+   "name": "Eric García",
+   "team": "Spain",
+   "pos": "SUB",
+   "apps": 1,
+   "mins": 21,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://images.fotmob.com/image_resources/playerimages/940573.png",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
+   "id": "287266",
+   "name": "Martín Zubimendi",
+   "team": "Spain",
+   "pos": "SUB",
+   "apps": 1,
+   "mins": 21,
+   "goals": 0,
+   "assists": 0,
+   "img": "https://img.a.transfermarkt.technology/portrait/big/423440-1684149419.jpg",
+   "flag": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png"
+  },
+  {
    "id": "183466",
    "name": "Samú Costa",
    "team": "Portugal",
@@ -11891,7 +11915,7 @@
    "mins": 7,
    "goals": 0,
    "assists": 0,
-   "img": "https://a.espncdn.com/i/headshots/soccer/players/full/235789.png",
+   "img": "https://img.a.transfermarkt.technology/portrait/big/422355-1780050203.jpg",
    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png"
   },
   {
