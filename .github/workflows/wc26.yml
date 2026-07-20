@@ -12,25 +12,45 @@ concurrency:
   group: wc26-update
   cancel-in-progress: false
 
+env:
+  # World Cup ended 2026-07-19; run one final update the day after, then stop.
+  LAST_UPDATE_DATE: "2026-07-20"
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Stop updating after the tournament
+        id: guard
+        run: |
+          today="$(date -u +%F)"
+          if [[ "$today" > "$LAST_UPDATE_DATE" ]]; then
+            echo "Today ($today) is past $LAST_UPDATE_DATE — skipping update."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
 
-      - uses: actions/setup-python@v5
+      - if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@v4
+
+      - if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Build stats.json
+        if: steps.guard.outputs.run == 'true'
         run: python3 scripts/wc26_build.py
 
       - name: Sync data into published docs/
+        if: steps.guard.outputs.run == 'true'
         run: |
           mkdir -p docs/assets/wc26
           cp assets/wc26/stats.json assets/wc26/match_cache.json docs/assets/wc26/
 
       - name: Commit changes if any
+        if: steps.guard.outputs.run == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

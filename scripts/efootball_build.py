@@ -50,26 +50,54 @@ LINE_RE = re.compile(
     r"rating\s+(?P<rating>[\d.]+)\s+#(?P<num>\d+)\s*$"
 )
 
+# Flags for the four UK home nations are subdivision flag sequences that can't
+# be derived from a two-letter code, so they're kept explicit.
 _SCOT = "\U0001F3F4\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F"
 _WALES = "\U0001F3F4\U000E0067\U000E0062\U000E0077\U000E006C\U000E0073\U000E007F"
 _ENG = "\U0001F3F4\U000E0067\U000E0062\U000E0065\U000E006E\U000E0067\U000E007F"
-FLAGS = {
-    "argentina": "🇦🇷", "belgium": "🇧🇪", "brazil": "🇧🇷", "colombia": "🇨🇴",
-    "croatia": "🇭🇷", "england": _ENG, "france": "🇫🇷", "germany": "🇩🇪",
-    "iran": "🇮🇷", "italy": "🇮🇹", "japan": "🇯🇵", "mexico": "🇲🇽", "morocco": "🇲🇦",
-    "netherlands": "🇳🇱", "portugal": "🇵🇹", "senegal": "🇸🇳", "spain": "🇪🇸",
-    "switzerland": "🇨🇭", "uruguay": "🇺🇾", "usa": "🇺🇸",
-    "algeria": "🇩🇿", "australia": "🇦🇺", "austria": "🇦🇹", "cameroon": "🇨🇲",
-    "canada": "🇨🇦", "congo": "🇨🇩", "czechia": "🇨🇿", "denmark": "🇩🇰",
-    "ecuador": "🇪🇨", "egypt": "🇪🇬", "greece": "🇬🇷", "hungary": "🇭🇺",
-    "ivory-coast": "🇨🇮", "korea": "🇰🇷", "nigeria": "🇳🇬", "norway": "🇳🇴",
-    "panama": "🇵🇦", "paraguay": "🇵🇾", "poland": "🇵🇱", "russia": "🇷🇺",
-    "scotland": _SCOT, "serbia": "🇷🇸", "slovakia": "🇸🇰", "sweden": "🇸🇪",
-    "tunisia": "🇹🇳", "turkey": "🇹🇷", "ukraine": "🇺🇦", "uzbekistan": "🇺🇿",
-    "venezuela": "🇻🇪", "wales": _WALES,
+SUBDIVISION_FLAGS = {"england": _ENG, "scotland": _SCOT, "wales": _WALES}
+
+# Map each squad directory id -> ISO 3166-1 alpha-2 code. The flag emoji is
+# generated from the code (see flag_for), so subbing a new nation in/out only
+# needs an entry here — no emoji to hand-pick. Ids match the folder names in
+# the efootball source repo (lowercase, hyphenated).
+ISO2 = {
+    "algeria": "dz", "angola": "ao", "argentina": "ar", "australia": "au",
+    "austria": "at", "azerbaijan": "az", "belgium": "be", "bolivia": "bo",
+    "bosnia": "ba", "brazil": "br", "bulgaria": "bg", "burkina-faso": "bf",
+    "cameroon": "cm", "canada": "ca", "cape-verde": "cv", "chile": "cl",
+    "china": "cn", "colombia": "co", "congo": "cd", "costa-rica": "cr",
+    "croatia": "hr", "czechia": "cz", "denmark": "dk", "dr-congo": "cd",
+    "ecuador": "ec", "egypt": "eg", "el-salvador": "sv", "finland": "fi",
+    "france": "fr", "gabon": "ga", "georgia": "ge", "germany": "de",
+    "ghana": "gh", "greece": "gr", "guatemala": "gt", "guinea": "gn",
+    "honduras": "hn", "hungary": "hu", "iceland": "is", "india": "in",
+    "indonesia": "id", "iran": "ir", "iraq": "iq", "ireland": "ie",
+    "israel": "il", "italy": "it", "ivory-coast": "ci", "jamaica": "jm",
+    "japan": "jp", "jordan": "jo", "kazakhstan": "kz", "kenya": "ke",
+    "korea": "kr", "kosovo": "xk", "kuwait": "kw", "luxembourg": "lu",
+    "mali": "ml", "mexico": "mx", "montenegro": "me", "morocco": "ma",
+    "netherlands": "nl", "new-zealand": "nz", "nigeria": "ng",
+    "north-macedonia": "mk", "norway": "no", "oman": "om", "panama": "pa",
+    "paraguay": "py", "peru": "pe", "poland": "pl", "portugal": "pt",
+    "qatar": "qa", "romania": "ro", "russia": "ru", "saudi-arabia": "sa",
+    "senegal": "sn", "serbia": "rs", "slovakia": "sk", "slovenia": "si",
+    "south-africa": "za", "spain": "es", "sweden": "se", "switzerland": "ch",
+    "thailand": "th", "tunisia": "tn", "turkey": "tr", "uae": "ae",
+    "ukraine": "ua", "uruguay": "uy", "usa": "us", "uzbekistan": "uz",
+    "venezuela": "ve", "vietnam": "vn", "zambia": "zm",
 }
-DISPLAY = {"usa": "USA", "korea": "South Korea", "ivory-coast": "Ivory Coast",
-           "congo": "DR Congo"}
+DISPLAY = {"usa": "USA", "uae": "UAE", "korea": "South Korea",
+           "ivory-coast": "Ivory Coast", "congo": "DR Congo",
+           "dr-congo": "DR Congo", "bosnia": "Bosnia & Herzegovina"}
+
+def flag_for(country):
+    if country in SUBDIVISION_FLAGS:
+        return SUBDIVISION_FLAGS[country]
+    iso = ISO2.get(country)
+    if not iso:
+        return ""
+    return "".join(chr(0x1F1E6 + ord(c) - ord("a")) for c in iso.lower())
 
 def log(*a):
     print(*a, file=sys.stderr, flush=True)
@@ -265,6 +293,13 @@ def build():
     fm_cache, tm_cache = cache["fotmob"], cache["transfermarkt"]
     overrides = json.load(open(OVERRIDES_PATH)) if os.path.exists(OVERRIDES_PATH) else {}
 
+    prev_ids = set()
+    if os.path.exists(SQUADS_PATH):
+        try:
+            prev_ids = {c["id"] for c in json.load(open(SQUADS_PATH)).get("countries", [])}
+        except Exception:
+            pass
+
     tmp = tempfile.mkdtemp(prefix="efb-")
     try:
         log("Cloning efootball repo ...")
@@ -305,14 +340,29 @@ def build():
                     p["since"] = since
                     p["days"] = (today - datetime.fromisoformat(since).date()).days
                 _assign_medals(players)
+                flag = flag_for(c)
+                if not flag:
+                    log(f"  WARNING: no flag mapping for '{c}' — add it to "
+                        f"ISO2 in efootball_build.py (flag will be blank).")
                 out_countries.append({
-                    "id": c, "name": display_name(c), "flag": FLAGS.get(c, ""),
+                    "id": c, "name": display_name(c), "flag": flag,
                     "players": players,
                 })
                 all_players.extend((c, p) for p in players)
                 log(f"  {group_dir}/{c}: {len(players)} players")
 
         out_countries.sort(key=lambda c: c["name"].lower())
+
+        curr_ids = {c["id"] for c in out_countries}
+        if prev_ids:
+            added = sorted(curr_ids - prev_ids)
+            removed = sorted(prev_ids - curr_ids)
+            if added:
+                log(f"Nations added: {', '.join(added)}")
+            if removed:
+                log(f"Nations removed: {', '.join(removed)}")
+            if not added and not removed:
+                log("Nations unchanged.")
 
         _resolve_fotmob(all_players, cache)
         _backfill_transfermarkt(all_players, cache)
