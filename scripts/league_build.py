@@ -434,3 +434,25 @@ def run(*, slug, start, end, out_name, tm_limit):
     }
     json.dump(out, open(stats_path, "w"), ensure_ascii=False, indent=1)
     log(f"Wrote {out_name}/stats.json: {len(players)} players across {len(events)} matches.")
+
+def refresh_images(*, out_name, tm_limit):
+    """Off-season photo backfill. Re-runs only the photo pipeline over the frozen
+    board, so a player still on an ESPN-headshot fallback picks up a Transfermarkt
+    or fotmob portrait once one becomes resolvable — without touching match stats
+    (no ESPN scoreboard/summary calls). Player order, apps, minutes, goals and
+    assists are left exactly as the last in-season build wrote them."""
+    out_dir = os.path.join(ROOT, "assets", out_name)
+    stats_path = os.path.join(out_dir, "stats.json")
+    img_cache_path = os.path.join(out_dir, "img_cache.json")
+    if not os.path.exists(stats_path):
+        log(f"No existing board for {out_name}; nothing to refresh.")
+        return
+    data = json.load(open(stats_path))
+    players = data.get("players", [])
+    if not players:
+        log(f"Empty board for {out_name}; nothing to refresh.")
+        return
+    attach_images(players, img_cache_path, tm_limit)
+    json.dump(data, open(stats_path, "w"), ensure_ascii=False, indent=1)
+    log(f"Refreshed {out_name}/stats.json photos: {len(players)} players "
+        f"(stats frozen).")

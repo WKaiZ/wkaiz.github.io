@@ -366,5 +366,25 @@ def attach_images(players):
         f"mappings), {fm_have} reused from eFootball's fotmob, rest fall back "
         f"to ESPN headshots.")
 
+def refresh_images():
+    """Post-tournament photo backfill: re-run only the photo pipeline over the
+    frozen board so players still on an ESPN-headshot fallback pick up a
+    Transfermarkt/fotmob portrait when one becomes resolvable — leaving match
+    stats untouched (no ESPN scoreboard/summary calls)."""
+    if not os.path.exists(STATS_PATH):
+        log("No existing board; nothing to refresh.")
+        return
+    data = json.load(open(STATS_PATH))
+    players = data.get("players", [])
+    if not players:
+        log("Empty board; nothing to refresh.")
+        return
+    attach_images(players)
+    json.dump(data, open(STATS_PATH, "w"), ensure_ascii=False, indent=1)
+    log(f"Refreshed wc26 photos: {len(players)} players (stats frozen).")
+
 if __name__ == "__main__":
-    build()
+    if "--images-only" in sys.argv:
+        refresh_images()
+    else:
+        build()

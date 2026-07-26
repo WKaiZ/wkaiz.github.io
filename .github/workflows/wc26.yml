@@ -13,47 +13,53 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # World Cup ended 2026-07-19; run one final update the day after, then stop.
+  # World Cup ended 2026-07-19; freeze the stats the day after. Past that date we
+  # keep running daily but only backfill missing player photos, never the stats.
   LAST_UPDATE_DATE: "2026-07-20"
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Stop updating after the tournament
-        id: guard
+      - name: Decide update mode
+        id: mode
         run: |
           today="$(date -u +%F)"
           if [[ "$today" > "$LAST_UPDATE_DATE" ]]; then
-            echo "Today ($today) is past $LAST_UPDATE_DATE — skipping update."
-            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Today ($today) is past $LAST_UPDATE_DATE — stats frozen, backfilling photos only."
+            echo "full=false" >> "$GITHUB_OUTPUT"
           else
-            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "full=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - if: steps.guard.outputs.run == 'true'
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - if: steps.guard.outputs.run == 'true'
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Build stats.json
-        if: steps.guard.outputs.run == 'true'
-        run: python3 scripts/wc26_build.py
+      - name: Build stats (during tournament) or backfill photos (after)
+        run: |
+          if [ "${{ steps.mode.outputs.full }}" = "true" ]; then
+            python3 scripts/wc26_build.py
+          else
+            python3 scripts/wc26_build.py --images-only
+          fi
 
       - name: Sync data into published docs/
-        if: steps.guard.outputs.run == 'true'
         run: |
           mkdir -p docs/assets/wc26
           cp assets/wc26/stats.json assets/wc26/match_cache.json docs/assets/wc26/
 
       - name: Commit changes if any
-        if: steps.guard.outputs.run == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/wc26 assets/tm_img_cache.json docs/assets/wc26
-          git diff --cached --quiet || git commit -m "chore: daily WC26 stats update"
+          if [ "${{ steps.mode.outputs.full }}" = "true" ]; then
+            msg="chore: daily WC26 stats update"
+          else
+            msg="chore: WC26 photo backfill"
+          fi
+          git diff --cached --quiet || git commit -m "$msg"
           git push

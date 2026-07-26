@@ -29,25 +29,32 @@ jobs:
             echo "Season underway — refreshing."
             echo "proceed=true" >> "$GITHUB_OUTPUT"
           else
-            echo "New season hasn't kicked off yet — leaving last season's board in place."
+            echo "Off-season — stats frozen, backfilling missing photos only."
             echo "proceed=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build stats.json
-        if: steps.gate.outputs.proceed == 'true'
-        run: python3 scripts/laliga_build.py
+      - name: Build stats (in-season) or backfill photos (off-season)
+        run: |
+          if [ "${{ steps.gate.outputs.proceed }}" = "true" ]; then
+            python3 scripts/laliga_build.py
+          else
+            python3 scripts/laliga_build.py --images-only
+          fi
 
       - name: Sync data into published docs/
-        if: steps.gate.outputs.proceed == 'true'
         run: |
           mkdir -p docs/assets/laliga
           cp assets/laliga/stats.json assets/laliga/match_cache.json docs/assets/laliga/
 
       - name: Commit changes if any
-        if: steps.gate.outputs.proceed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/laliga assets/tm_img_cache.json assets/nation_cache.json docs/assets/laliga
-          git diff --cached --quiet || git commit -m "chore: daily La Liga stats update"
+          if [ "${{ steps.gate.outputs.proceed }}" = "true" ]; then
+            msg="chore: daily La Liga stats update"
+          else
+            msg="chore: La Liga off-season photo backfill"
+          fi
+          git diff --cached --quiet || git commit -m "$msg"
           git push

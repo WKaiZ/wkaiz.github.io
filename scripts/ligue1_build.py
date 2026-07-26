@@ -26,4 +26,8 @@ if __name__ == "__main__":
         started = league_build.season_started(
             CONFIG["slug"], CONFIG["start"], CONFIG["end"])
         sys.exit(0 if started else 1)
-    league_build.run(**CONFIG)
+    if "--images-only" in sys.argv:
+        league_build.refresh_images(
+            out_name=CONFIG["out_name"], tm_limit=CONFIG["tm_limit"])
+    else:
+        league_build.run(**CONFIG)
