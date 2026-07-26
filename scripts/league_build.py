@@ -110,8 +110,20 @@ def tm_search(name):
 
 def resolve_tm_img(tm_id):
     html = tm_get(TM_PROFILE.format(id=tm_id))
-    m = re.search(rf"portrait/(?:big|header)/{tm_id}-(\d+)\.(jpg|png)", html)
-    return TM_IMG.format(id=tm_id, ts=m.group(1), ext=m.group(2)) if m else None
+    # Accept jpg/jpeg/png in any case, any of big/header/medium, and ignore the
+    # ?lm= cache-buster; normalize to the canonical big/<id>-<ts>.<ext>. Fall back
+    # to Transfermarkt's legacy "s_<id>_..." filename for older (often retired)
+    # players whose portrait isn't keyed by "<id>-<ts>".
+    m = re.search(rf"portrait/(?:big|header|medium)/{tm_id}-(\d+)\.(jpe?g|png)",
+                  html, re.I)
+    if m:
+        return TM_IMG.format(id=tm_id, ts=m.group(1), ext=m.group(2).lower())
+    m = re.search(rf"portrait/(?:big|header|medium)/(s_{tm_id}_[\d_]+)\.(jpe?g|png)",
+                  html, re.I)
+    if m:
+        return ("https://img.a.transfermarkt.technology/portrait/big/"
+                f"{m.group(1)}.{m.group(2).lower()}")
+    return None
 
 def completed_events(base, start, end):
     url = base + f"/scoreboard?dates={start}-{end}&limit=400"
