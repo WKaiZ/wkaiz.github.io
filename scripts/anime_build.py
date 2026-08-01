@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
-"""Refresh 2026 anime catalog metadata from AniList.
+"""Refresh anime catalog metadata from AniList.
 
 Preserves personal fields (status, score, notes) for existing series ids.
 New series are added as plan_to_watch with blank scores.
 
 Series rule: Season 1 / Season 2 / Part N of the same show collapse to one entry.
+
+Usage:
+  python3 scripts/anime_build.py              # replace catalog with 2025+2026
+  python3 scripts/anime_build.py --append 2025  # only add new series from 2025
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -21,7 +26,9 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "assets" / "anime" / "list.json"
-SEASON_YEAR = 2026
+DOCS_OUT = REPO / "docs" / "assets" / "anime" / "list.json"
+WATCHLIST = REPO / "assets" / "anime" / "watchlist-zh.txt"
+SEASON_YEARS = [2025, 2026]
 CHINESE_TITLES_URL = (
     "https://raw.githubusercontent.com/soruly/anilist-chinese/master/anilist-chinese.json"
 )
@@ -300,26 +307,133 @@ def merge_personal(catalog: list[dict], existing: dict[str, dict]) -> list[dict]
     return merged
 
 
+def append_new(catalog: list[dict], existing_items: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Keep existing curated list; append catalog entries not already present."""
+    by_id = {item["id"]: item for item in existing_items if item.get("id")}
+    by_title = {
+        series_key(item.get("title") or ""): item
+        for item in existing_items
+        if item.get("title")
+    }
+    by_anilist = {
+        item["anilist_id"]: item
+        for item in existing_items
+        if item.get("anilist_id") is not None
+    }
+
+    added = []
+    for item in catalog:
+        key = series_key(item.get("title") or "")
+        if (
+            item.get("id") in by_id
+            or (key and key in by_title)
+            or (item.get("anilist_id") in by_anilist)
+        ):
+            continue
+        # Skip titles with no Chinese name — same rule as the watchlist filter.
+        if not (item.get("title_chinese") or "").strip():
+            continue
+        added.append(item)
+
+    combined = existing_items + added
+    combined.sort(key=lambda e: (e.get("title") or "").lower())
+    return combined, added
+
+
+def write_list(series: list[dict], years: list[int]) -> None:
+    payload = {
+        "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "years": years,
+        "series": series,
+    }
+    text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(text, encoding="utf-8")
+    DOCS_OUT.parent.mkdir(parents=True, exist_ok=True)
+    DOCS_OUT.write_text(text, encoding="utf-8")
+
+
+def append_watchlist(chinese_titles: list[str]) -> int:
+    existing: list[str] = []
+    seen: set[str] = set()
+    if WATCHLIST.exists():
+        for line in WATCHLIST.read_text(encoding="utf-8").splitlines():
+            name = line.strip()
+            if not name or name.startswith("#") or name in seen:
+                continue
+            seen.add(name)
+            existing.append(name)
+    added = 0
+    for name in chinese_titles:
+        name = (name or "").strip()
+        if not name or name in seen:
+            continue
+        seen.add(name)
+        existing.append(name)
+        added += 1
+    existing.sort(key=lambda s: s.casefold())
+    WATCHLIST.write_text("\n".join(existing) + "\n", encoding="utf-8")
+    return added
+
+
+def fetch_years(years: list[int]) -> list[dict]:
+    media: list[dict] = []
+    for year in years:
+        print(f"Fetching TV anime for {year} from AniList…")
+        batch = fetch_season_media(year)
+        print(f"  {year}: {len(batch)} seasonal entries")
+        media.extend(batch)
+        time.sleep(0.5)
+    return media
+
+
 def main() -> int:
-    print(f"Fetching TV anime for {SEASON_YEAR} from AniList…")
-    media = fetch_season_media(SEASON_YEAR)
-    print(f"Got {len(media)} seasonal entries")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--append",
+        type=int,
+        metavar="YEAR",
+        help="Only add new series from YEAR onto the existing list",
+    )
+    args = parser.parse_args()
+
+    if args.append is not None:
+        years = [args.append]
+    else:
+        years = list(SEASON_YEARS)
+
+    media = fetch_years(years)
+    print(f"Total seasonal entries: {len(media)}")
     print("Fetching Chinese titles (anilist-chinese)…")
     chinese_map = fetch_chinese_titles()
     print(f"Loaded {len(chinese_map)} Chinese title rows")
     catalog = consolidate(media, chinese_map)
     with_cn = sum(1 for e in catalog if e.get("title_chinese"))
     print(f"Consolidated to {len(catalog)} series ({with_cn} with Chinese titles)")
-    merged = merge_personal(catalog, load_existing())
 
-    payload = {
-        "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "year": SEASON_YEAR,
-        "series": merged,
-    }
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
-    print(f"Wrote {len(merged)} series → {OUT.relative_to(REPO)}")
+    existing = load_existing()
+    if args.append is not None:
+        existing_items = list(existing.values())
+        # Preserve current order-ish via title sort inside append_new
+        if OUT.exists():
+            raw = json.loads(OUT.read_text(encoding="utf-8"))
+            existing_items = raw.get("series") or existing_items
+        series, added = append_new(catalog, existing_items)
+        cn_new = [e["title_chinese"] for e in added if e.get("title_chinese")]
+        wl_added = append_watchlist(cn_new)
+        # Envelope years = previous ∪ new
+        prev_years = []
+        if OUT.exists():
+            prev = json.loads(OUT.read_text(encoding="utf-8"))
+            prev_years = prev.get("years") or ([prev["year"]] if prev.get("year") else [])
+        all_years = sorted(set(prev_years) | set(years))
+        write_list(series, all_years)
+        print(f"Appended {len(added)} new series ({wl_added} Chinese names → watchlist)")
+        print(f"Total {len(series)} series → {OUT.relative_to(REPO)}")
+    else:
+        merged = merge_personal(catalog, existing)
+        write_list(merged, years)
+        print(f"Wrote {len(merged)} series → {OUT.relative_to(REPO)}")
     return 0
 
 

@@ -1,7 +1,24 @@
 {
-  "updated": "2026-08-01T03:06:34Z",
-  "year": 2026,
+  "updated": "2026-08-01T03:36:56Z",
+  "years": [
+    2025,
+    2026
+  ],
   "series": [
+    {
+      "id": "anilist-179979",
+      "anilist_id": 179979,
+      "mal_id": 59466,
+      "title": "Aharen-san wa Hakarenai",
+      "title_native": "阿波連さんははかれない",
+      "title_chinese": "不會拿捏距離的阿波連同學",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx179979-OiIKSkhJRmvo.jpg",
+      "url": "https://anilist.co/anime/179979",
+      "mal_url": "https://myanimelist.net/anime/59466",
+      "status": "on_hold",
+      "score": 7,
+      "notes": ""
+    },
     {
       "id": "anilist-189123",
       "anilist_id": 189123,
@@ -14,6 +31,48 @@
       "mal_url": "https://myanimelist.net/anime/61323",
       "status": "on_hold",
       "score": 7,
+      "notes": ""
+    },
+    {
+      "id": "anilist-175914",
+      "anilist_id": 175914,
+      "mal_id": 58390,
+      "title": "Call of the Night",
+      "title_native": "よふかしのうた",
+      "title_chinese": "徹夜之歌",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx175914-VsbL90WzuqoM.jpg",
+      "url": "https://anilist.co/anime/175914",
+      "mal_url": "https://myanimelist.net/anime/58390",
+      "status": "completed",
+      "score": 7,
+      "notes": ""
+    },
+    {
+      "id": "anilist-153554",
+      "anilist_id": 153554,
+      "mal_id": 52709,
+      "title": "Can a Boy-Girl Friendship Survive?",
+      "title_native": "男女の友情は成立する？（いや、 しないっ!!）",
+      "title_chinese": "男女之間存在純友情嗎？（不，不存在！）",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx153554-hHYe9aV6Gvlv.jpg",
+      "url": "https://anilist.co/anime/153554",
+      "mal_url": "https://myanimelist.net/anime/52709",
+      "status": "on_hold",
+      "score": 7,
+      "notes": ""
+    },
+    {
+      "id": "anilist-180082",
+      "anilist_id": 180082,
+      "mal_id": 59517,
+      "title": "Chitose Is in the Ramune Bottle",
+      "title_native": "千歳くんはラムネ瓶のなか",
+      "title_chinese": "彈珠汽水瓶裡的千歲同學",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180082-IZAlf06G2VVm.png",
+      "url": "https://anilist.co/anime/180082",
+      "mal_url": "https://myanimelist.net/anime/59517",
+      "status": "on_hold",
+      "score": 6,
       "notes": ""
     },
     {
@@ -55,7 +114,7 @@
       "url": "https://anilist.co/anime/199111",
       "mal_url": "https://myanimelist.net/anime/62542",
       "status": "watching",
-      "score": 8,
+      "score": 9,
       "notes": ""
     },
     {
@@ -87,6 +146,34 @@
       "notes": ""
     },
     {
+      "id": "anilist-178462",
+      "anilist_id": 178462,
+      "mal_id": 59135,
+      "title": "I'm Getting Married to a Girl I Hate in My Class",
+      "title_native": "クラスの大嫌いな女子と結婚することになった。",
+      "title_chinese": "我和班上最討厭的女生結婚了。",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx178462-YW6BgSGGP4az.jpg",
+      "url": "https://anilist.co/anime/178462",
+      "mal_url": "https://myanimelist.net/anime/59135",
+      "status": "on_hold",
+      "score": 6,
+      "notes": ""
+    },
+    {
+      "id": "anilist-187940",
+      "anilist_id": 187940,
+      "mal_id": 61209,
+      "title": "Inexpressive Kashiwada and Expressive Oota",
+      "title_native": "顔に出ない柏田さんと顔に出る太田君",
+      "title_chinese": "不動聲色的柏田與喜形於色的太田",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx187940-3ugUhO9h0luh.jpg",
+      "url": "https://anilist.co/anime/187940",
+      "mal_url": "https://myanimelist.net/anime/61209",
+      "status": "plan_to_watch",
+      "score": null,
+      "notes": ""
+    },
+    {
       "id": "anilist-182578",
       "anilist_id": 182578,
       "mal_id": 60055,
@@ -98,6 +185,34 @@
       "mal_url": "https://myanimelist.net/anime/60055",
       "status": "on_hold",
       "score": null,
+      "notes": ""
+    },
+    {
+      "id": "anilist-154768",
+      "anilist_id": 154768,
+      "mal_id": 53065,
+      "title": "My Dress-Up Darling",
+      "title_native": "その着せ替え人形は恋をする",
+      "title_chinese": "戀上換裝娃娃",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx154768-DHHvNd4MjV1p.jpg",
+      "url": "https://anilist.co/anime/154768",
+      "mal_url": "https://myanimelist.net/anime/53065",
+      "status": "on_hold",
+      "score": 9,
+      "notes": ""
+    },
+    {
+      "id": "anilist-129195",
+      "anilist_id": 129195,
+      "mal_id": 47158,
+      "title": "My Friend's Little Sister Has It In for Me!",
+      "title_native": "友達の妹が俺にだけウザい",
+      "title_chinese": "朋友的妹妹只纏著我",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx129195-9BT4wE1QTLj2.jpg",
+      "url": "https://anilist.co/anime/129195",
+      "mal_url": "https://myanimelist.net/anime/47158",
+      "status": "watching",
+      "score": 8,
       "notes": ""
     },
     {
@@ -140,6 +255,20 @@
       "mal_url": "https://myanimelist.net/anime/59393",
       "status": "watching",
       "score": 7,
+      "notes": ""
+    },
+    {
+      "id": "anilist-181182",
+      "anilist_id": 181182,
+      "mal_id": 59828,
+      "title": "SHOSHIMIN: How to become Ordinary",
+      "title_native": "小市民シリーズ",
+      "title_chinese": "小市民系列",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx181182-lnlfAByYD7X6.png",
+      "url": "https://anilist.co/anime/181182",
+      "mal_url": "https://myanimelist.net/anime/59828",
+      "status": "on_hold",
+      "score": 6,
       "notes": ""
     },
     {
@@ -213,6 +342,20 @@
       "notes": ""
     },
     {
+      "id": "anilist-169420",
+      "anilist_id": 169420,
+      "mal_id": 56693,
+      "title": "Watari-kun's ****** Is about to Collapse",
+      "title_native": "渡くんの××が崩壊寸前",
+      "title_chinese": "渡君的xx即將崩壞",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169420-u4wDhHlTfX9P.jpg",
+      "url": "https://anilist.co/anime/169420",
+      "mal_url": "https://myanimelist.net/anime/56693",
+      "status": "on_hold",
+      "score": 6,
+      "notes": ""
+    },
+    {
       "id": "anilist-184951",
       "anilist_id": 184951,
       "mal_id": 60371,
@@ -224,20 +367,6 @@
       "mal_url": "https://myanimelist.net/anime/60371",
       "status": "watching",
       "score": 10,
-      "notes": ""
-    },
-    {
-      "id": "anilist-189565",
-      "anilist_id": 189565,
-      "mal_id": 61359,
-      "title": "You Can't Be In a Rom-Com with Your Childhood Friends!",
-      "title_native": "幼馴染とはラブコメにならない",
-      "title_chinese": "青梅竹馬的戀愛喜劇無法成立",
-      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx189565-OHhadYSsd0Bg.jpg",
-      "url": "https://anilist.co/anime/189565",
-      "mal_url": "https://myanimelist.net/anime/61359",
-      "status": "on_hold",
-      "score": 5,
       "notes": ""
     }
   ]
