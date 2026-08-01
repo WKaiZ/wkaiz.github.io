@@ -1,14 +1,6 @@
 ---
 title: "Wesley Kai Zheng"
-image: "assets/drawing-placeholder.png"
-format:
-  html:
-    include-in-header:
-      - text: |
-          <style>
-            .quarto-about-trestles .about-image { opacity: 0 !important; }
-            .quarto-about-trestles .about-image.is-ready { opacity: 1 !important; }
-          </style>
+image: "assets/avatar.jpg"
 
 about: 
   template: trestles 
@@ -69,21 +61,16 @@ I am also currently a TA for [DATA 102: Data, Inference, and Decisions](https://
 ```{=html}
 <script>
 window.addEventListener("DOMContentLoaded", () => {
-  const img = document.querySelector(".quarto-about-trestles .about-image");
-  if (!img) return;
+  const about = document.querySelector(".quarto-about-trestles .about-entity");
+  if (!about) return;
 
-  // Fixed frame so layout stays stable; contain keeps the full drawing visible.
-  if (!img.parentElement?.classList.contains("home-drawing-frame")) {
-    const frame = document.createElement("div");
-    frame.className = "home-drawing-frame";
-    img.replaceWith(frame);
-    frame.appendChild(img);
-  }
+  const links = about.querySelector(".about-links");
+  if (!links) return;
 
+  const img = document.createElement("img");
+  img.className = "home-rotating-drawing";
   img.alt = "Drawing";
-  img.removeAttribute("style");
-  // Drop the fallback src immediately so it can't flash while we preload.
-  img.removeAttribute("src");
+  links.insertAdjacentElement("afterend", img);
 
   const candidates = [
     "assets/drawing1.jpeg",
@@ -152,21 +139,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const reveal = () => {
     requestAnimationFrame(() => {
-      img.classList.add("is-ready");
+      img.style.opacity = "1";
     });
   };
 
   const preload = new Image();
   preload.onload = () => {
     img.src = picked;
-    if (img.decode) {
-      img.decode().then(reveal).catch(reveal);
-    } else {
-      reveal();
-    }
+    reveal();
   };
   preload.onerror = () => {
-    img.src = picked;
     reveal();
   };
   preload.src = picked;

@@ -26,6 +26,8 @@ website:
             text: eFootball
           - href: spotify.qmd
             text: Playlist
+          # - href: anime.qmd
+          #   text: Anime
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/
