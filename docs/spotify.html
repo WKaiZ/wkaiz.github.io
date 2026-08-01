@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>FIFA World Cup 2026 – Wesley Zheng</title>
+<title>Playlist – Wesley Zheng</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">FIFA World Cup 2026</h1>
+<h1 class="title">Playlist</h1>
 </div>
 
 
@@ -162,158 +162,434 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Player leaderboards for the 2026 FIFA World Cup — minutes played, goals, and assists across every player in the tournament. Stats are aggregated from completed matches and refresh automatically every day.</p>
+<p>My Spotify playlist <a href="https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI">アニメソング</a>. The list refreshes automatically every day.</p>
 <style>
-  .wc-wrap { --wc-card-bg:#fff; --wc-card-br:#e6e8eb; --wc-muted:#6b7280;
-             --wc-accent:#2c6bed; --wc-chip:#eef2f7;
-             --wc-shadow:0 1px 3px rgba(0,0,0,.08); color:#1f2937; margin-top:.5rem; }
-  .wc-meta { color:var(--wc-muted); font-size:.85rem; margin-bottom:1.25rem; }
-  .wc-tabs { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.25rem; }
-  .wc-tab { display:inline-flex; align-items:center; gap:.4rem; cursor:pointer;
-            border:1px solid var(--wc-card-br); background:var(--wc-card-bg);
-            border-radius:999px; padding:.35rem .8rem; font-size:.9rem; line-height:1;
-            transition:all .12s ease; color:inherit; }
-  .wc-tab:hover { border-color:var(--wc-accent); }
-  .wc-tab.active { background:var(--wc-accent); border-color:var(--wc-accent); color:#fff; }
-  .wc-tab .flag { width:1.2em; height:1.2em; object-fit:contain; }
-  .wc-boards { display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start; }
-  .wc-board { background:var(--wc-card-bg); border:1px solid var(--wc-card-br);
-              border-radius:14px; box-shadow:var(--wc-shadow); overflow:hidden; }
-  .wc-board h3 { margin:0; padding:.8rem 1rem; font-size:1rem; font-weight:600;
-                 border-bottom:1px solid var(--wc-card-br); display:flex; align-items:baseline; gap:.5rem; }
-  .wc-board h3 .count { color:var(--wc-muted); font-weight:400; font-size:.8rem; }
-  .wc-table { width:100%; border-collapse:collapse; font-size:.88rem; }
-  .wc-table td { padding:.42rem .6rem; border-top:1px solid #f1f3f6; vertical-align:middle; }
-  .wc-table tr:first-child td { border-top:none; }
-  .wc-table tr:hover td { background:#f8fafc; }
-  .wc-rank { width:2rem; text-align:right; color:var(--wc-muted); font-variant-numeric:tabular-nums; }
-  .wc-headshot { width:30px; height:30px; border-radius:50%; background:#f1f3f6;
-                 object-fit:cover; display:block; }
-  .wc-initials { width:30px; height:30px; border-radius:50%; background:var(--wc-chip);
-                 color:var(--wc-muted); font-size:.66rem; font-weight:600;
-                 display:flex; align-items:center; justify-content:center; }
-  .wc-player { line-height:1.15; }
-  .wc-player .nm { font-weight:600; }
-  .wc-player .tm { color:var(--wc-muted); font-size:.76rem; display:flex; align-items:center; gap:.3rem; }
-  .wc-flag { width:1.15em; height:1.15em; object-fit:contain; border-radius:2px; flex:none; }
-  .wc-val { text-align:right; font-weight:700; font-variant-numeric:tabular-nums; }
-  .wc-sub { text-align:right; color:var(--wc-muted); font-size:.76rem; white-space:nowrap;
-            font-variant-numeric:tabular-nums; }
-  .wc-more { display:block; width:100%; border:none; background:none; cursor:pointer;
-             padding:.6rem; font-size:.82rem; color:var(--wc-accent); font-weight:600;
-             border-top:1px solid var(--wc-card-br); }
-  .wc-more:hover { background:#f8fafc; }
-  .wc-medal { margin-right:.2rem; }
-  .wc-loading, .wc-error { color:var(--wc-muted); padding:2rem 0; }
+  .sp-wrap {
+    --sp-green: #1db954;
+    --sp-green-dark: #169c46;
+    --sp-muted: #6b7280;
+    --sp-line: #e6e8eb;
+    --sp-bg: #f7f8fa;
+    color: #1f2937;
+    margin-top: .5rem;
+  }
+  .sp-hero {
+    display: flex;
+    gap: 1.1rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  .sp-cover {
+    width: 96px;
+    height: 96px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: var(--sp-bg);
+    box-shadow: 0 2px 10px rgba(0,0,0,.12);
+    flex: 0 0 auto;
+  }
+  .sp-hero-text h2 {
+    margin: 0 0 .25rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .sp-meta {
+    color: var(--sp-muted);
+    font-size: .9rem;
+    margin: 0 0 .65rem;
+  }
+  .sp-open {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--sp-green);
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 999px;
+    padding: .38rem .9rem;
+    font-size: .88rem;
+    font-weight: 600;
+    transition: background .12s ease;
+  }
+  .sp-open:hover { background: var(--sp-green-dark); }
+  .sp-player {
+    margin: 0 0 1.1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  }
+  .sp-player iframe,
+  .sp-player > div {
+    display: block;
+    width: 100%;
+    min-height: 152px;
+    border: 0;
+  }
+  .sp-now {
+    color: var(--sp-muted);
+    font-size: .85rem;
+    margin: 0 0 .55rem;
+    min-height: 1.2em;
+  }
+  .sp-now strong { color: #1f2937; font-weight: 600; }
+  .sp-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    align-items: center;
+    margin-bottom: .85rem;
+  }
+  .sp-search,
+  .sp-artist {
+    border: 1px solid var(--sp-line);
+    border-radius: 10px;
+    padding: .5rem .75rem;
+    font-size: .92rem;
+    background: #fff;
+    color: inherit;
+  }
+  .sp-search {
+    flex: 1 1 220px;
+    min-width: 180px;
+  }
+  .sp-artist {
+    flex: 0 1 220px;
+    min-width: 160px;
+    max-width: 280px;
+  }
+  .sp-search:focus,
+  .sp-artist:focus {
+    outline: 2px solid rgba(29,185,84,.35);
+    border-color: var(--sp-green);
+  }
+  .sp-count {
+    color: var(--sp-muted);
+    font-size: .85rem;
+    white-space: nowrap;
+  }
+  .sp-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--sp-line);
+  }
+  .sp-row {
+    display: grid;
+    grid-template-columns: 2.4rem 1fr auto;
+    gap: .75rem;
+    align-items: center;
+    width: 100%;
+    padding: .7rem .15rem;
+    border: 0;
+    border-bottom: 1px solid var(--sp-line);
+    background: transparent;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    transition: background .1s ease;
+  }
+  .sp-row:hover { background: var(--sp-bg); }
+  .sp-row.active {
+    background: rgba(29,185,84,.08);
+  }
+  .sp-row.active .sp-num,
+  .sp-row.active .sp-title {
+    color: var(--sp-green-dark);
+  }
+  .sp-num {
+    color: var(--sp-muted);
+    font-variant-numeric: tabular-nums;
+    font-size: .85rem;
+    text-align: right;
+  }
+  .sp-title {
+    font-weight: 600;
+    font-size: .95rem;
+    line-height: 1.25;
+  }
+  .sp-artists {
+    color: var(--sp-muted);
+    font-size: .82rem;
+    margin-top: .15rem;
+    line-height: 1.3;
+  }
+  .sp-artist-link {
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    border-bottom: 1px dotted transparent;
+  }
+  .sp-artist-link:hover {
+    color: var(--sp-green-dark);
+    border-bottom-color: currentColor;
+  }
+  .sp-dur {
+    color: var(--sp-muted);
+    font-variant-numeric: tabular-nums;
+    font-size: .82rem;
+    white-space: nowrap;
+  }
+  .sp-empty {
+    color: var(--sp-muted);
+    padding: 1.5rem .2rem;
+  }
+  @media (max-width: 520px) {
+    .sp-hero { align-items: flex-start; }
+    .sp-cover { width: 72px; height: 72px; }
+    .sp-row { grid-template-columns: 2rem 1fr auto; gap: .55rem; }
+    .sp-artist { max-width: none; flex: 1 1 100%; }
+  }
 </style>
 
-<div class="wc-wrap">
-  <div class="wc-meta" id="wc-meta"></div>
-  <div class="wc-tabs" id="wc-tabs"></div>
-  <div id="wc-boards"><div class="wc-loading">Loading leaderboards…</div></div>
+<div class="sp-wrap" id="sp-root">
+  <div class="sp-hero">
+    <img class="sp-cover" id="sp-cover" alt="" width="96" height="96">
+    <div class="sp-hero-text">
+      <h2 id="sp-name" class="anchored">Playlist</h2>
+      <p class="sp-meta" id="sp-meta"></p>
+      <a class="sp-open" id="sp-open" href="https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI" target="_blank" rel="noopener">
+        Open in Spotify
+      </a>
+    </div>
+  </div>
+
+  <p class="sp-now" id="sp-now">Select a song to play</p>
+  <div class="sp-player">
+    <div id="sp-embed"></div>
+  </div>
+
+  <div class="sp-toolbar">
+    <input class="sp-search" id="sp-search" type="search" placeholder="Filter by song…" autocomplete="off">
+    <select class="sp-artist" id="sp-artist" aria-label="Filter by artist">
+      <option value="">All artists</option>
+    </select>
+    <span class="sp-count" id="sp-count"></span>
+  </div>
+  <ol class="sp-list" id="sp-list"></ol>
+  <p class="sp-empty" id="sp-empty" hidden="">No matching songs.</p>
 </div>
 
+<script src="https://open.spotify.com/embed/iframe-api/v1" async=""></script>
 <script>
-(function () {
-  const TOP = 25;
-  const MEDAL = { 0:"🥇", 1:"🥈", 2:"🥉" };
+(async () => {
+  const PLAYLIST_URI = "spotify:playlist:2h21jaELSrCkMjjNQAyTVI";
 
-  const esc = (s) => String(s).replace(/[&<>"]/g, c =>
-    ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
-  const initials = (n) => n.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
-
-  const photo = (p) => p.img
-    ? `<img loading="lazy" class="wc-headshot" src="${esc(p.img)}" alt=""
-         onerror="this.outerHTML='<span class=&quot;wc-initials&quot;>${esc(initials(p.name))}</span>'">`
-    : `<span class="wc-initials">${esc(initials(p.name))}</span>`;
-
-  const flag = (url) => url
-    ? `<img class="wc-flag" src="${esc(url)}" alt="" loading="lazy" onerror="this.style.display='none'">`
-    : "";
-
-  function row(p, i, val, sub) {
-    const medal = i < 3 ? `<span class="wc-medal">${MEDAL[i]}</span>` : "";
-    return `<tr>
-      <td class="wc-rank">${i + 1}</td>
-      <td style="width:34px">${photo(p)}</td>
-      <td class="wc-player"><div class="nm">${esc(p.name)}</div>
-        <div class="tm">${flag(p.flag)}${esc(p.team)}</div></td>
-      <td class="wc-val">${medal}${val}</td>
-      <td class="wc-sub">${sub}</td>
-    </tr>`;
-  }
-
-  function board(el, title, unit, players, val, sub) {
-    let shown = TOP;
-    const render = () => {
-      el.innerHTML = `<h3>${title}<span class="count">${players.length} players</span></h3>
-        <table class="wc-table"><tbody>
-          ${players.slice(0, shown).map((p,i) => row(p, i, val(p), sub(p))).join("")}
-        </tbody></table>
-        ${shown < players.length
-          ? `<button class="wc-more">Show all ${players.length}</button>`
-          : players.length > TOP ? `<button class="wc-more">Show top ${TOP}</button>` : ""}`;
-      const btn = el.querySelector(".wc-more");
-      if (btn) btn.addEventListener("click", () => {
-        shown = shown < players.length ? players.length : TOP; render();
-      });
-    };
-    render();
-  }
-
-  const by = (...keys) => (a, b) => {
-    for (const k of keys) { if (a[k] !== b[k]) return b[k] - a[k]; }
-    return a.name.localeCompare(b.name);
+  const fmtDur = (ms) => {
+    const s = Math.round((ms || 0) / 1000);
+    const m = Math.floor(s / 60);
+    const r = s % 60;
+    return `${m}:${String(r).padStart(2, "0")}`;
   };
 
-  function renderBoards(players) {
-    const host = document.getElementById("wc-boards");
-    host.innerHTML = `<div class="wc-boards">
-      <div class="wc-board" id="wc-mins"></div>
-      <div class="wc-board" id="wc-goals"></div>
-      <div class="wc-board" id="wc-assists"></div></div>`;
-    board(document.getElementById("wc-mins"), "Minutes", "mins",
-      [...players].sort(by("mins", "apps", "goals")),
-      p => `${p.mins}′`, p => `${p.apps} apps · ${p.goals}g ${p.assists}a`);
-    board(document.getElementById("wc-goals"), "Goals", "goals",
-      players.filter(p => p.goals > 0).sort(by("goals", "assists")),
-      p => p.goals, p => `${p.assists}a · ${p.apps} apps`);
-    board(document.getElementById("wc-assists"), "Assists", "assists",
-      players.filter(p => p.assists > 0).sort(by("assists", "goals")),
-      p => p.assists, p => `${p.goals}g · ${p.apps} apps`);
-  }
+  const splitArtists = (artists) =>
+    (artists || "")
+      .split(/\s*,\s*/)
+      .map((name) => name.trim())
+      .filter(Boolean);
 
-  function buildTabs(players) {
-    const tabsEl = document.getElementById("wc-tabs");
-    const flags = new Map(players.filter(p => p.team).map(p => [p.team, p.flag]));
-    const teams = [...flags.keys()].sort((a, b) => a.localeCompare(b));
-    const tab = (label, url, team, active) =>
-      `<span class="wc-tab${active ? " active" : ""}" data-team="${esc(team)}">` +
-      `${url ? `<img class="flag" src="${esc(url)}" alt="" onerror="this.style.display='none'">` : ""}${esc(label)}</span>`;
-    tabsEl.innerHTML = tab("All", "", "", true) +
-      teams.map(t => tab(t, flags.get(t), t, false)).join("");
-    tabsEl.addEventListener("click", e => {
-      const t = e.target.closest(".wc-tab"); if (!t) return;
-      tabsEl.querySelectorAll(".wc-tab").forEach(x => x.classList.remove("active"));
-      t.classList.add("active");
-      const team = t.dataset.team;
-      renderBoards(team ? players.filter(p => p.team === team) : players);
-    });
-  }
+  const root = document.getElementById("sp-root");
+  const listEl = document.getElementById("sp-list");
+  const emptyEl = document.getElementById("sp-empty");
+  const countEl = document.getElementById("sp-count");
+  const searchEl = document.getElementById("sp-search");
+  const artistEl = document.getElementById("sp-artist");
+  const embedEl = document.getElementById("sp-embed");
+  const nowEl = document.getElementById("sp-now");
 
-  fetch("assets/wc26/stats.json?v=" + Date.now())
-    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(data => {
-      const ps = data.players || [];
-      document.getElementById("wc-meta").textContent =
-        `Updated ${data.updated || ""} · ${data.matches} matches played · ${ps.length} players`;
-      buildTabs(ps);
-      renderBoards(ps);
-    })
-    .catch(err => {
-      document.getElementById("wc-boards").innerHTML =
-        `<div class="wc-error">Couldn't load stats (${esc(err.message)}).</div>`;
+  let tracks = [];
+  let activeId = null;
+  let embedController = null;
+  let embedReady = null;
+  let pendingPlay = null;
+
+  const ensureEmbed = () => {
+    if (embedController) return Promise.resolve(embedController);
+    if (embedReady) return embedReady;
+    embedReady = new Promise((resolve) => {
+      const start = (IFrameAPI) => {
+        IFrameAPI.createController(
+          embedEl,
+          { uri: PLAYLIST_URI, width: "100%", height: 152 },
+          (controller) => {
+            embedController = controller;
+            resolve(controller);
+            if (pendingPlay) {
+              const track = pendingPlay;
+              pendingPlay = null;
+              markActive(track);
+              startUri(controller, `spotify:track:${track.id}`);
+            }
+          }
+        );
+      };
+      if (window.SpotifyIframeApi) start(window.SpotifyIframeApi);
+      else {
+        const prev = window.onSpotifyIframeApiReady;
+        window.onSpotifyIframeApiReady = (api) => {
+          window.SpotifyIframeApi = api;
+          if (typeof prev === "function") prev(api);
+          start(api);
+        };
+      }
     });
+    return embedReady;
+  };
+
+  const markActive = (track) => {
+    activeId = track.id;
+    nowEl.innerHTML = `Now playing: <strong></strong>`;
+    nowEl.querySelector("strong").textContent =
+      `${track.title}${track.artists ? " — " + track.artists : ""}`;
+    listEl.querySelectorAll(".sp-row").forEach((row) => {
+      row.classList.toggle("active", row.dataset.id === activeId);
+    });
+  };
+
+  const startUri = (controller, uri) => {
+    // Must stay in the same user-gesture turn as the click for autoplay.
+    controller.loadUri(uri);
+    controller.play();
+  };
+
+  const playTrack = (track) => {
+    if (!track?.id) return;
+    markActive(track);
+    const uri = `spotify:track:${track.id}`;
+
+    if (embedController) {
+      startUri(embedController, uri);
+      return;
+    }
+
+    // Controller still booting — queue play for the ready callback.
+    pendingPlay = track;
+    ensureEmbed();
+  };
+
+  // Warm up the embed API as soon as the page is ready.
+  ensureEmbed();
+
+  const populateArtists = () => {
+    const counts = new Map();
+    tracks.forEach((t) => {
+      splitArtists(t.artists).forEach((name) => {
+        counts.set(name, (counts.get(name) || 0) + 1);
+      });
+    });
+    const names = [...counts.keys()].sort((a, b) =>
+      a.localeCompare(b, undefined, { sensitivity: "base" })
+    );
+    artistEl.replaceChildren();
+    const all = document.createElement("option");
+    all.value = "";
+    all.textContent = "All artists";
+    artistEl.appendChild(all);
+    names.forEach((name) => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = `${name} (${counts.get(name)})`;
+      artistEl.appendChild(opt);
+    });
+  };
+
+  const render = () => {
+    const needle = searchEl.value.trim().toLowerCase();
+    const artist = artistEl.value;
+    const filtered = tracks.filter((t) => {
+      const artists = splitArtists(t.artists);
+      const artistOk = !artist || artists.includes(artist);
+      const searchOk =
+        !needle ||
+        t.title.toLowerCase().includes(needle) ||
+        t.artists.toLowerCase().includes(needle);
+      return artistOk && searchOk;
+    });
+
+    listEl.replaceChildren();
+    filtered.forEach((t, i) => {
+      const row = document.createElement("button");
+      row.type = "button";
+      row.className = "sp-row" + (t.id === activeId ? " active" : "");
+      row.dataset.id = t.id;
+      row.innerHTML = `
+        <span class="sp-num">${i + 1}</span>
+        <span>
+          <div class="sp-title"></div>
+          <div class="sp-artists"></div>
+        </span>
+        <span class="sp-dur">${fmtDur(t.duration_ms)}</span>
+      `;
+      row.querySelector(".sp-title").textContent = t.title;
+
+      const artistsEl = row.querySelector(".sp-artists");
+      const names = splitArtists(t.artists);
+      if (!names.length) {
+        artistsEl.textContent = t.artists || "";
+      } else {
+        names.forEach((name, idx) => {
+          if (idx) artistsEl.appendChild(document.createTextNode(", "));
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "sp-artist-link";
+          btn.textContent = name;
+          btn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            artistEl.value = name;
+            render();
+          });
+          artistsEl.appendChild(btn);
+        });
+      }
+
+      row.addEventListener("click", () => playTrack(t));
+      listEl.appendChild(row);
+    });
+
+    emptyEl.hidden = filtered.length > 0;
+    const filtering = Boolean(needle || artist);
+    countEl.textContent = filtering
+      ? `${filtered.length} / ${tracks.length} songs`
+      : `${tracks.length} songs`;
+  };
+
+  try {
+    const res = await fetch("assets/spotify/playlist.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    tracks = (data.tracks || []).filter((t) => !t.local);
+
+    const cover = document.getElementById("sp-cover");
+    if (data.cover) {
+      cover.src = data.cover;
+      cover.alt = data.name || "Playlist cover";
+    } else {
+      cover.hidden = true;
+    }
+    document.getElementById("sp-name").textContent = data.name || "Playlist";
+    const owner = data.owner ? `by ${data.owner}` : "";
+    const updated = data.updated
+      ? ` · updated ${data.updated.slice(0, 10)}`
+      : "";
+    document.getElementById("sp-meta").textContent = `${owner}${updated}`.replace(/^ · /, "");
+    if (data.url) document.getElementById("sp-open").href = data.url;
+
+    populateArtists();
+    render();
+    searchEl.addEventListener("input", render);
+    artistEl.addEventListener("change", render);
+  } catch (err) {
+    root.innerHTML = `<p class="sp-empty">Could not load playlist data.</p>`;
+    console.error(err);
+  }
 })();
 </script>
 

@@ -100,6 +100,10 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<style>
+  .quarto-about-trestles .about-image { opacity: 0 !important; }
+  .quarto-about-trestles .about-image.is-ready { opacity: 1 !important; }
+</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -163,57 +167,18 @@ window.Quarto = {
     <a class="nav-link" href="./courses.html"> 
 <span class="menu-text">Courses</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./efootball.html"> 
-<span class="menu-text">eFootball</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./wc26.html"> 
-<span class="menu-text">FIFA World Cup 2026</span></a>
-  </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-uefa" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">UEFA</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-miscellaneous" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Miscellaneous</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-uefa">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-miscellaneous">    
         <li>
-    <a class="dropdown-item" href="./ucl.html">
- <span class="dropdown-text">UEFA Champions League</span></a>
+    <a class="dropdown-item" href="./efootball.html">
+ <span class="dropdown-text">eFootball</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./europa.html">
- <span class="dropdown-text">UEFA Europa League</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./conference.html">
- <span class="dropdown-text">UEFA Europa Conference League</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-top-5-leagues" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Top 5 Leagues</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-top-5-leagues">    
-        <li>
-    <a class="dropdown-item" href="./epl.html">
- <span class="dropdown-text">Premier League</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./laliga.html">
- <span class="dropdown-text">La Liga</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./seriea.html">
- <span class="dropdown-text">Serie A</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./bundesliga.html">
- <span class="dropdown-text">Bundesliga</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ligue1.html">
- <span class="dropdown-text">Ligue 1</span></a>
+    <a class="dropdown-item" href="./spotify.html">
+ <span class="dropdown-text">Playlist</span></a>
   </li>  
     </ul>
   </li>
@@ -242,7 +207,7 @@ window.Quarto = {
 <!-- main -->
 <div class="quarto-about-trestles">
   <div class="about-entity">
-    <img src="assets/avatar.jpg" class="about-image
+    <img src="assets/drawing-placeholder.png" class="about-image
   rounded " style="width: 80%;">
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -272,19 +237,23 @@ window.Quarto = {
   </div>
   <div class="about-contents"><main class="content" id="quarto-document-content">
 <p>Hello! I am an incoming fifth-year master’s student in EECS at the UC Berkeley, advised by Professor <a href="https://people.eecs.berkeley.edu/~akcheung/">Alvin Cheung</a>.</p>
-<p>My current research interests lie in artificial intelligence and database systems, where I have the privilege of being mentored by, <a href="https://joyemang33.github.io/">Qiuyang Mang</a> and <a href="https://huanzhimao.com/">Hans Mao</a>.</p>
-<p>Previously, I completed my undergraduate studies at UC Berkeley as well, studying computer science, applied mathematics, and data science.</p>
+<p>My current research interests lie in artificial intelligence and database systems. Previously, I completed my undergraduate studies at UC Berkeley as well, studying computer science, applied mathematics, and data science.</p>
 <p>I am also currently a TA for <a href="https://data102.org/">DATA 102: Data, Inference, and Decisions</a>. Previously, I have served as a TA for <a href="https://eecs189.org/">CS 189: Introduction to Machine Learning</a>, <a href="https://www.data8.org/">Data 8: Foundations of Data Science</a>, <a href="https://ds100.org/">Data 100: Principles and Techniques of Data Science</a>, and <a href="https://inst.eecs.berkeley.edu/~cs188/">CS 188: Introduction to Artificial Intelligence</a>.</p>
 <script>
 window.addEventListener("DOMContentLoaded", () => {
-  const about = document.querySelector(".quarto-about-trestles .about-entity");
-  if (!about) return;
-  const links = about.querySelector(".about-links");
-  if (!links) return;
-  const img = document.createElement("img");
-  img.className = "home-rotating-drawing";
+  const img = document.querySelector(".quarto-about-trestles .about-image");
+  if (!img) return;
+  // Fixed frame so layout stays stable; contain keeps the full drawing visible.
+  if (!img.parentElement?.classList.contains("home-drawing-frame")) {
+    const frame = document.createElement("div");
+    frame.className = "home-drawing-frame";
+    img.replaceWith(frame);
+    frame.appendChild(img);
+  }
   img.alt = "Drawing";
-  links.insertAdjacentElement("afterend", img);
+  img.removeAttribute("style");
+  // Drop the fallback src immediately so it can't flash while we preload.
+  img.removeAttribute("src");
   const candidates = [
     "assets/drawing1.jpeg",
     "assets/drawing2.jpeg",
@@ -347,15 +316,20 @@ window.addEventListener("DOMContentLoaded", () => {
   window.localStorage.setItem(key, String(idx));
   const reveal = () => {
     requestAnimationFrame(() => {
-      img.style.opacity = "1";
+      img.classList.add("is-ready");
     });
   };
   const preload = new Image();
   preload.onload = () => {
     img.src = picked;
-    reveal();
+    if (img.decode) {
+      img.decode().then(reveal).catch(reveal);
+    } else {
+      reveal();
+    }
   };
   preload.onerror = () => {
+    img.src = picked;
     reveal();
   };
   preload.src = picked;

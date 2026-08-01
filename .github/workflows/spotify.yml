@@ -1,0 +1,43 @@
+name: Update Spotify playlist
+
+on:
+  schedule:
+    - cron: "50 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: spotify-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build playlist.json
+        run: python3 scripts/spotify_build.py
+
+      - name: Sync data into published docs/
+        run: |
+          mkdir -p docs/assets/spotify
+          cp assets/spotify/playlist.json docs/assets/spotify/
+
+      - name: Commit changes if any
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/spotify docs/assets/spotify
+          if git diff --staged --quiet; then
+            echo "No playlist changes today."
+          else
+            git commit -m "chore: daily Spotify playlist update"
+            git push
+          fi

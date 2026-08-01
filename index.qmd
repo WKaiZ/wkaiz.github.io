@@ -1,6 +1,14 @@
 ---
 title: "Wesley Kai Zheng"
-image: "assets/avatar.jpg"
+image: "assets/drawing-placeholder.png"
+format:
+  html:
+    include-in-header:
+      - text: |
+          <style>
+            .quarto-about-trestles .about-image { opacity: 0 !important; }
+            .quarto-about-trestles .about-image.is-ready { opacity: 1 !important; }
+          </style>
 
 about: 
   template: trestles 
@@ -54,25 +62,28 @@ listing:
 
 Hello! I am an incoming fifth-year master’s student in EECS at the UC Berkeley, advised by Professor [Alvin Cheung](https://people.eecs.berkeley.edu/~akcheung/).
 
-My current research interests lie in artificial intelligence and database systems, where I have the privilege of being mentored by, [Qiuyang Mang](https://joyemang33.github.io/) and [Hans Mao](https://huanzhimao.com/).
-
-Previously, I completed my undergraduate studies at UC Berkeley as well, studying computer science, applied mathematics, and data science.
+My current research interests lie in artificial intelligence and database systems. Previously, I completed my undergraduate studies at UC Berkeley as well, studying computer science, applied mathematics, and data science.
 
 I am also currently a TA for [DATA 102: Data, Inference, and Decisions](https://data102.org/). Previously, I have served as a TA for [CS 189: Introduction to Machine Learning](https://eecs189.org/), [Data 8: Foundations of Data Science](https://www.data8.org/), [Data 100: Principles and Techniques of Data Science](https://ds100.org/), and [CS 188: Introduction to Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/).
 
 ```{=html}
 <script>
 window.addEventListener("DOMContentLoaded", () => {
-  const about = document.querySelector(".quarto-about-trestles .about-entity");
-  if (!about) return;
+  const img = document.querySelector(".quarto-about-trestles .about-image");
+  if (!img) return;
 
-  const links = about.querySelector(".about-links");
-  if (!links) return;
+  // Fixed frame so layout stays stable; contain keeps the full drawing visible.
+  if (!img.parentElement?.classList.contains("home-drawing-frame")) {
+    const frame = document.createElement("div");
+    frame.className = "home-drawing-frame";
+    img.replaceWith(frame);
+    frame.appendChild(img);
+  }
 
-  const img = document.createElement("img");
-  img.className = "home-rotating-drawing";
   img.alt = "Drawing";
-  links.insertAdjacentElement("afterend", img);
+  img.removeAttribute("style");
+  // Drop the fallback src immediately so it can't flash while we preload.
+  img.removeAttribute("src");
 
   const candidates = [
     "assets/drawing1.jpeg",
@@ -141,20 +152,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const reveal = () => {
     requestAnimationFrame(() => {
-      img.style.opacity = "1";
+      img.classList.add("is-ready");
     });
   };
 
   const preload = new Image();
   preload.onload = () => {
     img.src = picked;
-    reveal();
+    if (img.decode) {
+      img.decode().then(reveal).catch(reveal);
+    } else {
+      reveal();
+    }
   };
   preload.onerror = () => {
+    img.src = picked;
     reveal();
   };
   preload.src = picked;
 });
 </script>
 ```
-

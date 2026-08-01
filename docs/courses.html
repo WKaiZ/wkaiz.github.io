@@ -3829,15 +3829,46 @@ vertical-align: -.125em;
 }</script>
 
 
-<style type="text/css">.home-rotating-drawing {
-opacity: 0;
-transition: opacity 180ms ease;
-display: block;
+<style type="text/css">
+.quarto-about-trestles .about-entity > .about-image,
+.home-drawing-frame {
 width: 80%;
-max-width: 520px;
-height: auto;
-margin: 12px auto 0;
+max-width: 420px;
+height: 320px;
+margin: 0 auto 0.5rem;
+box-sizing: border-box;
+background: #f3f4f6;
 border-radius: 12px;
+}
+.quarto-about-trestles .about-entity > .about-image {
+object-fit: contain !important;
+object-position: center !important;
+display: block;
+}
+
+.quarto-about-trestles .about-image {
+opacity: 0;
+}
+.quarto-about-trestles .about-image.is-ready {
+opacity: 1;
+transition: opacity 180ms ease;
+}
+.home-drawing-frame {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.home-drawing-frame .about-image {
+width: 100% !important;
+height: 100% !important;
+max-width: none !important;
+max-height: none !important;
+margin: 0 !important;
+object-fit: contain !important;
+object-position: center !important;
+border-radius: 0;
+background: transparent;
+display: block;
 }
 </style>
 </head>
@@ -3871,57 +3902,18 @@ border-radius: 12px;
     <a class="nav-link active" href="./courses.html" aria-current="page"> 
 <span class="menu-text">Courses</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./efootball.html"> 
-<span class="menu-text">eFootball</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./wc26.html"> 
-<span class="menu-text">FIFA World Cup 2026</span></a>
-  </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-uefa" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">UEFA</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-miscellaneous" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Miscellaneous</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-uefa">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-miscellaneous">    
         <li>
-    <a class="dropdown-item" href="./ucl.html">
- <span class="dropdown-text">UEFA Champions League</span></a>
+    <a class="dropdown-item" href="./efootball.html">
+ <span class="dropdown-text">eFootball</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./europa.html">
- <span class="dropdown-text">UEFA Europa League</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./conference.html">
- <span class="dropdown-text">UEFA Europa Conference League</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-top-5-leagues" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Top 5 Leagues</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-top-5-leagues">    
-        <li>
-    <a class="dropdown-item" href="./epl.html">
- <span class="dropdown-text">Premier League</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./laliga.html">
- <span class="dropdown-text">La Liga</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./seriea.html">
- <span class="dropdown-text">Serie A</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./bundesliga.html">
- <span class="dropdown-text">Bundesliga</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ligue1.html">
- <span class="dropdown-text">Ligue 1</span></a>
+    <a class="dropdown-item" href="./spotify.html">
+ <span class="dropdown-text">Playlist</span></a>
   </li>  
     </ul>
   </li>
