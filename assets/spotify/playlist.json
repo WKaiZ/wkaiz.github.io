@@ -4,9 +4,18 @@
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
   "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-08-01T08:57:23Z",
-  "total": 397,
+  "updated": "2026-08-02T09:01:42Z",
+  "total": 396,
   "tracks": [
+    {
+      "id": "7tGDXCPLpAScEwmqab9YZd",
+      "title": "Walking with you",
+      "artists": "Novelbright",
+      "duration_ms": 223186,
+      "url": "https://open.spotify.com/track/7tGDXCPLpAScEwmqab9YZd",
+      "preview_url": null,
+      "added_at": "2026-08-01T21:48:38Z"
+    },
     {
       "id": "1T7OVSd5A5H0Ic82eu6Mbm",
       "title": "泥中に咲く",
@@ -530,15 +539,6 @@
       "added_at": "2026-01-26T20:39:02Z"
     },
     {
-      "id": "1lMzpNxPIzxImLaPC5StNf",
-      "title": "原来 (你说我们星座不相配)",
-      "artists": "南征北戰",
-      "duration_ms": 210174,
-      "url": "https://open.spotify.com/track/1lMzpNxPIzxImLaPC5StNf",
-      "preview_url": null,
-      "added_at": "2026-01-20T00:13:22Z"
-    },
-    {
       "id": "78DX3tE003w78ZpwurnhjF",
       "title": "STAY WITH YOU",
       "artists": "CHiCO with HoneyWorks",
@@ -708,15 +708,6 @@
       "url": "https://open.spotify.com/track/5WqrUkIkSR3MWcJq18bJ6Y",
       "preview_url": null,
       "added_at": "2025-08-14T16:46:36Z"
-    },
-    {
-      "id": "6oHUMXEKpnXOrs13VoGsuF",
-      "title": "Trap",
-      "artists": "HENRY LAU, KYUHYUN, TAEMIN",
-      "duration_ms": 225386,
-      "url": "https://open.spotify.com/track/6oHUMXEKpnXOrs13VoGsuF",
-      "preview_url": null,
-      "added_at": "2025-08-10T01:47:41Z"
     },
     {
       "id": "2WxsvOCNGnik4d0C0pHNGl",
