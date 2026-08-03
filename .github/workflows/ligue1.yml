@@ -33,6 +33,9 @@ jobs:
             echo "proceed=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Route Transfermarkt requests around the runner IP block
+        uses: ./.github/actions/warp-proxy
+
       - name: Build stats (in-season) or backfill photos (off-season)
         env:
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}

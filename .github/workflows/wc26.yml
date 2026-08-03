@@ -38,6 +38,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Route Transfermarkt requests around the runner IP block
+        uses: ./.github/actions/warp-proxy
+
       - name: Build stats (during tournament) or backfill photos (after)
         env:
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}

@@ -18,12 +18,12 @@ So resolution here is three-way, never two-way:
 for, or the search form we submitted), because a block page can plausibly carry
 a default portrait of its own and must never be mistaken for a null.
 
-Requests walk an ordered list of STRATEGIES: the plain hosts first, then
-r.jina.ai, which fetches from its own machines and so sidesteps a block that is
-keyed to the runner's IP. The first strategy to return a real page wins and is
-remembered for the rest of the process, so a blocked runner pays the failover
-cost once rather than on every player. Run this file directly to print which
-strategies work from the current host:
+Requests walk an ordered list of STRATEGIES: the plain hosts, r.jina.ai, and --
+where the workflow provides one via TM_SOCKS_PROXY -- a Cloudflare WARP proxy,
+which is the only route a GitHub runner has (see SOCKS_PROXY below). The first
+strategy to return a real page wins and is remembered for the rest of the
+process, so a blocked host pays the failover cost once rather than on every
+player. Run this file directly to print which strategies work from here:
 
     python3 scripts/tmfetch.py
 """
@@ -31,6 +31,7 @@ strategies work from the current host:
 import gzip
 import os
 import re
+import subprocess
 import sys
 import urllib.error
 import urllib.parse
@@ -93,6 +94,17 @@ STRATEGIES = [
      "headers": _reader_headers()},
 ]
 
+# A GitHub runner cannot read Transfermarkt at all: every one of its ~30
+# regional domains answers an Actions IP with HTTP 202 and an empty body, and
+# r.jina.ai refuses keyless requests from those IPs (probed 2026-08-03). The
+# only way through is to leave on a different network, so the workflows run
+# Cloudflare WARP as a local SOCKS proxy and point TM_SOCKS_PROXY at it. Where
+# it's set we try it first, since it's the one route known to work there.
+SOCKS_PROXY = os.environ.get("TM_SOCKS_PROXY")
+if SOCKS_PROXY:
+    STRATEGIES.insert(0, {"name": "warp", "host": "https://www.transfermarkt.us",
+                          "headers": BASIC, "proxy": SOCKS_PROXY})
+
 TIMEOUT = int(os.environ.get("TM_TIMEOUT", "30"))
 
 # Index into STRATEGIES of the last one that returned a real page. Sticky for
@@ -110,10 +122,33 @@ def strategy_used():
     return _used
 
 
+def _fetch_via_proxy(url, strategy):
+    """Fetch through a SOCKS proxy. urllib can't speak SOCKS, and curl ships on
+    every runner and on macOS, so shell out rather than add a dependency.
+
+    -L matters: Transfermarkt 301s /x/profil/spieler/<id> to the canonical slug
+    URL, so without it every response is an empty redirect body.
+    """
+    cmd = ["curl", "-sSL", "--max-time", str(TIMEOUT),
+           "--proxy", f"socks5h://{strategy['proxy']}"]
+    for k, v in strategy["headers"].items():
+        cmd += ["-H", f"{k}: {v}"]
+    cmd += ["-w", "\n%{http_code}", url]
+    p = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT + 10)
+    if p.returncode != 0:
+        raise OSError(f"curl exit {p.returncode}: {p.stderr.strip()[:120]}")
+    body, _, code = p.stdout.rpartition("\n")
+    if code != "200":
+        raise urllib.error.HTTPError(url, int(code or 0), "via proxy", None, None)
+    return body
+
+
 def _fetch(strategy, path):
     url = strategy["host"] + path
     if strategy.get("via"):
         url = strategy["via"] + url
+    if strategy.get("proxy"):
+        return _fetch_via_proxy(url, strategy)
     req = urllib.request.Request(url, headers=strategy["headers"])
     with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
         body = r.read()
