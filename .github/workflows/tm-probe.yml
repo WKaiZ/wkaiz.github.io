@@ -22,3 +22,39 @@ jobs:
         env:
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: python3 scripts/tmfetch.py
+
+  probe-warp:
+    # Same two requests, but sent through Cloudflare WARP's local SOCKS proxy
+    # so they leave on a consumer network rather than the runner's Azure IP.
+    # Proxy mode (not a full tunnel) keeps every other request in the workflow
+    # -- ESPN, fotmob, GitHub -- on the normal path.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install and connect Cloudflare WARP in proxy mode
+        run: |
+          curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg \
+            | sudo gpg --yes --dearmor -o /usr/share/keyrings/cloudflare-warp.gpg
+          echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" \
+            | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq cloudflare-warp
+          sudo warp-cli --accept-tos registration new
+          sudo warp-cli --accept-tos mode proxy
+          sudo warp-cli --accept-tos proxy port 40000
+          sudo warp-cli --accept-tos connect
+          for i in $(seq 1 20); do
+            warp-cli --accept-tos status | grep -q Connected && break || sleep 2
+          done
+          warp-cli --accept-tos status
+          echo "egress via WARP:"; curl -sS --socks5-hostname 127.0.0.1:40000 https://api.ipify.org; echo
+          echo "egress direct:  "; curl -sS https://api.ipify.org; echo
+
+      - name: Read a Transfermarkt profile through the proxy
+        run: |
+          for tid in 2219 1146046; do
+            body=$(curl -sS --socks5-hostname 127.0.0.1:40000 \
+              -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" \
+              "https://www.transfermarkt.us/x/profil/spieler/$tid")
+            echo "#$tid: $(printf '%s' "$body" | wc -c) bytes"
+            printf '%s' "$body" | grep -o "portrait/big/$tid-[0-9]*\.[a-zA-Z]*" | head -1
+            printf '%s' "$body" | grep -c "schnellsuche" | sed 's/^/  site-marker hits: /'
+          done
