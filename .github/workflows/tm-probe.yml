@@ -23,6 +23,33 @@ jobs:
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: python3 scripts/tmfetch.py
 
+  probe-tlds:
+    # Transfermarkt runs the same site on ~30 country domains. The main three
+    # sit behind one WAF that refuses runner IPs; this checks whether any
+    # regional edge is configured differently, which would make the fix a host
+    # list rather than a proxy.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sweep every regional domain
+        run: |
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+          for host in transfermarkt.us transfermarkt.com transfermarkt.de \
+                      transfermarkt.co.uk transfermarkt.at transfermarkt.be \
+                      transfermarkt.ch transfermarkt.co transfermarkt.co.id \
+                      transfermarkt.co.in transfermarkt.co.kr transfermarkt.co.za \
+                      transfermarkt.com.ar transfermarkt.com.br transfermarkt.com.tr \
+                      transfermarkt.es transfermarkt.fr transfermarkt.gr \
+                      transfermarkt.it transfermarkt.jp transfermarkt.mx \
+                      transfermarkt.nl transfermarkt.pe transfermarkt.pl \
+                      transfermarkt.pt transfermarkt.ro transfermarkt.world; do
+            out=$(curl -sS -m 25 -w '%{http_code} %{size_download}' -o /tmp/body \
+                  -A "$UA" -H 'Accept-Language: en-US,en;q=0.9' \
+                  "https://www.$host/x/profil/spieler/2219" 2>&1) || out="curl-failed"
+            hit=$(grep -c -o 'portrait/big/2219-[0-9]*' /tmp/body 2>/dev/null || echo 0)
+            verdict=$([ "$hit" -gt 0 ] && echo "PORTRAIT <-- usable" || echo blocked)
+            printf '  %-26s %s  %s\n' "$host" "$out" "$verdict"
+          done
+
   probe-warp:
     # Same two requests, but sent through Cloudflare WARP's local SOCKS proxy
     # so they leave on a consumer network rather than the runner's Azure IP.
@@ -45,13 +72,19 @@ jobs:
             warp-cli --accept-tos status | grep -q Connected && break || sleep 2
           done
           warp-cli --accept-tos status
-          echo "egress via WARP:"; curl -sS --socks5-hostname 127.0.0.1:40000 https://api.ipify.org; echo
-          echo "egress direct:  "; curl -sS https://api.ipify.org; echo
+          echo "waiting for the SOCKS listener on 40000 ..."
+          for i in $(seq 1 30); do
+            (echo > /dev/tcp/127.0.0.1/40000) >/dev/null 2>&1 && { echo "  listening"; break; }
+            sleep 2
+          done
+          ss -lntp | grep 40000 || echo "  nothing bound to 40000"
+          echo -n "egress via WARP: "; curl -sS -m 25 --proxy socks5h://127.0.0.1:40000 https://api.ipify.org || echo "(failed: $?)"; echo
+          echo -n "egress direct:   "; curl -sS -m 25 https://ifconfig.me/ip || echo "(failed: $?)"; echo
 
       - name: Read a Transfermarkt profile through the proxy
         run: |
           for tid in 2219 1146046; do
-            body=$(curl -sS --socks5-hostname 127.0.0.1:40000 \
+            body=$(curl -sS -m 30 --proxy socks5h://127.0.0.1:40000 \
               -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" \
               "https://www.transfermarkt.us/x/profil/spieler/$tid")
             echo "#$tid: $(printf '%s' "$body" | wc -c) bytes"
