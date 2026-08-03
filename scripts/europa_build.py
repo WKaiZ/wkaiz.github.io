@@ -18,7 +18,7 @@ CONFIG = dict(
     start=os.environ.get("EUROPA_START", "20260901"),
     end=os.environ.get("EUROPA_END", "20270701"),
     out_name="europa",
-    tm_limit=int(os.environ.get("EUROPA_TM_LIMIT", "26")),
+    tm_limit=int(os.environ.get("EUROPA_TM_LIMIT") or "26"),
 )
 
 if __name__ == "__main__":

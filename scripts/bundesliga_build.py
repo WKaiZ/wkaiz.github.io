@@ -18,7 +18,7 @@ CONFIG = dict(
     start=os.environ.get("BUNDESLIGA_START", "20260701"),
     end=os.environ.get("BUNDESLIGA_END", "20270630"),
     out_name="bundesliga",
-    tm_limit=int(os.environ.get("BUNDESLIGA_TM_LIMIT", "26")),
+    tm_limit=int(os.environ.get("BUNDESLIGA_TM_LIMIT") or "26"),
 )
 
 if __name__ == "__main__":

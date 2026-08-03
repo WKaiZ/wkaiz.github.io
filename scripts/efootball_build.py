@@ -23,7 +23,7 @@ GROUPS = [("contenders", "contender"), ("challengers", "challenger")]
 FOTMOB_SUGGEST = "https://apigw.fotmob.com/searchapi/suggest"
 FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
 TM_LINK = tmfetch.TM_LINK
-TM_DAILY_LIMIT = int(os.environ.get("EFOOTBALL_TM_LIMIT", "23"))
+TM_DAILY_LIMIT = int(os.environ.get("EFOOTBALL_TM_LIMIT") or "23")
 TM_NULL_LIMIT = int(os.environ.get("EFOOTBALL_TM_NULL_LIMIT", "3"))
 TM_ERROR_LIMIT = int(os.environ.get("EFOOTBALL_TM_ERROR_LIMIT", "5"))
 # Consecutive unreadable-page runs before we conclude Transfermarkt is not

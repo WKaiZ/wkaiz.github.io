@@ -3,7 +3,11 @@ name: Update WC26 leaderboards
 on:
   schedule:
     - cron: "50 6 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      tm_limit:
+        description: "Photos to resolve this run (blank = the daily default). Raise it to drain a backlog in one go."
+        required: false
 
 permissions:
   contents: write
@@ -43,6 +47,7 @@ jobs:
 
       - name: Build stats (during tournament) or backfill photos (after)
         env:
+          WC26_TM_LIMIT: ${{ inputs.tm_limit }}
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: |
           if [ "${{ steps.mode.outputs.full }}" = "true" ]; then

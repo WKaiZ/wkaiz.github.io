@@ -18,7 +18,7 @@ CONFIG = dict(
     start=os.environ.get("EPL_START", "20260701"),
     end=os.environ.get("EPL_END", "20270630"),
     out_name="epl",
-    tm_limit=int(os.environ.get("EPL_TM_LIMIT", "26")),
+    tm_limit=int(os.environ.get("EPL_TM_LIMIT") or "26"),
 )
 
 if __name__ == "__main__":

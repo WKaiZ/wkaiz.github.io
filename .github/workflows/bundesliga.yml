@@ -3,7 +3,11 @@ name: Update Bundesliga leaderboards
 on:
   schedule:
     - cron: "20 10 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      tm_limit:
+        description: "Photos to resolve this run (blank = the daily default). Raise it to drain a backlog in one go."
+        required: false
 
 permissions:
   contents: write
@@ -38,6 +42,7 @@ jobs:
 
       - name: Build stats (in-season) or backfill photos (off-season)
         env:
+          BUNDESLIGA_TM_LIMIT: ${{ inputs.tm_limit }}
           JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: |
           if [ "${{ steps.gate.outputs.proceed }}" = "true" ]; then

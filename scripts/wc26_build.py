@@ -29,7 +29,7 @@ HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/{id}.png"
 FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
 
 PES_DB_URL = "https://raw.githubusercontent.com/WKaiZ/efootball/main/pes.db"
-TM_DAILY_LIMIT = int(os.environ.get("WC26_TM_LIMIT", "26"))
+TM_DAILY_LIMIT = int(os.environ.get("WC26_TM_LIMIT") or "26")
 TM_NULL_LIMIT, TM_ERROR_LIMIT, SEARCH_MISS_LIMIT = 3, 5, 3
 # Consecutive unreadable pages before we accept that Transfermarkt isn't
 # talking to this host today and stop asking.
