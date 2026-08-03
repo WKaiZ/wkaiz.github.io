@@ -39,6 +39,8 @@ jobs:
           python-version: "3.12"
 
       - name: Build stats (during tournament) or backfill photos (after)
+        env:
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: |
           if [ "${{ steps.mode.outputs.full }}" = "true" ]; then
             python3 scripts/wc26_build.py

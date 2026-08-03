@@ -1,0 +1,24 @@
+name: Probe Transfermarkt reachability
+
+# Diagnostic only — never scheduled. Transfermarkt answers GitHub's runner IPs
+# differently than it answers a laptop, so when photo backfill stops finding
+# anything, run this to see which of scripts/tmfetch.py's strategies a runner
+# can actually use. It makes two requests per strategy and writes nothing.
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Report usable fetch strategies
+        env:
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
+        run: python3 scripts/tmfetch.py

@@ -34,6 +34,8 @@ jobs:
           fi
 
       - name: Build stats (in-season) or backfill photos (off-season)
+        env:
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: |
           if [ "${{ steps.gate.outputs.proceed }}" = "true" ]; then
             python3 scripts/seriea_build.py

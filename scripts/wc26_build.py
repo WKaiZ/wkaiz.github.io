@@ -14,11 +14,11 @@ import sys
 import tempfile
 import time
 import unicodedata
-import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
 import imgcache
+import tmfetch
 
 BASE = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world"
 SCOREBOARD = BASE + "/scoreboard?dates={start}-{end}&limit=300"
@@ -29,11 +29,11 @@ HEADSHOT = "https://a.espncdn.com/i/headshots/soccer/players/full/{id}.png"
 FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
 
 PES_DB_URL = "https://raw.githubusercontent.com/WKaiZ/efootball/main/pes.db"
-TM_SEARCH = "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={q}"
-TM_PROFILE = "https://www.transfermarkt.us/x/profil/spieler/{id}"
-TM_IMG = "https://img.a.transfermarkt.technology/portrait/big/{id}-{ts}.{ext}"
 TM_DAILY_LIMIT = int(os.environ.get("WC26_TM_LIMIT", "26"))
 TM_NULL_LIMIT, TM_ERROR_LIMIT, SEARCH_MISS_LIMIT = 3, 5, 3
+# Consecutive unreadable pages before we accept that Transfermarkt isn't
+# talking to this host today and stop asking.
+TM_BLOCK_ABORT = 3
 TEAM2DB = {"Congo DR": "congo", "Ivory Coast": "ivory-coast",
            "South Korea": "korea", "Türkiye": "turkey", "United States": "usa"}
 
@@ -50,11 +50,6 @@ UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
 )
-TM_HEADERS = {
-    "User-Agent": UA,
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
 
 def log(*a):
     print(*a, file=sys.stderr, flush=True)
@@ -68,11 +63,6 @@ def get_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
-
-def tm_get(url):
-    req = urllib.request.Request(url, headers=TM_HEADERS)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8", "replace")
 
 def pes_index():
     """team slug -> {normalized player name -> transfermarkt id} from pes.db."""
@@ -110,28 +100,6 @@ def match_tm_id(idx, player):
         return pool[target]
     hits = {v for k, v in pool.items() if target in k or k in target}
     return hits.pop() if len(hits) == 1 else None
-
-def tm_search(name):
-    html = tm_get(TM_SEARCH.format(q=urllib.parse.quote_plus(name)))
-    m = re.search(r"profil/spieler/(\d+)", html)
-    return m.group(1) if m else None
-
-def resolve_tm_img(tm_id):
-    html = tm_get(TM_PROFILE.format(id=tm_id))
-    # Accept jpg/jpeg/png in any case, any of big/header/medium, and ignore the
-    # ?lm= cache-buster; normalize to the canonical big/<id>-<ts>.<ext>. Fall back
-    # to Transfermarkt's legacy "s_<id>_..." filename for older (often retired)
-    # players whose portrait isn't keyed by "<id>-<ts>".
-    m = re.search(rf"portrait/(?:big|header|medium)/{tm_id}-(\d+)\.(jpe?g|png)",
-                  html, re.I)
-    if m:
-        return TM_IMG.format(id=tm_id, ts=m.group(1), ext=m.group(2).lower())
-    m = re.search(rf"portrait/(?:big|header|medium)/(s_{tm_id}_[\d_]+)\.(jpe?g|png)",
-                  html, re.I)
-    if m:
-        return ("https://img.a.transfermarkt.technology/portrait/big/"
-                f"{m.group(1)}.{m.group(2).lower()}")
-    return None
 
 def completed_events():
     data = get_json(SCOREBOARD.format(start=WC_START, end=WC_END))
@@ -300,8 +268,9 @@ def attach_images(players):
     budget = TM_DAILY_LIMIT
     prio = sorted(players,
                   key=lambda p: -(p["mins"] + 120 * (p["goals"] + p["assists"])))
+    blocked = 0
     for p in prio:
-        if budget <= 0:
+        if budget <= 0 or blocked >= TM_BLOCK_ABORT:
             break
         tid = tm_map.get(p["id"])
         if not tid:
@@ -309,7 +278,14 @@ def attach_images(players):
                 continue
             budget -= 1
             try:
-                tid = tm_search(p["name"])
+                tid = tmfetch.search_player(p["name"])
+            except tmfetch.Blocked as e:
+                # No search page came back, so this is not evidence the player
+                # is absent from Transfermarkt — don't spend a search_miss on it.
+                blocked += 1
+                log(f"  blocked searching {p['name']}: {e}")
+                time.sleep(2.0)
+                continue
             except Exception as e:
                 log(f"  search fail {p['name']}: {e}")
                 tid = None
@@ -329,19 +305,33 @@ def attach_images(players):
             continue
         budget -= 1
         try:
-            url = resolve_tm_img(tid)
-            if url:
-                cache["transfermarkt"][tid] = url
-                cache["tm_null"].pop(tid, None)
-                cache["tm_err"].pop(tid, None)
-                log(f"  img  {p['name']} (#{tid})")
-            else:
-                cache["tm_null"][tid] = cache["tm_null"].get(tid, 0) + 1
-                log(f"  null {p['name']} (#{tid})")
+            url = tmfetch.resolve_portrait(tid)
+        except tmfetch.Blocked as e:
+            # Likewise: an unreadable page says nothing about this id, so leave
+            # its retry counters alone instead of blacklisting a photo that exists.
+            blocked += 1
+            log(f"  blocked {p['name']} (#{tid}): {e}")
+            time.sleep(2.0)
+            continue
         except Exception as e:
             cache["tm_err"][tid] = cache["tm_err"].get(tid, 0) + 1
             log(f"  fail {p['name']} (#{tid}): {e}")
+            time.sleep(1.0)
+            continue
+        if url:
+            cache["transfermarkt"][tid] = url
+            cache["tm_null"].pop(tid, None)
+            cache["tm_err"].pop(tid, None)
+            log(f"  img  {p['name']} (#{tid})")
+        else:
+            cache["tm_null"][tid] = cache["tm_null"].get(tid, 0) + 1
+            log(f"  null {p['name']} (#{tid})")
         time.sleep(1.0)
+    if blocked >= TM_BLOCK_ABORT:
+        log(f"  Transfermarkt unreadable from this host ({blocked} in a row) — "
+            f"stopped early, no retry counters touched.")
+    elif tmfetch.strategy_used():
+        log(f"  Transfermarkt reachable via the '{tmfetch.strategy_used()}' strategy.")
 
     json.dump({"tm_map": cache["tm_map"], "search_miss": cache["search_miss"]},
               open(IMG_CACHE_PATH, "w"), ensure_ascii=False, indent=1)

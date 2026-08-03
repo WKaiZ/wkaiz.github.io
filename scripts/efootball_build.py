@@ -15,18 +15,21 @@ import urllib.request
 from datetime import datetime, timezone
 
 import imgcache
+import tmfetch
 
 REPO_URL = "https://github.com/WKaiZ/efootball"
 GROUPS = [("contenders", "contender"), ("challengers", "challenger")]
 
 FOTMOB_SUGGEST = "https://apigw.fotmob.com/searchapi/suggest"
 FOTMOB_IMG = "https://images.fotmob.com/image_resources/playerimages/{id}.png"
-TM_PROFILE = "https://www.transfermarkt.us/x/profil/spieler/{id}"
-TM_LINK = "https://www.transfermarkt.com/x/profil/spieler/{id}"
-TM_IMG = "https://img.a.transfermarkt.technology/portrait/big/{id}-{ts}.{ext}"
+TM_LINK = tmfetch.TM_LINK
 TM_DAILY_LIMIT = int(os.environ.get("EFOOTBALL_TM_LIMIT", "23"))
 TM_NULL_LIMIT = int(os.environ.get("EFOOTBALL_TM_NULL_LIMIT", "3"))
 TM_ERROR_LIMIT = int(os.environ.get("EFOOTBALL_TM_ERROR_LIMIT", "5"))
+# Consecutive unreadable-page runs before we conclude Transfermarkt is not
+# talking to this host today and stop, rather than spend the daily budget on
+# requests that can only come back unreadable.
+TM_BLOCK_ABORT = int(os.environ.get("EFOOTBALL_TM_BLOCK_ABORT", "3"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -39,11 +42,6 @@ UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
 )
-TM_HEADERS = {
-    "User-Agent": UA,
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-}
 
 LINE_RE = re.compile(
     r"^\s*\[(?P<slot>[A-Z]+)\]\s+(?P<name>.+?)\s+\((?P<pos>[A-Z]+)\)\s+"
@@ -234,26 +232,6 @@ def find_tm_id(rows, player, override):
             return pid
     return None
 
-def resolve_transfermarkt(tm_id):
-    with urllib.request.urlopen(
-        urllib.request.Request(TM_PROFILE.format(id=tm_id), headers=TM_HEADERS), timeout=30
-    ) as r:
-        html = r.read().decode("utf-8", "replace")
-    # Accept jpg/jpeg/png in any case, any of big/header/medium, and ignore the
-    # ?lm= cache-buster; normalize to the canonical big/<id>-<ts>.<ext>. Fall back
-    # to Transfermarkt's legacy "s_<id>_..." filename for older (often retired)
-    # players whose portrait isn't keyed by "<id>-<ts>".
-    m = re.search(rf"portrait/(?:big|header|medium)/{tm_id}-(\d+)\.(jpe?g|png)",
-                  html, re.I)
-    if m:
-        return TM_IMG.format(id=tm_id, ts=m.group(1), ext=m.group(2).lower())
-    m = re.search(rf"portrait/(?:big|header|medium)/(s_{tm_id}_[\d_]+)\.(jpe?g|png)",
-                  html, re.I)
-    if m:
-        return ("https://img.a.transfermarkt.technology/portrait/big/"
-                f"{m.group(1)}.{m.group(2).lower()}")
-    return None
-
 def load_cache():
     if not os.path.exists(CACHE_PATH):
         return {"fotmob": {}, "transfermarkt": {}, "tm_null": {}}
@@ -439,21 +417,22 @@ def _backfill_transfermarkt(all_players, cache):
         log("Transfermarkt: nothing to backfill.")
         return
     log(f"Transfermarkt: resolving {len(queue)} photo(s) (limit {TM_DAILY_LIMIT}).")
+    blocked = 0
     for tid, (days, name) in queue:
         try:
-            url = resolve_transfermarkt(tid)
-            if url:
-                tm_cache[tid] = url
-                tm_null.pop(tid, None)
-                tm_err.pop(tid, None)
-                log(f"  ok   {name} (#{tid}, {days}d)")
-            else:
-                n = tm_null.get(tid, 0) + 1
-                tm_null[tid] = n
-                if n >= TM_NULL_LIMIT:
-                    log(f"  null {name} (#{tid}) — giving up after {n} null result(s)")
-                else:
-                    log(f"  null {name} (#{tid}) — attempt {n}/{TM_NULL_LIMIT}, will retry")
+            url = tmfetch.resolve_portrait(tid)
+        except tmfetch.Blocked as e:
+            # Nothing readable came back, so we learned nothing about this
+            # player: leave the retry counters alone. Recording a null here is
+            # what previously blacklisted hundreds of ids whose photos exist.
+            blocked += 1
+            log(f"  blocked {name} (#{tid}): {e}")
+            if blocked >= TM_BLOCK_ABORT:
+                log(f"Transfermarkt: unreadable from this host ({blocked} in a "
+                    f"row) — stopping early, no retry counters touched.")
+                break
+            time.sleep(2.0)
+            continue
         except Exception as e:
             n = tm_err.get(tid, 0) + 1
             tm_err[tid] = n
@@ -461,7 +440,23 @@ def _backfill_transfermarkt(all_players, cache):
                 log(f"  fail {name} (#{tid}): {e} — giving up after {n} error(s)")
             else:
                 log(f"  fail {name} (#{tid}): {e} — attempt {n}/{TM_ERROR_LIMIT}, will retry")
+            time.sleep(1.0)
+            continue
+        if url:
+            tm_cache[tid] = url
+            tm_null.pop(tid, None)
+            tm_err.pop(tid, None)
+            log(f"  ok   {name} (#{tid}, {days}d)")
+        else:
+            n = tm_null.get(tid, 0) + 1
+            tm_null[tid] = n
+            if n >= TM_NULL_LIMIT:
+                log(f"  null {name} (#{tid}) — giving up after {n} null result(s)")
+            else:
+                log(f"  null {name} (#{tid}) — attempt {n}/{TM_NULL_LIMIT}, will retry")
         time.sleep(1.0)
+    if tmfetch.strategy_used():
+        log(f"Transfermarkt: reachable via the '{tmfetch.strategy_used()}' strategy.")
     save_cache(cache)
 
 if __name__ == "__main__":
