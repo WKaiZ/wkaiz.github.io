@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Shared Transfermarkt fetch layer for the eFootball, WC26 and league builders.
 
-Transfermarkt answers some datacenter IPs -- GitHub Actions runners in
-particular -- with an HTTP 200 page that carries no player markup at all. The
-builders used to read that as "this player has no portrait": they bumped
-tm_null and, after three strikes, blacklisted the id forever. Through late July
-2026 that quietly burned 239 ids whose photos exist and froze the shared cache
-at 909 entries while every daily run reported 23/23 "null".
+Transfermarkt refuses datacenter IPs -- GitHub Actions runners in particular --
+without ever saying so: a 2.4KB challenge page under HTTP 200, or a 202 with no
+body at all, depending on the client. The builders used to read that as "this
+player has no portrait": they bumped tm_null and, after three strikes,
+blacklisted the id forever. Through late July 2026 that quietly burned 239 ids
+whose photos exist and froze the shared cache at 909 entries while every daily
+run reported 23/23 "null".
 
 So resolution here is three-way, never two-way:
 
@@ -52,9 +53,10 @@ BASIC = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-# A fuller, more browser-shaped set. Sec-Fetch-*/Sec-CH-* and a Referer are
-# cheap to send and are exactly what a naive scraper omits, so a host that
-# rejects BASIC may still answer this.
+# A fuller, more browser-shaped set: Sec-Fetch-*/Sec-CH-* and a Referer, the
+# headers a naive scraper omits. It does not get past the runner-IP block --
+# nothing header-shaped does -- but it costs nothing and covers the milder case
+# of a host that only objects to a bare request.
 BROWSER = dict(BASIC, **{
     "Accept-Encoding": "gzip, deflate",
     "Cache-Control": "no-cache",
