@@ -4,9 +4,54 @@
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
   "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-08-03T10:28:09Z",
-  "total": 396,
+  "updated": "2026-08-04T09:31:11Z",
+  "total": 401,
   "tracks": [
+    {
+      "id": "1TOdMVtmF6ChRINRsvw6UA",
+      "title": "Sandalleap",
+      "artists": "MARY",
+      "duration_ms": 232216,
+      "url": "https://open.spotify.com/track/1TOdMVtmF6ChRINRsvw6UA",
+      "preview_url": null,
+      "added_at": "2026-08-04T03:29:33Z"
+    },
+    {
+      "id": "6j335mQjB0XHNTHfjgWM2e",
+      "title": "TAKE ME HOME",
+      "artists": "MAN WITH A MISSION",
+      "duration_ms": 134466,
+      "url": "https://open.spotify.com/track/6j335mQjB0XHNTHfjgWM2e",
+      "preview_url": null,
+      "added_at": "2026-08-04T03:10:37Z"
+    },
+    {
+      "id": "2k8rKfgfoiWjq8d8zSpeAg",
+      "title": "Bright Future",
+      "artists": "tofubeats",
+      "duration_ms": 133058,
+      "url": "https://open.spotify.com/track/2k8rKfgfoiWjq8d8zSpeAg",
+      "preview_url": null,
+      "added_at": "2026-08-03T16:13:08Z"
+    },
+    {
+      "id": "7KHpE8UAkeTXoiSnVAuslb",
+      "title": "ふたりのテーマ",
+      "artists": "tofubeats, Tadashi Machida",
+      "duration_ms": 225999,
+      "url": "https://open.spotify.com/track/7KHpE8UAkeTXoiSnVAuslb",
+      "preview_url": null,
+      "added_at": "2026-08-03T16:13:00Z"
+    },
+    {
+      "id": "5Qq7kURxLlKg0tu2ZTGGvs",
+      "title": "猫じゃらし",
+      "artists": "7co",
+      "duration_ms": 167173,
+      "url": "https://open.spotify.com/track/5Qq7kURxLlKg0tu2ZTGGvs",
+      "preview_url": null,
+      "added_at": "2026-08-03T16:12:55Z"
+    },
     {
       "id": "7tGDXCPLpAScEwmqab9YZd",
       "title": "Walking with you",
