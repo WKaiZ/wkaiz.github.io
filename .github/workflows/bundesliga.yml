@@ -56,15 +56,17 @@ jobs:
           mkdir -p docs/assets/bundesliga
           cp assets/bundesliga/stats.json assets/bundesliga/match_cache.json docs/assets/bundesliga/
 
-      - name: Commit changes if any
+      - name: Stage changes
+        id: stage
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/bundesliga assets/tm_img_cache.json assets/nation_cache.json docs/assets/bundesliga
           if [ "${{ steps.gate.outputs.proceed }}" = "true" ]; then
-            msg="chore: daily Bundesliga stats update"
+            echo "message=chore: daily Bundesliga stats update" >> "$GITHUB_OUTPUT"
           else
-            msg="chore: Bundesliga off-season photo backfill"
+            echo "message=chore: Bundesliga off-season photo backfill" >> "$GITHUB_OUTPUT"
           fi
-          git diff --cached --quiet || git commit -m "$msg"
-          git push
+
+      - name: Commit and push
+        uses: ./.github/actions/commit-push
+        with:
+          message: ${{ steps.stage.outputs.message }}

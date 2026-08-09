@@ -56,15 +56,17 @@ jobs:
           mkdir -p docs/assets/seriea
           cp assets/seriea/stats.json assets/seriea/match_cache.json docs/assets/seriea/
 
-      - name: Commit changes if any
+      - name: Stage changes
+        id: stage
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/seriea assets/tm_img_cache.json assets/nation_cache.json docs/assets/seriea
           if [ "${{ steps.gate.outputs.proceed }}" = "true" ]; then
-            msg="chore: daily Serie A stats update"
+            echo "message=chore: daily Serie A stats update" >> "$GITHUB_OUTPUT"
           else
-            msg="chore: Serie A off-season photo backfill"
+            echo "message=chore: Serie A off-season photo backfill" >> "$GITHUB_OUTPUT"
           fi
-          git diff --cached --quiet || git commit -m "$msg"
-          git push
+
+      - name: Commit and push
+        uses: ./.github/actions/commit-push
+        with:
+          message: ${{ steps.stage.outputs.message }}

@@ -43,14 +43,10 @@ jobs:
              assets/efootball/overrides.json \
              docs/assets/efootball/
 
-      - name: Commit changes if any
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/efootball assets/tm_img_cache.json docs/assets/efootball
-          if git diff --staged --quiet; then
-            echo "No squad changes today."
-          else
-            git commit -m "chore: daily eFootball squad update"
-            git push
-          fi
+      - name: Stage changes
+        run: git add assets/efootball assets/tm_img_cache.json docs/assets/efootball
+
+      - name: Commit and push
+        uses: ./.github/actions/commit-push
+        with:
+          message: chore: daily eFootball squad update

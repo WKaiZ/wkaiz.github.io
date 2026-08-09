@@ -56,15 +56,17 @@ jobs:
           mkdir -p docs/assets/ucl
           cp assets/ucl/stats.json assets/ucl/match_cache.json docs/assets/ucl/
 
-      - name: Commit changes if any
+      - name: Stage changes
+        id: stage
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/ucl assets/tm_img_cache.json assets/nation_cache.json docs/assets/ucl
           if [ "${{ steps.gate.outputs.proceed }}" = "true" ]; then
-            msg="chore: daily UCL stats update"
+            echo "message=chore: daily UCL stats update" >> "$GITHUB_OUTPUT"
           else
-            msg="chore: UCL off-season photo backfill"
+            echo "message=chore: UCL off-season photo backfill" >> "$GITHUB_OUTPUT"
           fi
-          git diff --cached --quiet || git commit -m "$msg"
-          git push
+
+      - name: Commit and push
+        uses: ./.github/actions/commit-push
+        with:
+          message: ${{ steps.stage.outputs.message }}
