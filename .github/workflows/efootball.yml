@@ -49,4 +49,4 @@ jobs:
       - name: Commit and push
         uses: ./.github/actions/commit-push
         with:
-          message: chore: daily eFootball squad update
+          message: "chore: daily eFootball squad update"

@@ -27,12 +27,11 @@ runs:
         git commit -m "${{ inputs.message }}"
 
         resolve_json_conflicts() {
-          local f ok=0
-          mapfile -t conflicted < <(git diff --name-only --diff-filter=U)
-          if [ "${#conflicted[@]}" -eq 0 ]; then
-            return 1
-          fi
-          for f in "${conflicted[@]}"; do
+          local f ok=0 seen=0
+          # Portable across bash 3.2+ (no mapfile).
+          while IFS= read -r f; do
+            [ -n "$f" ] || continue
+            seen=1
             case "$f" in
               *.json)
                 python3 scripts/merge_json_conflict.py "$f"
@@ -43,7 +42,8 @@ runs:
                 ok=1
                 ;;
             esac
-          done
+          done < <(git diff --name-only --diff-filter=U)
+          [ "$seen" -eq 1 ] || return 1
           return "$ok"
         }
 

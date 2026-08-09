@@ -36,4 +36,4 @@ jobs:
       - name: Commit and push
         uses: ./.github/actions/commit-push
         with:
-          message: chore: daily Spotify playlist update
+          message: "chore: daily Spotify playlist update"
