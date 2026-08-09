@@ -251,9 +251,24 @@ def save_cache(cache):
     imgcache.save(cache)
 
 def _parse_players(text):
+    """Parse a squad .txt. Contenders may have First/Second Squad blocks;
+    only First Squad is kept. Files without those headers (challengers)
+    are parsed as a single squad."""
     players, section = [], None
+    # None = no squad headers (legacy / challengers); True = in First Squad
+    in_first = None
     for line in text.splitlines():
         low = line.strip().lower()
+        if low == "first squad":
+            in_first = True
+            section = None
+            continue
+        if low == "second squad":
+            in_first = False
+            section = None
+            continue
+        if in_first is False:
+            continue
         if low.startswith("starters"):
             section = "starters"; continue
         if low.startswith("substitutes"):
