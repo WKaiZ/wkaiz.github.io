@@ -376,9 +376,19 @@ def build():
 
     for c in out_countries:
         for p in c["players"]:
-            fm = FOTMOB_IMG.format(id=p["fm_id"]) if p["fm_id"] else None
             tm = tm_cache.get(p["tm_id"]) if p["tm_id"] else None
-            p["img"] = tm or fm
+            # When we have a Transfermarkt id, never fall back to FotMob: short
+            # legend names (Kaká, Cafu, Dida, …) collide with unrelated active
+            # players there. Prefer a blank/initials tile until the TM portrait
+            # is cached over showing the wrong face.
+            if tm:
+                p["img"] = tm
+            elif p["tm_id"]:
+                p["img"] = None
+            elif p["fm_id"]:
+                p["img"] = FOTMOB_IMG.format(id=p["fm_id"])
+            else:
+                p["img"] = None
             if p["tm_id"]:
                 p["tm"] = TM_LINK.format(id=p["tm_id"])
             p.pop("fm_id", None); p.pop("tm_id", None); p.pop("row", None)
@@ -397,9 +407,11 @@ def build():
         f"({sum(1 for v in tm_cache.values() if v)} via Transfermarkt backfill).")
 
 def _resolve_fotmob(all_players, cache):
-    fm_cache, tm_cache = cache["fotmob"], cache["transfermarkt"]
-    todo = [(c, p) for c, p in all_players
-            if not p["fm_id"] and not (p["tm_id"] and tm_cache.get(p["tm_id"]))]
+    fm_cache = cache["fotmob"]
+    # Only ask FotMob when there is no Transfermarkt id at all. pes.db already
+    # gives every eFootball squad player a TM id; looking up FotMob for those
+    # just burns quota and sticks wrong mononym matches in the cache.
+    todo = [(c, p) for c, p in all_players if not p["fm_id"] and not p["tm_id"]]
     if not todo:
         log("Fotmob: nothing to look up.")
         return
@@ -425,9 +437,11 @@ def _backfill_transfermarkt(all_players, cache):
             continue
         if tm_null.get(tid, 0) >= TM_NULL_LIMIT or tm_err.get(tid, 0) >= TM_ERROR_LIMIT:
             continue
-        if tid not in pending or p["days"] < pending[tid][0]:
+        # Keep the longest-tenured appearance of each id — legends sitting on
+        # wrong/blank tiles for months should drain before day-1 squad churn.
+        if tid not in pending or p["days"] > pending[tid][0]:
             pending[tid] = (p["days"], p["name"])
-    queue = sorted(pending.items(), key=lambda kv: kv[1][0])[:TM_DAILY_LIMIT]
+    queue = sorted(pending.items(), key=lambda kv: -kv[1][0])[:TM_DAILY_LIMIT]
     if not queue:
         log("Transfermarkt: nothing to backfill.")
         return
