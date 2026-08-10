@@ -1499,13 +1499,18 @@
   "3604": "https://img.a.transfermarkt.technology/portrait/big/3604-1414136710.jpg",
   "568693": "https://img.a.transfermarkt.technology/portrait/big/568693-1668163083.jpg",
   "921995": "https://img.a.transfermarkt.technology/portrait/big/921995-1760114291.jpg",
-  "172623": "https://img.a.transfermarkt.technology/portrait/big/172623-1619018314.jpg"
+  "172623": "https://img.a.transfermarkt.technology/portrait/big/172623-1619018314.jpg",
+  "74229": "https://img.a.transfermarkt.technology/portrait/big/74229-1664970397.jpg",
+  "890721": "https://img.a.transfermarkt.technology/portrait/big/890721-1758053582.jpg",
+  "315853": "https://img.a.transfermarkt.technology/portrait/big/315853-1742497518.jpg",
+  "946883": "https://img.a.transfermarkt.technology/portrait/big/946883-1761231757.jpg"
  },
  "tm_null": {
   "1146046": 3,
   "137447": 3,
   "19195": 1,
-  "124063": 1
+  "124063": 1,
+  "668888": 1
  },
  "tm_err": {}
 }
