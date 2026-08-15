@@ -3,10 +3,19 @@
   "name": "アニメソング",
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
-  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-08-14T08:02:42Z",
-  "total": 401,
+  "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
+  "updated": "2026-08-15T07:16:53Z",
+  "total": 402,
   "tracks": [
+    {
+      "id": "6TwfdLbaxTKzQi3AgsZNzx",
+      "title": "Daylight",
+      "artists": "Maroon 5",
+      "duration_ms": 225306,
+      "url": "https://open.spotify.com/track/6TwfdLbaxTKzQi3AgsZNzx",
+      "preview_url": null,
+      "added_at": "2026-08-14T22:00:14Z"
+    },
     {
       "id": "1TOdMVtmF6ChRINRsvw6UA",
       "title": "Sandalleap",
