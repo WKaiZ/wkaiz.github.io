@@ -4,9 +4,18 @@
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
   "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-08-23T07:20:54Z",
-  "total": 402,
+  "updated": "2026-08-25T07:30:59Z",
+  "total": 403,
   "tracks": [
+    {
+      "id": "5U4UIPhCRKehoqeBK8rRKL",
+      "title": "背負う者",
+      "artists": "CHiCO with HoneyWorks",
+      "duration_ms": 205546,
+      "url": "https://open.spotify.com/track/5U4UIPhCRKehoqeBK8rRKL",
+      "preview_url": null,
+      "added_at": "2026-08-23T18:43:29Z"
+    },
     {
       "id": "6TwfdLbaxTKzQi3AgsZNzx",
       "title": "Daylight",
