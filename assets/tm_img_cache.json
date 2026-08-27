@@ -2997,7 +2997,18 @@
   "468192": "https://img.a.transfermarkt.technology/portrait/big/468192-1753789449.png",
   "479638": "https://img.a.transfermarkt.technology/portrait/big/479638-1757513051.jpg",
   "282199": "https://img.a.transfermarkt.technology/portrait/big/282199-1785512108.png",
-  "614800": "https://img.a.transfermarkt.technology/portrait/big/614800-1753789596.png"
+  "614800": "https://img.a.transfermarkt.technology/portrait/big/614800-1753789596.png",
+  "288499": "https://img.a.transfermarkt.technology/portrait/big/288499-1762903409.png",
+  "558473": "https://img.a.transfermarkt.technology/portrait/big/558473-1618928994.jpg",
+  "543501": "https://img.a.transfermarkt.technology/portrait/big/543501-1753350943.jpg",
+  "847257": "https://img.a.transfermarkt.technology/portrait/big/847257-1669379693.png",
+  "325087": "https://img.a.transfermarkt.technology/portrait/big/325087-1755224698.jpg",
+  "264302": "https://img.a.transfermarkt.technology/portrait/big/264302-1645615695.jpg",
+  "243679": "https://img.a.transfermarkt.technology/portrait/big/243679-1736614287.jpg",
+  "125033": "https://img.a.transfermarkt.technology/portrait/big/125033-1704400424.jpg",
+  "808452": "https://img.a.transfermarkt.technology/portrait/big/808452-1697116246.jpg",
+  "667870": "https://img.a.transfermarkt.technology/portrait/big/667870-1764844765.jpg",
+  "486204": "https://img.a.transfermarkt.technology/portrait/big/486204-1773760652.png"
  },
  "tm_null": {
   "1146046": 3,
@@ -3015,7 +3026,9 @@
   "1126355": 3,
   "719999": 1,
   "414956": 2,
-  "1027838": 1
+  "1027838": 1,
+  "957327": 1,
+  "478712": 1
  },
  "tm_err": {}
 }
