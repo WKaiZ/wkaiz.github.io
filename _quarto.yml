@@ -24,14 +24,10 @@ website:
       - courses.qmd
       - href: schedule.qmd
         text: Book A Meeting
-      - text: Miscellaneous
-        menu:
-          - href: efootball.qmd
-            text: eFootball
-          - href: spotify.qmd
-            text: Playlist
-          # - href: anime.qmd
-          #   text: Anime
+      - href: efootball.qmd
+        text: eFootball
+      - href: spotify.qmd
+        text: Playlist
     right:
       - text: Notes
         href: https://wkaiz.github.io/discussions/

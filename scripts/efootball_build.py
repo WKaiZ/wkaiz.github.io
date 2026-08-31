@@ -30,6 +30,8 @@ TM_ERROR_LIMIT = int(os.environ.get("EFOOTBALL_TM_ERROR_LIMIT", "5"))
 # talking to this host today and stop, rather than spend the daily budget on
 # requests that can only come back unreadable.
 TM_BLOCK_ABORT = int(os.environ.get("EFOOTBALL_TM_BLOCK_ABORT", "3"))
+TM_BLOCKED_WAIT = float(os.environ.get("TM_BLOCKED_WAIT", "45"))
+TM_BLOCKED_RETRIES = int(os.environ.get("TM_BLOCKED_RETRIES", "2"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -448,28 +450,37 @@ def _backfill_transfermarkt(all_players, cache):
     log(f"Transfermarkt: resolving {len(queue)} photo(s) (limit {TM_DAILY_LIMIT}).")
     blocked = 0
     for tid, (days, name) in queue:
-        try:
-            url = tmfetch.resolve_portrait(tid)
-        except tmfetch.Blocked as e:
-            # Nothing readable came back, so we learned nothing about this
-            # player: leave the retry counters alone. Recording a null here is
-            # what previously blacklisted hundreds of ids whose photos exist.
-            blocked += 1
-            log(f"  blocked {name} (#{tid}): {e}")
-            if blocked >= TM_BLOCK_ABORT:
-                log(f"Transfermarkt: unreadable from this host ({blocked} in a "
-                    f"row) — stopping early, no retry counters touched.")
+        url = None
+        for attempt in range(TM_BLOCKED_RETRIES + 1):
+            try:
+                url = tmfetch.resolve_portrait(tid)
+                blocked = 0
                 break
-            time.sleep(2.0)
-            continue
-        except Exception as e:
-            n = tm_err.get(tid, 0) + 1
-            tm_err[tid] = n
-            if n >= TM_ERROR_LIMIT:
-                log(f"  fail {name} (#{tid}): {e} — giving up after {n} error(s)")
-            else:
-                log(f"  fail {name} (#{tid}): {e} — attempt {n}/{TM_ERROR_LIMIT}, will retry")
-            time.sleep(1.0)
+            except tmfetch.Blocked as e:
+                if attempt < TM_BLOCKED_RETRIES:
+                    log(f"  blocked {name} (#{tid}) — waiting {TM_BLOCKED_WAIT:.0f}s "
+                        f"(retry {attempt + 1}/{TM_BLOCKED_RETRIES})")
+                    time.sleep(TM_BLOCKED_WAIT)
+                    continue
+                blocked += 1
+                log(f"  blocked {name} (#{tid}): {e}")
+                if blocked >= TM_BLOCK_ABORT:
+                    log(f"Transfermarkt: still blocked after retries ({blocked} in a "
+                        f"row) — stopping early, no retry counters touched.")
+                    break
+                break
+            except Exception as e:
+                n = tm_err.get(tid, 0) + 1
+                tm_err[tid] = n
+                if n >= TM_ERROR_LIMIT:
+                    log(f"  fail {name} (#{tid}): {e} — giving up after {n} error(s)")
+                else:
+                    log(f"  fail {name} (#{tid}): {e} — attempt {n}/{TM_ERROR_LIMIT}, will retry")
+                url = "error"
+                break
+        if blocked >= TM_BLOCK_ABORT:
+            break
+        if url == "error":
             continue
         if url:
             tm_cache[tid] = url
@@ -483,7 +494,6 @@ def _backfill_transfermarkt(all_players, cache):
                 log(f"  null {name} (#{tid}) — giving up after {n} null result(s)")
             else:
                 log(f"  null {name} (#{tid}) — attempt {n}/{TM_NULL_LIMIT}, will retry")
-        time.sleep(1.0)
     if tmfetch.strategy_used():
         log(f"Transfermarkt: reachable via the '{tmfetch.strategy_used()}' strategy.")
     save_cache(cache)

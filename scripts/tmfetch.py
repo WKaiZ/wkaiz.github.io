@@ -34,6 +34,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -108,6 +109,10 @@ if SOCKS_PROXY:
                           "headers": BASIC, "proxy": SOCKS_PROXY})
 
 TIMEOUT = int(os.environ.get("TM_TIMEOUT", "30"))
+# Transfermarkt starts returning HTTP 403 after bursts; spacing requests avoids
+# a temporary IP ban that looks like "every strategy failed".
+_MIN_INTERVAL = float(os.environ.get("TM_MIN_INTERVAL", "2.0"))
+_last_fetch = 0.0
 
 # Index into STRATEGIES of the last one that returned a real page. Sticky for
 # the life of the process so we don't re-pay a failed strategy per player.
@@ -122,6 +127,14 @@ class Blocked(Exception):
 def strategy_used():
     """Name of the strategy that last answered, for the builders' logs."""
     return _used
+
+
+def _throttle():
+    global _last_fetch
+    wait = _MIN_INTERVAL - (time.monotonic() - _last_fetch)
+    if wait > 0:
+        time.sleep(wait)
+    _last_fetch = time.monotonic()
 
 
 def _fetch_via_proxy(url, strategy):
@@ -146,6 +159,7 @@ def _fetch_via_proxy(url, strategy):
 
 
 def _fetch(strategy, path):
+    _throttle()
     url = strategy["host"] + path
     if strategy.get("via"):
         url = strategy["via"] + url
