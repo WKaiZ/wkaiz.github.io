@@ -18,8 +18,12 @@ website:
       - href: index.qmd
         text: Home
       - slides.qmd
+      - href: resume.qmd
+        text: Resume
       # - publications.qmd
       - courses.qmd
+      - href: schedule.qmd
+        text: Book A Meeting
       - text: Miscellaneous
         menu:
           - href: efootball.qmd

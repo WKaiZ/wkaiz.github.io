@@ -1,0 +1,54 @@
+---
+title: "Book A Meeting"
+format:
+  html:
+    page-layout: full
+    toc: false
+---
+
+Pick an open slot below to book a meeting. Times are shown in Pacific Time.
+
+```{=html}
+<style>
+  .sched-wrap {
+    margin-top: .35rem;
+  }
+  .sched-booking {
+    --sched-zoom: 0.82;
+    border: 1px solid #e6e8eb;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+    height: calc(100vh - 11rem);
+    min-height: 28rem;
+    position: relative;
+  }
+  .sched-booking iframe {
+    display: block;
+    width: calc(100% / var(--sched-zoom));
+    height: calc(100% / var(--sched-zoom));
+    border: 0;
+    transform: scale(var(--sched-zoom));
+    transform-origin: top left;
+  }
+  @media (max-width: 768px) {
+    .sched-booking {
+      --sched-zoom: 0.72;
+      height: calc(100vh - 10rem);
+      min-height: 22rem;
+    }
+  }
+</style>
+
+<div class="sched-wrap">
+  <section class="sched-booking" aria-label="Book A Meeting">
+    <iframe
+      src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Bdajq29IfzJiu1wIOfuVnWgZp68CcSQE1gJBqtqPvRg_O5lWXRPTdLW3xCwoFNWqxrYnZi7si?gv=true"
+      title="Book a meeting with Wesley Zheng"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+</div>
+```
