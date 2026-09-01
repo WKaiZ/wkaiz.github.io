@@ -12,7 +12,7 @@ format:
 | Course | Description | Instructor | Units | Grade |
 |--------|-------------|-----------|-------|-------|
 | [COMPSCI 260A](http://teaching.paulos.net/cs160_FL2026/index.html) | User Interface Design | Eric Paulos | 4.0 | IP |
-| [COMPSCI 262A](https://cs262a.github.io/) | Advanced Topics in Computer Systems | Rishabh Iyer | 4.0 | P |
+| [COMPSCI 262A](https://cs262a.github.io/) | Advanced Topics in Computer Systems | Rishabh Iyer | 4.0 | IP |
 | [STAT 154](https://stat154.berkeley.edu/fall-2026/) | Statistical Machine Learning | Ryan Giordano | 4.0 | IP |
 
 ### Spring 2026
