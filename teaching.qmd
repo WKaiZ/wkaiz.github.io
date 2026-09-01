@@ -214,6 +214,7 @@ assistant across various data science and computer science courses.
     <path id="edge-c8-loop" class="chain-edge loop" d="M 105 350 C 25 285 20 440 110 400"/>
     <path id="edge-c8-189" class="chain-edge" d="M 165 365 Q 430 350 645 255"/>
     <path id="edge-189-102" class="chain-edge" d="M 710 195 Q 765 145 790 115"/>
+    <path id="chain-journey" fill="none" stroke="none" d="M 165 105 Q 285 75 350 190 L 376 185 C 315 90 505 70 454 185 L 376 185 C 315 90 505 70 454 185 L 376 185 C 315 90 505 70 454 185 L 350 255 Q 260 300 165 340 L 105 350 C 25 285 20 440 110 400 L 165 355 Q 260 330 350 260 L 420 275 Q 445 335 455 365 L 405 405 Q 290 445 165 380 L 105 350 C 25 285 20 440 110 400 L 165 365 Q 430 350 645 255 L 710 195 Q 765 145 790 115"/>
 
     <text class="chain-label" x="262" y="89">1×</text>
     <text class="chain-label" x="260" y="303">2×</text>
@@ -225,16 +226,7 @@ assistant across various data science and computer science courses.
     <text class="chain-label" x="752" y="153">1×</text>
 
     <circle class="chain-pulse" r="7">
-      <animateMotion id="hop-1" dur="3.5s" begin="0s;hop-10.end+2s" fill="freeze" calcMode="paced"><mpath href="#edge-c88-188"/></animateMotion>
-      <animateMotion id="hop-2" dur="3.2s" begin="hop-1.end" repeatCount="3" fill="freeze" calcMode="paced"><mpath href="#edge-188-loop"/></animateMotion>
-      <animateMotion id="hop-3" dur="3.5s" begin="hop-2.end" fill="freeze" calcMode="paced"><mpath href="#edge-188-c8"/></animateMotion>
-      <animateMotion id="hop-4" dur="3.8s" begin="hop-3.end" fill="freeze" calcMode="paced"><mpath href="#edge-c8-loop"/></animateMotion>
-      <animateMotion id="hop-5" dur="3.5s" begin="hop-4.end" fill="freeze" calcMode="paced"><mpath href="#edge-c8-188"/></animateMotion>
-      <animateMotion id="hop-6" dur="3.5s" begin="hop-5.end" fill="freeze" calcMode="paced"><mpath href="#edge-188-c100"/></animateMotion>
-      <animateMotion id="hop-7" dur="3.5s" begin="hop-6.end" fill="freeze" calcMode="paced"><mpath href="#edge-c100-c8"/></animateMotion>
-      <animateMotion id="hop-8" dur="3.8s" begin="hop-7.end" fill="freeze" calcMode="paced"><mpath href="#edge-c8-loop"/></animateMotion>
-      <animateMotion id="hop-9" dur="4.5s" begin="hop-8.end" fill="freeze" calcMode="paced"><mpath href="#edge-c8-189"/></animateMotion>
-      <animateMotion id="hop-10" dur="3.5s" begin="hop-9.end" fill="freeze" calcMode="paced"><mpath href="#edge-189-102"/></animateMotion>
+      <animateMotion dur="45s" repeatCount="indefinite" calcMode="paced"><mpath href="#chain-journey"/></animateMotion>
     </circle>
 
     <a class="chain-node" href="https://c88c.org/" target="_blank" rel="noopener"><circle cx="115" cy="95" r="50"/><text x="115" y="91">DATA C88C</text><text class="chain-count" x="115" y="112">1 term</text></a>
