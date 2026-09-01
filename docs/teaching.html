@@ -240,6 +240,8 @@ ul.task-list li input[type="checkbox"] {
     line-height: 1.2;
   }
   .teaching-map-course { display: block; font-size: .76rem; font-weight: 700; color: #2c6bed; }
+  .teaching-course-link { color: inherit; text-decoration: none; }
+  .teaching-course-link:hover { text-decoration: underline; }
   .teaching-map-role { display: block; margin-top: .15rem; color: #6b7280; font-size: .65rem; }
   .teaching-map-entry.intern .teaching-map-course { color: #b45309; }
   .teaching-map-entry.tutor .teaching-map-course { color: #15803d; }
@@ -248,6 +250,27 @@ ul.task-list li input[type="checkbox"] {
     font-size: 1.15rem;
     font-weight: 650;
   }
+  .teaching-chain {
+    max-width: 940px;
+    margin-top: 2.2rem;
+  }
+  .teaching-chain svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: .75rem;
+    border: 1px solid #e6e8eb;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #fbfdff, #f7f5ff);
+  }
+  .chain-edge { fill: none; stroke: #a9b4c6; stroke-width: 2.5; marker-end: url(#chain-arrow); }
+  .chain-edge.loop { stroke: #7c8da8; }
+  .chain-pulse { fill: #7c3aed; filter: drop-shadow(0 0 4px rgba(124, 58, 237, .65)); }
+  .chain-node circle { fill: #fff; stroke: #2c6bed; stroke-width: 3; }
+  .chain-node:hover circle { fill: #eef4ff; stroke-width: 4; }
+  .chain-node text { fill: #1f2937; font-size: 15px; font-weight: 700; text-anchor: middle; }
+  .chain-count { fill: #6b7280; font-size: 12px; text-anchor: middle; }
+  .chain-label { fill: #6b7280; font-size: 11px; font-weight: 600; paint-order: stroke; stroke: #fff; stroke-width: 4px; }
   .teaching-card {
     display: grid;
     grid-template-columns: minmax(8rem, 11rem) 1fr;
@@ -293,50 +316,90 @@ ul.task-list li input[type="checkbox"] {
   <div class="teaching-route">
     <div class="teaching-stop">
       <div class="teaching-term">Fall 2023</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry intern"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Academic Intern</span></div>
-      <div class="teaching-map-entry intern"><span class="teaching-map-course">DATA C88C</span><span class="teaching-map-role">Academic Intern</span></div>
+      <div class="teaching-map-entry intern"><span class="teaching-map-course"><a class="teaching-course-link" href="https://data8.org/" target="_blank" rel="noopener">DATA C8</a></span><span class="teaching-map-role">Academic Intern</span></div>
+      <div class="teaching-map-entry intern"><span class="teaching-map-course"><a class="teaching-course-link" href="https://c88c.org/" target="_blank" rel="noopener">DATA C88C</a></span><span class="teaching-map-role">Academic Intern</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Spring 2024</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry tutor"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Tutor</span></div>
+      <div class="teaching-map-entry tutor"><span class="teaching-map-course"><a class="teaching-course-link" href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank" rel="noopener">CS 188</a></span><span class="teaching-map-role">Tutor</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Summer 2024</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Teaching Assistant</span></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank" rel="noopener">CS 188</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://data8.org/" target="_blank" rel="noopener">DATA C8</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Fall 2024</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank" rel="noopener">CS 188</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Spring 2025</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank" rel="noopener">CS 188</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Summer 2025</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Teaching Assistant</span></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C100</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://data8.org/" target="_blank" rel="noopener">DATA C8</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://ds100.org/" target="_blank" rel="noopener">DATA C100</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Fall 2025</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://data8.org/" target="_blank" rel="noopener">DATA C8</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Spring 2026</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">CS 189</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://eecs189.org/" target="_blank" rel="noopener">CS 189</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
     </div>
     <div class="teaching-stop">
       <div class="teaching-term">Fall 2026</div><div class="teaching-dot"></div>
-      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C102</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course"><a class="teaching-course-link" href="https://data102.org/" target="_blank" rel="noopener">DATA C102</a></span><span class="teaching-map-role">Teaching Assistant</span></div>
     </div>
   </div>
+</div>
+
+<div class="teaching-chain">
+  <div class="teaching-map-title">Course-Hopping Chain</div>
+  <div class="teaching-map-note">A Markov-ish view of where one teaching term led next. Moving dots replay the transitions; loops mean staying with the same course.</div>
+  <svg viewbox="0 0 900 490" role="img" aria-label="Directed graph of transitions between courses taught">
+    <defs>
+      <marker id="chain-arrow" viewbox="0 0 10 10" refx="9" refy="5" markerwidth="7" markerheight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8b98ac"></path></marker>
+    </defs>
+    <path id="edge-c88-188" class="chain-edge" d="M 165 105 Q 285 75 350 190"></path>
+    <path id="edge-c8-188" class="chain-edge" d="M 165 355 Q 260 330 350 260"></path>
+    <path id="edge-188-loop" class="chain-edge loop" d="M 376 185 C 315 90 505 70 454 185"></path>
+    <path id="edge-188-c8" class="chain-edge" d="M 350 255 Q 260 300 165 340"></path>
+    <path id="edge-188-c100" class="chain-edge" d="M 420 275 Q 445 335 455 365"></path>
+    <path id="edge-c100-c8" class="chain-edge" d="M 405 405 Q 290 445 165 380"></path>
+    <path id="edge-c8-loop" class="chain-edge loop" d="M 105 350 C 25 285 20 440 110 400"></path>
+    <path id="edge-c8-189" class="chain-edge" d="M 165 365 Q 430 350 645 255"></path>
+    <path id="edge-189-102" class="chain-edge" d="M 710 195 Q 765 145 790 115"></path>
+
+    <text class="chain-label" x="262" y="89">1×</text>
+    <text class="chain-label" x="260" y="303">2× each way</text>
+    <text class="chain-label" x="415" y="91">3× stay</text>
+    <text class="chain-label" x="443" y="326">1×</text>
+    <text class="chain-label" x="290" y="432">1×</text>
+    <text class="chain-label" x="48" y="350">1× stay</text>
+    <text class="chain-label" x="420" y="349">1×</text>
+    <text class="chain-label" x="752" y="153">1×</text>
+
+    <circle class="chain-pulse" r="6"><animatemotion dur="5.5s" repeatcount="indefinite"><mpath href="#edge-c88-188"></mpath></animatemotion></circle>
+    <circle class="chain-pulse" r="6"><animatemotion dur="6.5s" begin="1.2s" repeatcount="indefinite"><mpath href="#edge-188-c8"></mpath></animatemotion></circle>
+    <circle class="chain-pulse" r="6"><animatemotion dur="7s" begin="2.3s" repeatcount="indefinite"><mpath href="#edge-c8-189"></mpath></animatemotion></circle>
+    <circle class="chain-pulse" r="6"><animatemotion dur="5s" begin="3.1s" repeatcount="indefinite"><mpath href="#edge-189-102"></mpath></animatemotion></circle>
+
+    <a class="chain-node" href="https://c88c.org/" target="_blank" rel="noopener"><circle cx="115" cy="95" r="50"></circle><text x="115" y="91">DATA C88C</text><text class="chain-count" x="115" y="112">1 term</text></a>
+    <a class="chain-node" href="https://data8.org/" target="_blank" rel="noopener"><circle cx="115" cy="365" r="50"></circle><text x="115" y="361">DATA C8</text><text class="chain-count" x="115" y="382">4 terms</text></a>
+    <a class="chain-node" href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank" rel="noopener"><circle cx="400" cy="230" r="56"></circle><text x="400" y="226">CS 188</text><text class="chain-count" x="400" y="247">4 terms</text></a>
+    <a class="chain-node" href="https://ds100.org/" target="_blank" rel="noopener"><circle cx="455" cy="415" r="50"></circle><text x="455" y="411">DATA C100</text><text class="chain-count" x="455" y="432">1 term</text></a>
+    <a class="chain-node" href="https://eecs189.org/" target="_blank" rel="noopener"><circle cx="690" cy="225" r="50"></circle><text x="690" y="221">CS 189</text><text class="chain-count" x="690" y="242">1 term</text></a>
+    <a class="chain-node" href="https://data102.org/" target="_blank" rel="noopener"><circle cx="815" cy="75" r="52"></circle><text x="815" y="71">DATA C102</text><text class="chain-count" x="815" y="92">1 term</text></a>
+  </svg>
 </div>
 
 <div class="teaching-details-title">Courses and Roles</div>
 <div class="teaching-list">
   <article class="teaching-card">
-    <div class="teaching-code">DATA C102</div>
+    <div class="teaching-code"><a class="teaching-course-link" href="https://data102.org/" target="_blank" rel="noopener">DATA C102</a></div>
     <div>
       <div class="teaching-title">Data, Inference, and Decisions</div>
       <div class="teaching-role">
@@ -347,7 +410,7 @@ ul.task-list li input[type="checkbox"] {
   </article>
 
   <article class="teaching-card">
-    <div class="teaching-code">CS 189</div>
+    <div class="teaching-code"><a class="teaching-course-link" href="https://eecs189.org/" target="_blank" rel="noopener">CS 189</a></div>
     <div>
       <div class="teaching-title">Introduction to Machine Learning</div>
       <div class="teaching-role">
@@ -358,7 +421,7 @@ ul.task-list li input[type="checkbox"] {
   </article>
 
   <article class="teaching-card">
-    <div class="teaching-code">DATA C8</div>
+    <div class="teaching-code"><a class="teaching-course-link" href="https://data8.org/" target="_blank" rel="noopener">DATA C8</a></div>
     <div>
       <div class="teaching-title">Foundations of Data Science</div>
       <div class="teaching-role">
@@ -373,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
   </article>
 
   <article class="teaching-card">
-    <div class="teaching-code">DATA C100</div>
+    <div class="teaching-code"><a class="teaching-course-link" href="https://ds100.org/" target="_blank" rel="noopener">DATA C100</a></div>
     <div>
       <div class="teaching-title">Principles and Techniques of Data Science</div>
       <div class="teaching-role">
@@ -384,7 +447,7 @@ ul.task-list li input[type="checkbox"] {
   </article>
 
   <article class="teaching-card">
-    <div class="teaching-code">CS 188</div>
+    <div class="teaching-code"><a class="teaching-course-link" href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank" rel="noopener">CS 188</a></div>
     <div>
       <div class="teaching-title">Introduction to Artificial Intelligence</div>
       <div class="teaching-role">
@@ -399,7 +462,7 @@ ul.task-list li input[type="checkbox"] {
   </article>
 
   <article class="teaching-card">
-    <div class="teaching-code">DATA C88C</div>
+    <div class="teaching-code"><a class="teaching-course-link" href="https://c88c.org/" target="_blank" rel="noopener">DATA C88C</a></div>
     <div>
       <div class="teaching-title">Computational Structures in Data Science</div>
       <div class="teaching-role">
