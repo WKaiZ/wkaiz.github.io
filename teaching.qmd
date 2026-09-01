@@ -6,8 +6,8 @@ format:
     toc: false
 ---
 
-My teaching path at UC Berkeley, from academic intern and tutor to teaching
-assistant across data science, artificial intelligence, and machine learning.
+My teaching path at UC Berkeley, from academic intern to teaching
+assistant across various data science and computer science courses.
 
 ```{=html}
 <style>
@@ -16,6 +16,79 @@ assistant across data science, artificial intelligence, and machine learning.
     gap: 1rem;
     margin-top: 1.5rem;
     max-width: 940px;
+  }
+  .teaching-map-title {
+    margin: 1.7rem 0 .25rem;
+    font-size: 1.15rem;
+    font-weight: 650;
+  }
+  .teaching-map-note { color: #6b7280; font-size: .86rem; }
+  .teaching-map {
+    margin-top: 1rem;
+    padding: 1.25rem 0 .8rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .teaching-route {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(9, minmax(105px, 1fr));
+    min-width: 980px;
+    padding: 0 .8rem;
+  }
+  .teaching-route::before {
+    content: "";
+    position: absolute;
+    top: 2.55rem;
+    right: 1.2rem;
+    left: 1.2rem;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f59e0b, #22a06b 42%, #2c6bed 72%, #7c3aed);
+  }
+  .teaching-stop {
+    position: relative;
+    min-width: 0;
+    padding: 0 .3rem;
+    text-align: center;
+  }
+  .teaching-term {
+    min-height: 1.5rem;
+    color: #4b5563;
+    font-size: .76rem;
+    font-weight: 650;
+    white-space: nowrap;
+  }
+  .teaching-dot {
+    position: relative;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    margin: .35rem auto .75rem;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    background: #2c6bed;
+    box-shadow: 0 0 0 2px #2c6bed;
+  }
+  .teaching-stop:first-child .teaching-dot { background: #f59e0b; box-shadow: 0 0 0 2px #f59e0b; }
+  .teaching-stop:last-child .teaching-dot { background: #7c3aed; box-shadow: 0 0 0 2px #7c3aed; }
+  .teaching-map-entry {
+    margin: .35rem 0;
+    padding: .45rem .35rem;
+    border: 1px solid #e6e8eb;
+    border-radius: 9px;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .05);
+    line-height: 1.2;
+  }
+  .teaching-map-course { display: block; font-size: .76rem; font-weight: 700; color: #2c6bed; }
+  .teaching-map-role { display: block; margin-top: .15rem; color: #6b7280; font-size: .65rem; }
+  .teaching-map-entry.intern .teaching-map-course { color: #b45309; }
+  .teaching-map-entry.tutor .teaching-map-course { color: #15803d; }
+  .teaching-details-title {
+    margin: 2rem 0 -.55rem;
+    font-size: 1.15rem;
+    font-weight: 650;
   }
   .teaching-card {
     display: grid;
@@ -56,6 +129,53 @@ assistant across data science, artificial intelligence, and machine learning.
   }
 </style>
 
+<div class="teaching-map-title">Berkeley Teaching Journey</div>
+<div class="teaching-map-note">Follow the route from academic intern to teaching assistant.</div>
+<div class="teaching-map" aria-label="Timeline of teaching roles at UC Berkeley">
+  <div class="teaching-route">
+    <div class="teaching-stop">
+      <div class="teaching-term">Fall 2023</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry intern"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Academic Intern</span></div>
+      <div class="teaching-map-entry intern"><span class="teaching-map-course">DATA C88C</span><span class="teaching-map-role">Academic Intern</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Spring 2024</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry tutor"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Tutor</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Summer 2024</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Teaching Assistant</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Fall 2024</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Teaching Assistant</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Spring 2025</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">CS 188</span><span class="teaching-map-role">Teaching Assistant</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Summer 2025</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Teaching Assistant</span></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C100</span><span class="teaching-map-role">Teaching Assistant</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Fall 2025</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C8</span><span class="teaching-map-role">Teaching Assistant</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Spring 2026</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">CS 189</span><span class="teaching-map-role">Teaching Assistant</span></div>
+    </div>
+    <div class="teaching-stop">
+      <div class="teaching-term">Fall 2026</div><div class="teaching-dot"></div>
+      <div class="teaching-map-entry"><span class="teaching-map-course">DATA C102</span><span class="teaching-map-role">Teaching Assistant</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="teaching-details-title">Courses and Roles</div>
 <div class="teaching-list">
   <article class="teaching-card">
     <div class="teaching-code">DATA C102</div>
