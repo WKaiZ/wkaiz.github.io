@@ -179,6 +179,12 @@ ul.task-list li input[type="checkbox"] {
   .ef-tab:hover { border-color:var(--ef-accent); }
   .ef-tab.active { background:var(--ef-accent); border-color:var(--ef-accent); color:#fff; }
   .ef-tab .flag { font-size:1.05rem; }
+  .ef-squad-switch { display:flex; gap:.35rem; margin:.25rem 0 1rem; }
+  .ef-squad-choice { cursor:pointer; border:1px solid var(--ef-card-br);
+                     background:var(--ef-card-bg); color:inherit; border-radius:8px;
+                     padding:.3rem .7rem; font-size:.8rem; }
+  .ef-squad-choice:hover { border-color:var(--ef-accent); }
+  .ef-squad-choice.active { background:var(--ef-accent); border-color:var(--ef-accent); color:#fff; }
   .ef-section-title { font-size:1.05rem; font-weight:600; margin:1.5rem 0 .7rem;
                       display:flex; align-items:baseline; gap:.5rem; }
   .ef-section-title .count { color:var(--ef-muted); font-weight:400; font-size:.85rem; }
@@ -295,20 +301,31 @@ ul.task-list li input[type="checkbox"] {
       <div class="ef-grid">${players.map(card).join("")}</div></div>`;
   }
 
-  function renderSquad(c) {
-    const byS = (s) => c.players.filter(p => p.section === s);
-    document.getElementById("ef-squad").innerHTML =
+  function renderSquad(c, selectedSquad) {
+    const hasSecond = c.players.some(p => p.squad === "second");
+    const squad = hasSecond && selectedSquad === "second" ? "second" : "first";
+    const players = c.players.filter(p => (p.squad || "first") === squad);
+    const byS = (s) => players.filter(p => p.section === s);
+    const picker = hasSecond ? `<div class="ef-squad-switch" role="group" aria-label="Choose squad">
+      <button class="ef-squad-choice${squad === "first" ? " active" : ""}" data-squad="first">First Squad</button>
+      <button class="ef-squad-choice${squad === "second" ? " active" : ""}" data-squad="second">Second Squad</button>
+    </div>` : "";
+    const root = document.getElementById("ef-squad");
+    root.innerHTML = picker +
       section("Starters", byS("starters")) +
       section("Substitutes", byS("substitutes")) +
       section("Wildcard", byS("wildcard"), "ef-wild");
+    root.querySelectorAll(".ef-squad-choice").forEach(button =>
+      button.addEventListener("click", () => renderSquad(c, button.dataset.squad)));
   }
 
   function renderVeterans(countries) {
     const positionOrder = ["GK", "CB", "LB", "RB", "LWB", "RWB",
                            "DMF", "CMF", "AMF", "LMF", "RMF",
                            "CF", "SS", "LWF", "RWF"];
-    const all = countries.flatMap(country =>
-      country.players.map(player => ({ player, country })));
+    const all = countries.flatMap(country => country.players
+      .filter(player => (player.squad || "first") === "first")
+      .map(player => ({ player, country })));
     const oldestAt = pos => all.filter(x => x.player.pos === pos).sort((a,b) =>
       a.player.since.localeCompare(b.player.since) ||
       b.player.rating - a.player.rating ||
@@ -316,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
     const winners = positionOrder.map(oldestAt).filter(Boolean);
     document.getElementById("ef-squad").innerHTML = `
       <div class="ef-section">
-        <div class="ef-section-title">Longest-serving player by position
+        <div class="ef-section-title">Longest-Serving Player by Position
           <span class="count">across ${countries.length} nations</span>
         </div>
         <div class="ef-grid">${winners.map(x => card(x.player, x.country)).join("")}</div>
@@ -331,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
         `Updated ${esc(data.updated || "")} · source: ` +
         `<a href="${esc(data.source)}" target="_blank" rel="noopener">WKaiZ/efootball</a>`;
       const tabs = document.getElementById("ef-tabs");
-      tabs.innerHTML = `<span class="ef-tab active" data-view="veterans">Veterans</span>` +
+      tabs.innerHTML = `<span class="ef-tab active" data-view="veterans">Across the Squads</span>` +
         countries.map((c,i) =>
         `<span class="ef-tab" data-i="${i}">
            <span class="flag">${c.flag||''}</span>${esc(c.name)}</span>`).join("");
