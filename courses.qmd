@@ -8,12 +8,19 @@ format:
 
 ## General Overview
 
+### Fall 2026
+| Course | Description | Instructor | Units | Grade |
+|--------|-------------|-----------|-------|-------|
+| [COMPSCI 260A](http://teaching.paulos.net/cs160_FL2026/index.html) | User Interface Design | Eric Paulos | 4.0 | IP |
+| [COMPSCI 262A](https://cs262a.github.io/) | Advanced Topics in Computer Systems | Rishabh Iyer | 4.0 | P |
+| [STAT 154](https://stat154.berkeley.edu/fall-2026/) | Statistical Machine Learning | Ryan Giordano | 4.0 | IP |
+
 ### Spring 2026
 | Course | Description | Instructor | Units | Grade |
 |--------|-------------|-----------|-------|-------|
-| [COMPSCI 162](https://cs162.org/) | Operating Systems and System Programming | John Kubiatowicz, this link opens in new tab | 4.0 | A |
+| [COMPSCI 162](https://cs162.org/) | Operating Systems and System Programming | John Kubiatowicz | 4.0 | A |
 | MATH 185 | Introduction to Complex Analysis | Ilia Nekrasov | 4.0 | A |
-| MCELLBI 50 | The Immune System and Disease | Anant Sahai, Gireeja Ranade | 4.0 | P |
+| MCELLBI 50 | The Immune System and Disease | Robert Beatty | 4.0 | P |
 | UGBA 10X | Foundations of Business | Brandi Pearce, Harris Sondak, Jonathan Heyne, Queen Jaks | 3.0 | P |
 
 ### Fall 2025
