@@ -20,6 +20,8 @@ website:
       - slides.qmd
       - href: resume.qmd
         text: Resume
+      - href: teaching.qmd
+        text: Teaching
       # - publications.qmd
       - courses.qmd
       - href: schedule.qmd
@@ -43,6 +45,5 @@ format:
       - brand
     css: styles.css
     toc: true
-
 
 
