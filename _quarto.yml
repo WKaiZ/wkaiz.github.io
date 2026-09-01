@@ -17,7 +17,6 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - slides.qmd
       - href: resume.qmd
         text: Resume
       - href: teaching.qmd
@@ -31,6 +30,7 @@ website:
       - href: spotify.qmd
         text: Playlist
     right:
+      - slides.qmd
       - text: Notes
         href: https://wkaiz.github.io/discussions/
         target: _blank
