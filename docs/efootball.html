@@ -298,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
     if (!players.length) return "";
     return `<div class="ef-section ${extra||''}">
       <div class="ef-section-title">${title}<span class="count">${players.length}</span></div>
-      <div class="ef-grid">${players.map(card).join("")}</div></div>`;
+      <div class="ef-grid">${players.map(p => card(p)).join("")}</div></div>`;
   }
 
   function renderSquad(c, selectedSquad) {
