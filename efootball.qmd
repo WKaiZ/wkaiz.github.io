@@ -27,6 +27,12 @@ automatically every day.
   .ef-tab:hover { border-color:var(--ef-accent); }
   .ef-tab.active { background:var(--ef-accent); border-color:var(--ef-accent); color:#fff; }
   .ef-tab .flag { font-size:1.05rem; }
+  .ef-squad-switch { display:flex; gap:.35rem; margin:.25rem 0 1rem; }
+  .ef-squad-choice { cursor:pointer; border:1px solid var(--ef-card-br);
+                     background:var(--ef-card-bg); color:inherit; border-radius:8px;
+                     padding:.3rem .7rem; font-size:.8rem; }
+  .ef-squad-choice:hover { border-color:var(--ef-accent); }
+  .ef-squad-choice.active { background:var(--ef-accent); border-color:var(--ef-accent); color:#fff; }
   .ef-section-title { font-size:1.05rem; font-weight:600; margin:1.5rem 0 .7rem;
                       display:flex; align-items:baseline; gap:.5rem; }
   .ef-section-title .count { color:var(--ef-muted); font-weight:400; font-size:.85rem; }
@@ -54,6 +60,7 @@ automatically every day.
              display:flex; align-items:center; justify-content:center; }
   .ef-pos { display:inline-block; margin-top:.3rem; font-size:.7rem; font-weight:600;
             border-radius:6px; padding:.1rem .42rem; background:var(--ef-chip); color:var(--ef-muted); }
+  .ef-country { margin-top:.35rem; font-size:.72rem; color:var(--ef-muted); }
   .ef-pos[data-line="GK"]  { background:#fde9c8; color:#8a5a00; }
   .ef-pos[data-line="DEF"] { background:#d6ecff; color:#0b5cad; }
   .ef-pos[data-line="MID"] { background:#dcf5e3; color:#1f7a3d; }
@@ -116,7 +123,7 @@ automatically every day.
          onerror="this.outerHTML='<span class=&quot;ef-initials&quot;>${esc(initials(p.name))}</span>'">`
     : `<span class="ef-initials">${esc(initials(p.name))}</span>`;
 
-  function card(p) {
+  function card(p, country) {
     const medal = p.tenureRank ? `<span class="ef-medal">${MEDAL[p.tenureRank]}</span>` : "";
     const tip = `${p.name} · ${p.pos} · ${p.card_type || "Standard"} · rating ${p.rating.toFixed(0)} · in squad since ${p.since}`;
     const cls = `ef-card ${ctClass(p.card_type)}${p.tenureRank ? " ef-ranked" : ""}`;
@@ -128,6 +135,7 @@ automatically every day.
       </div>
       <div class="ef-name">${esc(p.name)}</div>
       <div><span class="ef-pos" data-line="${lineOf(p.pos)}">${esc(p.pos)}</span></div>
+      ${country ? `<div class="ef-country">${country.flag||""} ${esc(country.name)}</div>` : ""}
       <div class="ef-days">${medal}${daysSince(p.since)}d in squad</div>`;
     return p.tm
       ? `<a class="${cls}" href="${esc(p.tm)}" target="_blank" rel="noopener" title="${esc(tip)}">${inner}</a>`
@@ -141,12 +149,43 @@ automatically every day.
       <div class="ef-grid">${players.map(card).join("")}</div></div>`;
   }
 
-  function renderSquad(c) {
-    const byS = (s) => c.players.filter(p => p.section === s);
-    document.getElementById("ef-squad").innerHTML =
+  function renderSquad(c, selectedSquad) {
+    const hasSecond = c.players.some(p => p.squad === "second");
+    const squad = hasSecond && selectedSquad === "second" ? "second" : "first";
+    const players = c.players.filter(p => (p.squad || "first") === squad);
+    const byS = (s) => players.filter(p => p.section === s);
+    const picker = hasSecond ? `<div class="ef-squad-switch" role="group" aria-label="Choose squad">
+      <button class="ef-squad-choice${squad === "first" ? " active" : ""}" data-squad="first">First Squad</button>
+      <button class="ef-squad-choice${squad === "second" ? " active" : ""}" data-squad="second">Second Squad</button>
+    </div>` : "";
+    const root = document.getElementById("ef-squad");
+    root.innerHTML = picker +
       section("Starters", byS("starters")) +
       section("Substitutes", byS("substitutes")) +
       section("Wildcard", byS("wildcard"), "ef-wild");
+    root.querySelectorAll(".ef-squad-choice").forEach(button =>
+      button.addEventListener("click", () => renderSquad(c, button.dataset.squad)));
+  }
+
+  function renderVeterans(countries) {
+    const positionOrder = ["GK", "CB", "LB", "RB", "LWB", "RWB",
+                           "DMF", "CMF", "AMF", "LMF", "RMF",
+                           "CF", "SS", "LWF", "RWF"];
+    const all = countries.flatMap(country => country.players
+      .filter(player => (player.squad || "first") === "first")
+      .map(player => ({ player, country })));
+    const oldestAt = pos => all.filter(x => x.player.pos === pos).sort((a,b) =>
+      a.player.since.localeCompare(b.player.since) ||
+      b.player.rating - a.player.rating ||
+      a.player.name.localeCompare(b.player.name))[0];
+    const winners = positionOrder.map(oldestAt).filter(Boolean);
+    document.getElementById("ef-squad").innerHTML = `
+      <div class="ef-section">
+        <div class="ef-section-title">Longest-Serving Player by Position
+          <span class="count">across ${countries.length} nations</span>
+        </div>
+        <div class="ef-grid">${winners.map(x => card(x.player, x.country)).join("")}</div>
+      </div>`;
   }
 
   fetch("assets/efootball/squads.json?v=" + Date.now())
@@ -157,16 +196,18 @@ automatically every day.
         `Updated ${esc(data.updated || "")} · source: ` +
         `<a href="${esc(data.source)}" target="_blank" rel="noopener">WKaiZ/efootball</a>`;
       const tabs = document.getElementById("ef-tabs");
-      tabs.innerHTML = countries.map((c,i) =>
-        `<span class="ef-tab${i===0?' active':''}" data-i="${i}">
+      tabs.innerHTML = `<span class="ef-tab active" data-view="veterans">Across the Squads</span>` +
+        countries.map((c,i) =>
+        `<span class="ef-tab" data-i="${i}">
            <span class="flag">${c.flag||''}</span>${esc(c.name)}</span>`).join("");
       tabs.addEventListener("click", e => {
         const t = e.target.closest(".ef-tab"); if (!t) return;
         tabs.querySelectorAll(".ef-tab").forEach(x => x.classList.remove("active"));
         t.classList.add("active");
-        renderSquad(countries[+t.dataset.i]);
+        if (t.dataset.view === "veterans") renderVeterans(countries);
+        else renderSquad(countries[+t.dataset.i]);
       });
-      if (countries.length) renderSquad(countries[0]);
+      if (countries.length) renderVeterans(countries);
       else document.getElementById("ef-squad").innerHTML = `<div class="ef-error">No squads available.</div>`;
     })
     .catch(err => {

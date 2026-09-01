@@ -253,23 +253,20 @@ def save_cache(cache):
     imgcache.save(cache)
 
 def _parse_players(text):
-    """Parse a squad .txt. Contenders may have First/Second Squad blocks;
-    only First Squad is kept. Files without those headers (challengers)
-    are parsed as a single squad."""
-    players, section = [], None
-    # None = no squad headers (legacy / challengers); True = in First Squad
-    in_first = None
+    """Parse a squad .txt, retaining both First and Second Squad blocks.
+
+    Files without explicit squad headers are treated as a first squad.
+    """
+    players, section, squad = [], None, "first"
     for line in text.splitlines():
         low = line.strip().lower()
         if low == "first squad":
-            in_first = True
+            squad = "first"
             section = None
             continue
         if low == "second squad":
-            in_first = False
+            squad = "second"
             section = None
-            continue
-        if in_first is False:
             continue
         if low.startswith("starters"):
             section = "starters"; continue
@@ -280,7 +277,8 @@ def _parse_players(text):
         m = LINE_RE.match(line)
         if m:
             players.append({
-                "section": section, "slot": m["slot"], "name": m["name"].strip(),
+                "squad": squad, "section": section, "slot": m["slot"],
+                "name": m["name"].strip(),
                 "pos": m["pos"], "rating": float(m["rating"]), "number": int(m["num"]),
                 "row": row_sig(line),
             })
@@ -346,7 +344,8 @@ def build():
                              else max(dates))
                     p["since"] = since
                     p["days"] = (today - datetime.fromisoformat(since).date()).days
-                _assign_medals(players)
+                for squad in ("first", "second"):
+                    _assign_medals([p for p in players if p["squad"] == squad])
                 flag = flag_for(c)
                 if not flag:
                     log(f"  WARNING: no flag mapping for '{c}' — add it to "
