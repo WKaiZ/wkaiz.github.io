@@ -123,6 +123,20 @@ def row_sig(line):
 def parse_sigs(text):
     return {row_sig(ln) for ln in text.splitlines() if LINE_RE.match(ln)}
 
+def parse_squad_sigs(text):
+    sigs, squad = set(), "first"
+    for line in text.splitlines():
+        low = line.strip().lower()
+        if low == "first squad":
+            squad = "first"
+            continue
+        if low == "second squad":
+            squad = "second"
+            continue
+        if LINE_RE.match(line):
+            sigs.add((squad, row_sig(line)))
+    return sigs
+
 POOL_ROW_RE = re.compile(r"^\s*(?P<name>[^,\[\]]+?),\s*(?P<pos>[A-Z]+),")
 POOL_BOOL_RE = re.compile(r",\s*(?:True|False),")
 
@@ -323,7 +337,7 @@ def build():
                 if not os.path.exists(path):
                     continue
                 players = _parse_players(open(path).read())
-                versions = history_versions(tmp, rel)
+                versions = history_versions(tmp, rel, parse_squad_sigs)
                 pool_rel = f"{group_dir}/{c}/{c}_players.txt"
                 pool_path = os.path.join(tmp, pool_rel)
                 pool_rows = (parse_pool_rows(open(pool_path).read())
@@ -336,7 +350,7 @@ def build():
                     p["fm_id"] = fm_cache.get(f"{c}|{norm(p['name'])}")
                     p["tm_id"] = find_tm_id(game_data.get(c, []), p, ov.get(norm(p["name"])))
                     p["card_type"] = card_types.get((c, p["tm_id"], p["pos"])) or "Standard"
-                    dates = [compute_since(versions, p["row"])]
+                    dates = [compute_since(versions, (p["squad"], p["row"]))]
                     pool_row = pool_rows.get((norm(p["name"]), p["pos"]))
                     if pool_row:
                         dates.append(compute_since(pool_versions, pool_row))
