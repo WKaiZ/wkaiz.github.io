@@ -123,6 +123,9 @@ def row_sig(line):
 def parse_sigs(text):
     return {row_sig(ln) for ln in text.splitlines() if LINE_RE.match(ln)}
 
+def squad_row_sig(line):
+    return re.sub(r"^\[[A-Z]+\]\s+", "", row_sig(line))
+
 def parse_squad_sigs(text):
     sigs, squad = set(), "first"
     for line in text.splitlines():
@@ -134,7 +137,7 @@ def parse_squad_sigs(text):
             squad = "second"
             continue
         if LINE_RE.match(line):
-            sigs.add((squad, row_sig(line)))
+            sigs.add((squad, squad_row_sig(line)))
     return sigs
 
 POOL_ROW_RE = re.compile(r"^\s*(?P<name>[^,\[\]]+?),\s*(?P<pos>[A-Z]+),")
@@ -350,7 +353,9 @@ def build():
                     p["fm_id"] = fm_cache.get(f"{c}|{norm(p['name'])}")
                     p["tm_id"] = find_tm_id(game_data.get(c, []), p, ov.get(norm(p["name"])))
                     p["card_type"] = card_types.get((c, p["tm_id"], p["pos"])) or "Standard"
-                    dates = [compute_since(versions, (p["squad"], p["row"]))]
+                    dates = [compute_since(
+                        versions, (p["squad"], squad_row_sig(p["row"]))
+                    )]
                     pool_row = pool_rows.get((norm(p["name"]), p["pos"]))
                     if pool_row:
                         dates.append(compute_since(pool_versions, pool_row))
@@ -464,6 +469,7 @@ def _backfill_transfermarkt(all_players, cache):
     blocked = 0
     for tid, (days, name) in queue:
         url = None
+        was_blocked = False
         for attempt in range(TM_BLOCKED_RETRIES + 1):
             try:
                 url = tmfetch.resolve_portrait(tid)
@@ -476,6 +482,7 @@ def _backfill_transfermarkt(all_players, cache):
                     time.sleep(TM_BLOCKED_WAIT)
                     continue
                 blocked += 1
+                was_blocked = True
                 log(f"  blocked {name} (#{tid}): {e}")
                 if blocked >= TM_BLOCK_ABORT:
                     log(f"Transfermarkt: still blocked after retries ({blocked} in a "
@@ -493,6 +500,8 @@ def _backfill_transfermarkt(all_players, cache):
                 break
         if blocked >= TM_BLOCK_ABORT:
             break
+        if was_blocked:
+            continue
         if url == "error":
             continue
         if url:

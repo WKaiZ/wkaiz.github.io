@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-03 00:19 UTC",
+ "updated": "2026-09-03 00:36 UTC",
  "source": "https://github.com/WKaiZ/efootball",
  "countries": [
   {
@@ -896,7 +896,7 @@
      "since": "2026-08-30",
      "days": 4,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/227081-1724826843.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/227081"
     },
     {
@@ -911,7 +911,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/266807-1701212448.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/266807"
     },
     {
@@ -926,7 +926,7 @@
      "since": "2026-08-30",
      "days": 4,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/8024-1763715267.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/8024"
     },
     {
@@ -956,7 +956,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/423436-1739827128.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/423436"
     },
     {
@@ -971,7 +971,7 @@
      "since": "2026-08-30",
      "days": 4,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/189453-1729087892.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/189453"
     },
     {
@@ -1001,7 +1001,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/89297-1739889334.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/89297"
     },
     {
@@ -1016,7 +1016,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/849582-1746578372.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/849582"
     },
     {
@@ -1462,9 +1462,9 @@
      "rating": 94.18,
      "number": 19,
      "card_type": "Highlight",
-     "since": "2026-08-13",
-     "days": 21,
-     "tenureRank": 0,
+     "since": "2026-06-13",
+     "days": 82,
+     "tenureRank": 1,
      "img": "https://img.a.transfermarkt.technology/portrait/big/324278-1716315718.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/324278"
     },
@@ -1479,7 +1479,7 @@
      "card_type": "Highlight",
      "since": "2026-06-13",
      "days": 82,
-     "tenureRank": 2,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/106987-1711745992.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/106987"
     },
@@ -1524,7 +1524,7 @@
      "card_type": "Showtime",
      "since": "2026-06-13",
      "days": 82,
-     "tenureRank": 1,
+     "tenureRank": 2,
      "img": "https://img.a.transfermarkt.technology/portrait/big/59016-1684921582.jpeg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/59016"
     },
@@ -1539,7 +1539,7 @@
      "card_type": "Highlight",
      "since": "2026-06-13",
      "days": 82,
-     "tenureRank": 3,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/225657-1658411602.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/225657"
     },
@@ -1799,8 +1799,8 @@
      "rating": 96.99,
      "number": 11,
      "card_type": "Highlight",
-     "since": "2026-09-02",
-     "days": 1,
+     "since": "2026-08-13",
+     "days": 21,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/486049-1743670159.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/486049"
@@ -2294,8 +2294,8 @@
      "rating": 74.26,
      "number": 16,
      "card_type": "Standard",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-08-21",
+     "days": 13,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/102226-1699906886.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/102226"
@@ -2342,7 +2342,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/289592-1657181518.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/289592"
     },
     {
@@ -2402,7 +2402,7 @@
      "since": "2026-08-15",
      "days": 19,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/179184-1753985153.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/179184"
     },
     {
@@ -2417,7 +2417,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/140808-1660750049.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/140808"
     }
    ]
@@ -2919,7 +2919,7 @@
      "since": "2026-08-24",
      "days": 10,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/7829-1589802688.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/7829"
     },
     {
@@ -2949,7 +2949,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/37579-1647201883.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/37579"
     },
     {
@@ -3009,7 +3009,7 @@
      "since": "2026-08-27",
      "days": 7,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/203394-1659355525.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/203394"
     },
     {
@@ -3024,7 +3024,7 @@
      "since": "2026-08-24",
      "days": 10,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/374136-1751370337.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/374136"
     },
     {
@@ -3054,7 +3054,7 @@
      "since": "2026-08-27",
      "days": 7,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/648020-1666689768.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/648020"
     },
     {
@@ -3084,7 +3084,7 @@
      "since": "2026-08-27",
      "days": 7,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/412594-1759761629.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/412594"
     },
     {
@@ -3487,7 +3487,7 @@
      "card_type": "Showtime",
      "since": "2026-06-24",
      "days": 71,
-     "tenureRank": 3,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/533738-1760114012.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/533738"
     },
@@ -3802,7 +3802,7 @@
      "card_type": "Standard",
      "since": "2026-06-14",
      "days": 81,
-     "tenureRank": 2,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/189014-1771712360.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/189014"
     },
@@ -3815,9 +3815,9 @@
      "rating": 74.61,
      "number": 9,
      "card_type": "Standard",
-     "since": "2026-08-15",
-     "days": 19,
-     "tenureRank": 0,
+     "since": "2026-06-14",
+     "days": 81,
+     "tenureRank": 2,
      "img": "https://img.a.transfermarkt.technology/portrait/big/343463-1720430112.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/343463"
     }
@@ -4234,8 +4234,8 @@
      "rating": 94.34,
      "number": 11,
      "card_type": "Highlight",
-     "since": "2026-07-26",
-     "days": 39,
+     "since": "2026-07-23",
+     "days": 42,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/588989-1719245400.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/588989"
@@ -4567,7 +4567,7 @@
      "since": "2026-08-31",
      "days": 3,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/413983-1662916084.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/413983"
     },
     {
@@ -4642,7 +4642,7 @@
      "since": "2026-08-31",
      "days": 3,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/474589-1739272404.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/474589"
     },
     {
@@ -4672,7 +4672,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/552474-1722348220.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/552474"
     },
     {
@@ -4762,7 +4762,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/476237-1771526824.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/476237"
     },
     {
@@ -4777,7 +4777,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/857948-1721724428.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/857948"
     },
     {
@@ -4792,7 +4792,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/746579-1654445626.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/746579"
     },
     {
@@ -4822,7 +4822,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/642967-1771707654.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/642967"
     },
     {
@@ -4837,7 +4837,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/659826-1771715291.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/659826"
     },
     {
@@ -4852,7 +4852,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/495722-1770806559.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/495722"
     },
     {
@@ -5216,8 +5216,8 @@
      "rating": 94.16,
      "number": 21,
      "card_type": "Highlight",
-     "since": "2026-05-17",
-     "days": 109,
+     "since": "2026-03-30",
+     "days": 157,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/502722-1692998699.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/502722"
@@ -5249,7 +5249,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/387105-1762637498.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/387105"
     },
     {
@@ -5264,7 +5264,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/226074-1764153180.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/226074"
     },
     {
@@ -5384,7 +5384,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/371013-1763647059.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/371013"
     },
     {
@@ -5399,7 +5399,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/548028-1727376769.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/548028"
     },
     {
@@ -5459,7 +5459,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/156617-1661352678.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/156617"
     },
     {
@@ -5553,8 +5553,8 @@
      "rating": 94.07,
      "number": 19,
      "card_type": "Highlight",
-     "since": "2026-09-02",
-     "days": 1,
+     "since": "2026-06-30",
+     "days": 65,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/552057-1755092070.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/552057"
@@ -5967,7 +5967,7 @@
      "card_type": "Highlight",
      "since": "2026-04-14",
      "days": 142,
-     "tenureRank": 2,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/196948-1668183241.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/196948"
     },
@@ -6027,7 +6027,7 @@
      "card_type": "Highlight",
      "since": "2026-04-14",
      "days": 142,
-     "tenureRank": 3,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/565821-1736777758.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/565821"
     },
@@ -6085,9 +6085,9 @@
      "rating": 94.0,
      "number": 7,
      "card_type": "Highlight",
-     "since": "2026-06-13",
-     "days": 82,
-     "tenureRank": 0,
+     "since": "2026-04-14",
+     "days": 142,
+     "tenureRank": 2,
      "img": "https://img.a.transfermarkt.technology/portrait/big/319859-1684771732.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/319859"
     },
@@ -7096,8 +7096,8 @@
      "rating": 72.28,
      "number": 20,
      "card_type": "Standard",
-     "since": "2026-08-27",
-     "days": 7,
+     "since": "2026-08-15",
+     "days": 19,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/677278-1765896161.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/677278"
@@ -7246,8 +7246,8 @@
      "rating": 74.42,
      "number": 7,
      "card_type": "Standard",
-     "since": "2026-08-27",
-     "days": 7,
+     "since": "2026-08-15",
+     "days": 19,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/234189-1780929645.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/234189"
@@ -7736,7 +7736,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/28238-1683199446.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/28238"
     },
     {
@@ -7781,7 +7781,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/251664-1677676808.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/251664"
     },
     {
@@ -7811,7 +7811,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/3208-1683203656.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/3208"
     },
     {
@@ -8222,7 +8222,7 @@
      "card_type": "Highlight",
      "since": "2026-05-28",
      "days": 98,
-     "tenureRank": 3,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/654539-1754901329.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/654539"
     },
@@ -8295,9 +8295,9 @@
      "rating": 99.29,
      "number": 9,
      "card_type": "Highlight",
-     "since": "2026-08-02",
-     "days": 32,
-     "tenureRank": 0,
+     "since": "2026-05-28",
+     "days": 98,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/709726-1758714741.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/709726"
     },
@@ -8493,7 +8493,7 @@
      "since": "2026-08-18",
      "days": 16,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/37647-1617979644.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/37647"
     },
     {
@@ -8568,7 +8568,7 @@
      "since": "2026-08-08",
      "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/3393-1542019112.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/3393"
     },
     {
@@ -8917,8 +8917,8 @@
      "rating": 95.32,
      "number": 15,
      "card_type": "Highlight",
-     "since": "2026-08-09",
-     "days": 25,
+     "since": "2026-06-18",
+     "days": 77,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/388198-1709560457.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/388198"
@@ -8992,8 +8992,8 @@
      "rating": 95.97,
      "number": 20,
      "card_type": "Highlight",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-08-09",
+     "days": 25,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/309400-1782889722.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/309400"
@@ -9190,7 +9190,7 @@
      "since": "2026-08-27",
      "days": 7,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/170527-1774652461.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/170527"
     },
     {
@@ -9247,8 +9247,8 @@
      "rating": 96.9,
      "number": 5,
      "card_type": "Epic",
-     "since": "2026-08-27",
-     "days": 7,
+     "since": "2026-08-08",
+     "days": 26,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/72347-1704730756.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/72347"
@@ -9404,9 +9404,9 @@
      "rating": 94.07,
      "number": 11,
      "card_type": "Highlight",
-     "since": "2026-08-20",
-     "days": 14,
-     "tenureRank": 0,
+     "since": "2026-07-04",
+     "days": 61,
+     "tenureRank": 1,
      "img": "https://img.a.transfermarkt.technology/portrait/big/1060087-1750779518.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/1060087"
     },
@@ -9511,7 +9511,7 @@
      "card_type": "Standard",
      "since": "2026-07-04",
      "days": 61,
-     "tenureRank": 2,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/124419-1706829687.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/124419"
     },
@@ -9526,7 +9526,7 @@
      "card_type": "Highlight",
      "since": "2026-07-04",
      "days": 61,
-     "tenureRank": 1,
+     "tenureRank": 2,
      "img": "https://img.a.transfermarkt.technology/portrait/big/523318-1682331342.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/523318"
     },
@@ -9691,7 +9691,7 @@
      "card_type": "Standard",
      "since": "2026-07-04",
      "days": 61,
-     "tenureRank": 3,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/481675-1724268727.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/481675"
     }
@@ -10273,8 +10273,8 @@
      "rating": 71.26,
      "number": 16,
      "card_type": "Standard",
-     "since": "2026-08-15",
-     "days": 19,
+     "since": "2026-06-11",
+     "days": 84,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/283833-1668859546.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/283833"
@@ -11093,7 +11093,7 @@
      "since": "2026-08-20",
      "days": 14,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/s_3390_123_2012_1.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/3390"
     }
    ]
@@ -11631,7 +11631,7 @@
      "card_type": "BigTime",
      "since": "2026-07-11",
      "days": 54,
-     "tenureRank": 3,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/66521-1455538386.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/66521"
     },
@@ -11674,8 +11674,8 @@
      "rating": 96.64,
      "number": 14,
      "card_type": "Epic",
-     "since": "2026-08-20",
-     "days": 14,
+     "since": "2026-08-13",
+     "days": 21,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/6069-1562854194.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/6069"
@@ -11704,9 +11704,9 @@
      "rating": 97.44,
      "number": 24,
      "card_type": "Showtime",
-     "since": "2026-08-20",
-     "days": 14,
-     "tenureRank": 0,
+     "since": "2026-07-02",
+     "days": 63,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/643574-1752587688.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/643574"
     },
@@ -11857,7 +11857,7 @@
      "since": "2026-08-20",
      "days": 14,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/111881-1772684980.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/111881"
     },
     {
@@ -11947,7 +11947,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/948169-1772965432.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/948169"
     },
     {
@@ -12052,7 +12052,7 @@
      "since": "2026-08-10",
      "days": 24,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/673858-1772817174.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/673858"
     },
     {
@@ -12082,7 +12082,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/261931-1772685015.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/261931"
     },
     {
@@ -12097,7 +12097,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/177521-1770310530.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/177521"
     },
     {
@@ -12112,7 +12112,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/188910-1772683314.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/188910"
     },
     {
@@ -12341,8 +12341,8 @@
      "rating": 75.14,
      "number": 6,
      "card_type": "Standard",
-     "since": "2026-08-13",
-     "days": 21,
+     "since": "2026-08-08",
+     "days": 26,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/286339-1565165533.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/286339"
@@ -12524,7 +12524,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/540315-1785849236.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/540315"
     },
     {
@@ -12659,7 +12659,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/834483-1709676711.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/834483"
     }
    ]
@@ -12708,8 +12708,8 @@
      "rating": 94.26,
      "number": 16,
      "card_type": "Highlight",
-     "since": "2026-07-30",
-     "days": 35,
+     "since": "2026-06-13",
+     "days": 82,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/724520-1758782814.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/724520"
@@ -12741,7 +12741,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/560873-1755177916.jpeg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/560873"
     },
     {
@@ -12801,7 +12801,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/45124-1437471177.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/45124"
     },
     {
@@ -12815,7 +12815,7 @@
      "card_type": "Showtime",
      "since": "2026-05-07",
      "days": 119,
-     "tenureRank": 3,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/398073-1672304327.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/398073"
     },
@@ -12888,9 +12888,9 @@
      "rating": 94.14,
      "number": 21,
      "card_type": "Highlight",
-     "since": "2026-07-30",
-     "days": 35,
-     "tenureRank": 0,
+     "since": "2026-03-19",
+     "days": 168,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/532776-1689710574.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/532776"
     },
@@ -13026,7 +13026,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/732950-1726146772.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/732950"
     },
     {
@@ -13146,7 +13146,7 @@
      "since": "2026-08-30",
      "days": 4,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/204198-1725787650.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/204198"
     },
     {
@@ -13158,10 +13158,10 @@
      "rating": 92.44,
      "number": 3,
      "card_type": "Highlight",
-     "since": "2026-09-02",
-     "days": 1,
+     "since": "2026-08-13",
+     "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/518802-1780492649.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/518802"
     },
     {
@@ -13176,7 +13176,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/216954-1646818019.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/216954"
     },
     {
@@ -13206,7 +13206,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/380473-1666874703.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/380473"
     },
     {
@@ -13236,7 +13236,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/45287-1603795522.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/45287"
     },
     {
@@ -13266,7 +13266,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/667965-1741951121.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/667965"
     },
     {
@@ -13281,7 +13281,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/860051-1678440290.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/860051"
     },
     {
@@ -13353,10 +13353,10 @@
      "rating": 74.23,
      "number": 20,
      "card_type": "Standard",
-     "since": "2026-09-02",
-     "days": 1,
+     "since": "2026-09-01",
+     "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/885445-1756290289.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/885445"
     }
    ]
@@ -13600,8 +13600,8 @@
      "rating": 96.15,
      "number": 26,
      "card_type": "Highlight",
-     "since": "2026-08-13",
-     "days": 21,
+     "since": "2026-06-18",
+     "days": 77,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/478573-1718097194.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/478573"
@@ -13783,7 +13783,7 @@
      "since": "2026-08-08",
      "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/3515-1461328878.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/3515"
     },
     {
@@ -13888,7 +13888,7 @@
      "since": "2026-08-21",
      "days": 13,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/3994-1461327946.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/3994"
     },
     {
@@ -13963,7 +13963,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/5198-1719543769.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/5198"
     },
     {
@@ -14224,7 +14224,7 @@
      "card_type": "Standard",
      "since": "2026-06-13",
      "days": 82,
-     "tenureRank": 2,
+     "tenureRank": 3,
      "img": "https://img.a.transfermarkt.technology/portrait/big/340353-1729542646.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/340353"
     },
@@ -14252,9 +14252,9 @@
      "rating": 75.04,
      "number": 24,
      "card_type": "Standard",
-     "since": "2026-08-15",
-     "days": 19,
-     "tenureRank": 3,
+     "since": "2026-06-25",
+     "days": 70,
+     "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/500067-1706264992.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/500067"
     },
@@ -14402,9 +14402,9 @@
      "rating": 96.37,
      "number": 19,
      "card_type": "Showtime",
-     "since": "2026-08-20",
-     "days": 14,
-     "tenureRank": 0,
+     "since": "2026-06-13",
+     "days": 82,
+     "tenureRank": 2,
      "img": "https://img.a.transfermarkt.technology/portrait/big/272855-1756305316.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/272855"
     }
@@ -14682,7 +14682,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/282250-1695237819.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/282250"
     },
     {
@@ -14832,7 +14832,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/499758-1754511519.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/499758"
     },
     {
@@ -14847,7 +14847,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/418567-1687764418.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/418567"
     },
     {
@@ -14877,7 +14877,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/185636-1771691267.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/185636"
     },
     {
@@ -14892,7 +14892,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/418553-1760020547.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/418553"
     },
     {
@@ -14907,7 +14907,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/794758-1671210731.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/794758"
     },
     {
@@ -14934,10 +14934,10 @@
      "rating": 69.52,
      "number": 14,
      "card_type": "Standard",
-     "since": "2026-08-13",
-     "days": 21,
+     "since": "2026-08-08",
+     "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/205586-1724962848.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/205586"
     },
     {
@@ -14952,7 +14952,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/581106-1704873743.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/581106"
     },
     {
@@ -14982,7 +14982,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/499859-1771715496.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/499859"
     },
     {
@@ -15057,7 +15057,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/291254-1637671999.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/291254"
     },
     {
@@ -15069,10 +15069,10 @@
      "rating": 67.52,
      "number": 4,
      "card_type": "Standard",
-     "since": "2026-08-27",
-     "days": 7,
+     "since": "2026-08-08",
+     "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/1129198-1720826278.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/1129198"
     }
    ]
@@ -15458,8 +15458,8 @@
      "rating": 74.48,
      "number": 11,
      "card_type": "Standard",
-     "since": "2026-08-15",
-     "days": 19,
+     "since": "2026-07-03",
+     "days": 62,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/678439-1746578477.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/678439"
@@ -15638,8 +15638,8 @@
      "rating": 74.29,
      "number": 18,
      "card_type": "Standard",
-     "since": "2026-08-27",
-     "days": 7,
+     "since": "2026-08-15",
+     "days": 19,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/970518-1781276813.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/970518"
@@ -15990,8 +15990,8 @@
      "rating": 70.3,
      "number": 16,
      "card_type": "Standard",
-     "since": "2026-08-15",
-     "days": 19,
+     "since": "2026-07-19",
+     "days": 46,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/687529-1776887069.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/687529"
@@ -16005,8 +16005,8 @@
      "rating": 71.65,
      "number": 10,
      "card_type": "Standard",
-     "since": "2026-08-15",
-     "days": 19,
+     "since": "2026-07-19",
+     "days": 46,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/224672-1746022729.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/224672"
@@ -16574,8 +16574,8 @@
      "rating": 94.29,
      "number": 13,
      "card_type": "Highlight",
-     "since": "2026-08-26",
-     "days": 8,
+     "since": "2026-08-13",
+     "days": 21,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/805714-1749414999.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/805714"
@@ -16889,8 +16889,8 @@
      "rating": 95.01,
      "number": 8,
      "card_type": "Highlight",
-     "since": "2026-08-20",
-     "days": 14,
+     "since": "2026-08-08",
+     "days": 26,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/240306-1683882766.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/240306"
@@ -17039,8 +17039,8 @@
      "rating": 94.37,
      "number": 26,
      "card_type": "Highlight",
-     "since": "2026-08-29",
-     "days": 5,
+     "since": "2026-08-08",
+     "days": 26,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/487474-1749069081.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/487474"
@@ -17072,7 +17072,7 @@
      "since": "2026-08-20",
      "days": 14,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/258027-1756943455.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/258027"
     },
     {
@@ -17117,7 +17117,7 @@
      "since": "2026-08-26",
      "days": 8,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/420465-1788352642.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/420465"
     },
     {
@@ -17690,8 +17690,8 @@
      "rating": 94.07,
      "number": 8,
      "card_type": "Highlight",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-05-31",
+     "days": 95,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/918969-1726834088.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/918969"
@@ -17870,8 +17870,8 @@
      "rating": 75.44,
      "number": 5,
      "card_type": "Standard",
-     "since": "2026-08-20",
-     "days": 14,
+     "since": "2026-08-09",
+     "days": 25,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/126665-1746646577.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/126665"
@@ -18173,7 +18173,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/238752-1726065554.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/238752"
     },
     {
@@ -18188,7 +18188,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/1026014-1727872268.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/1026014"
     },
     {
@@ -18200,8 +18200,8 @@
      "rating": 70.64,
      "number": 30,
      "card_type": "Standard",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-08-13",
+     "days": 21,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/662242-1654095080.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/662242"
@@ -18233,7 +18233,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/1111045-1732104439.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/1111045"
     },
     {
@@ -18245,10 +18245,10 @@
      "rating": 64.88,
      "number": 4,
      "card_type": "Standard",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-08-08",
+     "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/1106982-1738110553.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/1106982"
     },
     {
@@ -18263,7 +18263,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/673514-1767803264.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/673514"
     },
     {
@@ -18278,7 +18278,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/570781-1779366722.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/570781"
     },
     {
@@ -18308,7 +18308,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/111051-1756666510.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/111051"
     }
    ]
@@ -18522,8 +18522,8 @@
      "rating": 70.63,
      "number": 9,
      "card_type": "Standard",
-     "since": "2026-08-13",
-     "days": 21,
+     "since": "2026-08-06",
+     "days": 28,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/846254-1770273673.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/846254"
@@ -19578,8 +19578,8 @@
      "rating": 98.82,
      "number": 1,
      "card_type": "Showtime",
-     "since": "2026-07-20",
-     "days": 45,
+     "since": "2026-06-01",
+     "days": 94,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/262749-1780663789.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/262749"
@@ -19746,7 +19746,7 @@
      "since": "2026-08-08",
      "days": 26,
      "tenureRank": 2,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/3979-1684226777.jpeg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/3979"
     },
     {
@@ -19806,7 +19806,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/7767-1683642827.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/7767"
     },
     {
@@ -19821,7 +19821,7 @@
      "since": "2026-08-08",
      "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/60444-1694703091.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/60444"
     },
     {
@@ -20005,8 +20005,8 @@
      "rating": 93.99,
      "number": 7,
      "card_type": "Highlight",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-06-30",
+     "days": 65,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/866246-1701861399.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/866246"
@@ -20155,8 +20155,8 @@
      "rating": 73.17,
      "number": 26,
      "card_type": "Standard",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-08-15",
+     "days": 19,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/308552-1659600431.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/308552"
@@ -20675,7 +20675,7 @@
      "since": "2026-08-08",
      "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/194638-1755185268.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/194638"
     },
     {
@@ -20735,7 +20735,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/313094-1729850115.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/313094"
     },
     {
@@ -20750,7 +20750,7 @@
      "since": "2026-08-23",
      "days": 11,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/507344-1702665167.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/507344"
     },
     {
@@ -20795,7 +20795,7 @@
      "since": "2026-08-08",
      "days": 26,
      "tenureRank": 3,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/59027-1771787475.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/59027"
     },
     {
@@ -20810,7 +20810,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/243856-1683103359.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/243856"
     },
     {
@@ -20840,7 +20840,7 @@
      "since": "2026-09-02",
      "days": 1,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/461461-1755185518.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/461461"
     },
     {
@@ -20930,7 +20930,7 @@
      "since": "2026-08-08",
      "days": 26,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/247915-1691248651.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/247915"
     },
     {
@@ -21953,8 +21953,8 @@
      "rating": 93.98,
      "number": 20,
      "card_type": "Highlight",
-     "since": "2026-09-01",
-     "days": 2,
+     "since": "2026-07-30",
+     "days": 35,
      "tenureRank": 0,
      "img": "https://img.a.transfermarkt.technology/portrait/big/572675-1773786535.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/572675"
@@ -22031,7 +22031,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/320739-1766446350.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/320739"
     },
     {
@@ -22046,7 +22046,7 @@
      "since": "2026-08-09",
      "days": 25,
      "tenureRank": 1,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/3408-1456484557.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/3408"
     },
     {
@@ -22076,7 +22076,7 @@
      "since": "2026-09-01",
      "days": 2,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/657746-1709932388.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/657746"
     },
     {
@@ -22091,7 +22091,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/402082-1678206054.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/402082"
     },
     {
@@ -22106,7 +22106,7 @@
      "since": "2026-08-09",
      "days": 25,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/143812-1695026891.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/143812"
     },
     {
@@ -22196,7 +22196,7 @@
      "since": "2026-08-09",
      "days": 25,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/563089-1741099748.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/563089"
     },
     {
@@ -22211,7 +22211,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/481367-1739899560.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/481367"
     },
     {
@@ -22223,10 +22223,10 @@
      "rating": 74.68,
      "number": 9,
      "card_type": "Standard",
-     "since": "2026-08-13",
-     "days": 21,
+     "since": "2026-08-09",
+     "days": 25,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/317454-1771600111.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/317454"
     },
     {
@@ -22241,7 +22241,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/928647-1743016476.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/928647"
     },
     {
@@ -22256,7 +22256,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/454181-1720465312.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/454181"
     },
     {
@@ -22271,7 +22271,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/707447-1720681061.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/707447"
     },
     {
@@ -22301,7 +22301,7 @@
      "since": "2026-08-09",
      "days": 25,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/898352-1739826537.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/898352"
     },
     {
@@ -22316,7 +22316,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/285322-1758832051.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/285322"
     },
     {
@@ -22331,7 +22331,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/339699-1753530559.png",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/339699"
     },
     {
@@ -22376,7 +22376,7 @@
      "since": "2026-08-21",
      "days": 13,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/303140-1744073265.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/303140"
     }
    ]
@@ -22743,7 +22743,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/562555-1771862075.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/562555"
     },
     {
@@ -22758,7 +22758,7 @@
      "since": "2026-08-09",
      "days": 25,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/466809-1605278989.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/466809"
     },
     {
@@ -22833,7 +22833,7 @@
      "since": "2026-08-09",
      "days": 25,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/637146-1771758451.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/637146"
     },
     {
@@ -22848,7 +22848,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/341049-1700296714.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/341049"
     },
     {
@@ -22878,7 +22878,7 @@
      "since": "2026-08-09",
      "days": 25,
      "tenureRank": 3,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/255916-1771719067.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/255916"
     },
     {
@@ -22908,7 +22908,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/315291-1709161726.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/315291"
     },
     {
@@ -22923,7 +22923,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/474249-1771756723.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/474249"
     },
     {
@@ -22938,7 +22938,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/876809-1771675361.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/876809"
     },
     {
@@ -22953,7 +22953,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/724547-1771689209.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/724547"
     },
     {
@@ -22983,7 +22983,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/670168-1771753469.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/670168"
     },
     {
@@ -22998,7 +22998,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/993063-1771598732.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/993063"
     },
     {
@@ -23013,7 +23013,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/245337-1771790204.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/245337"
     },
     {
@@ -23058,7 +23058,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/656316-1645958054.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/656316"
     },
     {
@@ -23073,7 +23073,7 @@
      "since": "2026-08-13",
      "days": 21,
      "tenureRank": 0,
-     "img": null,
+     "img": "https://img.a.transfermarkt.technology/portrait/big/245893-1771597717.jpg",
      "tm": "https://www.transfermarkt.com/x/profil/spieler/245893"
     }
    ]
