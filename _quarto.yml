@@ -17,18 +17,23 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: resume.qmd
-        text: Resume
-      - href: teaching.qmd
-        text: Teaching
-      # - publications.qmd
-      - courses.qmd
-      - href: schedule.qmd
-        text: Book A Meeting
-      - href: efootball.qmd
-        text: eFootball
-      - href: spotify.qmd
-        text: Playlist
+      - text: About
+        menu:
+          - href: resume.qmd
+            text: Resume
+          - href: teaching.qmd
+            text: Teaching
+          # - publications.qmd
+          - href: courses.qmd
+            text: Courses
+          - href: schedule.qmd
+            text: Book A Meeting
+      - text: More
+        menu:
+          - href: efootball.qmd
+            text: eFootball
+          - href: spotify.qmd
+            text: Playlist
     right:
       - slides.qmd
       - text: Notes
