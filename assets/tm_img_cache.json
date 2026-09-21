@@ -3669,7 +3669,8 @@
   "321195": "https://img.a.transfermarkt.technology/portrait/big/321195-1771689125.jpg",
   "520815": "https://img.a.transfermarkt.technology/portrait/big/520815-1789131236.png",
   "287635": "https://img.a.transfermarkt.technology/portrait/big/287635-1657714916.jpg",
-  "333175": "https://img.a.transfermarkt.technology/portrait/big/333175-1525697908.jpg"
+  "333175": "https://img.a.transfermarkt.technology/portrait/big/333175-1525697908.jpg",
+  "837619": "https://img.a.transfermarkt.technology/portrait/big/837619-1727117232.jpg"
  },
  "tm_null": {
   "1146046": 3,
@@ -3694,8 +3695,7 @@
   "723023": 2,
   "429892": 2,
   "1092158": 1,
-  "90785": 3,
-  "776607": 3
+  "90785": 3
  },
  "tm_err": {}
 }
