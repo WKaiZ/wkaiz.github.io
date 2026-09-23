@@ -3,10 +3,19 @@
   "name": "アニメソング",
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
-  "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-09-22T12:03:34Z",
-  "total": 405,
+  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
+  "updated": "2026-09-23T12:14:52Z",
+  "total": 406,
   "tracks": [
+    {
+      "id": "2F27XjfE5naz2PGgBpjB4W",
+      "title": "UNDEAD",
+      "artists": "麻婆豆腐",
+      "duration_ms": 184610,
+      "url": "https://open.spotify.com/track/2F27XjfE5naz2PGgBpjB4W",
+      "preview_url": null,
+      "added_at": "2026-09-23T00:45:53Z"
+    },
     {
       "id": "2SdXNiI9ny1WunIx4A7Bjg",
       "title": "パレード",
