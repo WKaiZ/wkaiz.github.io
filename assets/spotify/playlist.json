@@ -3,10 +3,19 @@
   "name": "アニメソング",
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
-  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-09-23T12:14:52Z",
-  "total": 406,
+  "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
+  "updated": "2026-09-24T12:14:26Z",
+  "total": 407,
   "tracks": [
+    {
+      "id": "4Z8WSP6i30vg05WTDyvw0X",
+      "title": "あの夏に咲け",
+      "artists": "ヨルシカ",
+      "duration_ms": 258876,
+      "url": "https://open.spotify.com/track/4Z8WSP6i30vg05WTDyvw0X",
+      "preview_url": null,
+      "added_at": "2026-09-23T21:49:29Z"
+    },
     {
       "id": "2F27XjfE5naz2PGgBpjB4W",
       "title": "UNDEAD",
