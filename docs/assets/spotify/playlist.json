@@ -4,9 +4,18 @@
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
   "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-09-29T13:20:59Z",
-  "total": 407,
+  "updated": "2026-09-30T13:01:38Z",
+  "total": 408,
   "tracks": [
+    {
+      "id": "5V4zMXD1SYSro1vpliQwWA",
+      "title": "イチジク煙",
+      "artists": "ZUTOMAYO",
+      "duration_ms": 235233,
+      "url": "https://open.spotify.com/track/5V4zMXD1SYSro1vpliQwWA",
+      "preview_url": null,
+      "added_at": "2026-09-29T21:53:14Z"
+    },
     {
       "id": "4Z8WSP6i30vg05WTDyvw0X",
       "title": "あの夏に咲け",
