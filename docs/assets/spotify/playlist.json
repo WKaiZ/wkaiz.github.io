@@ -3,10 +3,19 @@
   "name": "アニメソング",
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
-  "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-09-30T13:01:38Z",
-  "total": 408,
+  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
+  "updated": "2026-10-01T13:55:36Z",
+  "total": 409,
   "tracks": [
+    {
+      "id": "3rm4MVBCHs52iYaCqj5XQG",
+      "title": "ひゅるりらぱっぱ - HYURURIRAPAPPA",
+      "artists": "tuki.",
+      "duration_ms": 200080,
+      "url": "https://open.spotify.com/track/3rm4MVBCHs52iYaCqj5XQG",
+      "preview_url": null,
+      "added_at": "2026-09-30T16:04:15Z"
+    },
     {
       "id": "5V4zMXD1SYSro1vpliQwWA",
       "title": "イチジク煙",
