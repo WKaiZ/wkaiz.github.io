@@ -207,15 +207,16 @@ def _attempt(path, classify):
 # Portraits are keyed <id>-<timestamp>; accept jpg/jpeg/png in any case and any
 # of big/header/medium, ignore the ?lm= cache-buster, and normalize to the
 # canonical big/<id>-<ts>.<ext>. Older (often retired) players instead use a
-# legacy "s_<id>_..." filename.
+# legacy "s_<id>_..." filename. The image host is case-sensitive: a portrait
+# uploaded as .JPG 404s when requested as .jpg, so keep the extension verbatim.
 def _portrait(html, tid):
     m = re.search(rf"portrait/(?:big|header|medium)/{tid}-(\d+)\.(jpe?g|png)", html, re.I)
     if m:
-        return TM_IMG.format(id=tid, ts=m.group(1), ext=m.group(2).lower())
+        return TM_IMG.format(id=tid, ts=m.group(1), ext=m.group(2))
     m = re.search(rf"portrait/(?:big|header|medium)/(s_{tid}_[\d_]+)\.(jpe?g|png)", html, re.I)
     if m:
         return ("https://img.a.transfermarkt.technology/portrait/big/"
-                f"{m.group(1)}.{m.group(2).lower()}")
+                f"{m.group(1)}.{m.group(2)}")
     return None
 
 
