@@ -4,9 +4,18 @@
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
   "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-10-05T15:17:54Z",
-  "total": 409,
+  "updated": "2026-10-06T13:38:35Z",
+  "total": 410,
   "tracks": [
+    {
+      "id": "49OhFX4S8uX22KnzZDGGU2",
+      "title": "純恋愛のインゴット - Pure Love Ingot",
+      "artists": "tuki.",
+      "duration_ms": 244186,
+      "url": "https://open.spotify.com/track/49OhFX4S8uX22KnzZDGGU2",
+      "preview_url": null,
+      "added_at": "2026-10-05T18:06:30Z"
+    },
     {
       "id": "3rm4MVBCHs52iYaCqj5XQG",
       "title": "ひゅるりらぱっぱ - HYURURIRAPAPPA",
