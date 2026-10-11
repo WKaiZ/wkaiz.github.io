@@ -3,10 +3,28 @@
   "name": "アニメソング",
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
-  "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-10-10T13:04:17Z",
-  "total": 410,
+  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
+  "updated": "2026-10-11T13:33:09Z",
+  "total": 412,
   "tracks": [
+    {
+      "id": "7odQdbAWvIh891tdRP44uH",
+      "title": "akanesasu",
+      "artists": "ZUTOMAYO",
+      "duration_ms": 210233,
+      "url": "https://open.spotify.com/track/7odQdbAWvIh891tdRP44uH",
+      "preview_url": null,
+      "added_at": "2026-10-11T08:01:22Z"
+    },
+    {
+      "id": "26GW1dAtZ9Ya1GB7bbB9aO",
+      "title": "五月は花緑青の窓辺から",
+      "artists": "ヨルシカ",
+      "duration_ms": 185080,
+      "url": "https://open.spotify.com/track/26GW1dAtZ9Ya1GB7bbB9aO",
+      "preview_url": null,
+      "added_at": "2026-10-11T07:37:20Z"
+    },
     {
       "id": "49OhFX4S8uX22KnzZDGGU2",
       "title": "純恋愛のインゴット - Pure Love Ingot",
