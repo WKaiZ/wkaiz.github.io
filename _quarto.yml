@@ -30,8 +30,6 @@ website:
             text: Book A Meeting
       - text: More
         menu:
-          - href: efootball.qmd
-            text: eFootball
           - href: spotify.qmd
             text: Playlist
     right:
