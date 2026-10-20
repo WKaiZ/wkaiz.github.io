@@ -1,4 +1,15 @@
 - path: https://docs.google.com/presentation/d/1Rels30Bi1H4dgNh6mWKjxMxuwyFXMevprqEmWfxf06g/edit?usp=sharing
+  title: "DATA 102 Fall 2026 Discussion 7"
+  image: /assets/data102.png
+  description: "Graphical Models & Gibbs Sampling"
+  date: "2026-10-21"
+  categories: [DATA 102, Fa26]
+  title: "DATA 102 Fall 2026 Discussion 7"
+  image: /assets/data102.png
+  description: "Generalized Linear Models"
+  date: "2026-10-14"
+  categories: [DATA 102, Fa26]
+- path: https://docs.google.com/presentation/d/1Rels30Bi1H4dgNh6mWKjxMxuwyFXMevprqEmWfxf06g/edit?usp=sharing
   title: "DATA 102 Fall 2026 Discussion 6"
   image: /assets/data102.png
   description: "Graphical Models & Gibbs Sampling"
