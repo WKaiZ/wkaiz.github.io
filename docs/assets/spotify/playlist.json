@@ -3,10 +3,136 @@
   "name": "アニメソング",
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
-  "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-10-27T12:41:28Z",
-  "total": 412,
+  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
+  "updated": "2026-10-28T13:33:23Z",
+  "total": 413,
   "tracks": [
+    {
+      "id": "5V4zMXD1SYSro1vpliQwWA",
+      "title": "イチジク煙",
+      "artists": "ZUTOMAYO",
+      "duration_ms": 235233,
+      "url": "https://open.spotify.com/track/5V4zMXD1SYSro1vpliQwWA",
+      "preview_url": null,
+      "added_at": "2026-10-27T18:16:11Z"
+    },
+    {
+      "id": "2Gaynwa8ZoYKdc9w3utD1h",
+      "title": "Dream Lantern - English Version",
+      "artists": "RADWIMPS",
+      "duration_ms": 131666,
+      "url": "https://open.spotify.com/track/2Gaynwa8ZoYKdc9w3utD1h",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:56:00Z"
+    },
+    {
+      "id": "2yAB3u40MOFRNuUzdl0but",
+      "title": "Seventeen",
+      "artists": "YOASOBI",
+      "duration_ms": 199082,
+      "url": "https://open.spotify.com/track/2yAB3u40MOFRNuUzdl0but",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:55:45Z"
+    },
+    {
+      "id": "69O0RdcJkH7eimOTXw41L7",
+      "title": "Adventure",
+      "artists": "YOASOBI",
+      "duration_ms": 200625,
+      "url": "https://open.spotify.com/track/69O0RdcJkH7eimOTXw41L7",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:55:31Z"
+    },
+    {
+      "id": "4KFvsGchCp4c7zphBlPxz3",
+      "title": "The Blessing",
+      "artists": "YOASOBI",
+      "duration_ms": 192840,
+      "url": "https://open.spotify.com/track/4KFvsGchCp4c7zphBlPxz3",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:55:18Z"
+    },
+    {
+      "id": "3UCbRuJbsnEZeGLXefqeow",
+      "title": "Just a Little Step",
+      "artists": "YOASOBI",
+      "duration_ms": 219018,
+      "url": "https://open.spotify.com/track/3UCbRuJbsnEZeGLXefqeow",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:55:08Z"
+    },
+    {
+      "id": "325iR7dCw6hNekr48puGdG",
+      "title": "Love Letter",
+      "artists": "YOASOBI",
+      "duration_ms": 210667,
+      "url": "https://open.spotify.com/track/325iR7dCw6hNekr48puGdG",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:54:57Z"
+    },
+    {
+      "id": "55O5PJor96At64xOQSWnkc",
+      "title": "RGB",
+      "artists": "YOASOBI",
+      "duration_ms": 222000,
+      "url": "https://open.spotify.com/track/55O5PJor96At64xOQSWnkc",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:54:36Z"
+    },
+    {
+      "id": "5ASNsnnOvreLu9FtvA3jpR",
+      "title": "If I Could Draw Life",
+      "artists": "YOASOBI",
+      "duration_ms": 202080,
+      "url": "https://open.spotify.com/track/5ASNsnnOvreLu9FtvA3jpR",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:54:27Z"
+    },
+    {
+      "id": "3eGKvQ0eYpyl28lMo8ZT93",
+      "title": "Blue",
+      "artists": "YOASOBI",
+      "duration_ms": 248444,
+      "url": "https://open.spotify.com/track/3eGKvQ0eYpyl28lMo8ZT93",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:54:23Z"
+    },
+    {
+      "id": "0JyJVPi4IBCgj2wTRKb0yN",
+      "title": "Into The Night",
+      "artists": "YOASOBI",
+      "duration_ms": 262153,
+      "url": "https://open.spotify.com/track/0JyJVPi4IBCgj2wTRKb0yN",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:54:18Z"
+    },
+    {
+      "id": "1zVsw1SqQKgtzE4aqmE8nE",
+      "title": "Idol",
+      "artists": "YOASOBI",
+      "duration_ms": 213233,
+      "url": "https://open.spotify.com/track/1zVsw1SqQKgtzE4aqmE8nE",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:53:10Z"
+    },
+    {
+      "id": "2I19G4B8vx7mrbK1PjpVq3",
+      "title": "Inemuri Enseitai",
+      "artists": "ZUTOMAYO",
+      "duration_ms": 218333,
+      "url": "https://open.spotify.com/track/2I19G4B8vx7mrbK1PjpVq3",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:32:26Z"
+    },
+    {
+      "id": "2AlU0ltG2bfCvpuV5vVaGY",
+      "title": "ultra soul",
+      "artists": "ZUTOMAYO",
+      "duration_ms": 79572,
+      "url": "https://open.spotify.com/track/2AlU0ltG2bfCvpuV5vVaGY",
+      "preview_url": null,
+      "added_at": "2026-10-27T17:32:18Z"
+    },
     {
       "id": "7odQdbAWvIh891tdRP44uH",
       "title": "akanesasu",
@@ -44,15 +170,6 @@
       "added_at": "2026-09-30T16:04:15Z"
     },
     {
-      "id": "5V4zMXD1SYSro1vpliQwWA",
-      "title": "イチジク煙",
-      "artists": "ZUTOMAYO",
-      "duration_ms": 235233,
-      "url": "https://open.spotify.com/track/5V4zMXD1SYSro1vpliQwWA",
-      "preview_url": null,
-      "added_at": "2026-09-29T21:53:14Z"
-    },
-    {
       "id": "4Z8WSP6i30vg05WTDyvw0X",
       "title": "あの夏に咲け",
       "artists": "ヨルシカ",
@@ -87,15 +204,6 @@
       "url": "https://open.spotify.com/track/2QS8VmtgJ40DBQbOfK4W9U",
       "preview_url": null,
       "added_at": "2026-09-09T00:20:09Z"
-    },
-    {
-      "id": "1SzUveFBheIYBW1n758uTt",
-      "title": "Fig Smoke",
-      "artists": "ZUTOMAYO",
-      "duration_ms": 235233,
-      "url": "https://open.spotify.com/track/1SzUveFBheIYBW1n758uTt",
-      "preview_url": null,
-      "added_at": "2026-08-28T17:58:46Z"
     },
     {
       "id": "5U4UIPhCRKehoqeBK8rRKL",
@@ -1367,15 +1475,6 @@
       "added_at": "2024-10-21T17:27:27Z"
     },
     {
-      "id": "2Gaynwa8ZoYKdc9w3utD1h",
-      "title": "Dream Lantern - English Version",
-      "artists": "RADWIMPS",
-      "duration_ms": 131666,
-      "url": "https://open.spotify.com/track/2Gaynwa8ZoYKdc9w3utD1h",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
       "id": "3kUWZiVYJ4YQOl0u7Y1Og8",
       "title": "カワキヲアメク",
       "artists": "美波",
@@ -2042,38 +2141,11 @@
       "added_at": "2024-10-21T17:27:27Z"
     },
     {
-      "id": "1zVsw1SqQKgtzE4aqmE8nE",
-      "title": "Idol",
-      "artists": "YOASOBI",
-      "duration_ms": 213233,
-      "url": "https://open.spotify.com/track/1zVsw1SqQKgtzE4aqmE8nE",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
-      "id": "0JyJVPi4IBCgj2wTRKb0yN",
-      "title": "Into The Night",
-      "artists": "YOASOBI",
-      "duration_ms": 262153,
-      "url": "https://open.spotify.com/track/0JyJVPi4IBCgj2wTRKb0yN",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
       "id": "7M9lc2hHXKQobbHQ31Yg2v",
       "title": "Monster",
       "artists": "YOASOBI",
       "duration_ms": 205000,
       "url": "https://open.spotify.com/track/7M9lc2hHXKQobbHQ31Yg2v",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
-      "id": "3eGKvQ0eYpyl28lMo8ZT93",
-      "title": "Blue",
-      "artists": "YOASOBI",
-      "duration_ms": 248444,
-      "url": "https://open.spotify.com/track/3eGKvQ0eYpyl28lMo8ZT93",
       "preview_url": null,
       "added_at": "2024-10-21T17:27:27Z"
     },
@@ -2087,29 +2159,11 @@
       "added_at": "2024-10-21T17:27:27Z"
     },
     {
-      "id": "5ASNsnnOvreLu9FtvA3jpR",
-      "title": "If I Could Draw Life",
-      "artists": "YOASOBI",
-      "duration_ms": 202080,
-      "url": "https://open.spotify.com/track/5ASNsnnOvreLu9FtvA3jpR",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
       "id": "0O0RP8iesLTKxhlEY4MKX6",
       "title": "Encore",
       "artists": "YOASOBI",
       "duration_ms": 270801,
       "url": "https://open.spotify.com/track/0O0RP8iesLTKxhlEY4MKX6",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
-      "id": "55O5PJor96At64xOQSWnkc",
-      "title": "RGB",
-      "artists": "YOASOBI",
-      "duration_ms": 222000,
-      "url": "https://open.spotify.com/track/55O5PJor96At64xOQSWnkc",
       "preview_url": null,
       "added_at": "2024-10-21T17:27:27Z"
     },
@@ -2137,15 +2191,6 @@
       "artists": "YOASOBI",
       "duration_ms": 201626,
       "url": "https://open.spotify.com/track/4RKXTsCXXXl9G06CqqJCBo",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
-      "id": "325iR7dCw6hNekr48puGdG",
-      "title": "Love Letter",
-      "artists": "YOASOBI",
-      "duration_ms": 210667,
-      "url": "https://open.spotify.com/track/325iR7dCw6hNekr48puGdG",
       "preview_url": null,
       "added_at": "2024-10-21T17:27:27Z"
     },
@@ -2182,15 +2227,6 @@
       "artists": "YOASOBI",
       "duration_ms": 220200,
       "url": "https://open.spotify.com/track/2pXmohBUnD5Li93sgpbPSg",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
-      "id": "3UCbRuJbsnEZeGLXefqeow",
-      "title": "Just a Little Step",
-      "artists": "YOASOBI",
-      "duration_ms": 219018,
-      "url": "https://open.spotify.com/track/3UCbRuJbsnEZeGLXefqeow",
       "preview_url": null,
       "added_at": "2024-10-21T17:27:27Z"
     },
@@ -2380,15 +2416,6 @@
       "artists": "YOASOBI",
       "duration_ms": 213233,
       "url": "https://open.spotify.com/track/7ovUcF5uHTBRzUpB6ZOmvt",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
-      "id": "4KFvsGchCp4c7zphBlPxz3",
-      "title": "The Blessing",
-      "artists": "YOASOBI",
-      "duration_ms": 192840,
-      "url": "https://open.spotify.com/track/4KFvsGchCp4c7zphBlPxz3",
       "preview_url": null,
       "added_at": "2024-10-21T17:27:27Z"
     },
@@ -2762,15 +2789,6 @@
       "added_at": "2024-10-21T17:27:27Z"
     },
     {
-      "id": "69O0RdcJkH7eimOTXw41L7",
-      "title": "Adventure",
-      "artists": "YOASOBI",
-      "duration_ms": 200625,
-      "url": "https://open.spotify.com/track/69O0RdcJkH7eimOTXw41L7",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
       "id": "1xc9r9pgQ3CG7iViKPf0cQ",
       "title": "イマジネーション",
       "artists": "SPYAIR",
@@ -2893,15 +2911,6 @@
       "artists": "Kairi Yagi",
       "duration_ms": 175013,
       "url": "https://open.spotify.com/track/5yPGl1KGxU7z3P9EL8TCwb",
-      "preview_url": null,
-      "added_at": "2024-10-21T17:27:27Z"
-    },
-    {
-      "id": "2yAB3u40MOFRNuUzdl0but",
-      "title": "Seventeen",
-      "artists": "YOASOBI",
-      "duration_ms": 199082,
-      "url": "https://open.spotify.com/track/2yAB3u40MOFRNuUzdl0but",
       "preview_url": null,
       "added_at": "2024-10-21T17:27:27Z"
     },
