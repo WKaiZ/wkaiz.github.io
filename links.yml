@@ -1,3 +1,9 @@
+- path: https://docs.google.com/presentation/d/1RVRN27vR-DMkkuv9BLRum5EAbvue6Ia0YlLtAbgRvUo/edit?usp=sharing
+  title: "DATA 102 Fall 2026 Discussion 10"
+  image: /assets/data102.png
+  description: "Multi-Armed Bandits"
+  date: "2026-11-18"
+  categories: [DATA 102, Fa26]
 - path: https://docs.google.com/presentation/d/1SbGFLvzb20CfToRj1ryDAEfqNrGYvu7Fz_wC_8UM3z0/edit?usp=sharing
   title: "DATA 102 Fall 2026 Discussion 8"
   image: /assets/data102.png
