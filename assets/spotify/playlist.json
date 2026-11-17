@@ -3,10 +3,19 @@
   "name": "アニメソング",
   "owner": "wes",
   "url": "https://open.spotify.com/playlist/2h21jaELSrCkMjjNQAyTVI",
-  "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
-  "updated": "2026-11-16T16:27:35Z",
-  "total": 415,
+  "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67706c0000d72c8d87c0d968be37365b108034",
+  "updated": "2026-11-17T16:29:33Z",
+  "total": 416,
   "tracks": [
+    {
+      "id": "0C0yofbpECr2lGAiKhnVXA",
+      "title": "あかねさす頃",
+      "artists": "ZUTOMAYO",
+      "duration_ms": 210233,
+      "url": "https://open.spotify.com/track/0C0yofbpECr2lGAiKhnVXA",
+      "preview_url": null,
+      "added_at": "2026-11-16T20:25:56Z"
+    },
     {
       "id": "3cffkuBCOS5E8TufmHh2ug",
       "title": "雨き声残響",
